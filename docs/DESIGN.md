@@ -191,6 +191,39 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** only players roll; threats roll attack pools; a side-initiative system.
 - **Why:** one roll covers both sides, so fights don't drag (A24), there are no opposed rolls, and the Storyteller's load fits on one card (A29). Scouting gives Sense-heavy frames a spotlight before the first obstacle.
 
+### D15 · 2026-10-22 · draft: Scent is the mission's threat track (Q9)
+- **Decision:**
+  - **Scent** is one track per mission, from 0 to the mission's **Limit**. The Limit is set by the mission's label and the party size, and it never moves during a mission.
+  - **It rises by 1** for each Partial or Fail at an obstacle (at most once per round at a group obstacle), once for each Clash (+1 or +2, D14), for each shift in sight of the Hunt (outside a Clash), and for a poor scouting roll.
+  - **It never goes down.**
+  - **On the Trail** (Scent at or above half the Limit, rounded up): every Escape obstacle is at +1 Difficulty.
+  - **The Hunt is Up** (Scent reaches the Limit): the Masters arrive. If the objective isn't done, it's lost. Everyone goes straight to the Escape, and **during the Escape a Fail means you're Taken**. Scent past the Limit is lost.
+- **Options:** one Scent track with two thresholds; separate Alert and Time tracks; Scent per character.
+- **Why:** every state is defined (A1); there are no penalties that climb inside one event (A2); nothing lowers it cheaply (A3); and it's the mission's clock, which the simulator must show binding (A22).
+
+### D16 · 2026-10-22 · draft: Wild is the one resource (Q10)
+- **Decision:**
+  - **Wild** comes as tokens. Each character starts every mission with **4** (to be tuned in the simulator).
+  - Spend 1 Wild to **Shift** into your animal, **Push** a roll, **Help** a friend, or **Patch Up** (heal 1 Hurt, yours or a friend's; it takes your action).
+  - Unspent Wild is lost when the mission ends, and the book tells players to spend it.
+  - **Edges** work as in D13.
+- **Options:** one resource per character; separate Shift and Push pools; one shared group pool.
+- **Why:** with one resource behind every choice, each spend is a real trade (A5–A7). The simulator checks that it gets spent.
+
+### D17 · 2026-10-22 · draft: Hurt, Down, Netted, Taken, Exposed and how a mission ends (Q11)
+- **Decision:**
+  - **Hurt:** 3 boxes, the same for every character in every form. Hurt clears between missions.
+  - **Down** (3 Hurt): you're out until the scene ends. Then you're back up with 2 Hurt, if a friend is still standing and the Hunt isn't Up. Otherwise you're **Taken**.
+  - **Netted** (by a Trapper): you can't act until a friend spends their action to free you. If the scene ends first, you're Taken.
+  - **Taken:** you're out for the rest of the mission, caged by the Hunt. In a campaign you can be rescued on a later mission.
+  - **Exposed:** the Hunt saw you shift, or Took you. It knows your face and your **Mark** (the one feature that shows in both your forms). In a campaign, your next mission starts at Scent 1.
+  - **Stuck:** see D12.
+  - **Everyone Down, Netted or Taken at once:** the mission ends, everyone is Taken, and it's a Loss.
+  - **Giving up:** the team may **Withdraw** at any time and go straight to the Escape. The mission is a Loss, so withdrawing is never better than fighting on (A4).
+  - **Results:** **Win** = the objective is done and nobody is Taken. **Costly Win** = it's done, but someone is Taken. **Loss** = it isn't done.
+- **Options:** capture-based failure; injury and death; failure that only means being exposed.
+- **Why:** real stakes for a 10+ table without death; losing costs something at every stage (A4); and "everyone down" is defined.
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
