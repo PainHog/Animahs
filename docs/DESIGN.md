@@ -163,6 +163,34 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
   - Wits obstacles, Crowds and Weaknesses make human form the better choice some of the time, so shifting is never always right or always wrong. The simulator measures this (D22);
   - two rows of ratings keep both forms on one sheet (A28).
 
+### D13 · 2026-10-22 · draft: Help, group obstacles and Edges (Q7)
+- **Decision:**
+  - **Help:** a friend at the same obstacle spends 1 Wild to give you +1 die. It doesn't use their action. They must be able to do it in their current form, and it counts towards the Cap.
+  - **Group obstacles:** everyone rolls and gets through on their own result. Scent rises **at most once per round**, if anyone gets a Partial or a Fail.
+  - **Edges:** a Critical or a good scouting roll can give the team an **Edge**: +1 die on any one roll, counting towards the Cap. The team holds at most 2.
+  - **Order of resolution:** the roll's result comes first, then its cost, then everything else.
+- **Options:** Help costs Wild but not your action; Help costs your action; free Help from one helper only.
+- **Why:** in the earlier games, helpers who spent a resource without spending their action made the best teamwork; the Cap stops bonuses stacking.
+
+### D14 · 2026-10-22 · draft: Time, obstacles, Clashes and scouting (Q8)
+- **Decision:**
+  - **Time:** a **round** is everyone getting one action. A **scene** is one obstacle or one Clash; once-per-scene abilities come back each scene. Moving between obstacles is free, and on the way each character may Shift or Patch Up once.
+  - **Obstacles** list their tags, the approaches that work with a Difficulty for each, the **progress** needed (usually 2), whether they're **point** (one roll a round, by anyone) or **group** (everyone has to get past), and whether they're **guarded**.
+    - Success: 1 progress. Critical: 1 progress plus 1 extra progress or an Edge. Partial: 1 progress, and Scent +1. Fail: no progress, and Scent +1; some obstacles also deal 1 Hurt.
+    - **Failing at a guarded obstacle starts a Clash** with its guards. Beating the guards clears the obstacle unless it says otherwise. You can also choose to start the Clash yourself.
+  - **Clashes:**
+    - threats have **Difficulty**, **Toughness** and **Harm**;
+    - **Strike** = a Force roll against the threat's Difficulty. Success: 1 harm. Critical: 2 harm. Partial: 1 harm, and you take the threat's Harm. Fail: you take its Harm;
+    - **Distract** = a Sneak or Move roll against its Difficulty. A Success puts the next Strike against it this round at −1 Difficulty;
+    - **Slip Away** = a Move or Sneak roll against its Difficulty. A Success takes you out of the Clash;
+    - at the end of each round, **each threat nobody rolled against hurts one character** of the Storyteller's choice;
+    - **a Clash lasts at most 4 rounds;** after that, any threats still standing pull back;
+    - **a Clash raises Scent once, when it ends:** +1, or +2 if it reached round 4, someone went Down, or someone shifted in sight of the Hunt.
+  - **Hurt never lowers your dice** (A2).
+  - **Scouting:** once per mission, before going in, one character rolls Sense against the mission's scouting Difficulty. Success: the team picks its way in and gains an Edge. Critical: two Edges. Partial: the team picks its way in, but Scent starts at 1. Fail: the Storyteller picks the way in, and Scent starts at 1.
+- **Options:** only players roll; threats roll attack pools; a side-initiative system.
+- **Why:** one roll covers both sides, so fights don't drag (A24), there are no opposed rolls, and the Storyteller's load fits on one card (A29). Scouting gives Sense-heavy frames a spotlight before the first obstacle.
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
