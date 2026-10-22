@@ -48,9 +48,53 @@ This is a living document. **§1 Pitch** is Richard's own. **§3 Decisions** log
 Brainstorm a distinctive title during the interview, avoiding "Animorphs", "Morph(s)", "Beasts" and "Shifters". Then run a full search (DriveThruRPG, itch.io, Steam, the USPTO and the UK IPO) before any store page, cover or logo.
 
 ## 3. Decisions log
-| Date | Decision | Notes |
-|---|---|---|
-| 2026-10-22 | Premise, and characters built from an animal-type frame, a human perk and a specific-animal perk | Title and enemy not decided; no Animorphs specifics (§2.1) |
+Each entry: the decision, the options weighed (the chosen one first), why, and its status. **Draft** decisions are in force for `docs/CORE-RULES.md` and the simulator until Richard revises them; a revision is logged as a new entry, never by editing an old one.
+
+### D1 · 2026-10-22 · approved (Richard's pitch): Premise and the three-part character
+Characters are built from an animal-type **frame**, a **human perk** and a specific-**animal perk**. No *Animorphs* specifics (§2.1).
+
+### D2 · 2026-10-22 · draft: Working title *Second Nature* (Q1)
+- **Decision:** the working title is ***Second Nature***.
+- **Options:** *Second Nature*; *Kindred of the Wild*; *Not Your Trophy*.
+- **Why:** it says what the game is about (becoming an animal until it's second nature) without "Animorphs", "Morph", "Beasts" or "Shifters". A web check on 2026-10-22 found no tabletop RPG with this title. It's a common phrase, so the full search in §2.3 (DriveThruRPG, itch.io, Steam, USPTO, UK IPO) is still needed before any store page, cover or logo. *Kindred of the Wild* is a 1902 public-domain book title and less distinctive. The repository name *Animahs* is not used as a title: it starts like *Animorphs*, and *Anima: Beyond Fantasy* is an existing RPG.
+
+### D3 · 2026-10-22 · draft: The enemy is the Gilded Hunt (Q1, flag 6)
+- **Decision:** the enemy is **the Gilded Hunt**, a centuries-old secret society of rich trophy hunters.
+  - They trap the power of Bonded animals and wear it as **Trophies** (a ring, a brooch, the head of a cane) that lend them stolen animal traits.
+  - Members pass as respectable townsfolk. They use hired **Beaters**, bred **Hounds** and **Trappers**. Members who wear a Trophy are **Huntsmen**; their leaders are **Masters**.
+  - **Their goal is the Last Hunt:** binding the Old Wild itself, so that every animal, and then every person, comes to heel.
+  - **How they find the players:** using the Wild near the Hunt leaves a **Scent** they can follow (D15).
+  - **Hidden or open:** hidden between missions (who in town is a member?), open clashes during them.
+- **Options:** the Gilded Hunt; the Collectors (aliens quietly building a zoo of Earth species); the Hush (a sound-borne thing that makes people docile).
+- **Why:**
+  - it isn't alien, which sets it apart from *Animorphs*, *Beasts* and *Idiot Teenagers With A Death Wish*;
+  - no parasites, no controlled hosts and no recruiting front club (§2.1); Hunt members are willing people;
+  - hunters are the natural enemy of animals, so the theme and the threat line up;
+  - capture rather than death keeps the stakes real for a 10+ table (D5);
+  - Trophies make the Hunt a mirror of the players: they *take* animal power, the players *become* animals.
+
+### D4 · 2026-10-22 · draft: The power comes from the Old Wild (Q1)
+- **Decision:** the power is **the Old Wild**, the living wildness in every animal. When the Hunt began its push towards the Last Hunt, the Wild woke a handful of young people on one strange night, **the Waking**. Each met the eyes of one animal and **Bonded** with it. One animal per person, for life. Nobody chooses it, touches it or collects it.
+- **Options:** the Old Wild; a lab accident (too close to *Maximum Ride*); a crashed alien vault (too close to the books' dying alien and its gift).
+- **Why:** it's original, it has a folklore feel without borrowing any real culture's "spirit animal" beliefs, and it gives the Hunt a reason to hunt the players: their Bond is the trophy it wants.
+
+### D5 · 2026-10-22 · draft: Ages 10 and up, adventure peril (Q1, flag 8)
+- **Decision:**
+  - **ages 10 and up**, with the peril of a good family adventure film;
+  - characters get hurt and can be **Taken** by the Hunt, and a Taken character can be rescued; no gore, and no player-character death by default;
+  - the change is played as **wonder with comedy** (new senses, clumsy first steps), never body horror.
+- **Options:** 10+ family adventure; 13+ war and horror like the books; 8+ light comedy.
+- **Why:** it matches Richard's earlier family games, it leaves the darker teen space to *Beasts* and *Idiot Teenagers…*, and it keeps the stakes real.
+
+### D6 · 2026-10-22 · draft: Present-day town, 3–5 players, 2–3 hour missions (Q1)
+- **Decision:** **present day, an ordinary town** (the group's own, or the book's sample town), with the Hunt's places hidden in it: an estate, a museum, a zoo, a mill, shops. **3–5 players and a Storyteller.** One mission fills a **2–3 hour session**.
+- **Options:** a present-day town; a 1980s town; a fantasy village.
+- **Why:** it's the easiest setting for a 10+ table to picture, and phones and cameras give the Hunt modern tools. The 1980s look is crowded with similar shows.
+
+### D7 · 2026-10-22 · draft: A campaign of one-shot missions; one animal per character, for life (Q1, flag 3)
+- **Decision:** a **campaign of missions building to the Last Hunt, where every mission also plays as a one-shot**. **Each character has one animal, for life**; advancement deepens the Bond instead of adding animals (D18).
+- **Options:** one animal for life; several animals collected over a campaign; a new animal each mission.
+- **Why:** one animal makes the frame and perks the character's identity, keeps every frame and animal testable in the simulator, sets the game apart from the books' collecting, and makes the group's make-up matter: every frame needs a spotlight.
 
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
