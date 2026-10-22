@@ -1,0 +1,38 @@
+{
+  "id": "morphgame",
+  "type": "system",
+  "title": "Morph Game",
+  "description": "The companion Foundry VTT game system for Morph Game, a tabletop roleplaying game by Richard Moore. Early skeleton: the game's rules are not written yet.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Richard Moore",
+      "url": "https://github.com/PainHog/Animahs"
+    }
+  ],
+  "esmodules": [
+    "module/morphgame.mjs"
+  ],
+  "styles": [
+    "styles/morphgame.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "socket": true,
+  "url": "https://github.com/PainHog/Animahs",
+  "bugs": "https://github.com/PainHog/Animahs/issues",
+  "manifest": "https://github.com/PainHog/Animahs/releases/latest/download/system.json",
+  "download": "https://github.com/PainHog/Animahs/releases/latest/download/system.zip",
+  "license": "LICENSE",
+  "readme": "README.md"
+}
