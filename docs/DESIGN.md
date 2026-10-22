@@ -278,6 +278,61 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** painterly naturalism; cartoon; photo-real.
 - **Why:** true-to-life animals are the draw; cartoon would undercut the stakes; photo-real is hard to keep consistent across a character's two forms.
 
+### D24 · 2026-10-22 · draft: First simulator pass: rule changes (core rules v0.1 → v0.1b)
+The simulator (`sim/`) ran the v0.1 text against the D22 targets. These changes are in `docs/CORE-RULES.md` v0.1b; each is logged in `book/REVIEW.md`. "Sweep" figures are from `sim/REPORT.md` §6 (putting the old rule back, all else equal).
+1. **A group obstacle raises Scent once, when it ends** (+1 if anyone got a Partial or a Fail), **plus 1 for every round after the third.**
+   - Before: Scent rose every round. That broke A2 ("a group check raises the threat once") and charged bigger groups more.
+   - The extra rise after round 3 stops a crossing that keeps failing from running forever (A24).
+   - Sweep: the old rule costs Standard −6.4 points and Hard −6.4.
+2. **In the Escape, Partials don't raise Scent.**
+   - Before: Hard missions reached "the Hunt is Up" in 67% of runs, mostly in the Escape.
+   - Sweep: putting it back costs Hard −6.8 points.
+3. **When the Hunt is Up, any Fail means you're Taken, anywhere. The objective isn't lost automatically: the team chooses to press on or Withdraw.**
+   - Before: almost every mission that wasn't won was a flat Loss (Standard Loss 17–25% at the target win rate).
+   - Now: Standard Loss is about 11% and Hard about 20%. Sweep: the old rule sends Hard Loss to 35%.
+   - The book's advice ("press on only if you're already working on the objective; run the moment a friend is Taken") is the simulator's policy.
+4. **Each mission gives its Scent Limit for 3, 4 and 5 players.**
+   - No single Limit per label hit the targets for every mission. Missions with many point obstacles favoured big groups by 10–12 points; crowd-heavy ones favoured small groups.
+   - Tested and rejected: only one friend may Help a roll (too weak to even it out), and Wild by party size (overcorrects).
+   - This is the explicit per-size adjustment A21 asks for.
+5. **Shifting between obstacles is always out of the Hunt's sight,** unless the mission says you're watched; shifting during a Clash is always in sight.
+   - If a table ruled even a quarter of those shifts as seen, win rates would drop 11–16 points, so it can't be left to judgement.
+6. **Hounds have Toughness 3 (was 2) and Huntsmen 4 (was 3).**
+   - Before: Clashes lasted 1.3 rounds on average, and Hurt hardly mattered.
+   - Now: Clashes average 1.7 rounds.
+- **Options:** the package above; a tighter Cap; fewer Edges.
+- **Why:** each change fixes a measured problem with the smallest rule. A tighter Cap or fewer Edges would only have moved the win rate, which the Limits already do.
+
+### D25 · 2026-10-22 · draft: Frames, animals and human perks rebalanced
+Measured by forcing one character to each option, with the rest of the group random and the dice the same (`sim/REPORT.md` §4). Figures are points of win rate against the average.
+- **Canines:** Sneak 3 and Force 3 (were 2 and 2). Before: −3.7 (−5.5 at Hard); now −1.6.
+- **Reptiles** lose their High Weakness. −2.4 before, −2.0 now.
+- **Brown Rat, Gnaw:** against Locked things, your Force rating is 3. It was "roll Sneak in place of Force or Wits": +6.2 before (+12.7 at Hard), +1.2 now.
+- **Wolf, Pack:** once per scene, Help without spending Wild. It was "your Help gives +2 dice": −4.1 before, −0.1 now.
+- **Human perks:**
+  - **The problem:** Class Clown and Brainiac dominated (+11.5 and +7.5 over having no perk). Class Clown stayed dominant through two nerfs. Big Sibling and First-Aider did nothing, because Hurt rarely decides a mission, and Drama Kid did nothing either.
+  - **The new list:**
+    - **five approach perks**, each +1 die on one approach: Football Player, Hide-and-Seek Champ, Track Star, Scout, Brainiac;
+    - **four place perks**, each +1 die in one kind of place: Swim Team, Gymnast, Night Owl, Drama Kid;
+    - **three others:** Gamer (+1 Wild), Team Captain (the team starts with an Edge) and Animal Whisperer.
+  - **Changes:** cut Class Clown, Big Sibling, First-Aider and Tinkerer; added Hide-and-Seek Champ, Swim Team, Night Owl and Team Captain. No perk can dominate another, because no two cover the same thing (A6).
+  - **Result:** all twelve are within ±2 points of the perk average.
+- **Lesson for this game:** anything that turns a Fail into something better is worth far more than a die, because once the Hunt is Up a Fail means Taken. Keep effects like that rare, once per scene, and watched by the simulator (the Red Fox's Wily is the only one left: +1.4).
+
+### D26 · 2026-10-22 · draft: Revised Hunt-is-Up target (revises D22)
+- **Decision:** the Hunt is Up in **Easy ≤ 35%, Standard 25–50%, Hard 45–75%** of missions (were ≤ 15%, 15–40% and 30–60%). Every other D22 target is unchanged.
+- **Why:** under D24 rule 3, the Hunt being Up is the mission's climax (the risk of being Taken), not an automatic Loss. So it has to happen more often for missions to carry real risk. The clock still binds (A22).
+
+### D27 · 2026-10-22 · draft: Test mission changes (revises D20 content)
+- **The Zoo:** a night keeper to talk past at the staff gate, and a Sense way past the Hound patrol.
+- **The Mill:**
+  - the grain store has a Beater and a Hound, and can be talked past (Wits 2);
+  - the gear loft needs 3 progress;
+  - the Callhorn is guarded by a Huntsman and needs Force 3.
+- **The Gala:** a Trapper joins the Hounds in the halls, and the Trophy case needs 3 progress.
+- **The Lodge:** the servants' door is added, and there's a Sense way past the kennels.
+- **Why:** labels come from results (A20). The Mill played easier than the Easy mission, and the Gala's best Limit (4–5) was too short to tune by party size. Each mission also gets a moment where human form is the best choice, so that shifting stays a decision.
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
