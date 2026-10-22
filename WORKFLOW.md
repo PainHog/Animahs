@@ -13,18 +13,19 @@ Author and designer: **Richard Moore**. Earlier games were reviewed with simulat
 - Copy anything useful into this repository (with a note of where it came from) and adapt the copy. Never import from or link to their files.
 - If another game seems to need a change, stop and tell Richard.
 
-## The author decides the game
-- **Never invent game content without Richard's approval.** That includes rules, numbers, character frames, animals, human and animal perks, the enemy, setting text and the names of mechanics.
-- **For each decision,** give two or three concrete options, with a recommendation and why. Wait for his choice, then record it in the `docs/DESIGN.md` Decisions log with the date.
-- **When one of his ideas would repeat a mistake from `docs/DESIGN-RULES.md` Part A,** say so straight away, name the rule, and offer options.
-- **Wording clarifications and fixes** for things the book already implies may be made directly. Anything that changes numbers or adds rules goes to Richard first.
-- **When he gives feedback on art or layout,** fix it and audit the whole book for the same kind of mistake.
+## How decisions are made: draft first, then Richard revises
+- **Design decisions are drafted in full and logged, then Richard revises them.** That covers rules, numbers, character frames, animals, human and animal perks, the enemy, setting text and the names of mechanics.
+- **Every decision goes in the `docs/DESIGN.md` Decisions log** with the date, the options that were weighed, the reason, and a status: **draft** (in force for the simulator and the next draft, open to revision) or **approved** (Richard has signed it off).
+- **Richard's revisions win.** When he changes a draft decision, log the change as a new row (never edit history away), re-run the simulator, and update everything that depends on it in the same piece of work.
+- **When a decision (draft or revision) would repeat a mistake from `docs/DESIGN-RULES.md` Part A,** say so straight away, name the rule, and offer options.
+- **Wording clarifications and fixes** for things the book already implies may be made directly.
+- **When Richard gives feedback on art or layout,** fix it and audit the whole book for the same kind of mistake.
 
 ## Order of work (DESIGN-RULES Part C)
-1. **Design interview** through every Part B question.
+1. **Design pass** through every Part B question (drafted, logged, then revised with Richard).
 2. **One-page core rules** in `docs/CORE-RULES.md`.
-3. **Simulator** in `sim/`, showing win and loss rates by difficulty and party size, element and build balance, and how often each animal and frame gets picked and pays off.
-4. **Richard approves the core.**
+3. **Simulator** in `sim/`, showing win and loss rates by difficulty and party size, frame, animal and perk balance, and how often morphing is used, and how often each animal and frame gets picked and pays off.
+4. **Richard reviews, revises and approves the core.**
 5. **Then** chapters, then art, then layout. No chapters or art before step 4.
 
 After every version, run `docs/REVIEW-PROCEDURE.md`. A version isn't done until it passes the DESIGN-RULES Part D release gates.

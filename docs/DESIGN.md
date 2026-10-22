@@ -1,6 +1,6 @@
 # Morph Game (codename): design document
 
-This is a living document. **§1 Pitch** is Richard's own. **§3 Decisions** lists only what Richard has approved. Everything in §4–§6 is undecided until he chooses. "Morph Game" is a codename; the game needs its own name.
+This is a living document. **§1 Pitch** is Richard's own. **§3 Decisions** logs every design decision with its status: **draft** (in force for the simulator and the next draft, open to Richard's revision) or **approved** (signed off by Richard). §4 and §5 note where each flag and question was settled. "Morph Game" is a codename; the working title is in §3.
 
 ## 1. Pitch (Richard Moore, 2026-10-22)
 
