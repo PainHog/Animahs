@@ -147,6 +147,22 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** work in any form; human form only; half strength in animal form.
 - **Why:** it follows §6's suggestion (the person stays in the animal), so the human side matters in every scene. The balance between human and animal perks is measured by the simulator (D22).
 
+### D12 · 2026-10-22 · draft: Shifting costs Wild and an action, with no time limit (Q6, flags 4–5)
+- **Decision:**
+  - **Shifting into your animal costs 1 Wild and your action. Shifting back is free, but it also takes your action.** There's **no time limit** on staying in animal form.
+  - **Out of Wild,** you can still shift into your animal by taking 1 Hurt, unless that would put you Down.
+  - **You become the real animal at its real size.** Your clothes and small personal things go with you and come back when you return; anything else you're holding drops.
+  - **What carries over:** your Hurt, your Wild and your human perk. **What doesn't:** your human ratings; the animal uses its frame's ratings.
+  - **In animal form you can't speak, read, or use hands or tools** (no Wits rolls), and you can carry one small thing in your jaws, beak or claws. Characters in animal form talk to each other only with simple signals the group agrees on.
+  - **Shifting where the Hunt can see you** raises Scent by 1 and leaves you Exposed (D17).
+  - **Stuck:** if you go Down in animal form, you can't shift back until the mission ends.
+- **Options:** a Wild cost and no time limit; a time limit plus an Instinct track; free shifting that only raises Scent.
+- **Why:**
+  - it's original: no two-hour rule, no touching, no thought-speak (§2.1);
+  - every shift costs something (A5), and the cost is paid going in, so there's no timer to track;
+  - Wits obstacles, Crowds and Weaknesses make human form the better choice some of the time, so shifting is never always right or always wrong. The simulator measures this (D22);
+  - two rows of ratings keep both forms on one sheet (A28).
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
