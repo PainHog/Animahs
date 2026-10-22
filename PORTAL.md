@@ -1,6 +1,6 @@
-Now: First drafts of the whole design and of the one-page core rules are done: the dice, the animal families, changing form and the enemy
-Next: A balance simulator to test every animal and group size, then Richard reviews and revises the drafts
-Number: Design decisions so far = 23
+Now: The balance simulator is built and the first round of fixes is in: every difficulty and group size now lands on its target
+Next: Richard reviews and revises the draft design and core rules
+Number: Design decisions so far = 27
 Number: Approved by Richard = 1
 Number: Core questions still open = 0
 
@@ -16,7 +16,8 @@ Plain words only: no repo names, usernames, file paths, links or commit IDs. Rul
 - [x] First check of the idea against other games and books with a similar theme
 - [x] A first draft answer to every core design question
 - [x] One page of core rules
-- [ ] Balance simulator: wins and losses for every group size and difficulty, and every frame and animal tested
+- [x] Balance simulator: wins and losses for every group size and difficulty, and every frame and animal tested
+- [x] First round of balance fixes from the simulator
 - [ ] Richard reviews and revises the drafts, and approves the core rules
 - [ ] Richard chooses the game's real title
 - [ ] Full check that the chosen title is free to use
