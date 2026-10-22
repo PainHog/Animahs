@@ -111,6 +111,42 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
   - a Blades-style roll would read like the two Blades-based *Animorphs*-inspired games (§2.2);
   - each form is one row of ratings, so both forms fit on one sheet (flag 5).
 
+### D9 · 2026-10-22 · draft: Five approaches, place tags and six frames (Q3, flag 2)
+- **Decision:**
+  - **Five approaches:** **Sneak** (hide, stalk, slip past), **Force** (fight, break, shove, scare), **Move** (run, climb, jump, fly, swim), **Sense** (notice, track, search, scout) and **Wits** (talk, plan aloud, use tools and machines, read). Wits is **human form only**.
+  - **Human form:** each player puts 3, 2, 2, 1 and 1 into the five approaches.
+  - **Places have tags:** **Dark, High, Narrow, Water, Open, Crowd, Locked.**
+  - **Six frames.** Each sets your animal-form ratings (Wits 0), two **Strengths** (+1 die when the place has one of them) and one or two **Weaknesses** (+1 Difficulty when the place has one of them). The numbers are in `docs/CORE-RULES.md`.
+    - **Big Cats:** sneaking and pouncing; strong in Dark and High places; weak in Water and Crowds.
+    - **Canines:** noses and stamina; strong in Open places and Crowds (people see a dog); weak up High.
+    - **Birds:** flight and eyes; strong High and in the Open; weak in Narrow places.
+    - **Critters:** tiny and unnoticed; strong in Narrow places and Crowds; weak in the Open.
+    - **Heavies:** raw strength; strong in the Open and against Locked things; weak in Narrow places and Crowds.
+    - **Reptiles:** patient ambushers; strong in Water and the Dark; weak in Crowds and up High.
+  - **Animals are their real size,** and the frame says what the body can do.
+- **Options:** six frames; four broad frames (predators, flyers, small, big); ten narrow frames.
+- **Why:**
+  - six covers the pitch's examples (cats, birds of prey, bears, small creatures, reptiles) and fits a d6 table;
+  - the tags give every frame places where it's best and places where it's worst, so no frame is always the answer (A6, A9), and the shipped missions must use every tag;
+  - insects are left out of v0.1 because they would out-sneak and out-scout everyone (A6), and sea animals because they would be useless on land (A9).
+
+### D10 · 2026-10-22 · draft: Three animals per frame; animal perks never skip a roll (Q4, flag 1)
+- **Decision:**
+  - **Three animals per frame, 18 in all.** Each has one **animal perk** that works only in animal form.
+  - **An animal perk never skips a roll.** It lowers a Difficulty, adds a die, gives a free Push once per scene, gives a once-per-scene effect, or lets you try something your frame normally can't (and you still roll for it).
+  - **The jaguar's "hide in any dark environment" becomes Night Rosettes:** in Dark places, your Sneak rolls are at −1 Difficulty. Every other animal perk follows the same rule.
+  - **Getting your animal:** choose it, or roll (a d6 for the frame, a d6 for the animal). **No two characters in a group share an animal**; if two players want the same one, roll off. Frames may repeat.
+- **Options:** choose or roll; roll only; find your animal during the first mission.
+- **Why:** A8 (nothing skips a roll for free); choosing or rolling at the table keeps setup under 30 minutes (A27).
+
+### D11 · 2026-10-22 · draft: Twelve human perks that mostly work in any form (Q5)
+- **Decision:** **twelve human perks**, each one short effect.
+  - Most work **in any form**: it's still you in there, so the football player's tackle works when you're a bear.
+  - The few that need speech or hands say **human form** and are a little stronger. They give a reason to stay human now and then.
+  - Choose one, or roll two d6.
+- **Options:** work in any form; human form only; half strength in animal form.
+- **Why:** it follows §6's suggestion (the person stays in the animal), so the human side matters in every scene. The balance between human and animal perks is measured by the simulator (D22).
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
