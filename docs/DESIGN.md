@@ -96,6 +96,21 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** one animal for life; several animals collected over a campaign; a new animal each mission.
 - **Why:** one animal makes the frame and perks the character's identity, keeps every frame and animal testable in the simulator, sets the game apart from the books' collecting, and makes the group's make-up matter: every frame needs a spotlight.
 
+### D8 · 2026-10-22 · draft: The engine is a d6 pool, a 5 or 6 is a hit (Q2)
+- **Decision:**
+  - **Roll a pool of d6s: each 5 or 6 is a hit.** The pool is your rating in the approach, in your current form, plus any bonus dice.
+  - **Difficulty 1–4** is the number of hits needed.
+  - **Results:** **Fail** = no hits. **Partial** = some hits, but fewer than the Difficulty: you do it, at a cost. **Success** = hits at least equal to the Difficulty. **Critical** = a Success with two or more 6s.
+  - **The Cap:** one roll gets at most **+2 dice and −1 Difficulty** from all sources together.
+  - **Push:** after a roll, spend 1 Wild to reroll every die that didn't hit, once per roll. A Push isn't a bonus die, so the Cap doesn't limit it.
+  - **No opposed rolls, and threats never roll.** A threat has a Difficulty, and it hurts you when you Fail or get a Partial against it.
+- **Options:** the *Heisty Spideys* d6 pool; *Don't Get Forked*'s trait die plus risk die; *Nine Lives Gang*'s push-your-luck; a Blades-style best-die roll.
+- **Why:**
+  - plain d6s suit a 10+ table, and the most dice anyone rolls is six;
+  - the *Heisty* core is proven, and its balance fixes are built in from the start: hits on 5–6, small pools, a hard Cap on bonuses, Partials that cost, and two rolls for most obstacles (`docs/reference/heisty-balance.md` §4);
+  - a Blades-style roll would read like the two Blades-based *Animorphs*-inspired games (§2.2);
+  - each form is one row of ratings, so both forms fit on one sheet (flag 5).
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
