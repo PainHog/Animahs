@@ -2,7 +2,7 @@
 
 A tabletop roleplaying game by **Richard Moore**. Ordinary people discover they can turn into animals, and use that power to save the world. Each character is built from an animal-type frame, a human perk and an animal perk. The title is a codename; the game will get its own name.
 
-**Status:** early design. The premise is set; the rules aren't written yet. See `docs/DESIGN.md`.
+**Status:** core design v0.1 (draft). Working title *Second Nature*. Decisions are in `docs/DESIGN.md`, the one-page rules in `docs/CORE-RULES.md`, and balance results in `sim/REPORT.md`.
 
 **How we work:** `WORKFLOW.md` holds the project's working rules. Read it before any work.
 
