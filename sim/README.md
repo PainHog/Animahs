@@ -1,8 +1,8 @@
-# Rules simulator — method
+# Rules simulator: method and status
 
-Nothing is simulated yet: the rules are not written. This file describes the method
-that worked on *Heisty Spideys*, so the simulator for Morph Game can be built the
-same way as soon as there are rules to test. Only `rng.mjs` exists so far.
+**Status (2026-10-22):** v0.1 is built and plays the five test missions (`scenarios.mjs`) by `docs/CORE-RULES.md` v0.1b. **Results are in `REPORT.md`**: win and loss rates by label and party size, frame, animal and perk balance, morph use, and the judgement-call sweep. Run it with `npm run sim` (about 4 minutes), or `npm run sim:quick` for the summary only. What the simulator does and doesn't model is in `NOTES.md`.
+
+This file describes the method that worked on *Heisty Spideys*. The simulator for Morph Game follows it.
 
 **Why simulate.** On Heisty Spideys the rulebook read as tense and risky, but the
 simulator showed that, as written, a party almost could not lose: the dice pools were far
@@ -86,7 +86,7 @@ functions into a **frozen file** (e.g. `rules-v0_3.mjs`, with a header saying wh
 is and why it is kept) and point the old baseline at it; the new rules become a package to
 compare against it.
 
-## 9. Procedural playtests
+## 9. Procedural playtests (not yet run for this game)
 The simulator is backed by procedural playtests: a tester plays a session strictly by the
 book with **real dice** (a `node -e` random roll script, never invented results, every roll
 logged in an appendix), logs every ambiguity with severity, the quoted passage and a
@@ -98,16 +98,19 @@ verification playtest confirms the fixes at the table.
 hand-worked examples with fixed dice, the character generator’s legality, and each
 package’s rule switches.
 
-## Files (to be created)
+## Files
 | File | What |
 |---|---|
-| `rng.mjs` | Seeded RNG (mulberry32 + FNV-1a stream derivation). **Exists.** |
-| `params.mjs` | Every judgement call: defaults, alternatives, docs, refs; presets; clarified baseline; packages |
-| `character.mjs` | Legal random character generation + validator |
-| `scenarios.mjs` | The book’s ready-to-play scenarios as data |
-| `engine.mjs` | Plays one scenario by the rules text |
-| `recorder.mjs` | Stats + issue detectors |
-| `notes.mjs` | Rule gaps found; what is / isn’t modelled |
-| `run.mjs` | CLI → `REPORT.md` |
-| `packages.mjs` | CLI → package comparison (`BALANCE.md`) |
-| `playtests/` | Playtest logs |
+| `rng.mjs` | Seeded RNG (mulberry32 + FNV-1a stream derivation) |
+| `dice.mjs` | §1 the roll: result bands, exact odds, Push odds |
+| `rules-data.mjs` | Every number in the core rules' tables (frames, animals, perks, threats); moves to `module/config.mjs` once the rules are approved |
+| `params.mjs` | Every judgement call and rule candidate: defaults, alternatives, docs, refs; presets |
+| `character.mjs` | §11 legal random character generation + validator |
+| `scenarios.mjs` | The five test missions as data (DESIGN D20, D27) |
+| `engine.mjs` | Plays one mission by the rules text, with documented player policies |
+| `recorder.mjs`, `stats.mjs` | Stats and summaries |
+| `run.mjs` | CLI → `REPORT.md` (targets, results, balance, spotlights, sweeps) |
+| `NOTES.md` | What is and isn't modelled; rule gaps found while building it |
+| `REPORT.md` | The latest results |
+
+Tests are in `test/sim.test.mjs`. They check the dice odds, the rules wiring against hand-worked cases, the character generator, the missions' A25 rules, determinism and termination. They also check that every number in `rules-data.mjs` matches the tables in `docs/CORE-RULES.md` (A11).

@@ -10,7 +10,9 @@
     "validate": "node tools/validate.mjs",
     "test": "node --test",
     "check": "npm run validate && npm test",
-    "build:book": "node book/build.mjs"
+    "build:book": "node book/build.mjs",
+    "sim": "node sim/run.mjs",
+    "sim:quick": "node sim/run.mjs --quick"
   },
   "devDependencies": {
     "@fontsource/alegreya": "^5.3.0",
