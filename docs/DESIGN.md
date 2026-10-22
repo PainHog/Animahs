@@ -224,6 +224,60 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** capture-based failure; injury and death; failure that only means being exposed.
 - **Why:** real stakes for a 10+ table without death; losing costs something at every stage (A4); and "everyone down" is defined.
 
+### D18 · 2026-10-22 · draft: Missions, the campaign and advancement (Q12)
+- **Decision:**
+  - **A mission:** briefing → scouting → one of two ways in → 2–4 obstacles → the objective → the Escape (1–2 obstacles) → the result.
+  - **A campaign:** about six missions, then the Last Hunt. A campaign **Hunt track** (0–6) rises by 2 for a Loss and by 1 for a Costly Win; at 6, the Last Hunt comes early.
+  - **Advancement:** after each mission, mark 1 Growth. At 2, 4 and 6 Growth, choose one: +1 Wild (to a maximum of 6); a second human perk; +1 to a human rating (to a maximum of 3); or **Wild Sense** (one of your frame's Strengths also works in human form).
+  - **Endings:** the Last Hunt decides whether the Old Wild stays free.
+  - v0.1 drafts the campaign rules but doesn't simulate them; the simulator plays single missions.
+- **Options:** a mission campaign with a Hunt track; a single long story; one-shots only.
+- **Why:** it supports both one-shots and campaigns (D7), and advancement grows the one Bond instead of adding animals.
+
+### D19 · 2026-10-22 · draft: Party size is tested every run (Q13)
+- **Decision:** the simulator runs **3, 4 and 5 players** for every mission. Any per-size adjustment (for example to the Scent Limit) comes from the results and is written into the rules outright. Duplicate frames are allowed; duplicate animals aren't.
+- **Why:** A21.
+
+### D20 · 2026-10-22 · draft: Five test missions, as simulator data (Q14)
+- **Decision:** v0.1 has **five test missions** as simulator data (`sim/scenarios.mjs`): one Easy, two Standard and two Hard. They're draft content for the book later. Each has:
+  - two ways in;
+  - every obstacle's approaches and Difficulties, and every threat's stats;
+  - an Escape that more than one approach can solve.
+
+  Across the five, every place tag is used, so every frame has a spotlight (A9, A25). There's no generator in v0.1; maps come with the chapters.
+- **Why:** balance needs scenarios to measure; the book's versions follow once the core is approved.
+
+### D21 · 2026-10-22 · draft: The first night (Q15)
+- **Decision:**
+  - **What the table needs:** six d6 per player (the biggest pool is 6); about 6 Wild tokens per player (beads or coins); a printed **Scent track** and a marker; six **pre-made characters** (one per frame); a Storyteller **round card** for Clashes; a one-page **At the Table** reference.
+  - **Two players want the same animal:** roll off; the loser picks another animal (the frame can be the same).
+  - **What players see:** the mission map and the two ways in. They learn an obstacle's Difficulties when they reach it or scout it.
+  - **Setup target:** under 30 minutes (A27).
+- **Why:** A27–A29.
+
+### D22 · 2026-10-22 · draft: Simulator targets, agreed before tuning (Q16)
+| Measure | Target |
+|---|---|
+| Win (objective done, nobody Taken) | Easy 85–95%, Standard 70–80%, Hard 50–62% |
+| Loss (objective not done) | Easy ≤ 5%, Standard 5–15%, Hard 12–30% |
+| Taken per mission | Hard 0.3–0.8 |
+| The Hunt is Up (the clock binds, A22) | Easy ≤ 15%, Standard 15–40%, Hard 30–60% |
+| Criticals / Fails (share of all rolls) | 15–25% / 8–15% |
+| Wild (A7) | the median character spends at least half |
+| Morphing | ≥ 85% of characters shift at least once a mission; 1.2–3.0 shifts per character; 50–80% of rolls made in animal form |
+| Frame and animal balance (A6, A9) | each within ±4 points of the average win rate |
+| Human perks | each worth at least +1.5 points against having no perk, and within ±3 points of the perk average |
+| Party size (A21) | the win rate at each label within ±5 points across 3, 4 and 5 players |
+| Clashes (A24) | 3 rounds or fewer on average; under 5% reach round 4 |
+
+### D23 · 2026-10-22 · draft: Art direction and Foundry (Q17)
+- **Decision:**
+  - **Art:** painterly naturalism. Animals are true to life (ART-CHECKLIST 21–22); colour is warm, like a storybook; the kids are drawn as ordinary kids.
+  - **The change is a swirl of light and leaves that hides the body.** Never a half-changed body, and never a person-to-animal sequence across a cover (§2.1, ART-CHECKLIST 24–25).
+  - **Foundry:** book first. The Foundry system is built once the core rules are approved; the skeleton stays as it is.
+- **Options:** painterly naturalism; cartoon; photo-real.
+- **Why:** true-to-life animals are the draw; cartoon would undercut the stakes; photo-real is hard to keep consistent across a character's two forms.
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
