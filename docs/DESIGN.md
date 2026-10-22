@@ -281,6 +281,8 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
+**Status (2026-10-22): all eight are settled in draft.** 1 → D10 · 2 → D9, D22 · 3 → D7 · 4 → D12 · 5 → D12 · 6 → D3 · 7 → D14, D19 · 8 → D5, D23.
+
 1. **"Hide in any dark environment" skips a roll** (A8).
    - Read literally, the jaguar perk automatically succeeds at hiding wherever it's dark. That's the kind of ability that broke earlier games (the Spitting Spider jam, the Ghost's Spectral pass).
    - **Options:** turn animal perks into bonuses (extra dice, a lower Difficulty, a free retry) rather than automatic successes; or keep an automatic effect but limit it (once per scene, costs a resource, only while unseen).
@@ -307,6 +309,8 @@ These aren't decisions. They're the first things to settle, because each one has
 8. **Tone and age.** The books are written for middle-grade readers but deal with war, horror and loss. Decide the age range, how dark it gets, and whether the transformation itself is played as wonder, comedy or body horror. That decision affects the art too.
 
 ## 5. Open questions for the design interview (DESIGN-RULES Part B, matched to this game)
+
+**Status (2026-10-22): every question has a draft answer.** 1 → D2–D7 · 2 → D8 · 3 → D9 · 4 → D10 · 5 → D11 · 6 → D12 · 7 → D13 · 8 → D14 · 9 → D15 · 10 → D16 · 11 → D17 · 12 → D18 · 13 → D19 · 14 → D20 · 15 → D21 · 16 → D22 · 17 → D23. The rules themselves are in `docs/CORE-RULES.md`.
 1. **Identity:**
    - the title (brainstorm options; §2.3);
    - the enemy (original; §2.1);
