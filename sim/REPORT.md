@@ -11,17 +11,17 @@ Every mission × party size (3, 4, 5) runs 4000 times with random legal characte
 | easy win | 90.8% | 85%–95% | ✓ |
 | easy loss | 3.4% | 0%–5% | ✓ |
 | easy Hunt is Up | 28.1% | 0%–35% | ✓ |
-| standard win | 76.1% | 70%–80% | ✓ |
-| standard loss | 10.4% | 5%–15% | ✓ |
-| standard Hunt is Up | 38.3% | 25%–50% | ✓ |
-| hard win | 56.2% | 50%–62% | ✓ |
-| hard loss | 20.0% | 12%–30% | ✓ |
-| hard Hunt is Up | 62.1% | 45%–75% | ✓ |
+| standard win | 75.7% | 70%–80% | ✓ |
+| standard loss | 10.7% | 5%–15% | ✓ |
+| standard Hunt is Up | 38.7% | 25%–50% | ✓ |
+| hard win | 56.0% | 50%–62% | ✓ |
+| hard loss | 20.2% | 12%–30% | ✓ |
+| hard Hunt is Up | 62.3% | 45%–75% | ✓ |
 | hard Taken / mission | 0.82 | 0.30–0.80 | ✗ |
 | easy win spread across 3/4/5 players | +1.2 pts | ≤ 5 pts | ✓ |
-| standard win spread across 3/4/5 players | +2.3 pts | ≤ 5 pts | ✓ |
-| hard win spread across 3/4/5 players | +2.9 pts | ≤ 5 pts | ✓ |
-| Criticals (share of rolls) | 18.6% | 15–25% | ✓ |
+| standard win spread across 3/4/5 players | +2.6 pts | ≤ 5 pts | ✓ |
+| hard win spread across 3/4/5 players | +3.2 pts | ≤ 5 pts | ✓ |
+| Criticals (share of rolls) | 18.5% | 15–25% | ✓ |
 | Fails (share of rolls) | 10.2% | 8–15% | ✓ |
 | median share of Wild spent | 100% | ≥ 50% | ✓ |
 | characters who shift at least once | 98.4% | ≥ 85% | ✓ |
@@ -37,7 +37,7 @@ Every mission × party size (3, 4, 5) runs 4000 times with random legal characte
 - **Clashes reaching round 4** is 5.2% (target < 5%).
 - Human perk **Brainiac** is worth only +1.4 points over no perk (target ≥ +1.5).
 - Human perk **Animal Whisperer** is worth only +1.4 points over no perk (target ≥ +1.5).
-- Human perk **Swim Team** is worth only +1.2 points over no perk (target ≥ +1.5).
+- Human perk **Swim Team** is worth only +1.0 points over no perk (target ≥ +1.5).
 - Human perk **Drama Kid** is worth only +0.8 points over no perk (target ≥ +1.5).
 
 ## 2. Results by label and party size
@@ -50,14 +50,14 @@ Win = objective done, nobody Taken. Costly = done, someone Taken. Loss = not don
 | easy | 4 | 90.5% | 6.3% | 3.1% | 0.10 | 28.4% | 21.1% | 4.4 |
 | easy | 5 | 90.3% | 6.0% | 3.6% | 0.10 | 31.1% | 22.7% | 3.7 |
 | easy | all | 90.8% | 5.8% | 3.4% | 0.10 | 28.1% | 20.7% | 4.3 |
-| standard | 3 | 75.0% | 10.1% | 14.9% | 0.47 | 34.6% | 27.4% | 5.7 |
-| standard | 4 | 77.3% | 13.8% | 8.9% | 0.41 | 37.6% | 26.9% | 5.8 |
-| standard | 5 | 76.1% | 16.4% | 7.5% | 0.42 | 42.7% | 28.0% | 5.6 |
-| standard | all | 76.1% | 13.4% | 10.4% | 0.43 | 38.3% | 27.4% | 5.7 |
-| hard | 3 | 54.8% | 19.5% | 25.8% | 0.80 | 60.7% | 42.8% | 5.7 |
-| hard | 4 | 56.1% | 24.9% | 18.9% | 0.82 | 63.1% | 40.7% | 5.8 |
-| hard | 5 | 57.7% | 26.9% | 15.4% | 0.84 | 62.5% | 36.6% | 5.8 |
-| hard | all | 56.2% | 23.8% | 20.0% | 0.82 | 62.1% | 40.1% | 5.8 |
+| standard | 3 | 74.5% | 10.3% | 15.2% | 0.48 | 34.9% | 28.0% | 5.7 |
+| standard | 4 | 77.0% | 13.8% | 9.2% | 0.41 | 37.8% | 27.3% | 5.8 |
+| standard | 5 | 75.6% | 16.6% | 7.8% | 0.43 | 43.4% | 28.4% | 5.7 |
+| standard | all | 75.7% | 13.6% | 10.7% | 0.44 | 38.7% | 27.9% | 5.7 |
+| hard | 3 | 54.4% | 19.7% | 25.9% | 0.81 | 60.9% | 43.2% | 5.7 |
+| hard | 4 | 56.1% | 24.8% | 19.1% | 0.82 | 63.2% | 40.8% | 5.8 |
+| hard | 5 | 57.6% | 26.7% | 15.7% | 0.84 | 62.7% | 36.6% | 5.8 |
+| hard | all | 56.0% | 23.8% | 20.2% | 0.82 | 62.3% | 40.2% | 5.8 |
 
 ### By mission
 
@@ -66,25 +66,25 @@ Win = objective done, nobody Taken. Costly = done, someone Taken. Loss = not don
 | 1. Pemberton's Pets | easy | 7 | 3 | 91.5% | 5.1% | 3.4% | 0.09 | 24.9% | 0.2 | 14.5 |
 | 1. Pemberton's Pets | easy | 6 | 4 | 90.5% | 6.3% | 3.1% | 0.10 | 28.4% | 0.8 | 14.0 |
 | 1. Pemberton's Pets | easy | 5 | 5 | 90.3% | 6.0% | 3.6% | 0.10 | 31.1% | 1.0 | 14.2 |
-| 2. The Zoo After Dark | standard | 8 | 3 | 74.7% | 11.1% | 14.2% | 0.45 | 37.8% | 0.6 | 21.9 |
-| 2. The Zoo After Dark | standard | 8 | 4 | 75.7% | 15.6% | 8.7% | 0.41 | 42.3% | 0.8 | 27.1 |
-| 2. The Zoo After Dark | standard | 8 | 5 | 78.5% | 15.9% | 5.7% | 0.36 | 40.3% | 1.2 | 31.0 |
-| 3. The Old Mill | standard | 7 | 3 | 75.3% | 9.1% | 15.7% | 0.49 | 31.3% | 0.3 | 17.1 |
-| 3. The Old Mill | standard | 7 | 4 | 78.8% | 12.1% | 9.1% | 0.40 | 32.9% | 0.7 | 20.6 |
-| 3. The Old Mill | standard | 6 | 5 | 73.9% | 16.8% | 9.3% | 0.48 | 45.2% | 1.0 | 22.5 |
+| 2. The Zoo After Dark | standard | 8 | 3 | 73.8% | 11.5% | 14.6% | 0.46 | 38.3% | 0.6 | 21.9 |
+| 2. The Zoo After Dark | standard | 8 | 4 | 75.5% | 15.3% | 9.2% | 0.42 | 42.5% | 0.8 | 27.1 |
+| 2. The Zoo After Dark | standard | 8 | 5 | 77.6% | 16.4% | 5.9% | 0.37 | 41.1% | 1.2 | 31.0 |
+| 3. The Old Mill | standard | 7 | 3 | 75.1% | 9.2% | 15.7% | 0.49 | 31.6% | 0.3 | 17.1 |
+| 3. The Old Mill | standard | 7 | 4 | 78.6% | 12.3% | 9.1% | 0.41 | 33.2% | 0.7 | 20.6 |
+| 3. The Old Mill | standard | 6 | 5 | 73.6% | 16.8% | 9.6% | 0.48 | 45.6% | 1.0 | 22.5 |
 | 4. The Trophy Gala | hard | 6 | 3 | 57.6% | 12.6% | 29.8% | 0.84 | 57.3% | 0.3 | 19.3 |
 | 4. The Trophy Gala | hard | 6 | 4 | 62.7% | 17.2% | 20.2% | 0.73 | 58.3% | 0.3 | 23.6 |
 | 4. The Trophy Gala | hard | 6 | 5 | 62.7% | 20.1% | 17.3% | 0.74 | 59.4% | 0.3 | 28.0 |
-| 5. The Lodge on the Hill | hard | 7 | 3 | 51.9% | 26.4% | 21.7% | 0.76 | 64.1% | 0.4 | 21.5 |
-| 5. The Lodge on the Hill | hard | 7 | 4 | 49.6% | 32.7% | 17.7% | 0.90 | 68.0% | 0.5 | 26.5 |
-| 5. The Lodge on the Hill | hard | 7 | 5 | 52.7% | 33.7% | 13.6% | 0.93 | 65.6% | 0.5 | 30.5 |
+| 5. The Lodge on the Hill | hard | 7 | 3 | 51.2% | 26.9% | 21.9% | 0.78 | 64.6% | 0.4 | 21.5 |
+| 5. The Lodge on the Hill | hard | 7 | 4 | 49.5% | 32.5% | 18.0% | 0.90 | 68.1% | 0.5 | 26.5 |
+| 5. The Lodge on the Hill | hard | 7 | 5 | 52.6% | 33.4% | 14.1% | 0.94 | 66.1% | 0.5 | 30.5 |
 
 ## 3. Dice, morphing, Wild and Clashes (all missions and sizes)
 
 | Measure | Value |
 |---|---|
 | rolls per mission | 22.1 |
-| Fail · Partial · Success · Critical | 10.2% · 45.5% · 25.7% · 18.6% |
+| Fail · Partial · Success · Critical | 10.2% · 45.7% · 25.5% · 18.5% |
 | shifts into animal form per character | 1.17 |
 | characters who shift at least once | 98.4% |
 | rolls made in animal form | 78.8% |
@@ -92,10 +92,10 @@ Win = objective done, nobody Taken. Costly = done, someone Taken. Loss = not don
 | shifts paid for with Hurt (no Wild left) / mission | 0.17 |
 | characters Exposed / mission | 0.54 |
 | median share of Wild spent · characters spending ≥ half | 100% · 99.4% |
-| Pushes (paid · free) / mission | 5.56 · 0.06 |
-| Helps / mission | 6.20 |
+| Pushes (paid · free) / mission | 5.59 · 0.06 |
+| Helps / mission | 6.18 |
 | Patch Ups / mission | 0.28 |
-| Edges gained · used / mission | 3.92 · 4.13 |
+| Edges gained · used / mission | 3.91 · 4.12 |
 | poor scouting rolls (Partial or Fail) | 8.7% |
 | Clashes / mission · mean rounds · reaching round 4 | 0.60 · 1.67 · 5.2% |
 | Down · Netted / mission | 0.21 · 0.21 |
@@ -105,20 +105,20 @@ Win = objective done, nobody Taken. Costly = done, someone Taken. Loss = not don
 
 | Perk | Fires per mission | | Perk | Fires per mission |
 |---|---|---|---|---|
-| Jaguar: Night Rosettes | 2.08 | | Tiger: Ambush | 0.50 |
-| Cheetah: Burst | 0.30 | | Wolf: Pack | 2.45 |
+| Jaguar: Night Rosettes | 2.07 | | Snow Leopard: Ambush | 0.50 |
+| Cheetah: Burst | 0.30 | | Coyote: Pack | 2.45 |
 | Shepherd Dog: Good Dog | 0.37 | | Red Fox: Wily | 0.32 |
-| Red-tailed Hawk: Keen Eyes | 0.68 | | Barn Owl: Silent Wings | 1.61 |
-| Raven: Clever Beak | 0.09 | | House Mouse: Tiny | 1.17 |
-| Brown Rat: Gnaw | 0.80 | | Grey Squirrel: Leaper | 0.96 |
-| Brown Bear: Thick Fur | 0.23 | | Gorilla: Chest Beat | 0.14 |
-| Rhinoceros: Charge | 0.65 | | Alligator: Lurker | 0.71 |
+| Peregrine Falcon: Keen Eyes | 0.68 | | Barn Owl: Silent Wings | 1.60 |
+| Raven: Clever Beak | 0.09 | | House Mouse: Tiny | 1.16 |
+| Brown Rat: Gnaw | 0.80 | | Grey Squirrel: Leaper | 0.97 |
+| Bison: Shaggy Coat | 0.23 | | Moose: Antler Sweep | 0.14 |
+| Hippopotamus: Charge | 0.65 | | Alligator: Lurker | 0.71 |
 | Python: Coil | 0.47 | | Komodo Dragon: Taste the Air | 1.48 |
-| Football Player | 2.50 | | Hide-and-Seek Champ | 2.50 |
+| Football Player | 2.49 | | Hide-and-Seek Champ | 2.50 |
 | Track Star | 2.91 | | Scout | 1.43 |
 | Brainiac | 1.22 | | Gamer | 0.92 |
-| Team Captain | 0.00 | | Animal Whisperer | 0.99 |
-| Swim Team | 0.94 | | Gymnast | 1.96 |
+| Team Captain | 0.00 | | Animal Whisperer | 1.00 |
+| Swim Team | 0.93 | | Gymnast | 1.97 |
 | Night Owl | 2.52 | | Drama Kid | 0.72 |
 
 ## 4. Balance (slot 0 forced to the option, the rest of the group random; 800 runs per mission × size per option, same dice)
@@ -129,51 +129,51 @@ Win = objective done, nobody Taken. Costly = done, someone Taken. Loss = not don
 
 | Frame | Win (all) | Δ all | Δ easy | Δ standard | Δ hard | petshop | zoo | mill | gala | lodge |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Big Cats | 74.0% | +2.8 | +0.2 | +5.2 | +1.6 | +0.2 | +1.5 | +9.0 | +3.2 | +0.0 |
-| Canines | 69.9% | −1.3 | −0.0 | −4.8 | +1.5 | −0.0 | −1.8 | −7.7 | +7.9 | −4.9 |
-| Birds | 71.0% | −0.2 | +0.7 | −1.8 | +0.9 | +0.7 | −2.5 | −1.0 | −1.4 | +3.1 |
-| Critters | 71.6% | +0.3 | −0.0 | +0.7 | +0.1 | −0.0 | −1.1 | +2.5 | −1.9 | +2.2 |
-| Heavies | 71.7% | +0.4 | +0.5 | +1.3 | −0.4 | +0.5 | +5.1 | −2.6 | −1.8 | +1.0 |
-| Reptiles | 69.2% | −2.0 | −1.3 | −0.7 | −3.7 | −1.3 | −1.1 | −0.2 | −6.0 | −1.4 |
+| Big Cats | 73.7% | +2.6 | +0.2 | +4.7 | +1.6 | +0.2 | +0.7 | +8.8 | +3.2 | +0.0 |
+| Canines | 69.7% | −1.4 | −0.0 | −4.7 | +1.3 | −0.0 | −1.8 | −7.7 | +7.9 | −5.4 |
+| Birds | 71.1% | −0.0 | +0.7 | −1.4 | +1.0 | +0.7 | −1.8 | −0.9 | −1.4 | +3.3 |
+| Critters | 71.4% | +0.3 | −0.0 | +0.7 | +0.1 | −0.0 | −1.0 | +2.4 | −1.9 | +2.0 |
+| Heavies | 71.7% | +0.6 | +0.5 | +1.5 | −0.2 | +0.5 | +5.5 | −2.4 | −1.8 | +1.3 |
+| Reptiles | 69.0% | −2.1 | −1.3 | −0.9 | −3.7 | −1.3 | −1.5 | −0.3 | −6.0 | −1.3 |
 
 ### Animals (Δ against the average of all 18)
 
 | Animal | Frame | Win (all) | Δ all | Δ hard | Δ vs its frame-mates |
 |---|---|---|---|---|---|
-| Jaguar (Night Rosettes) | Big Cats | 74.6% | +3.4 | +4.2 | +1.2 |
-| Tiger (Ambush) | Big Cats | 72.8% | +1.5 | −0.6 | −0.7 |
-| Cheetah (Burst) | Big Cats | 72.9% | +1.7 | −0.5 | −0.5 |
-| Wolf (Pack) | Canines | 71.2% | −0.0 | +3.1 | +0.3 |
-| Shepherd Dog (Good Dog) | Canines | 68.8% | −2.5 | +0.6 | −2.2 |
-| Red Fox (Wily) | Canines | 72.8% | +1.6 | +5.5 | +1.9 |
-| Red-tailed Hawk (Keen Eyes) | Birds | 70.7% | −0.5 | +0.2 | +0.1 |
-| Barn Owl (Silent Wings) | Birds | 71.3% | +0.0 | +0.1 | +0.6 |
-| Raven (Clever Beak) | Birds | 69.9% | −1.3 | −0.5 | −0.7 |
-| House Mouse (Tiny) | Critters | 70.8% | −0.5 | −1.7 | −0.5 |
-| Brown Rat (Gnaw) | Critters | 72.6% | +1.4 | +4.6 | +1.4 |
-| Grey Squirrel (Leaper) | Critters | 70.3% | −0.9 | −2.3 | −0.9 |
-| Brown Bear (Thick Fur) | Heavies | 71.0% | −0.2 | −1.8 | −0.6 |
-| Gorilla (Chest Beat) | Heavies | 71.3% | +0.1 | −1.7 | −0.3 |
-| Rhinoceros (Charge) | Heavies | 72.4% | +1.2 | −0.1 | +0.8 |
-| Alligator (Lurker) | Reptiles | 69.0% | −2.2 | −3.7 | −0.6 |
-| Python (Coil) | Reptiles | 68.5% | −2.7 | −4.0 | −1.0 |
-| Komodo Dragon (Taste the Air) | Reptiles | 71.2% | −0.0 | −1.3 | +1.6 |
+| Jaguar (Night Rosettes) | Big Cats | 74.3% | +3.3 | +4.1 | +1.3 |
+| Snow Leopard (Ambush) | Big Cats | 72.0% | +1.0 | −1.1 | −0.9 |
+| Cheetah (Burst) | Big Cats | 72.6% | +1.6 | −0.6 | −0.4 |
+| Coyote (Pack) | Canines | 71.0% | +0.0 | +3.3 | +0.3 |
+| Shepherd Dog (Good Dog) | Canines | 68.6% | −2.4 | +0.5 | −2.2 |
+| Red Fox (Wily) | Canines | 72.7% | +1.7 | +5.4 | +1.9 |
+| Peregrine Falcon (Keen Eyes) | Birds | 70.7% | −0.4 | +0.4 | +0.1 |
+| Barn Owl (Silent Wings) | Birds | 71.2% | +0.2 | +0.3 | +0.7 |
+| Raven (Clever Beak) | Birds | 69.8% | −1.3 | −0.3 | −0.8 |
+| House Mouse (Tiny) | Critters | 70.4% | −0.6 | −1.7 | −0.5 |
+| Brown Rat (Gnaw) | Critters | 72.3% | +1.3 | +4.5 | +1.4 |
+| Grey Squirrel (Leaper) | Critters | 70.1% | −0.9 | −2.2 | −0.9 |
+| Bison (Shaggy Coat) | Heavies | 70.9% | −0.1 | −1.7 | −0.5 |
+| Moose (Antler Sweep) | Heavies | 71.2% | +0.2 | −1.6 | −0.3 |
+| Hippopotamus (Charge) | Heavies | 72.3% | +1.3 | +0.0 | +0.8 |
+| Alligator (Lurker) | Reptiles | 68.8% | −2.2 | −3.7 | −0.6 |
+| Python (Coil) | Reptiles | 68.4% | −2.6 | −4.1 | −1.0 |
+| Komodo Dragon (Taste the Air) | Reptiles | 71.1% | +0.0 | −1.3 | +1.6 |
 
 ### Human perks
 
 | Perk | Win (all) | Value vs no perk | Δ vs perk average | Value at hard |
 |---|---|---|---|---|
-| Football Player | 73.4% | +4.4 | +2.0 | +4.9 |
-| Hide-and-Seek Champ | 71.5% | +2.5 | +0.1 | +3.4 |
-| Track Star | 72.1% | +3.1 | +0.7 | +3.9 |
-| Scout | 71.9% | +2.9 | +0.5 | +3.9 |
+| Football Player | 73.4% | +4.4 | +2.0 | +4.8 |
+| Hide-and-Seek Champ | 71.3% | +2.3 | −0.0 | +3.3 |
+| Track Star | 72.1% | +3.1 | +0.7 | +4.0 |
+| Scout | 72.0% | +3.0 | +0.6 | +3.8 |
 | Brainiac | 70.4% | +1.4 | −1.0 | +2.0 |
-| Gamer | 72.0% | +3.0 | +0.6 | +4.0 |
-| Team Captain | 71.9% | +2.9 | +0.5 | +4.1 |
-| Animal Whisperer | 70.4% | +1.4 | −1.0 | +2.5 |
-| Swim Team | 70.2% | +1.2 | −1.2 | +1.0 |
-| Gymnast | 71.3% | +2.2 | −0.2 | +1.8 |
-| Night Owl | 72.2% | +3.2 | +0.8 | +4.1 |
+| Gamer | 71.9% | +2.9 | +0.5 | +3.9 |
+| Team Captain | 71.8% | +2.8 | +0.4 | +3.9 |
+| Animal Whisperer | 70.4% | +1.4 | −0.9 | +2.3 |
+| Swim Team | 70.0% | +1.0 | −1.4 | +0.6 |
+| Gymnast | 71.3% | +2.3 | −0.1 | +2.0 |
+| Night Owl | 72.1% | +3.1 | +0.7 | +4.0 |
 | Drama Kid | 69.8% | +0.8 | −1.6 | +1.9 |
 | *(no perk: control)* | 69.0% | — | — | — |
 
@@ -183,11 +183,11 @@ Shows where each frame does the work. A frame with a low number everywhere has n
 
 | Frame | petshop | zoo | mill | gala | lodge |
 |---|---|---|---|---|---|
-| Big Cats | 3.3 (80% animal) | 6.0 (89% animal) | 5.8 (98% animal) | 5.7 (90% animal) | 6.0 (83% animal) |
-| Canines | 2.9 (70% animal) | 6.5 (76% animal) | 4.4 (70% animal) | 6.6 (84% animal) | 6.4 (73% animal) |
-| Birds | 3.8 (79% animal) | 7.4 (61% animal) | 4.9 (82% animal) | 5.4 (80% animal) | 6.8 (81% animal) |
+| Big Cats | 3.3 (80% animal) | 6.0 (88% animal) | 5.8 (98% animal) | 5.7 (90% animal) | 5.9 (83% animal) |
+| Canines | 2.9 (70% animal) | 6.5 (76% animal) | 4.4 (70% animal) | 6.6 (84% animal) | 6.4 (74% animal) |
+| Birds | 3.8 (79% animal) | 7.5 (61% animal) | 4.9 (82% animal) | 5.4 (80% animal) | 6.8 (81% animal) |
 | Critters | 2.9 (64% animal) | 5.7 (67% animal) | 5.3 (84% animal) | 5.4 (89% animal) | 6.1 (78% animal) |
-| Heavies | 5.1 (92% animal) | 7.4 (67% animal) | 5.3 (78% animal) | 6.6 (69% animal) | 7.2 (80% animal) |
+| Heavies | 5.1 (92% animal) | 7.4 (67% animal) | 5.3 (78% animal) | 6.6 (69% animal) | 7.1 (80% animal) |
 | Reptiles | 3.3 (77% animal) | 6.9 (78% animal) | 4.5 (92% animal) | 5.6 (74% animal) | 6.9 (81% animal) |
 
 ## 6. Judgement calls and presets (800 runs per mission × size)
@@ -196,23 +196,23 @@ Each row changes one parameter from its default (`sim/params.mjs`). Δ in points
 
 | Variant | Easy win | Standard win | Hard win | Hard loss | Hard Taken | Up (all) | Wild spent (median) | Shifts / char |
 |---|---|---|---|---|---|---|---|---|
-| default | 91.0% | 74.9% | 56.2% | 20.1% | 0.83 | 46.0% | 100% | 1.18 |
-| startWild = 3 | 80.4% (−10.6) | 63.9% (−11.1) | 41.7% (−14.5) | 30.5% | 1.16 | 58.9% | 100% | 1.13 |
-| startWild = 5 | 95.5% (+4.5) | 85.0% (+10.0) | 69.3% (+13.1) | 13.5% | 0.55 | 34.0% | 100% | 1.21 |
-| limitShift = -1 | 83.3% (−7.7) | 65.6% (−9.3) | 43.1% (−13.1) | 28.2% | 1.02 | 60.3% | 100% | 1.18 |
-| limitShift = 1 | 95.2% (+4.2) | 82.8% (+7.9) | 67.0% (+10.8) | 14.9% | 0.65 | 32.6% | 100% | 1.17 |
-| escapePartialScent = true | 91.0% (+0.0) | 74.9% (+0.0) | 49.6% (−6.6) | 21.4% | 0.91 | 57.7% | 100% | 1.18 |
-| groupScent = "perRound" | 88.8% (−2.2) | 68.5% (−6.4) | 49.9% (−6.3) | 21.5% | 0.91 | 50.0% | 100% | 1.18 |
-| maxHelpers = 1 | 90.1% (−0.9) | 76.5% (+1.6) | 58.0% (+1.9) | 19.3% | 0.78 | 44.3% | 100% | 1.18 |
-| wildBySize = {"3":5,"4":4,"5":3} | 88.3% (−2.7) | 73.6% (−1.3) | 55.1% (−1.1) | 20.0% | 0.86 | 47.6% | 100% | 1.16 |
-| huntUpInside = "lost" | 85.8% (−5.2) | 71.4% (−3.6) | 53.5% (−2.7) | 34.8% | 0.78 | 46.0% | 100% | 1.18 |
-| pressOnWhen = "lastObstacle" | 91.3% (+0.3) | 75.1% (+0.1) | 56.4% (+0.2) | 19.1% | 0.84 | 46.0% | 100% | 1.18 |
-| pressTarget = "mostHurt" | 91.0% (+0.0) | 75.1% (+0.1) | 56.4% (+0.2) | 20.0% | 0.82 | 46.1% | 100% | 1.18 |
-| pressTarget = "leastHurt" | 91.0% (+0.0) | 75.4% (+0.4) | 56.3% (+0.1) | 20.0% | 0.82 | 46.0% | 100% | 1.17 |
-| shiftSeenOutside = 0.25 | 80.5% (−10.5) | 59.6% (−15.3) | 42.0% (−14.1) | 29.0% | 1.03 | 64.1% | 100% | 1.19 |
-| spend = "thrifty" | 79.2% (−11.8) | 66.9% (−8.0) | 41.7% (−14.5) | 37.4% | 0.95 | 65.0% | 100% | 1.21 |
-| midClashShift = false | 90.9% (−0.1) | 75.0% (+0.1) | 56.4% (+0.2) | 20.2% | 0.84 | 45.7% | 100% | 1.17 |
-| fightGuards = "sneak" | 86.8% (−4.2) | 78.2% (+3.2) | 59.8% (+3.6) | 18.7% | 0.74 | 44.3% | 100% | 1.14 |
-| preset: generous | 91.0% (+0.0) | 75.4% (+0.4) | 56.3% (+0.1) | 20.0% | 0.82 | 46.0% | 100% | 1.17 |
-| preset: strict | 80.5% (−10.5) | 59.7% (−15.2) | 42.0% (−14.2) | 28.9% | 1.02 | 64.1% | 100% | 1.19 |
+| default | 91.0% | 74.5% | 55.9% | 20.4% | 0.83 | 46.3% | 100% | 1.18 |
+| startWild = 3 | 80.4% (−10.6) | 63.6% (−10.9) | 41.5% (−14.4) | 30.4% | 1.16 | 59.2% | 100% | 1.13 |
+| startWild = 5 | 95.5% (+4.5) | 84.7% (+10.2) | 69.1% (+13.2) | 13.5% | 0.55 | 34.1% | 100% | 1.22 |
+| limitShift = -1 | 83.3% (−7.7) | 65.1% (−9.4) | 43.0% (−13.0) | 28.4% | 1.02 | 60.6% | 100% | 1.18 |
+| limitShift = 1 | 95.2% (+4.2) | 82.4% (+8.0) | 66.8% (+10.9) | 14.9% | 0.65 | 32.8% | 100% | 1.17 |
+| escapePartialScent = true | 91.0% (+0.0) | 74.5% (+0.0) | 49.4% (−6.5) | 21.6% | 0.92 | 58.0% | 100% | 1.18 |
+| groupScent = "perRound" | 88.8% (−2.2) | 68.2% (−6.3) | 49.6% (−6.3) | 21.7% | 0.92 | 50.1% | 100% | 1.18 |
+| maxHelpers = 1 | 90.1% (−0.9) | 76.0% (+1.5) | 57.9% (+1.9) | 19.4% | 0.78 | 44.7% | 100% | 1.18 |
+| wildBySize = {"3":5,"4":4,"5":3} | 88.3% (−2.7) | 73.8% (−0.7) | 54.9% (−1.0) | 20.0% | 0.86 | 47.7% | 100% | 1.16 |
+| huntUpInside = "lost" | 85.8% (−5.2) | 70.7% (−3.8) | 53.2% (−2.7) | 35.1% | 0.78 | 46.3% | 100% | 1.18 |
+| pressOnWhen = "lastObstacle" | 91.3% (+0.3) | 74.6% (+0.2) | 56.1% (+0.2) | 19.2% | 0.84 | 46.3% | 100% | 1.18 |
+| pressTarget = "mostHurt" | 91.0% (+0.0) | 74.7% (+0.2) | 56.1% (+0.1) | 20.3% | 0.83 | 46.4% | 100% | 1.18 |
+| pressTarget = "leastHurt" | 91.0% (+0.0) | 75.0% (+0.5) | 56.0% (+0.0) | 20.2% | 0.82 | 46.2% | 100% | 1.17 |
+| shiftSeenOutside = 0.25 | 80.5% (−10.5) | 59.2% (−15.3) | 41.9% (−14.0) | 29.1% | 1.03 | 64.2% | 100% | 1.19 |
+| spend = "thrifty" | 79.2% (−11.8) | 66.5% (−8.0) | 41.8% (−14.1) | 37.7% | 0.95 | 65.2% | 100% | 1.21 |
+| midClashShift = false | 90.9% (−0.1) | 74.5% (+0.1) | 56.1% (+0.1) | 20.3% | 0.85 | 46.0% | 100% | 1.17 |
+| fightGuards = "sneak" | 86.8% (−4.2) | 77.6% (+3.2) | 59.5% (+3.5) | 18.8% | 0.75 | 44.6% | 100% | 1.14 |
+| preset: generous | 91.0% (+0.0) | 75.0% (+0.5) | 56.0% (+0.0) | 20.2% | 0.82 | 46.2% | 100% | 1.17 |
+| preset: strict | 80.5% (−10.5) | 59.3% (−15.2) | 41.9% (−14.0) | 29.0% | 1.02 | 64.2% | 100% | 1.19 |
 

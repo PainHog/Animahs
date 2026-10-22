@@ -1,6 +1,6 @@
 Now: The balance simulator is built and the first round of fixes is in: every difficulty and group size now lands on its target
 Next: Richard reviews and revises the draft design and core rules
-Number: Design decisions so far = 27
+Number: Design decisions so far = 28
 Number: Approved by Richard = 1
 Number: Core questions still open = 0
 

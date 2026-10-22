@@ -1,6 +1,6 @@
 # Second Nature: core rules (v0.1b draft)
 
-*Working title (DESIGN D2). These are the rules until chapters exist. The simulator follows this page and cites its § numbers. The tables after the rules hold the options and numbers. v0.1b includes the first simulator pass (DESIGN D24–D27; `book/REVIEW.md` rows 1–9).*
+*Working title (DESIGN D2). These are the rules until chapters exist. The simulator follows this page and cites its § numbers. The tables after the rules hold the options and numbers. v0.1b includes the first simulator pass (DESIGN D24–D28; `book/REVIEW.md` rows 1–10).*
 
 Kids aged 11–15 have **Bonded** with one animal each and can become it. They fight **the Gilded Hunt**, a secret society of rich trophy hunters who steal animal power and wear it as **Trophies**. Each session is one **mission** against the Hunt. One player is the **Storyteller**; the other 3–5 each play one Bonded kid.
 
@@ -103,20 +103,20 @@ The Clash ends when every threat is out, when nobody is left in it, or **at the 
 | Frame | Animal | Perk |
 |---|---|---|
 | Big Cats | Jaguar | **Night Rosettes:** in Dark places, your Sneak rolls are at −1 Difficulty. |
-| | Tiger | **Ambush:** your first Strike in each Clash is at −1 Difficulty, and Water isn't a Weakness for you. |
+| | Snow Leopard | **Ambush:** your first Strike in each Clash is at −1 Difficulty. |
 | | Cheetah | **Burst:** once per scene, Push a Move roll without spending Wild. |
-| Canines | Wolf | **Pack:** once per scene, Help without spending Wild. |
+| Canines | Coyote | **Pack:** once per scene, Help without spending Wild. |
 | | Shepherd Dog | **Good Dog:** in Crowds, your Sneak and Sense rolls are at −1 Difficulty. |
 | | Red Fox | **Wily:** once per scene, when your roll Fails, it becomes a Partial instead. |
-| Birds | Red-tailed Hawk | **Keen Eyes:** in Open or High places, your Sense rolls are at −1 Difficulty. |
+| Birds | Peregrine Falcon | **Keen Eyes:** in Open or High places, your Sense rolls are at −1 Difficulty. |
 | | Barn Owl | **Silent Wings:** in Dark places, +1 die on Sneak and Move rolls. |
 | | Raven | **Clever Beak:** against Locked things you can roll Wits in animal form (rating 2) to work latches, keys and switches. |
 | Critters | House Mouse | **Tiny:** in Narrow places, your Sneak and Move rolls are at −1 Difficulty. |
 | | Brown Rat | **Gnaw:** against Locked things, your Force rating is 3. |
 | | Grey Squirrel | **Leaper:** in High places, your Move rolls are at −1 Difficulty. |
-| Heavies | Brown Bear | **Thick Fur:** once per scene, when you'd take Hurt, take 1 less. |
-| | Gorilla | **Chest Beat:** once per scene, when your Strike against a Beater or Hound Succeeds, it's out at once. |
-| | Rhinoceros | **Charge:** once per scene, when a Force roll Succeeds, it counts as a Critical. |
+| Heavies | Bison | **Shaggy Coat:** once per scene, when you'd take Hurt, take 1 less. |
+| | Moose | **Antler Sweep:** once per scene, when your Strike against a Beater or Hound Succeeds, it's out at once. |
+| | Hippopotamus | **Charge:** once per scene, when a Force roll Succeeds, it counts as a Critical. |
 | Reptiles | Alligator | **Lurker:** in Water, your Sneak and Force rolls are at −1 Difficulty. |
 | | Python | **Coil:** when your Strike Succeeds, the next roll anyone makes against that threat this Clash is at −1 Difficulty. |
 | | Komodo Dragon | **Taste the Air:** +1 die on Sense rolls, and a Hound's Tracker doesn't affect you. |

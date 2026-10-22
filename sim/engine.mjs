@@ -83,14 +83,12 @@ function selfMods(c, form, opt, ctx) {
   if (form === "animal") {
     const F = FR[c.frame];
     if (F.strengths.some(t => tags.includes(t))) dice++;                        // §2 Strength
-    let weak = F.weaknesses.filter(t => tags.includes(t));
-    if (c.animal === "tiger") weak = weak.filter(t => t !== "water");           // Tiger: Water isn't a Weakness
-    if (weak.length) up++;                                                       // §2 Weakness
+    if (F.weaknesses.some(t => tags.includes(t))) up++;                          // §2 Weakness
     switch (c.animal) {
       case "jaguar": if (a === "sneak" && tags.includes("dark")) { down++; fires.push("jaguar"); } break;
-      case "tiger": if (ctx.action === "strike" && ctx.firstStrike) { down++; fires.push("tiger"); } break;
+      case "snowleopard": if (ctx.action === "strike" && ctx.firstStrike) { down++; fires.push("snowleopard"); } break;
       case "dog": if ((a === "sneak" || a === "sense") && tags.includes("crowd")) { down++; fires.push("dog"); } break;
-      case "hawk": if (a === "sense" && (tags.includes("open") || tags.includes("high"))) { down++; fires.push("hawk"); } break;
+      case "falcon": if (a === "sense" && (tags.includes("open") || tags.includes("high"))) { down++; fires.push("falcon"); } break;
       case "owl": if ((a === "sneak" || a === "move") && tags.includes("dark")) { dice++; fires.push("owl"); } break;
       case "raven": if (opt.approach === "wits") fires.push("raven"); break;
       case "mouse": if ((a === "sneak" || a === "move") && tags.includes("narrow")) { down++; fires.push("mouse"); } break;
@@ -226,8 +224,8 @@ function patchUp(S, healer, target) {
 
 function hurt(S, c, amount, o = {}) {
   if (amount <= 0 || c.status !== "active") return;
-  // Brown Bear, Thick Fur: once per scene, take 1 less.
-  if (c.animal === "bear" && c.form === "animal" && !c.used.has("bear")) { c.used.add("bear"); amount -= 1; fire(S, "bear"); }
+  // Bison, Shaggy Coat: once per scene, take 1 less.
+  if (c.animal === "bison" && c.form === "animal" && !c.used.has("bison")) { c.used.add("bison"); amount -= 1; fire(S, "bison"); }
   if (amount <= 0) return;
   c.hurt += amount;
   if (c.hurt >= R.HURT_BOXES) {
@@ -325,7 +323,7 @@ function planBoosts(S, roller, form, opt, m, vals, info) {
     for (const h of cands) {
       const give = 1;
       const g = evAt(Math.min(R.CAP_DICE - m.dice, extraDice + give), extraDown) - evAt(extraDice, extraDown);
-      const freeHelp = h.form === "animal" && h.animal === "wolf" && !h.used.has("wolf"); // Wolf: Pack
+      const freeHelp = h.form === "animal" && h.animal === "coyote" && !h.used.has("coyote"); // Coyote: Pack
       const net = g - (freeHelp ? 0 : wildValue(S, h));
       if (net > 0 && (!best || net > best.net)) best = { h, give, net };
     }
@@ -343,7 +341,7 @@ function planBoosts(S, roller, form, opt, m, vals, info) {
 function makeRoll(S, c, form, opt, m, plan, vals) {
   for (const h of plan.helpers) {
     S.st.helps++;
-    if (h.form === "animal" && h.animal === "wolf" && !h.used.has("wolf")) { h.used.add("wolf"); fire(S, "wolf"); continue; }
+    if (h.form === "animal" && h.animal === "coyote" && !h.used.has("coyote")) { h.used.add("coyote"); fire(S, "coyote"); continue; }
     h.wild--; h.wildSpent++;
   }
   if (plan.edges) { S.edges -= plan.edges; S.st.edgesUsed += plan.edges; }
@@ -518,11 +516,11 @@ function runObstacle(S, rawOb) {
       const plan2 = planBoosts(S, best.c, best.form, best.opt, best.m, best.vals, {});
       const res = makeRoll(S, best.c, best.form, best.opt, best.m, plan2, best.vals);
       if (res === "crit") {
-        if (best.opt.rollAs === "force" && best.c.animal === "rhino") fire(S, "rhino");
+        if (best.opt.rollAs === "force" && best.c.animal === "hippo") fire(S, "hippo");
         if (prog + 1 < ob.progress) prog += 2; else { prog += 1; gainEdge(S); }
       } else if (res === "success") {
-        if (best.form === "animal" && best.c.animal === "rhino" && best.opt.rollAs === "force" && !best.c.used.has("rhino") && prog + 1 < ob.progress) {
-          best.c.used.add("rhino"); fire(S, "rhino"); prog += 2; // Rhino: Charge counts as a Critical
+        if (best.form === "animal" && best.c.animal === "hippo" && best.opt.rollAs === "force" && !best.c.used.has("hippo") && prog + 1 < ob.progress) {
+          best.c.used.add("hippo"); fire(S, "hippo"); prog += 2; // Hippopotamus: Charge counts as a Critical
         } else prog += 1;
       } else if (res === "partial") { prog += 1; scentUp(S, 1); }
       else {
@@ -673,9 +671,9 @@ function clash(S, ob, guardKeys) {
       firstStrike.add(c);
       if (usedDistract) { distracted.delete(t.i); fire(S, "distract"); }
       if (usedCoil) t.coil = false;
-      if (res === "success" && c.form === "animal" && c.animal === "rhino" && !c.used.has("rhino")) { c.used.add("rhino"); fire(S, "rhino"); res = "crit"; }
-      if (res === "success" && c.form === "animal" && c.animal === "gorilla" && !c.used.has("gorilla") && (t.key === "beater" || t.key === "hound")) {
-        c.used.add("gorilla"); fire(S, "gorilla"); t.dmg = t.tough;
+      if (res === "success" && c.form === "animal" && c.animal === "hippo" && !c.used.has("hippo")) { c.used.add("hippo"); fire(S, "hippo"); res = "crit"; }
+      if (res === "success" && c.form === "animal" && c.animal === "moose" && !c.used.has("moose") && (t.key === "beater" || t.key === "hound")) {
+        c.used.add("moose"); fire(S, "moose"); t.dmg = t.tough;
       } else if (res === "crit") t.dmg += 2;
       else if (res === "success" || res === "partial") t.dmg += 1;
       if ((res === "success" || res === "crit") && c.form === "animal" && c.animal === "python") { t.coil = true; fire(S, "python"); }

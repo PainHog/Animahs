@@ -49,9 +49,9 @@ test("rules wiring: Strengths, Weaknesses, perks and the Cap", () => {
   };
   // Jaguar, Night Rosettes: Sneak 4, +1 die (Dark Strength), −1 Difficulty
   assert.deepEqual(roll(ch("jaguar"), "animal", { tags: ["dark"], approaches: { sneak: 2 } }, "sneak"), { n: 5, d: 1 });
-  // Big Cats in Water: +1 Difficulty; the Tiger ignores it
+  // Big Cats in Water: +1 Difficulty; in a Dark Water place, a Strength and a Weakness both apply
   assert.deepEqual(roll(ch("cheetah"), "animal", { tags: ["water"], approaches: { move: 2 } }, "move"), { n: 3, d: 3 });
-  assert.deepEqual(roll(ch("tiger"), "animal", { tags: ["water"], approaches: { move: 2 } }, "move"), { n: 3, d: 2 });
+  assert.deepEqual(roll(ch("snowleopard"), "animal", { tags: ["water", "dark"], approaches: { move: 2 } }, "move"), { n: 4, d: 3 });
   // The Cap: Barn Owl in a Dark High place with Gymnast = +3 dice, capped at +2
   assert.deepEqual(roll(ch("owl", "gymnast"), "animal", { tags: ["dark", "high"], approaches: { move: 2 } }, "move"), { n: 6, d: 2 });
   // Human form has no Strengths or Weaknesses
@@ -62,7 +62,7 @@ test("rules wiring: Strengths, Weaknesses, perks and the Cap", () => {
   // Brown Rat, Gnaw: Force rating 3 against Locked things (+1 die: Narrow Strength)
   assert.deepEqual(roll(ch("rat"), "animal", { tags: ["locked", "narrow"], approaches: { force: 3 } }, "force"), { n: 4, d: 3 });
   // Animals can't roll Wits; the Raven can against Locked things (rating 2)
-  assert.equal(T.optionsFor(ch("hawk"), "animal", { tags: ["locked"], approaches: { wits: 2 } }).length, 0);
+  assert.equal(T.optionsFor(ch("falcon"), "animal", { tags: ["locked"], approaches: { wits: 2 } }).length, 0);
   assert.equal(T.optionsFor(ch("raven"), "animal", { tags: ["locked"], approaches: { wits: 2 } })[0].rating, 2);
 });
 

@@ -33,7 +33,9 @@ This is a living document. **§1 Pitch** is Richard's own. **§3 Decisions** log
   - the **two-hour limit**, after which you're trapped as the animal for good;
   - thought-speak;
   - the dying alien at a construction site who gives the kids the power;
-  - the series' covers, where a person morphs into an animal across the cover.
+  - the series' covers, where a person morphs into an animal across the cover;
+  - the main characters' signature animals as a set: tiger, rhinoceros, elephant, grizzly bear, wolf, horse, gorilla and red-tailed hawk (D28). A wolf or a bear on its own is fine; several of them together read as the books' cast;
+  - a zoo-and-amusement-park where animals are acquired ("The Gardens").
 - **Free to use:** the genre idea itself, ordinary people who can turn into animals and fight a hidden threat. That idea is old (folklore, *Invasion of the Body Snatchers*, many games).
 - **The rule for this project:** the enemy, the origin of the power, how morphing works, and its limits and costs must all be **original**.
 
@@ -332,6 +334,15 @@ Measured by forcing one character to each option, with the rest of the group ran
 - **The Gala:** a Trapper joins the Hounds in the halls, and the Trophy case needs 3 progress.
 - **The Lodge:** the servants' door is added, and there's a Sense way past the kennels.
 - **Why:** labels come from results (A20). The Mill played easier than the Easy mission, and the Gala's best Limit (4–5) was too short to tune by party size. Each mission also gets a moment where human form is the best choice, so that shifting stays a decision.
+
+### D28 · 2026-10-22 · draft: Six animals replaced to avoid the books' signature animals
+- **Decision:** Tiger → **Snow Leopard**, Wolf → **Coyote**, Red-tailed Hawk → **Peregrine Falcon**, Brown Bear → **Bison**, Gorilla → **Moose**, Rhinoceros → **Hippopotamus**.
+  - Each keeps its perk's effect. Two perks are renamed to fit the new animal: Bison's Thick Fur becomes **Shaggy Coat**, and Moose's Chest Beat becomes **Antler Sweep**.
+  - The Tiger's "Water isn't a Weakness" clause goes with it.
+- **Why:** a check against plot summaries and character lists found that the draft's animal list held six of the books' main characters' signature battle forms: tiger and rhinoceros (Jake), grizzly bear (Rachel), wolf (Cassie), gorilla (Marco) and red-tailed hawk (Tobias). As a set, that reads as the books' cast (§2.1; DESIGN-RULES Part D, "no famous-character echoes"). The new animals are the same size and do the same job in their frames. The re-run balance is unchanged: every animal is within ±3.3 points (`sim/REPORT.md` §4).
+- **Also checked:**
+  - The Zoo test mission is about stopping Trappers, not about getting a form, which is where the books' zoo scene (The Gardens) is used. Keep any zoo in the book a plain zoo: no amusement park, and no "Gardens" name.
+  - **Stuck** (§9) is temporary and comes from going Down. It isn't the books' permanent trap after a time limit.
 
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
