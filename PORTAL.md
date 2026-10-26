@@ -3,6 +3,7 @@ Next: Richard reviews and revises the whole draft book
 Number: Design decisions so far = 31
 Number: Approved by Richard = 1
 Number: Core questions still open = 0
+Screenshot: docs/portal/cover.webp = The draft cover, with stand-in art until the real drawings are done
 
 # Game plan
 

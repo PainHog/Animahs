@@ -335,6 +335,19 @@ async function printPdf(browser, html, out) {
   await p.close();
 }
 
+// The finished files carry the book's own details, not the browser's that printed them.
+async function stampMetadata(file, part = "") {
+  const { PDFDocument } = await import("pdf-lib");
+  const doc = await PDFDocument.load(readFileSync(file), { updateMetadata: false });
+  doc.setTitle(`${BOOK_TITLE}${part ? ` (${part})` : ""} — Version ${VERSION}`, { showInWindowTitleBar: true });
+  doc.setAuthor(AUTHOR);
+  doc.setSubject(BOOK_DESCRIPTION);
+  doc.setCreator(AUTHOR);
+  doc.setProducer(AUTHOR);
+  doc.setKeywords(["roleplaying game", "tabletop", BOOK_TITLE]);
+  writeFileSync(file, await doc.save());
+}
+
 async function pageMap(pdfPath) {
   const pdfjs = await import("pdfjs-dist/legacy/build/pdf.mjs");
   const doc = await pdfjs.getDocument({ data: new Uint8Array(readFileSync(pdfPath)), verbosity: 0 }).promise;
@@ -392,12 +405,14 @@ try {
     await printPdf(browser, html, out);
     ({ pages } = await pageMap(out));
   }
+  await stampMetadata(out, PRINT ? "print interior" : "");
   console.log(`Built ${relative(ROOT, out)} — ${pages} pages (pass 1: ${p1.pages}).`);
   if (PRINT) {
     for (const [cls, name] of [["cover", "front"], ["back-cover", "back"]]) {
       if (!sectionOf(body, cls)) continue;
       const f = join(DIST, `${FILE_STEM}_v${VERSION}_print-cover-${name}.pdf`);
       await printPdf(browser, page(null, false, {}, { only: cls }), f);
+      await stampMetadata(f, `print cover, ${name}`);
       console.log(`Built ${relative(ROOT, f)} (${8.5 + 2 * BLEED_IN}in × ${11 + 2 * BLEED_IN}in, bleed included).`);
     }
   }
