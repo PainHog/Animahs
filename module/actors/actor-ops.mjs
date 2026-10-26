@@ -10,6 +10,7 @@ import { usedThisScene, markUsed } from "../logic/usage.mjs";
 import { missionClock, isRunning } from "../logic/mission.mjs";
 import { runOp, registerOp, owns } from "../net/gm-ops.mjs";
 import { getState } from "../mission/store.mjs";
+import { ChatMessageClass } from "../foundry-classes.mjs";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const setting = key => game.settings.get(SYSTEM_ID, key);
@@ -203,11 +204,11 @@ export async function postCard(kind, data, { actor = null, title = "", lines = [
   });
   const msg = {
     content,
-    speaker: ChatMessage.getSpeaker({ actor }),
+    speaker: ChatMessageClass().getSpeaker({ actor }),
     flags: { [FLAG]: { card } },
   };
   if (whisperGM) msg.whisper = game.users.filter(u => u.isGM).map(u => u.id);
-  return ChatMessage.create(msg);
+  return ChatMessageClass().create(msg);
 }
 
 /** A short notice card. */

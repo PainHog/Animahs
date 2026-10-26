@@ -872,6 +872,7 @@ export function installFoundry({ users = [] } = {}) {
 
   CONFIG = globalThis.CONFIG = {
     Actor: { dataModels: {}, documentClass: Actor, trackableAttributes: {} },
+    ChatMessage: { documentClass: ChatMessage },
     Item: { dataModels: {}, documentClass: Item },
     Combat: {},
     queries: {}
@@ -938,7 +939,9 @@ export function installFoundry({ users = [] } = {}) {
     },
     abstract: { TypeDataModel, DataModelValidationError },
     data: { fields: new Proxy(FIELDS, { get: (t, k) => t[k] ?? DataField }) },
+    dice: { Roll },
     documents: {
+      Actor, ChatMessage, Item,
       collections: {
         // v13: Actors.registerSheet / unregisterSheet (static, delegating to DocumentSheetConfig)
         Actors: {

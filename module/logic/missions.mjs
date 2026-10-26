@@ -2,7 +2,7 @@
  * The mission catalog (Foundry-free): the five missions of the rulebook
  * (Part Three, chapters 13–17; DESIGN D20) as data. The simulator plays them
  * (sim/scenarios.mjs re-exports this file), the book's obstacle tables are
- * generated from them (book/tools/mission-tables.mjs), and the Foundry mission
+ * built from them (book/tools/mission-tables.mjs), and the Foundry mission
  * tracker runs them, so all three always agree.
  *
  * Obstacle fields (CORE-RULES §6):

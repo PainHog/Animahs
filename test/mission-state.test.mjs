@@ -232,6 +232,16 @@ test("a Critical's extra progress when it's needed; a Push for a Critical adds o
   assert.equal(W2.state.progress[ob2.uid].points, 2, "the upgrade adds the extra progress once");
   W2.do(M.applyRoll, { messageId: mid, actorId: "priya", result: "crit", missionId: "mission1", context: "obstacle", obstacleUid: ob2.uid }, {});
   assert.equal(W2.state.progress[ob2.uid].points, 2);
+  // the last roll at a group obstacle Pushed into a Critical after it ended: still an Edge
+  const W3 = world();
+  W3.start();
+  W3.do(M.chooseWay, 0);
+  const ob3 = M.currentObstacle(W3.state);
+  W3.state.edges = 0;
+  for (const id of ["maya", "theo", "priya", "jonah"]) W3.roll(id, "success");
+  assert.equal(W3.state.progress[ob3.uid].ended, true);
+  W3.do(M.applyRoll, { messageId: `m${W3.n}`, actorId: "jonah", result: "crit", missionId: "mission1", context: "obstacle", obstacleUid: ob3.uid }, {});
+  assert.equal(W3.state.edges, 1);
 });
 
 test("group obstacles: Scent once when it ends; rounds from the third cost; Escape Partials are free", () => {

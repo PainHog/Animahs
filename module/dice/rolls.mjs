@@ -18,6 +18,7 @@ import { getState, mutate } from "../mission/store.mjs";
 import { runOp, registerOp, owns } from "../net/gm-ops.mjs";
 import { planFor, planInput, inParty, packFree } from "./roll-context.mjs";
 import { cantAct } from "../actors/actor-ops.mjs";
+import { ChatMessageClass, rollD6 } from "../foundry-classes.mjs";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const setting = key => game.settings.get(SYSTEM_ID, key);
@@ -60,7 +61,7 @@ export async function performRoll(actor, choices) {
 
 /** Roll the plan's pool and post the card. */
 async function rollAndPost(actor, choices, plan, { state, autoWild, input }) {
-  const roll = await new Roll(`${plan.pool}d6`).evaluate();
+  const roll = await rollD6(plan.pool);
   const faces = roll.dice[0].results.map(r => r.result);
   const res = resolveFaces(faces, plan.difficulty);
   const running = inParty(state, actor);
@@ -97,14 +98,14 @@ async function rollAndPost(actor, choices, plan, { state, autoWild, input }) {
   };
   card.final = !pendingReactions(card, actor, state);
   const msg = {
-    speaker: ChatMessage.getSpeaker({ actor }),
+    speaker: ChatMessageClass().getSpeaker({ actor }),
     content: await renderRollCard(card),
     rolls: [roll],
     sound: CONFIG.sounds?.dice,
     flags: { [FLAG]: { card } },
   };
-  ChatMessage.applyRollMode?.(msg, game.settings.get("core", "rollMode"));
-  return ChatMessage.create(msg);
+  ChatMessageClass().applyRollMode?.(msg, game.settings.get("core", "rollMode"));
+  return ChatMessageClass().create(msg);
 }
 
 /* ------------------------------------------------------------------ reactions */
@@ -168,7 +169,7 @@ export async function push(message, by = "wild") {
   const r = reactions(card, actor, state);
   if (!(by === "burst" ? r.burst : r.push)) { ui.notifications.warn(L("MG.Reason.cantPush")); return null; }
   const idx = pushIndices(card.faces);
-  const roll = await new Roll(`${idx.length}d6`).evaluate();
+  const roll = await rollD6(idx.length);
   game.dice3d?.showForRoll?.(roll, game.user, true);
   const newFaces = roll.dice[0].results.map(x => x.result);
   const res = resolveFaces(applyPush(card.faces, newFaces), card.difficulty);

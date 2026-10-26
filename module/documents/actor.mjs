@@ -5,8 +5,9 @@
  */
 import { ANIMALS } from "../config.mjs";
 import { SYSTEM_PATH } from "../contracts.mjs";
+import { BaseActor } from "../foundry-classes.mjs";
 
-export class MGActor extends Actor {
+export class MGActor extends BaseActor {
   async _preCreate(data, options, user) {
     const allowed = await super._preCreate?.(data, options, user);
     if (allowed === false) return false;

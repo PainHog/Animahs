@@ -6,6 +6,7 @@
 import { SYSTEM_PATH, TEMPLATES, APPS } from "../contracts.mjs";
 import { FRAMES, FRAME_ORDER, ANIMALS, PERKS, PERK_ORDER, APPROACHES, APPROACH_INFO, TAG_INFO, HUMAN_SPREAD, animalsOf } from "../config.mjs";
 import { rollCharacter, validateBonded } from "../logic/character.mjs";
+import { rollD6 } from "../foundry-classes.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -75,7 +76,7 @@ export class CharacterBuilder extends HandlebarsApplicationMixin(ApplicationV2) 
 
   /** §11 by the dice (Foundry's Roll, so the dice show), duplicate animals rerolled. */
   async rollAll() {
-    const roll = await new Roll("40d6").evaluate();
+    const roll = await rollD6(40);
     const faces = roll.dice[0].results.map(r => r.result);
     let i = 0;
     const d6 = () => faces[i++] ?? (1 + Math.floor(Math.random() * 6));

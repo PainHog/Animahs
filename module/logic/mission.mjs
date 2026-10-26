@@ -381,9 +381,10 @@ function applyUpgrade(S, card, prev) {
   if (card.context === "obstacle") {
     const ob = currentObstacle(S);
     const p = ob && progressOf(S, ob.uid);
-    if (!ob || !p || ob.uid !== card.obstacleUid || p.ended) return S;
+    if (!ob || !p || ob.uid !== card.obstacleUid) return S;
     if (card.result === "crit" && better("crit", prev.result) && prev.result === "success") {
-      if (ob.kind === "group") gainEdge(S, "crit");
+      // the extra progress if it's still needed, otherwise an Edge (also once the obstacle has ended)
+      if (ob.kind === "group" || p.ended) gainEdge(S, "crit");
       else if (p.points < ob.progress) {
         p.points += 1;
         log(S, "MG.Log.progress", { who: nameOf(S, card.actorId), points: p.points, need: ob.progress, name: ob.name });
