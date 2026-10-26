@@ -1,0 +1,8 @@
+<div class="morphgame mg-card mg-notice mg-kind-{{kind}}">
+  <header class="mg-card-head">
+    {{#if img}}<img src="{{img}}" alt="" class="mg-portrait"/>{{/if}}
+    <h3>{{title}}</h3>
+  </header>
+  {{#if lines.length}}<ul class="mg-notice-lines">{{#each lines}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+  <div class="mg-card-actions"></div>
+</div>

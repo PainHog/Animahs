@@ -1,8 +1,8 @@
 {
   "id": "morphgame",
   "type": "system",
-  "title": "Morph Game",
-  "description": "The companion Foundry VTT game system for Morph Game, a tabletop roleplaying game by Richard Moore. Early skeleton: the game's rules are not written yet.",
+  "title": "Second Nature",
+  "description": "The Foundry VTT game system for Second Nature, a tabletop roleplaying game by Richard Moore: kids who can become animals take on the Gilded Hunt. Character sheets with both forms, a roll dialog that applies every Strength, Weakness, perk and the Cap, roll cards with Push and the animal perks, and a Mission Tracker that runs Scent, obstacles, Clashes, the Hunt and the campaign for you. Includes the six ready-made Bonded, the threats, the five missions and the rules.",
   "version": "0.1.0",
   "compatibility": {
     "minimum": "13",
@@ -27,8 +27,33 @@
       "path": "lang/en.json"
     }
   ],
+  "documentTypes": {
+    "Actor": {
+      "bonded": { "htmlFields": ["notes"] },
+      "threat": { "htmlFields": ["notes"] }
+    }
+  },
   "packs": [],
+  "relationships": {
+    "systems": [],
+    "requires": [],
+    "recommends": [
+      {
+        "id": "dice-so-nice",
+        "type": "module",
+        "reason": "3D dice for every roll and Push."
+      }
+    ]
+  },
+  "primaryTokenAttribute": "wild",
+  "secondaryTokenAttribute": "hurt",
   "socket": true,
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "hbs", "json"],
+      "paths": ["styles", "templates", "lang"]
+    }
+  },
   "url": "https://github.com/PainHog/Animahs",
   "bugs": "https://github.com/PainHog/Animahs/issues",
   "manifest": "https://github.com/PainHog/Animahs/releases/latest/download/system.json",

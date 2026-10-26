@@ -1,0 +1,35 @@
+<section class="mg-sheet-body mg-threat-body">
+  <header class="mg-sheet-head">
+    <img src="{{img}}" alt="" class="mg-portrait-large" data-action="editImage" data-edit="img"/>
+    <div class="mg-head-fields">
+      <input class="mg-name" type="text" name="name" value="{{name}}"/>
+      <label class="mg-field">{{localize "MG.ThreatSheet.kind"}}
+        <select name="system.kind">{{#each kindOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+    </div>
+  </header>
+
+  {{#if fightable}}
+  <section class="mg-panel mg-threat-stats">
+    <label class="mg-field mg-narrow">{{localize "MG.ThreatSheet.difficulty"}} <input type="number" name="system.difficulty" value="{{system.difficulty}}" min="1" max="6"/></label>
+    <label class="mg-field mg-narrow">{{localize "MG.ThreatSheet.toughness"}} <input type="number" name="system.toughness" value="{{system.toughness}}" min="1" max="12"/></label>
+    <label class="mg-field mg-narrow">{{localize "MG.ThreatSheet.harm"}} <input type="number" name="system.harm" value="{{system.harm}}" min="0" max="6"/></label>
+  </section>
+  <section class="mg-panel">
+    <h4>{{localize "MG.ThreatSheet.harmTaken"}} {{#if out}}<span class="mg-chip used">{{localize "MG.ThreatSheet.out"}}</span>{{/if}}</h4>
+    <div class="mg-pips">{{#each harmBoxes}}<button type="button" class="mg-box {{#if filled}}filled{{/if}}" data-action="harmBox" data-n="{{n}}" aria-label="{{n}}"></button>{{/each}}</div>
+  </section>
+  {{/if}}
+
+  <section class="mg-panel">
+    <h4>{{localize "MG.ThreatSheet.special"}}</h4>
+    <p>{{#if specialName}}<strong>{{specialName}}:</strong> {{/if}}{{specialRule}}</p>
+    <label class="mg-field">{{localize "MG.ThreatSheet.specialText"}} <input type="text" name="system.special" value="{{system.special}}"/></label>
+    <p class="mg-muted">{{rulebook}} {{#if owner}}<button type="button" data-action="resetKind">{{localize "MG.ThreatSheet.reset"}}</button>{{/if}}</p>
+  </section>
+
+  <section class="mg-panel mg-notes">
+    <h4>{{localize "MG.Sheet.notes"}}</h4>
+    <textarea name="system.notes" rows="5">{{system.notes}}</textarea>
+  </section>
+</section>

@@ -35,7 +35,7 @@ const SYSTEM_ID = JSON.parse(readFileSync(join(ROOT, "system.json"), "utf8")).id
 
 /* ------------------------------------------------------------------ state -- */
 
-export const log = { errors: [], warnings: [], infos: [], rolls: [], dialogs: [], emits: [], work: 0 };
+export const log = { errors: [], warnings: [], infos: [], rolls: [], dialogs: [], emits: [], sheets: [], missingI18n: new Set(), work: 0 };
 const als = new AsyncLocalStorage();
 let defaultUser = null;
 
@@ -257,10 +257,51 @@ function recordError(where, err) {
   log.errors.push(`${where}: ${err?.stack ?? err?.message ?? err}`);
 }
 
+/* ------------------------------------------------------------ i18n -- */
+
+/**
+ * Localization like Foundry's: the system's language files are merged (dotted keys
+ * expanded), `localize` returns the key itself when a string is missing, `format`
+ * fills {placeholders}. Missing keys in the system's own namespace are recorded in
+ * `log.missingI18n` so tests can assert every UI string exists.
+ */
+const I18N_PREFIX = "MG.";
+function loadTranslations() {
+  const manifest = JSON.parse(readFileSync(join(ROOT, "system.json"), "utf8"));
+  const out = {};
+  for (const l of manifest.languages ?? []) {
+    if (l.lang !== "en") continue;
+    try { mergeObject(out, expandObject(JSON.parse(readFileSync(join(ROOT, l.path), "utf8")))); } catch { /* invalid JSON is the validator's job */ }
+  }
+  return out;
+}
+function makeI18n() {
+  const translations = loadTranslations();
+  const localize = key => {
+    const v = getProperty(translations, String(key ?? ""));
+    if (typeof v === "string") return v;
+    if (String(key).startsWith(I18N_PREFIX)) log.missingI18n.add(String(key));
+    return String(key ?? "");
+  };
+  return {
+    lang: "en",
+    translations,
+    has: key => typeof getProperty(translations, String(key ?? "")) === "string",
+    localize,
+    format: (key, data = {}) => localize(key).replace(/{([^}]+)}/g, (m, k) => (k in (data ?? {}) ? String(data[k]) : m))
+  };
+}
+
 /* ------------------------------------------------------- Handlebars -- */
 
 const Handlebars = HandlebarsLib.create();
-Handlebars.registerHelper("localize", s => String(s ?? ""));
+// Foundry's helper: {{localize "KEY"}} or {{localize "KEY" name=value}} (format).
+Handlebars.registerHelper("localize", (value, options) => {
+  const hash = options?.hash ?? {};
+  const i18n = globalThis.game?.i18n;
+  if (!i18n) return String(value ?? "");
+  return Object.keys(hash).length ? i18n.format(value, hash) : i18n.localize(value);
+});
 const templateCache = new Map();
 async function renderTemplate(path, data) {
   touch();
@@ -348,6 +389,116 @@ class ClientSettings {
   }
 }
 
+/* -------------------------------------------------------- Data models -- */
+
+/**
+ * A small, faithful subset of foundry.data.fields: each field knows its initial value,
+ * cleans (fills in missing values, drops unknown keys) and validates like Foundry does —
+ * a NumberField outside min/max or not an integer, a StringField not among its choices,
+ * or a wrong type makes a document update throw, so writing bad data fails loudly.
+ */
+class DataModelValidationError extends Error {}
+class DataField {
+  constructor(options = {}) {
+    this.options = { ...this.constructor._defaults, ...options };
+    this.nullable = !!this.options.nullable;
+  }
+  static get _defaults() { return { nullable: false, initial: undefined }; }
+  getInitialValue() { const i = this.options.initial; return typeof i === "function" ? i() : clone(i); }
+  clean(value) { return value === undefined ? this.getInitialValue() : value; }
+  validate(value, path) {
+    if (value === null || value === undefined) {
+      if (this.nullable || value === undefined) return;
+      throw new DataModelValidationError(`${path}: may not be null`);
+    }
+    this._validateType(value, path);
+  }
+  _validateType() {}
+}
+class NumberField extends DataField {
+  static get _defaults() { return { nullable: true, initial: null, integer: false, min: undefined, max: undefined }; }
+  clean(value) {
+    if (value === undefined) return this.getInitialValue();
+    if (value === null || value === "") return this.nullable ? null : this.getInitialValue();
+    const n = Number(value);
+    return Number.isNaN(n) ? value : n;
+  }
+  _validateType(v, path) {
+    if (typeof v !== "number" || !Number.isFinite(v)) throw new DataModelValidationError(`${path}: must be a finite number (got ${JSON.stringify(v)})`);
+    if (this.options.integer && !Number.isInteger(v)) throw new DataModelValidationError(`${path}: must be an integer (got ${v})`);
+    if (this.options.min !== undefined && v < this.options.min) throw new DataModelValidationError(`${path}: must be at least ${this.options.min} (got ${v})`);
+    if (this.options.max !== undefined && v > this.options.max) throw new DataModelValidationError(`${path}: must be at most ${this.options.max} (got ${v})`);
+  }
+}
+class StringField extends DataField {
+  static get _defaults() { return { nullable: false, initial: "", blank: true, choices: undefined }; }
+  clean(value) { return value === undefined ? this.getInitialValue() : (value === null ? (this.nullable ? null : this.getInitialValue()) : String(value)); }
+  _validateType(v, path) {
+    if (typeof v !== "string") throw new DataModelValidationError(`${path}: must be a string`);
+    if (v === "") { if (this.options.blank) return; throw new DataModelValidationError(`${path}: may not be blank`); }
+    const ch = typeof this.options.choices === "function" ? this.options.choices() : this.options.choices;
+    if (ch) {
+      const keys = Array.isArray(ch) ? ch : Object.keys(ch);
+      if (!keys.includes(v)) throw new DataModelValidationError(`${path}: "${v}" is not a valid choice`);
+    }
+  }
+}
+class HTMLField extends StringField {}
+class BooleanField extends DataField {
+  static get _defaults() { return { nullable: false, initial: false }; }
+  clean(value) { return value === undefined || value === null ? this.getInitialValue() : !!value; }
+  _validateType(v, path) { if (typeof v !== "boolean") throw new DataModelValidationError(`${path}: must be a boolean`); }
+}
+class ObjectField extends DataField {
+  static get _defaults() { return { nullable: false, initial: () => ({}) }; }
+  clean(value) { return isObj(value) ? value : this.getInitialValue(); }
+  _validateType(v, path) { if (!isObj(v)) throw new DataModelValidationError(`${path}: must be an object`); }
+}
+class ArrayField extends DataField {
+  constructor(element, options = {}) { super(options); this.element = element; }
+  static get _defaults() { return { nullable: false, initial: () => [] }; }
+  clean(value) {
+    if (value === undefined || value === null) return this.getInitialValue();
+    const arr = Array.isArray(value) ? value : (isObj(value) ? Object.values(value) : [value]);
+    return arr.map(v => (this.element ? this.element.clean(v) : v));
+  }
+  _validateType(v, path) {
+    if (!Array.isArray(v)) throw new DataModelValidationError(`${path}: must be an array`);
+    v.forEach((x, i) => this.element?.validate(x, `${path}.${i}`));
+  }
+}
+class SetField extends ArrayField {}
+class SchemaField extends DataField {
+  constructor(fields = {}, options = {}) { super(options); this.fields = fields; }
+  static get _defaults() { return { nullable: false, initial: undefined }; }
+  getInitialValue() { return Object.fromEntries(Object.entries(this.fields).map(([k, f]) => [k, f.getInitialValue()])); }
+  clean(value) {
+    const v = isObj(value) ? value : {};
+    return Object.fromEntries(Object.entries(this.fields).map(([k, f]) => [k, f.clean(v[k])]));
+  }
+  _validateType(v, path) {
+    if (!isObj(v)) throw new DataModelValidationError(`${path}: must be an object`);
+    for (const [k, f] of Object.entries(this.fields)) f.validate(v[k], `${path}.${k}`);
+  }
+}
+const FIELDS = { DataField, NumberField, StringField, HTMLField, BooleanField, ObjectField, ArrayField, SetField, SchemaField };
+
+const schemas = new WeakMap();
+/** foundry.abstract.TypeDataModel: a system data model with a schema (initialised, cleaned, validated). */
+class TypeDataModel {
+  static defineSchema() { return {}; }
+  static get schema() {
+    if (!schemas.has(this)) schemas.set(this, new SchemaField(this.defineSchema()));
+    return schemas.get(this);
+  }
+  /** Fake-only: source data with every default filled in and unknown keys dropped. */
+  static _fakeClean(source) { return this.schema.clean(source ?? {}); }
+  /** Fake-only: throw a validation error for bad data. */
+  static _fakeValidate(source) { this.schema.validate(source, "system"); }
+  prepareBaseData() {}
+  prepareDerivedData() {}
+}
+
 /* ---------------------------------------------------------- Documents -- */
 
 const OWNER = 3;
@@ -420,7 +571,10 @@ export class Actor extends BaseDocument {
     this.img = data.img ?? "icons/svg/mystery-man.svg";
     this.flags = clone(data.flags ?? {});
     this.ownership = clone(data.ownership ?? { default: 0 });
-    this.system = clone(data.system ?? {});
+    const Model = CONFIG.Actor.dataModels?.[this.type];
+    this.system = Model?._fakeClean ? Model._fakeClean(clone(data.system ?? {})) : clone(data.system ?? {});
+    if (Model?._fakeValidate) Model._fakeValidate(this.system);
+    this.prototypeToken = clone(data.prototypeToken ?? {});
     this.items = new Collection();
     const IC = CONFIG.Item.documentClass ?? Item;
     for (const i of data.items ?? []) this.items.push(new IC(i, { parent: this }));
@@ -446,7 +600,19 @@ export class Actor extends BaseDocument {
   async update(changes, options = {}) {
     touch();
     if (!this.isOwner) throw new Error(`${game.user.name} lacks permission to update Actor ${this.name}`);
-    const diff = applyUpdate(this, changes);
+    const diff = expandObject(changes);
+    // Like Foundry: the system data is cleaned (form strings cast to numbers, unknown keys
+    // dropped) and validated BEFORE anything changes; bad data throws.
+    const Model = CONFIG.Actor.dataModels?.[this.type];
+    let nextSystem = null;
+    if (diff.system && Model?._fakeClean) {
+      nextSystem = Model._fakeClean(mergeObject(clone(this.system), diff.system));
+      Model._fakeValidate(nextSystem);
+    }
+    const { system, ...rest } = diff;
+    mergeObject(this, rest);
+    if (nextSystem) this.system = nextSystem;
+    else if (system) mergeObject(this.system, system);
     this.prepareData();
     broadcast("updateActor", this, diff, options, game.user.id);
     return this;
@@ -650,6 +816,27 @@ export function fakeForm(values = {}) {
   return { elements, querySelectorAll: () => [], querySelector: () => null };
 }
 
+/**
+ * foundry.applications.ux.FormDataExtended: a form's named controls as { name: value }
+ * (checkboxes as booleans, number inputs as numbers; dotted names stay flat, as in Foundry).
+ */
+class FormDataExtended {
+  constructor(form) {
+    this.object = {};
+    for (const el of form?.descendants?.() ?? []) {
+      const name = el.attributes?.name;
+      if (!name || el.disabled) continue;
+      if (el.tagName === "INPUT") {
+        const type = (el.attributes.type ?? "text").toLowerCase();
+        if (type === "checkbox") this.object[name] = el.checked;
+        else if (type === "radio") { if (el.checked) this.object[name] = el.value; }
+        else if (type === "number" || type === "range") this.object[name] = el.value === "" ? null : Number(el.value);
+        else this.object[name] = el.value;
+      } else if (el.tagName === "SELECT" || el.tagName === "TEXTAREA") this.object[name] = el.value;
+    }
+  }
+}
+
 /* -------------------------------------------------------------- install -- */
 
 export let game;
@@ -665,7 +852,7 @@ export function installFoundry({ users = [] } = {}) {
   defaultUser = userDocs.find(u => u.isGM) ?? userDocs[0];
 
   CONFIG = globalThis.CONFIG = {
-    Actor: { dataModels: {}, documentClass: Actor },
+    Actor: { dataModels: {}, documentClass: Actor, trackableAttributes: {} },
     Item: { dataModels: {}, documentClass: Item },
     Combat: {},
     queries: {}
@@ -685,7 +872,7 @@ export function installFoundry({ users = [] } = {}) {
     scenes: { viewed: null },
     packs: new Map(),
     combat: null,
-    i18n: { localize: s => s, format: s => s },
+    i18n: makeI18n(),
     socket: {
       _listeners: new Map(),
       on(name, fn) { (this._listeners.get(name) ?? this._listeners.set(name, []).get(name)).push(fn); },
@@ -730,15 +917,24 @@ export function installFoundry({ users = [] } = {}) {
       randomID, deepClone: clone, duplicate: clone, getProperty, setProperty, hasProperty, mergeObject: (a, b) => mergeObject(a, b),
       expandObject, isNewerVersion, escapeHTML, debounce: fn => fn
     },
-    abstract: { TypeDataModel: class { static defineSchema() { return {}; } } },
-    data: { fields: new Proxy({}, { get: () => class { constructor(...a) { this.args = a; } } }) },
+    abstract: { TypeDataModel, DataModelValidationError },
+    data: { fields: new Proxy(FIELDS, { get: (t, k) => t[k] ?? DataField }) },
+    documents: {
+      collections: {
+        // v13: Actors.registerSheet / unregisterSheet (static, delegating to DocumentSheetConfig)
+        Actors: {
+          registerSheet(scope, cls, options = {}) { log.sheets.push({ document: "Actor", scope, cls, options }); },
+          unregisterSheet(scope, cls, options = {}) { log.sheets.push({ document: "Actor", scope, cls, options, unregister: true }); }
+        }
+      }
+    },
     applications: {
       api: { ApplicationV2, HandlebarsApplicationMixin, DialogV2, DocumentSheetV2 },
       sheets: { ActorSheetV2, ItemSheetV2 },
       apps: { DocumentSheetConfig: { registerSheet() {}, unregisterSheet() {} } },
       handlebars: { renderTemplate },
       instances,
-      ux: { TextEditor: { implementation: { enrichHTML: async s => String(s ?? ""), getDragEventData: () => null } } }
+      ux: { TextEditor: { implementation: { enrichHTML: async s => String(s ?? ""), getDragEventData: () => null } }, FormDataExtended }
     }
   };
   process.on("unhandledRejection", err => recordError("unhandled rejection", err));

@@ -1,0 +1,132 @@
+<section class="mg-sheet-body {{#if isAnimal}}form-animal{{else}}form-human{{/if}}">
+  <header class="mg-sheet-head">
+    <img src="{{img}}" alt="" class="mg-portrait-large" data-action="editImage" data-edit="img"/>
+    <div class="mg-head-fields">
+      <input class="mg-name" type="text" name="name" value="{{name}}" placeholder="{{localize 'MG.Sheet.name'}}"/>
+      <div class="mg-field-row">
+        <label class="mg-field mg-narrow">{{localize "MG.Sheet.age"}} <input type="number" name="system.age" value="{{system.age}}" min="0" max="99"/></label>
+        <label class="mg-field">{{localize "MG.Sheet.mark"}} <input type="text" name="system.mark" value="{{system.mark}}"/></label>
+      </div>
+      <label class="mg-field">{{localize "MG.Sheet.loves"}} <input type="text" name="system.loves" value="{{system.loves}}"/></label>
+    </div>
+  </header>
+
+  {{#if hasProblems}}
+  <div class="mg-problems">
+    <ul>{{#each problems}}<li>{{this}}</li>{{/each}}</ul>
+    {{#if owner}}<button type="button" data-action="builder"><i class="fa-solid fa-wand-magic-sparkles"></i> {{localize "MG.Sheet.builder"}}</button>{{/if}}
+  </div>
+  {{/if}}
+
+  <section class="mg-panel mg-bond">
+    <div class="mg-field-row">
+      <label class="mg-field">{{localize "MG.Sheet.frame"}}
+        <select name="system.frame">{{#each frameOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+      <label class="mg-field">{{localize "MG.Sheet.animal"}}
+        <select name="system.animal">{{#each animalOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}{{#if taken}} ✕{{/if}}</option>{{/each}}</select>
+      </label>
+      <label class="mg-field">{{localize "MG.Sheet.perk"}}
+        <select name="system.perk">{{#each perkOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+      {{#if hasPerk2}}
+      <label class="mg-field">{{localize "MG.Sheet.perk2"}}
+        <select name="system.perk2">{{#each perk2Options}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+      {{/if}}
+    </div>
+    {{#if frame}}
+    <p class="mg-frame-line"><strong>{{frame.label}}</strong> · <span class="good">{{localize "MG.Sheet.strengths"}}: {{frame.strengths}}</span> · <span class="bad">{{localize "MG.Sheet.weaknesses"}}: {{frame.weaknesses}}</span></p>
+    {{/if}}
+    {{#if animal}}
+    <p class="mg-perk"><strong>{{animal.label}} · {{animal.perk}}</strong> <em>({{localize "MG.Sheet.animalPerk"}})</em>: {{animal.text}}{{#if animal.scene}} <span class="mg-chip {{#if animal.used}}used{{/if}}">{{#if animal.used}}{{localize "MG.Sheet.usedScene"}}{{else}}{{localize "MG.Sheet.readyScene"}}{{/if}}</span>{{/if}}</p>
+    {{/if}}
+    {{#each perks}}
+    <p class="mg-perk"><strong>{{label}}</strong> <em>({{localize "MG.Sheet.humanPerk"}}{{#if human}}, {{localize "MG.Sheet.humanFormOnly"}}{{/if}})</em>: {{text}}</p>
+    {{/each}}
+    {{#if wildSense}}<p class="mg-perk">{{wildSense}}</p>{{/if}}
+  </section>
+
+  <section class="mg-panel mg-ratings">
+    <table>
+      <thead>
+        <tr><th></th>{{#each ratings}}<th title="{{hint}}">{{label}}</th>{{/each}}</tr>
+      </thead>
+      <tbody>
+        <tr class="mg-row-human {{#unless isAnimal}}current{{/unless}}">
+          <th>{{localize "MG.Form.human"}}</th>
+          {{#each ratings}}<td><input type="number" name="{{humanName}}" value="{{human}}" min="0" max="3"/></td>{{/each}}
+        </tr>
+        <tr class="mg-row-animal {{#if isAnimal}}current{{/if}}">
+          <th>{{localize "MG.Form.animal"}}</th>
+          {{#each ratings}}<td>{{animal}}</td>{{/each}}
+        </tr>
+        <tr class="mg-row-roll">
+          <th>{{formLabel}}</th>
+          {{#each ratings}}<td><button type="button" class="mg-roll-btn" data-action="roll" data-approach="{{key}}" {{#unless canRoll}}disabled{{/unless}}><i class="fa-solid fa-dice-six"></i> {{now}}</button></td>{{/each}}
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="mg-panel mg-tracks">
+    <div class="mg-track">
+      <h4>{{localize "MG.Sheet.wild"}} <small>{{wild.value}} / {{wild.max}}</small></h4>
+      <div class="mg-pips">{{#each wildPips}}<button type="button" class="mg-pip {{#if filled}}filled{{/if}}" data-action="wildPip" data-n="{{n}}" aria-label="{{n}}"></button>{{/each}}</div>
+    </div>
+    <div class="mg-track">
+      <h4>{{localize "MG.Sheet.hurt"}}</h4>
+      <div class="mg-pips">{{#each hurtBoxes}}<button type="button" class="mg-box {{#if filled}}filled{{/if}}" data-action="hurtBox" data-n="{{n}}" aria-label="{{n}}"></button>{{/each}}</div>
+    </div>
+    <div class="mg-track mg-shift">
+      <h4>{{formLabel}}</h4>
+      <button type="button" data-action="shift" {{#if shift.disabled}}disabled{{/if}}><i class="fa-solid fa-paw"></i> {{shift.label}}</button>
+      <p class="mg-muted">{{shift.note}}</p>
+    </div>
+  </section>
+
+  <section class="mg-panel mg-statuses">
+    {{#each statuses}}<button type="button" class="mg-status {{#if active}}active{{/if}}" data-action="status" data-key="{{key}}" title="{{hint}}">{{label}}</button>{{/each}}
+  </section>
+
+  {{#if owner}}
+  <section class="mg-panel mg-actions">
+    {{#if hasPatchTargets}}
+    <div><span>{{localize "MG.Sheet.patchUp"}}:</span>
+      {{#each patchTargets}}<button type="button" data-action="patchUp" data-target="{{id}}">{{name}}</button>{{/each}}
+    </div>
+    {{/if}}
+    {{#if hasFreeTargets}}
+    <div><span>{{localize "MG.Sheet.free"}}:</span>
+      {{#each freeTargets}}<button type="button" data-action="freeNetted" data-target="{{id}}">{{name}}</button>{{/each}}
+    </div>
+    {{/if}}
+    <div>
+      <button type="button" data-action="tracker"><i class="fa-solid fa-paw"></i> {{localize "MG.Tracker.open"}}</button>
+      <button type="button" data-action="builder"><i class="fa-solid fa-wand-magic-sparkles"></i> {{localize "MG.Sheet.builder"}}</button>
+    </div>
+  </section>
+  {{/if}}
+
+  <section class="mg-panel mg-growth">
+    <h4>{{localize "MG.Sheet.growth"}}
+      <input type="number" name="system.growth.value" value="{{growth.value}}" min="0" max="6" class="mg-inline"/>
+      <small>{{localize "MG.Sheet.picksLeft" n=growth.left}}</small>
+    </h4>
+    {{#if growth.picks.length}}
+    <ul class="mg-picks">{{#each growth.picks}}<li>{{label}} <button type="button" class="mg-icon" data-action="removePick" data-index="{{idx}}" aria-label="✕">✕</button></li>{{/each}}</ul>
+    {{/if}}
+    {{#if growth.left}}
+    <div class="mg-pick-add">
+      {{#each growth.pickTypes}}<button type="button" data-action="addPick" data-type="{{type}}" title="{{hint}}" {{#unless ok}}disabled{{/unless}}>{{label}}</button>{{/each}}
+      <select data-pick="approach">{{#each pickApproaches}}<option value="{{key}}">{{label}}</option>{{/each}}</select>
+      <select data-pick="tag">{{#each pickTags}}<option value="{{key}}">{{label}}</option>{{/each}}</select>
+    </div>
+    {{/if}}
+  </section>
+
+  <section class="mg-panel mg-notes">
+    <h4>{{localize "MG.Sheet.notes"}}</h4>
+    <textarea name="system.notes" rows="5">{{system.notes}}</textarea>
+  </section>
+</section>

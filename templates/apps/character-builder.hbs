@@ -1,0 +1,32 @@
+<section class="mg-builder-body">
+  <p class="mg-muted">{{localize "MG.Builder.intro"}}</p>
+  <label class="mg-field">{{localize "MG.Sheet.frame"}}
+    <select name="frame"><option value="">—</option>{{#each frames}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+  </label>
+  <ul class="mg-muted mg-small">{{#each frames}}{{#if selected}}<li>{{line}}</li>{{/if}}{{/each}}</ul>
+  <label class="mg-field">{{localize "MG.Sheet.animal"}}
+    <select name="animal"><option value="">—</option>{{#each animals}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}{{#if taken}} ✕{{/if}}</option>{{/each}}</select>
+  </label>
+  <ul class="mg-muted mg-small">{{#each animals}}{{#if selected}}<li>{{text}}</li>{{/if}}{{/each}}</ul>
+  <label class="mg-field">{{localize "MG.Sheet.perk"}}
+    <select name="perk"><option value="">—</option>{{#each perks}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+  </label>
+  <ul class="mg-muted mg-small">{{#each perks}}{{#if selected}}<li>{{text}}</li>{{/if}}{{/each}}</ul>
+  <fieldset>
+    <legend>{{localize "MG.Builder.ratings" spread=spread}}</legend>
+    <div class="mg-field-row">
+      {{#each ratings}}
+      <label class="mg-field mg-narrow">{{label}}
+        <select name="human.{{key}}">{{#each options}}<option value="{{n}}" {{#if selected}}selected{{/if}}>{{n}}</option>{{/each}}</select>
+      </label>
+      {{/each}}
+    </div>
+  </fieldset>
+  {{#if dice}}<p class="mg-muted">{{localize "MG.Builder.rolled"}} {{dice}}</p>{{/if}}
+  {{#each problems}}<p class="bad">{{this}}</p>{{/each}}
+  <footer class="mg-buttons">
+    <button type="button" data-action="roll"><i class="fa-solid fa-dice"></i> {{localize "MG.Builder.rollAll"}}</button>
+    <button type="submit" {{#unless ok}}disabled{{/unless}}><i class="fa-solid fa-check"></i> {{localize "MG.Builder.apply"}}</button>
+    <button type="button" data-action="cancel">{{localize "MG.RollDialog.cancel"}}</button>
+  </footer>
+</section>
