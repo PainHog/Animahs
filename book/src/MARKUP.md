@@ -1,13 +1,14 @@
-# Morph Game rulebook — source markup
+# Second Nature rulebook — source markup
 
 The book is plain HTML fragments + one stylesheet, paginated by Chromium's native
 CSS paged media and printed to PDF (`npm run build:book`). Every chapter is one
 file in `book/src/chapters/NN-slug.html`, concatenated in filename order.
 
-**The author decides the game.** Never add rules, numbers, names or flavour text
-that Richard Moore has not approved. Text not written yet is marked
-`class="placeholder"` and starts with "PLACEHOLDER —", so it shows on every proof.
-Record every ruling or text change in `book/REVIEW.md`.
+**Draft first, then Richard revises** (`WORKFLOW.md`). Rules text follows
+`docs/CORE-RULES.md` and the Decisions log in `docs/DESIGN.md`; never add a rule or
+number that isn't there. Text not written yet is marked `class="placeholder"` and
+starts with "PLACEHOLDER —", so it shows on every proof. Record every ruling or text
+change in `book/REVIEW.md`.
 
 ## File order
 

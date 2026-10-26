@@ -1,20 +1,37 @@
-// Shared drawing primitives for the Morph Game book art.
-// Palette-agnostic: every colour comes from C, which mirrors the PLACEHOLDER
-// tokens at the top of book/src/book.css. Art direction is undecided — when the
-// palette is chosen, change C (and book.css, and book/art/README.md) together.
+// Shared drawing primitives for the Second Nature book art.
+// Every colour comes from C (the book palette, DESIGN D29), which mirrors the
+// tokens at the top of book/src/book.css; change C, book.css and
+// book/art/README.md together.
 // Nothing in here draws a particular character, creature or place; build those
 // in their own modules on top of these primitives (see scenes/placeholders.mjs).
 import { writeFileSync } from "node:fs";
 
 export const OUT = new URL("../../art/", import.meta.url).pathname; // book/art/
 
-/** PLACEHOLDER palette — keep in step with book/src/book.css :root tokens. */
+/** The book palette (DESIGN D29) — keep in step with book/src/book.css :root tokens and book/art/README.md. */
 export const C = {
-  dark: "#3a3a3c", deep: "#222224", soft: "#5c5c60",
-  paper: "#f2f1ee", paper2: "#e3e1dc", edge: "#c9c6bf", light: "#faf9f6",
-  ink: "#161618", inkSoft: "#5a5a5e",
-  accent: "#7a7f88", accentDeep: "#555a63", accentB: "#e4e6ea",
-  alarm: "#7c2a2a", alarmB: "#b5473f", good: "#3f6f52",
+  // page and ink (shared with book.css)
+  dark: "#2f3f52", deep: "#1f2a3a", soft: "#4a5d73",
+  paper: "#f6f0e1", paper2: "#ece2c9", edge: "#d6c8a6", light: "#fbf7ee",
+  ink: "#1d1b19", inkSoft: "#5b5348",
+  accent: "#5f7d4e", accentDeep: "#3e5a34", accentB: "#e6efd6",
+  alarm: "#8c2f24", alarmB: "#c2563f", good: "#3f6f52",
+  // night and the Wild
+  night: "#1f2a3a", night2: "#2f3f52", dusk: "#4a5d73", moon: "#f3e7c4", moonGlow: "#e9d9a8",
+  leaf: "#6f8f4f", leafDeep: "#3e5a34", leafLight: "#a9c27f", wild: "#d9e8b0",
+  // the Gilded Hunt
+  gold: "#c9a227", goldDeep: "#8a6d12", goldLight: "#ead27a", crimson: "#8c2f24", coat: "#3b2f2a",
+  // animals
+  tawny: "#c98f3c", tawnyLight: "#e8c27a", rosette: "#3a2a1a", snow: "#e9e6de", fog: "#b9bcbd",
+  grey: "#8d8f8f", greyDark: "#5e6163", rust: "#b5582a", cream: "#f4e9d2", brown: "#7a5232",
+  brownDark: "#4b3220", hippo: "#8e8189", hippoLight: "#c9b3b8", olive: "#6b6b3a", oliveDark: "#45452a",
+  python: "#a3864a", pythonDark: "#5e4a24", komodo: "#6e6a55", feather: "#6b5a48", owl: "#d9b98c",
+  // people
+  skin1: "#f1c9a5", skin2: "#d9a066", skin3: "#a86b3c", skin4: "#6b4226",
+  hair1: "#2b211b", hair2: "#7a4a24", hair3: "#d8b061", hair4: "#1a1a1a",
+  shirt1: "#c2563f", shirt2: "#5f7d4e", shirt3: "#d9a441", shirt4: "#4a6d8c", shirt5: "#8a5a8c", denim: "#3f5670",
+  // town
+  brick: "#9b5a43", brickDark: "#6e3e2e", wall: "#d8c9a8", wood: "#8a6a45", woodDark: "#5a4430", stone: "#a39c8d", glass: "#a9c3cf", lamp: "#f2d27a",
 };
 
 // Unique ids per piece (clipPaths, gradients) — the book build also namespaces them.

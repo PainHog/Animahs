@@ -1,9 +1,9 @@
 /**
- * MORPH GAME — Rulebook build
+ * SECOND NATURE (codename Morph Game) — Rulebook build
  * ---------------------------------
  * book/src/chapters/*.html (in filename order) + book/src/book.css + book/art/*.svg
- *   → book/dist/morphgame.html  (self-contained print HTML)
- *   → book/dist/Morph_Game_v<version>.pdf
+ *   → book/dist/second-nature.html  (self-contained print HTML)
+ *   → book/dist/Second_Nature_v<version>.pdf
  *
  * Printed by the local Chromium (Playwright) using native CSS paged media:
  * @page sizes/margins, named pages (cover, part), margin-box page numbers.
@@ -31,12 +31,12 @@ const ART = join(BOOK, "art");
 const DIST = join(BOOK, "dist");
 
 /* ------------------------------------------------------------ the book -- */
-const BOOK_TITLE = "Morph Game";             // curly apostrophe, as in the chapters
-const BOOK_DESCRIPTION = "A tabletop roleplaying game by Richard Moore";   // PLACEHOLDER — the real subtitle is not written yet
+const BOOK_TITLE = "Second Nature";          // working title (DESIGN D2)
+const BOOK_DESCRIPTION = "A roleplaying game about kids who become animals, by Richard Moore";
 const AUTHOR = "Richard Moore";
 const VERSION = "0.1";
-const FILE_STEM = "Morph_Game";        // → Morph_Game_v0.1.pdf
-const HTML_NAME = "morphgame.html";   // the self-contained print HTML (digital build only)
+const FILE_STEM = "Second_Nature";     // → Second_Nature_v0.1.pdf
+const HTML_NAME = "second-nature.html"; // the self-contained print HTML (digital build only)
 // An ornament anchored in the top-left corner of the Table of Contents page
 // (an art name from book/art/, or null for none). Art direction is undecided.
 const TOC_ART = null;

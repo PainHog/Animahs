@@ -344,6 +344,20 @@ Measured by forcing one character to each option, with the rest of the group ran
   - The Zoo test mission is about stopping Trappers, not about getting a form, which is where the books' zoo scene (The Gardens) is used. Keep any zoo in the book a plain zoo: no amusement park, and no "Gardens" name.
   - **Stuck** (§9) is temporary and comes from going Down. It isn't the books' permanent trap after a time limit.
 
+### D29 · 2026-10-26 · draft: Art is flat storybook vector art drawn by the book's own art scripts (revises D23)
+- **Decision:** every picture is SVG vector art made by the scripts in `book/tools/art-gen/`.
+  - **Style:** flat shapes with an inked outline, like a storybook.
+  - **Palette** (`book/art/README.md`): deep blue nights, warm cream paper, moss green for the Wild, and gold and crimson for the Gilded Hunt.
+  - **Animals:** true to life in shape, markings and size (ART-CHECKLIST 21–22).
+  - **The change** stays a swirl of light and leaves that hides the body (D23). Never a half-changed body, and never a person-to-animal sequence across a cover.
+  - **Typefaces:** Fraunces for headings, Alegreya for text, Alegreya Sans for labels (all SIL OFL).
+- **Options:** vector art drawn in code now; marked placeholders for a hired artist to paint later.
+- **Why:** Richard chose to have the whole book made now, with art, and revise it afterwards. Vector art can be fixed and re-made as often as the text changes. A painted edition can replace it later, picture for picture, using the same names and shapes.
+
+### D30 · 2026-10-26 · draft: Core rules v0.1b are used to draft the whole book
+- **Decision:** the rulebook (chapters, missions, ready-made characters, sheets) is drafted from `docs/CORE-RULES.md` v0.1b and the simulator's test missions. Richard revises the whole draft afterwards.
+- **Why:** Richard asked for the full book with art now (2026-10-26). This doesn't approve the core rules: they and every draft decision stay open to his revision. When a rule changes, the chapters, the sheets and the simulator change with it.
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
