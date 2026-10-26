@@ -29,11 +29,77 @@
   ],
   "documentTypes": {
     "Actor": {
-      "bonded": { "htmlFields": ["notes"] },
-      "threat": { "htmlFields": ["notes"] }
+      "bonded": {
+        "htmlFields": [
+          "notes"
+        ]
+      },
+      "threat": {
+        "htmlFields": [
+          "notes"
+        ]
+      }
     }
   },
-  "packs": [],
+  "packs": [
+    {
+      "name": "ready-made-bonded",
+      "label": "Ready-Made Bonded",
+      "path": "packs/ready-made-bonded",
+      "type": "Actor",
+      "system": "morphgame",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "threats",
+      "label": "Threats",
+      "path": "packs/threats",
+      "type": "Actor",
+      "system": "morphgame",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "rules",
+      "label": "Rules",
+      "path": "packs/rules",
+      "type": "JournalEntry",
+      "system": "morphgame",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "missions",
+      "label": "Missions",
+      "path": "packs/missions",
+      "type": "JournalEntry",
+      "system": "morphgame",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Second Nature",
+      "sorting": "m",
+      "color": "#1f2a3a",
+      "packs": [
+        "ready-made-bonded",
+        "threats",
+        "rules",
+        "missions"
+      ]
+    }
+  ],
   "relationships": {
     "systems": [],
     "requires": [],
@@ -50,8 +116,16 @@
   "socket": true,
   "flags": {
     "hotReload": {
-      "extensions": ["css", "hbs", "json"],
-      "paths": ["styles", "templates", "lang"]
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ],
+      "paths": [
+        "styles",
+        "templates",
+        "lang"
+      ]
     }
   },
   "url": "https://github.com/PainHog/Animahs",

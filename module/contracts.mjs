@@ -55,7 +55,7 @@ export const OPS = Object.freeze({
 /** Hooks this system fires (other modules may listen). */
 export const HOOKS = Object.freeze({
   rollResolved: "morphgame.rollResolved",       // (message, card) — a roll card was created or changed
-  missionChanged: "morphgame.missionChanged",   // (state, previous)
+  missionChanged: "morphgame.missionChanged",   // (state) — on every client, when the mission state is saved
   shifted: "morphgame.shifted",                 // (actor, fromForm, toForm)
 });
 

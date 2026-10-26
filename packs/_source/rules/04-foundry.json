@@ -1,0 +1,42 @@
+{
+  "key": "04-foundry",
+  "name": "Second Nature in Foundry",
+  "pages": [
+    {
+      "key": "start",
+      "name": "Starting a mission",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>Open the <strong>Mission Tracker</strong> from the paw button in the token controls. Choose one of the five missions (or a custom one), tick the Bonded who are playing and press <strong>Start the mission</strong>. Everyone gets their Wild back and loses their Hurt; Team Captain's Edge and an Exposed character's Scent 1 are applied for you.</p>\n<p>Scouting comes first: a player rolls from their sheet or the tracker (the roll dialog already says Sense against Difficulty 2). The result sets the Edges, the Scent and who picks the way in; press <strong>Go in by way A</strong> or <strong>B</strong>.</p>"
+      }
+    },
+    {
+      "key": "rolling",
+      "name": "Rolling",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>Every <strong>Roll</strong> button opens the roll dialog. It knows the current obstacle: its tags, the approaches that work and their Difficulty, its guards and whether you're On the Trail. It lists every modifier with its source (Strengths, Weaknesses, animal perks, human perks, Tracker, Trophy, Distract, Coil) and applies the Cap. Tick friends to Help (each pays 1 Wild; Coyote's Pack pays once a scene) and choose Edges; anything over the Cap isn't spent.</p>\n<p>The roll card shows the dice with hits highlighted and the result. A Fail or a Partial stays open while you could still <strong>Push</strong> (1 Wild), use <strong>Burst</strong> or <strong>Wily</strong>; press <strong>Accept</strong>, or the next roll anyone makes settles it. A Success can still be Pushed for a Critical, or counted as one with <strong>Charge</strong>.</p>"
+      }
+    },
+    {
+      "key": "automation",
+      "name": "What happens by itself",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>The Storyteller's client applies each roll once it is final: progress at point obstacles, who is past at group obstacles, Edges from Criticals, Scent (Partials and Fails at point obstacles, one rise when a group obstacle ends, +1 a round from the third, scouting), Hurt at dangerous obstacles, a Clash on a guarded Fail, Taken on any Fail once the Hunt is Up, and Down and Netted friends at the end of each scene. Shifting in a Clash marks the shifter Exposed and the Clash's Scent rise becomes 2.</p>\n<p>In a Clash, roll against a threat (Strike, Distract or Slip Away). <strong>End round</strong> asks who each threat nobody rolled against goes for (a random friend is preselected). The Clash ends when every threat is out, nobody is left, or after round 4, and raises Scent once.</p>\n<p>Every automation has a switch in the system settings. With one off, its outcome is listed on the tracker and the roll card gets an <strong>Apply the outcome</strong> button for the Storyteller.</p>"
+      }
+    },
+    {
+      "key": "end",
+      "name": "The Hunt is Up, and the end",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>When Scent reaches the Limit, the tracker announces it and, if the objective isn't done, offers <strong>Press on</strong> or <strong>Withdraw</strong> with the book's advice highlighted. When the last Escape obstacle is behind the team, the tracker shows Win, Costly Win or Loss; <strong>Finish the mission</strong> moves the Hunt track (+1 for a Costly Win, +2 for a Loss) and gives every character 1 Growth.</p>"
+      }
+    }
+  ]
+}

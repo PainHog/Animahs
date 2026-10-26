@@ -1,0 +1,29 @@
+{
+  "key": "03-mill",
+  "name": "The Old Mill",
+  "flags": {
+    "morphgame": {
+      "mission": "mill"
+    }
+  },
+  "pages": [
+    {
+      "key": "obstacles",
+      "name": "Obstacles and Limits",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Standard mission.</strong> The Hunt has built a Callhorn in the mill tower; when it sounds, every Hound in town will hunt. Wreck it.</p>\n<table>\n<thead><tr><th>Where</th><th>Obstacle</th><th>Kind</th><th>Tags</th><th>Approaches (Difficulty)</th><th>Progress</th><th>Notes</th></tr></thead>\n<tbody>\n<tr><td>Way in A</td><td><strong>The millrace</strong></td><td>Group</td><td>Water, Dark</td><td>Sneak 2 · Move 2</td><td>each</td><td>Dangerous: a Fail deals 1 Hurt.</td></tr>\n<tr><td>Way in B</td><td><strong>The ivy wall</strong></td><td>Group</td><td>High</td><td>Sneak 3 · Move 2</td><td>each</td><td>—</td></tr>\n<tr><td>Inside 1</td><td><strong>The grain store (a Beater and a Hound)</strong></td><td>Group</td><td>Dark, Narrow</td><td>Sneak 2 · Move 3 · Sense 3 · Wits 2</td><td>each</td><td>Guarded by a Beater and a Hound. Beating them clears the obstacle.</td></tr>\n<tr><td>Inside 2</td><td><strong>The gear loft</strong></td><td>Point</td><td>High, Narrow</td><td>Move 2 · Sense 3</td><td>3</td><td>Dangerous: a Fail deals 1 Hurt.</td></tr>\n<tr><td>Objective</td><td><strong>The Callhorn</strong></td><td>Point</td><td>High, Locked</td><td>Force 3 · Wits 2</td><td>3</td><td>Guarded by a Huntsman. Progress is still needed after the Clash. The objective.</td></tr>\n<tr><td>Escape</td><td><strong>Down the waterwheel</strong></td><td>Group</td><td>Water, High</td><td>Sneak 3 · Move 2</td><td>each</td><td>—</td></tr>\n</tbody>\n</table>\n<p><strong>Scent Limit:</strong> 7 with 3 players · 7 with 4 · 6 with 5. <strong>Scouting:</strong> Sense, Difficulty 2.</p>\n<p>Scouting: Sense, Difficulty 2. Run it from the Mission Tracker: it knows every obstacle on this page.</p>"
+      }
+    },
+    {
+      "key": "mission",
+      "name": "The Mission",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>Mr Thatch has built a Callhorn in the tower of the Old Mill: a great brass horn that, when it sounds, sends every Hound in Wrenfield out hunting at once. The team gets into the mill, climbs through the gears to the top of the tower and wrecks the Callhorn before it’s finished.</p>\n<blockquote>\n<h4>Read This Aloud</h4>\n<p><em>Every night this week, at midnight, the whole town’s dogs have howled at once. Tonight you followed the sound to the Old Mill. Up in the tower window there’s a glint of brass, and the low hum of something waking up. Down below, the waterwheel turns in the dark. Whatever that thing is, it’s nearly ready.</em></p>\n</blockquote>\n<h3>What’s Going On</h3>\n<p>The Callhorn is nearly finished. Once it works, the Hunt can loose every Hound in town at once, on any night it likes. Mr Thatch is in the tower, fitting the last pieces. A Beater and a Hound guard the grain store on the ground floor.</p>\n<p><em>The Old Mill. A: the millrace under the wheel. B: the ivy wall. 1: the grain store. 2: the gear loft. The objective: the Callhorn at the top of the tower. The Escape: down the waterwheel to the river.</em></p>\n<h3>The Places</h3>\n<h4>Way in A: The Millrace</h4>\n<p>The fast channel of water that turns the wheel runs right under the mill, and through a grating into the cellar. It’s dark and fast: a Fail deals 1 Hurt.</p>\n<h4>Way in B: The Ivy Wall</h4>\n<p>The back wall of the mill is covered in ancient ivy up to a broken first-floor window. It’s an easy climb for anything with claws or wings, and an awkward one for a kid.</p>\n<h4>Inside 1: The Grain Store</h4>\n<p>A dark, cramped room of sacks and bins, with a Beater and a Hound on guard. Everyone has to get past. A kid in human form can try the oldest trick (“Dad sent me to fetch Mr Thatch”), or you can sneak, or squeeze along the top of the bins. If anyone Fails, it’s a Clash.</p>\n<h4>Inside 2: The Gear Loft</h4>\n<p>Huge wooden gears turn in the dark, and the only way up is through them: along beams, between teeth, up a narrow ladder. One of you finds the path and calls the others through. A Fail here deals 1 Hurt.</p>\n<h4>The Objective: The Callhorn</h4>\n<p>At the top of the tower, a brass horn as long as a bus, bolted into the beams, with Mr Thatch working beside it. It can be smashed, if you’re very strong, or taken apart by clever hands, bolt by bolt. If anyone Fails while Mr Thatch is there, it’s a Clash; beating him doesn’t wreck the horn.</p>\n<h4>The Escape: Down the Waterwheel</h4>\n<p>The quickest way out of the tower is the window above the waterwheel, then down its turning paddles into the river.</p>\n<h3>Threats</h3>\n<p>A <strong>Beater</strong> and a <strong>Hound</strong> in the grain store, and <strong>Mr Thatch</strong>, a Huntsman with a Bearpaw Cane, at the Callhorn (Chapter 10). If the Hunt is Up, the Masters come up the stairs, and the Callhorn gives a long, terrible groan.</p>\n<blockquote>\n<h4>Spotlights</h4>\n<p>Reptiles love the millrace and the wheel; Big Cats, Birds and Critters love the ivy and the gear loft. The Callhorn is a job for a Heavy or for clever hands, and Mr Thatch is a fight for the whole team.</p>\n</blockquote>\n<h3>After the Mission</h3>\n<ul>\n<li><strong>Win:</strong> the Callhorn falls in pieces, and Wrenfield’s dogs sleep soundly again. Mr Thatch limps home and doesn’t say a word about it at the council meeting.</li>\n<li><strong>Costly Win:</strong> the horn is wrecked, but a friend was caught in the tower.</li>\n<li><strong>Loss:</strong> the Callhorn is finished. On the next mission, the Hunt can loose its Hounds whenever it likes: the Storyteller may add a Hound to one guarded obstacle.</li>\n</ul>"
+      }
+    }
+  ]
+}

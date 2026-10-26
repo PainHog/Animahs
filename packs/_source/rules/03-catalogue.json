@@ -1,0 +1,42 @@
+{
+  "key": "03-catalogue",
+  "name": "Frames, Animals, Perks and Threats",
+  "pages": [
+    {
+      "key": "frames",
+      "name": "Frames",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>Animal-form ratings (Wits is always 0). In animal form, a Strength among the place's tags gives +1 die; a Weakness, +1 Difficulty (one of each at most).</p>\n<table><thead><tr><th>d6</th><th>Frame</th><th>Sneak</th><th>Force</th><th>Move</th><th>Sense</th><th>Strengths (+1 die)</th><th>Weaknesses (+1 Difficulty)</th></tr></thead><tbody>\n<tr><td>1</td><td><strong>Big Cats</strong></td><td>4</td><td>3</td><td>3</td><td>2</td><td>Dark, High</td><td>Water, Crowd</td></tr>\n<tr><td>2</td><td><strong>Canines</strong></td><td>3</td><td>3</td><td>3</td><td>4</td><td>Open, Crowd</td><td>High</td></tr>\n<tr><td>3</td><td><strong>Birds</strong></td><td>2</td><td>1</td><td>4</td><td>4</td><td>High, Open</td><td>Narrow</td></tr>\n<tr><td>4</td><td><strong>Critters</strong></td><td>4</td><td>1</td><td>3</td><td>3</td><td>Narrow, Crowd</td><td>Open</td></tr>\n<tr><td>5</td><td><strong>Heavies</strong></td><td>2</td><td>4</td><td>3</td><td>3</td><td>Open, Locked</td><td>Narrow, Crowd</td></tr>\n<tr><td>6</td><td><strong>Reptiles</strong></td><td>3</td><td>3</td><td>3</td><td>3</td><td>Water, Dark</td><td>Crowd</td></tr>\n</tbody></table>"
+      }
+    },
+    {
+      "key": "animals",
+      "name": "Animals and Animal Perks",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>Animal perks work in animal form only. Roll a d6 within the frame: 1–2 the first, 3–4 the second, 5–6 the third. No two Bonded in a group have the same animal.</p>\n<table><thead><tr><th>Frame</th><th>Animal</th><th>Perk</th></tr></thead><tbody>\n<tr><td>Big Cats</td><td>Jaguar</td><td><strong>Night Rosettes:</strong> In Dark places, your Sneak rolls are at −1 Difficulty.</td></tr>\n<tr><td></td><td>Snow Leopard</td><td><strong>Ambush:</strong> Your first Strike in each Clash is at −1 Difficulty.</td></tr>\n<tr><td></td><td>Cheetah</td><td><strong>Burst:</strong> Once per scene, Push a Move roll without spending Wild.</td></tr>\n<tr><td>Canines</td><td>Coyote</td><td><strong>Pack:</strong> Once per scene, Help without spending Wild.</td></tr>\n<tr><td></td><td>Shepherd Dog</td><td><strong>Good Dog:</strong> In Crowds, your Sneak and Sense rolls are at −1 Difficulty.</td></tr>\n<tr><td></td><td>Red Fox</td><td><strong>Wily:</strong> Once per scene, when your roll Fails, it becomes a Partial instead.</td></tr>\n<tr><td>Birds</td><td>Peregrine Falcon</td><td><strong>Keen Eyes:</strong> In Open or High places, your Sense rolls are at −1 Difficulty.</td></tr>\n<tr><td></td><td>Barn Owl</td><td><strong>Silent Wings:</strong> In Dark places, +1 die on Sneak and Move rolls.</td></tr>\n<tr><td></td><td>Raven</td><td><strong>Clever Beak:</strong> Against Locked things you can roll Wits in animal form (rating 2) to work latches, keys and switches.</td></tr>\n<tr><td>Critters</td><td>House Mouse</td><td><strong>Tiny:</strong> In Narrow places, your Sneak and Move rolls are at −1 Difficulty.</td></tr>\n<tr><td></td><td>Brown Rat</td><td><strong>Gnaw:</strong> Against Locked things, your Force rating is 3.</td></tr>\n<tr><td></td><td>Grey Squirrel</td><td><strong>Leaper:</strong> In High places, your Move rolls are at −1 Difficulty.</td></tr>\n<tr><td>Heavies</td><td>Bison</td><td><strong>Shaggy Coat:</strong> Once per scene, when you'd take Hurt, take 1 less.</td></tr>\n<tr><td></td><td>Moose</td><td><strong>Antler Sweep:</strong> Once per scene, when your Strike against a Beater or Hound Succeeds, it's out at once.</td></tr>\n<tr><td></td><td>Hippopotamus</td><td><strong>Charge:</strong> Once per scene, when a Force roll Succeeds, it counts as a Critical.</td></tr>\n<tr><td>Reptiles</td><td>Alligator</td><td><strong>Lurker:</strong> In Water, your Sneak and Force rolls are at −1 Difficulty.</td></tr>\n<tr><td></td><td>Python</td><td><strong>Coil:</strong> When your Strike Succeeds, the next roll anyone makes against that threat this Clash is at −1 Difficulty.</td></tr>\n<tr><td></td><td>Komodo Dragon</td><td><strong>Taste the Air:</strong> +1 die on Sense rolls, and a Hound's Tracker doesn't affect you.</td></tr>\n</tbody></table>"
+      }
+    },
+    {
+      "key": "perks",
+      "name": "Human Perks",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>Every perk works in any form unless it says otherwise; a perk's die counts towards the Cap. Roll two d6: the first picks the list (1–3 A, 4–6 B), the second the row.</p>\n<table><thead><tr><th></th><th>A (1–3)</th><th>B (4–6)</th></tr></thead><tbody>\n<tr><td>1</td><td><strong>Football Player:</strong> +1 die on Force rolls.</td><td><strong>Team Captain:</strong> The team starts every mission with 1 Edge.</td></tr>\n<tr><td>2</td><td><strong>Hide-and-Seek Champ:</strong> +1 die on Sneak rolls.</td><td><strong>Animal Whisperer:</strong> +1 die on rolls against Hounds, or to get past an obstacle they guard.</td></tr>\n<tr><td>3</td><td><strong>Track Star:</strong> +1 die on Move rolls.</td><td><strong>Swim Team:</strong> +1 die on rolls in Water.</td></tr>\n<tr><td>4</td><td><strong>Scout:</strong> +1 die on Sense rolls.</td><td><strong>Gymnast:</strong> +1 die on rolls in High places.</td></tr>\n<tr><td>5</td><td><strong>Brainiac:</strong> +1 die on Wits rolls (human form).</td><td><strong>Night Owl:</strong> +1 die on rolls in Dark places.</td></tr>\n<tr><td>6</td><td><strong>Gamer:</strong> Start every mission with 1 extra Wild.</td><td><strong>Drama Kid:</strong> +1 die on rolls in Crowds.</td></tr>\n</tbody></table>"
+      }
+    },
+    {
+      "key": "threats",
+      "name": "Threats",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>Threats never roll. Strike, Distract or Slip Away against their Difficulty; they are out when their harm taken equals their Toughness.</p>\n<table><thead><tr><th>Threat</th><th>Difficulty</th><th>Toughness</th><th>Harm</th><th>Special</th></tr></thead><tbody>\n<tr><td><strong>Beater</strong></td><td>2</td><td>2</td><td>1</td><td>—</td></tr>\n<tr><td><strong>Hound</strong></td><td>2</td><td>3</td><td>1</td><td><strong>Tracker:</strong> Sneak rolls at an obstacle a Hound guards are at +1 Difficulty.</td></tr>\n<tr><td><strong>Trapper</strong></td><td>2</td><td>2</td><td>1</td><td><strong>Net:</strong> When you Fail against a Trapper, you're Netted instead of Hurt.</td></tr>\n<tr><td><strong>Huntsman</strong></td><td>3</td><td>4</td><td>2</td><td><strong>Trophy:</strong> Sneak rolls at an obstacle a Huntsman guards are at +1 Difficulty.</td></tr>\n<tr><td><strong>Master of the Hunt</strong></td><td>—</td><td>—</td><td>—</td><td><strong>Arrives:</strong> Only when the Hunt is Up. Masters are never fought. While they're here, any Fail means you're Taken.</td></tr>\n</tbody></table>"
+      }
+    }
+  ]
+}

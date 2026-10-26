@@ -1,0 +1,57 @@
+{
+  "key": "01-maya",
+  "name": "Maya Reyes",
+  "img": "systems/morphgame/assets/icons/bonded.svg",
+  "system": {
+    "age": 12,
+    "mark": "a fleck of gold in her left eye",
+    "loves": "the rooftop garden at the library",
+    "notes": "<p><em>“If you can’t see me, I’m doing it right.”</em></p>\n<p>Quiet, watchful, and the best hide-and-seek player Wrenfield Middle has ever had. Her jaguar found her on the wet roof of the garden centre on the night of the Waking. She loves the rooftop garden at the library.</p>",
+    "frame": "cats",
+    "animal": "jaguar",
+    "perk": "hideseek",
+    "perk2": "",
+    "human": {
+      "sneak": 3,
+      "force": 1,
+      "move": 2,
+      "sense": 2,
+      "wits": 1
+    },
+    "form": "human",
+    "wild": {
+      "value": 4,
+      "max": 4
+    },
+    "hurt": {
+      "value": 0,
+      "max": 3
+    },
+    "status": {
+      "down": false,
+      "netted": false,
+      "taken": false,
+      "exposed": false,
+      "stuck": false
+    },
+    "growth": {
+      "value": 0,
+      "picks": []
+    },
+    "usage": {}
+  },
+  "prototypeToken": {
+    "name": "Maya",
+    "actorLink": true,
+    "disposition": 1,
+    "bar1": {
+      "attribute": "wild"
+    },
+    "bar2": {
+      "attribute": "hurt"
+    },
+    "texture": {
+      "src": "systems/morphgame/assets/icons/bonded.svg"
+    }
+  }
+}

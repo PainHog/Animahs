@@ -1,0 +1,28 @@
+{
+  "key": "04-huntsman",
+  "name": "Huntsman",
+  "img": "systems/morphgame/assets/icons/huntsman.svg",
+  "system": {
+    "kind": "huntsman",
+    "difficulty": 3,
+    "toughness": 4,
+    "harm": 2,
+    "harmTaken": 0,
+    "special": "Sneak rolls at an obstacle a Huntsman guards are at +1 Difficulty.",
+    "notes": "<p><em>a member, wearing a Trophy</em></p>\n<p>A full member of the Hunt, in good tweed and a gold Trophy. Huntsmen are clever, calm and very hard to fool. They don’t chase you. They wait for you to make a mistake.</p>"
+  },
+  "prototypeToken": {
+    "name": "Huntsman",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "systems/morphgame/assets/icons/huntsman.svg"
+    }
+  }
+}

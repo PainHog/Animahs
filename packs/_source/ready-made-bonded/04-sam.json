@@ -1,0 +1,57 @@
+{
+  "key": "04-sam",
+  "name": "Sam Lindqvist",
+  "img": "systems/morphgame/assets/icons/bonded.svg",
+  "system": {
+    "age": 12,
+    "mark": "a white streak in his fringe; as a rat, a white patch between his ears",
+    "loves": "the arcade on the High Street",
+    "notes": "<p><em>“I’ve got one life left. That’s plenty.”</em></p>\n<p>Sam knows every shortcut in town and the high score on every machine in the arcade. His rat came up through the drain in his back yard. He loves the arcade on the High Street.</p>",
+    "frame": "critters",
+    "animal": "rat",
+    "perk": "gamer",
+    "perk2": "",
+    "human": {
+      "sneak": 2,
+      "force": 1,
+      "move": 2,
+      "sense": 3,
+      "wits": 1
+    },
+    "form": "human",
+    "wild": {
+      "value": 5,
+      "max": 5
+    },
+    "hurt": {
+      "value": 0,
+      "max": 3
+    },
+    "status": {
+      "down": false,
+      "netted": false,
+      "taken": false,
+      "exposed": false,
+      "stuck": false
+    },
+    "growth": {
+      "value": 0,
+      "picks": []
+    },
+    "usage": {}
+  },
+  "prototypeToken": {
+    "name": "Sam",
+    "actorLink": true,
+    "disposition": 1,
+    "bar1": {
+      "attribute": "wild"
+    },
+    "bar2": {
+      "attribute": "hurt"
+    },
+    "texture": {
+      "src": "systems/morphgame/assets/icons/bonded.svg"
+    }
+  }
+}

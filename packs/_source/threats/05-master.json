@@ -1,0 +1,28 @@
+{
+  "key": "05-master",
+  "name": "Master of the Hunt",
+  "img": "systems/morphgame/assets/icons/master.svg",
+  "system": {
+    "kind": "master",
+    "difficulty": null,
+    "toughness": null,
+    "harm": null,
+    "harmTaken": 0,
+    "special": "Only when the Hunt is Up. Masters are never fought. While they're here, any Fail means you're Taken.",
+    "notes": "<p><em>“Well, well. Another one.”</em></p>\n<p>The leaders of the Hunt, hung with Trophies, moving through the dark with a dozen borrowed senses. When a Master arrives, the only sensible thing to do is run.</p>"
+  },
+  "prototypeToken": {
+    "name": "Master of the Hunt",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "systems/morphgame/assets/icons/master.svg"
+    }
+  }
+}

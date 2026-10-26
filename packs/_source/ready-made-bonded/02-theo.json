@@ -1,0 +1,57 @@
+{
+  "key": "02-theo",
+  "name": "Theo Park",
+  "img": "systems/morphgame/assets/icons/bonded.svg",
+  "system": {
+    "age": 13,
+    "mark": "a notch in his left ear",
+    "loves": "the football pitch in the park",
+    "notes": "<p><em>“Right. Plan. Everybody listen.”</em></p>\n<p>Captain of the junior football team, and the one who keeps everyone together. A coyote waited for him at the end of his street. He loves the football pitch in the park.</p>",
+    "frame": "canines",
+    "animal": "coyote",
+    "perk": "captain",
+    "perk2": "",
+    "human": {
+      "sneak": 1,
+      "force": 2,
+      "move": 3,
+      "sense": 1,
+      "wits": 2
+    },
+    "form": "human",
+    "wild": {
+      "value": 4,
+      "max": 4
+    },
+    "hurt": {
+      "value": 0,
+      "max": 3
+    },
+    "status": {
+      "down": false,
+      "netted": false,
+      "taken": false,
+      "exposed": false,
+      "stuck": false
+    },
+    "growth": {
+      "value": 0,
+      "picks": []
+    },
+    "usage": {}
+  },
+  "prototypeToken": {
+    "name": "Theo",
+    "actorLink": true,
+    "disposition": 1,
+    "bar1": {
+      "attribute": "wild"
+    },
+    "bar2": {
+      "attribute": "hurt"
+    },
+    "texture": {
+      "src": "systems/morphgame/assets/icons/bonded.svg"
+    }
+  }
+}
