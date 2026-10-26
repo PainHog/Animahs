@@ -230,3 +230,22 @@ export function buildRollPlan(input) {
   plan.floored = opt.D + m.up - plan.down.applied < DIFF_MIN;
   return plan;
 }
+
+/**
+ * §5 Help: can this friend Help a roll of `approach` at a place? It has to be something
+ * their current form can do: in animal form you can't help a Wits roll, except the Raven's
+ * Clever Beak against Locked things (Ch 4). Down, Netted and Taken friends can't act.
+ * helper: { id, form, animal, wild, status: { down, netted, taken } }.
+ * Returns { ok, reason, free } — free when Coyote's Pack pays instead of Wild.
+ */
+export function canHelp(helper, { approach, tags = [], rollerId, packFree = false } = {}) {
+  if (!helper || helper.id === rollerId) return { ok: false, reason: "self", free: false };
+  const st = helper.status ?? {};
+  if (st.down || st.netted || st.taken) return { ok: false, reason: "cantAct", free: false };
+  if (helper.form === "animal" && approach === "wits" && !(helper.animal === "raven" && tags.includes("locked"))) {
+    return { ok: false, reason: "animalWits", free: false };
+  }
+  if (packFree) return { ok: true, reason: null, free: true };
+  if ((Number(helper.wild) || 0) < 1) return { ok: false, reason: "noWild", free: false };
+  return { ok: true, reason: null, free: false };
+}
