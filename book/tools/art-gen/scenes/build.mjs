@@ -4,9 +4,9 @@
 // modules to `mods` (a module that doesn't exist yet is skipped).
 import { writeFileSync } from "node:fs";
 import { ART } from "./lib.mjs";
-const mods = ["./placeholders.mjs"];
+const mods = ["./placeholders.mjs", "./sn.mjs", "./sn-scenes.mjs", "./sn-maps.mjs", "./sn-spots.mjs"];
 const map = {};
-const PIECE = /^(placeholder|cover|part_|ch_|map_|diagram_|orn_|spot_)/;
+const PIECE = /^(placeholder|cover|back$|part_|ch_|map_|diagram_|orn_|spot_|frame_|threat_|pc_)/;
 for (const m of mods) {
   let mm; try { mm = await import(m); } catch (e) { if (e.code === "ERR_MODULE_NOT_FOUND" && e.message.includes(m.slice(2))) continue; throw e; }
   for (const [k, v] of Object.entries(mm)) if (typeof v === "function" && PIECE.test(k)) map[k.replace(/_/g, "-")] = v;

@@ -1,4 +1,4 @@
-Now: Writing the whole rulebook as a first draft, with its pictures, from the draft core rules
+Now: Polishing the draft rulebook and its stand-in pictures, and building the online version for Foundry VTT
 Next: Richard reviews and revises the whole draft book
 Number: Design decisions so far = 30
 Number: Approved by Richard = 1
@@ -27,6 +27,7 @@ Plain words only: no repo names, usernames, file paths, links or commit IDs. Rul
 - [ ] Write the rulebook chapters
 - [ ] Ready-made characters for a quick start
 - [ ] The first ready-made adventure
+- [x] A stand-in picture for every spot in the book, including a map for each mission, ready to swap for the real drawings
 - [ ] Cover and book art
 - [ ] Rulebook layout, for screen and for print
 - [ ] Computer playtests by the book, and the fixes they turn up

@@ -28,22 +28,22 @@ function notes(ob, isObjective) {
   const out = [];
   if (ob.guards.length) {
     const them = ob.guards.length > 1 ? "them" : "it";
-    out.push(`Guarded by ${guardText(ob.guards)}. ${ob.guardsClear ? `Beating ${them} clears the obstacle.` : "Progress is still needed after the Clash."}`);
+    out.push(`Guarded by ${guardText(ob.guards)}. ${ob.guardsClear ? `Beating ${them} clears it.` : "Clash first, then progress."}`);
   }
   if (ob.dangerous) out.push("Dangerous: a Fail deals 1 Hurt.");
-  if (isObjective) out.push(ob.carry ? "The objective: a prize to carry out." : "The objective.");
+  if (isObjective && ob.carry) out.push("A prize to carry out.");
   return out.join(" ") || "—";
 }
 
-/** The whole mission as one table: where, obstacle, kind, tags, approaches, progress, notes. */
+/** The whole mission as one table: where, obstacle, tags, approaches, kind and progress, notes. */
 export function missionTable(m) {
   const rows = [];
   const add = (where, ob, isObjective = false) => {
     const appr = APPROACH_ORDER.filter(a => ob.approaches[a]).map(a => `${cap(a)} ${ob.approaches[a]}`).join(" · ");
     const tags = ob.tags.length ? ob.tags.map(cap).join(", ") : "—";
-    const kind = ob.kind === "group" ? "Group" : "Point";
-    const prog = ob.kind === "group" ? "each" : String(ob.progress);
-    rows.push(`      <tr><td>${where}</td><td><strong>${ob.name}</strong></td><td>${kind}</td><td>${tags}</td><td>${appr}</td><td class="num">${prog}</td><td>${notes(ob, isObjective)}</td></tr>`);
+    // group: everyone gets past on their own; point: the team needs this much progress
+    const kind = ob.kind === "group" ? "Group" : `Point&nbsp;·&nbsp;${ob.progress}`;
+    rows.push(`      <tr><td>${where}</td><td><strong>${ob.name}</strong></td><td>${tags}</td><td>${appr}</td><td>${kind}</td><td>${notes(ob, isObjective)}</td></tr>`);
   };
   m.waysIn[0].forEach((ob, i) => add(m.waysIn[0].length > 1 ? `Way in A${i + 1}` : "Way in A", ob));
   m.waysIn[1].forEach((ob, i) => add(m.waysIn[1].length > 1 ? `Way in B${i + 1}` : "Way in B", ob));
@@ -53,7 +53,7 @@ export function missionTable(m) {
   return [
     `<!-- obstacles:${m.id} -->`,
     `  <table class="tbl wide obstacles">`,
-    `    <thead><tr><th>Where</th><th>Obstacle</th><th>Kind</th><th>Tags</th><th>Approaches (Difficulty)</th><th class="num">Progress</th><th>Notes</th></tr></thead>`,
+    `    <thead><tr><th>Where</th><th>Obstacle</th><th>Tags</th><th>Approaches (Difficulty)</th><th>Kind · Progress</th><th>Notes</th></tr></thead>`,
     `    <tbody>`,
     ...rows,
     `    </tbody>`,

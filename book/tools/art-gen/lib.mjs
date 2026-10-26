@@ -22,7 +22,7 @@ export const C = {
   // the Gilded Hunt
   gold: "#c9a227", goldDeep: "#8a6d12", goldLight: "#ead27a", crimson: "#8c2f24", coat: "#3b2f2a",
   // animals
-  tawny: "#c98f3c", tawnyLight: "#e8c27a", rosette: "#3a2a1a", snow: "#e9e6de", fog: "#b9bcbd",
+  tawny: "#c98f3c", tawnyLight: "#e8c27a", tawnyDeep: "#a8722c", coyote: "#a8967a", coyoteDeep: "#857558", brownDeep: "#5e3f26", rosette: "#3a2a1a", snow: "#e9e6de", fog: "#b9bcbd",
   grey: "#8d8f8f", greyDark: "#5e6163", rust: "#b5582a", cream: "#f4e9d2", brown: "#7a5232",
   brownDark: "#4b3220", hippo: "#8e8189", hippoLight: "#c9b3b8", olive: "#6b6b3a", oliveDark: "#45452a",
   python: "#a3864a", pythonDark: "#5e4a24", komodo: "#6e6a55", feather: "#6b5a48", owl: "#d9b98c",

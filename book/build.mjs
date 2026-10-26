@@ -23,6 +23,7 @@ import { chromium } from "playwright-core";
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { imageSize, RASTER_EXT, MIME } from "./tools/image-size.mjs";
 
 const BOOK = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(BOOK, "..");
@@ -53,12 +54,43 @@ const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(
 const cssString = s => `"${String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
 
 /* ---------------------------------------------------------------- art -- */
+// Drop-in artwork: book/art/NAME.png, .jpg, .jpeg or .webp replaces NAME.svg
+// (a raster file wins when both exist). See book/art/ART-LIST.md for every
+// picture's name, shape and the pixels it needs to print sharply (300 ppi).
 const artCache = new Map();
-function loadArt(name) {
-  if (artCache.has(name)) return artCache.get(name);
-  const file = join(ART, `${name}.svg`);
+function artFile(name) {
+  for (const ext of RASTER_EXT) { const f = join(ART, `${name}.${ext}`); if (existsSync(f)) return { kind: "raster", ext, file: f }; }
+  const f = join(ART, `${name}.svg`);
+  return existsSync(f) ? { kind: "svg", file: f } : null;
+}
+const hasArt = name => artFile(name) !== null;
+// The printed width of each kind of figure (inches): drop-in art should have
+// at least 300 pixels per inch of it. Tailpieces are limited by height instead.
+const PRINT_WIDTH_IN = { "cover-art": 8.75, "part-art": 6.7, "chapter-art": 7.14, "back-art": 4.16, map: 3.42, diagram: 3.42 };
+const PORTRAIT_IN = { entry: 1.2, statblock: 1.75 };
+function checkRaster(name, cls, px) {
+  if (!px) { warn.push(`can't read the size of ${name}`); return; }
+  let need = null;
+  for (const [k, inch] of Object.entries(PRINT_WIDTH_IN)) if (cls.includes(k)) need = { w: inch * 300 };
+  if (cls.includes("portrait")) need = { w: PORTRAIT_IN.statblock * 300 };
+  if (cls.includes("tailpiece")) need = { h: 5.3 * 300 };
+  if (cls.includes("chapter-art")) need = { w: 7.14 * 300, h: 1.8 * 300 };
+  if (!need) return;
+  if ((need.w && px.width < need.w) || (need.h && px.height < need.h))
+    warn.push(`${name}: ${px.width}×${px.height} px is below 300 ppi at print size (needs ${need.w ? `${Math.round(need.w)} px wide` : ""}${need.w && need.h ? " and " : ""}${need.h ? `${Math.round(need.h)} px tall` : ""})`);
+}
+function loadArt(name, cls = "") {
+  const key = `${name}|${cls}`;
+  if (artCache.has(key)) return artCache.get(key);
+  const found = artFile(name);
   let svg;
-  if (existsSync(file)) {
+  if (found?.kind === "raster") {
+    const px = imageSize(found.file);
+    checkRaster(name, cls, px);
+    const data = readFileSync(found.file).toString("base64");
+    svg = `<img class="art-raster" alt="" src="data:${MIME[found.ext]};base64,${data}"${px ? ` width="${px.width}" height="${px.height}"` : ""}>`;
+  } else if (found?.kind === "svg") {
+    const file = found.file;
     svg = readFileSync(file, "utf8")
       .replace(/<\?xml[^>]*\?>/g, "")
       .replace(/<!DOCTYPE[^>]*>/gi, "")
@@ -75,12 +107,12 @@ function loadArt(name) {
     }
     svg = svg.replace(/<svg\b/, `<svg role="img" aria-hidden="true" preserveAspectRatio="xMidYMid meet"`);
   } else {
-    const msg = `missing art: ${name}.svg`;
+    const msg = `missing art: ${name} (.svg, .png, .jpg or .webp)`;
     if (!DRAFT) throw new Error(`${msg} (use --draft to build with placeholders)`);
     warn.push(msg);
     svg = `<div class="art-missing">${name}</div>`;
   }
-  artCache.set(name, svg);
+  artCache.set(key, svg);
   return svg;
 }
 
@@ -89,7 +121,8 @@ function inlineArt(html) {
     /<figure\b([^>]*?)\bdata-art="([^"]+)"([^>]*)>([\s\S]*?)<\/figure>/g,
     (_, pre, name, post, inner) => {
       const caption = (inner.match(/<figcaption[\s\S]*?<\/figcaption>/) ?? [""])[0];
-      return `<figure${pre}data-art="${name}"${post}>${loadArt(name)}${caption}</figure>`;
+      const cls = ((pre + post).match(/class="([^"]*)"/) ?? [, ""])[1];
+      return `<figure${pre}data-art="${name}"${post}>${loadArt(name, cls)}${caption}</figure>`;
     });
 }
 
@@ -136,7 +169,9 @@ for (const m of body.matchAll(/<section class="(part|chapter|sheet)[^"]*" id="([
   } else if (kind === "chapter") {
     const num = strip((inner.match(/class="chapter-num">([\s\S]*?)</) ?? [, ""])[1]);
     const title = strip((inner.match(/<h2[^>]*>([\s\S]*?)<\/h2>/) ?? [, id])[1]);
-    entries.push({ kind, id, label: num, title });
+    // "Chapter 13 · Easy mission": the number is the label, the rest a tag after the title
+    const [label, ...tag] = num.split(" · ");
+    entries.push({ kind, id, label, title, tag: tag.join(" · ") });
   } else {
     const title = strip((inner.match(/<h2[^>]*>([\s\S]*?)<\/h2>/) ?? [, "Sheet"])[1]);
     entries.push({ kind, id, label: "", title });
@@ -149,7 +184,8 @@ function tocHtml(pages) {
     if (e.kind === "part") {
       return `<li class="toc-part"><a href="#${e.id}"><span class="toc-label">${e.label}</span> <span class="toc-title">${e.title}</span><span class="toc-page">${n}</span></a></li>`;
     }
-    return `<li class="toc-${e.kind}"><a href="#${e.id}"><span class="toc-label">${e.label}</span><span class="toc-title">${e.title}</span><span class="toc-page">${n}</span></a></li>`;
+    const tag = e.tag ? ` <span class="toc-tag">${e.tag}</span>` : "";
+    return `<li class="toc-${e.kind}"><a href="#${e.id}"><span class="toc-label">${e.label}</span><span class="toc-title">${e.title}${tag}</span><span class="toc-page">${n}</span></a></li>`;
   }).join("\n");
   return `<section class="toc" id="contents">
   ${TOC_ART ? `<figure class="art toc-art" data-art="${TOC_ART}"></figure>` : ""}
@@ -177,7 +213,10 @@ const fonts = [
 /* ---------------------------------------------------------------- page -- */
 const css = readFileSync(join(SRC, "book.css"), "utf8");
 // The running footer carries the book title from the constant above.
-const FOOTER_CSS = `@page { @bottom-center { content: ${cssString(BOOK_TITLE + "  ·  ")} counter(page); } }`;
+// It comes after book.css, so the pages that carry no footer must say so again here.
+const NO_FOOTER = ["cover", "part", "toc", "credits", "sheet", "back", "blankp"];
+const FOOTER_CSS = `@page { @bottom-center { content: ${cssString(BOOK_TITLE + "  ·  ")} counter(page); } }\n` +
+  NO_FOOTER.map(name => `@page ${name} { @bottom-center { content: none; } }`).join("\n");
 
 /*
  * Spot illustrations fill the space a chapter leaves empty on its last page.
@@ -185,9 +224,14 @@ const FOOTER_CSS = `@page { @bottom-center { content: ${cssString(BOOK_TITLE + "
  * room is left, and a spot sized to fit is placed there (never enough to move a page).
  * Each chapter lists spots in order of preference; the first not yet used wins.
  *   e.g.  "ch-01": ["spot-something", "spot-spare"],
- * Empty until the art exists (the build then warns about large unfilled gaps).
+ * A chapter with no list (or whose list is used up) may take any spot no later chapter wants.
  */
-const SPOTS = {};
+const SPOTS = {
+  "ch-02": ["spot-sheet"], "ch-04": ["spot-tracks"], "ch-05": ["spot-scent"], "ch-06": ["spot-net"],
+  "ch-07": ["spot-window"], "ch-08": ["spot-treehouse"], "ch-09": ["spot-books"], "ch-10": ["spot-trophy"],
+  "ch-11": ["spot-busstop"], "ch-12": ["spot-notebook"], "ch-13": ["spot-poster"], "ch-14": ["spot-alligator"],
+  "ch-15": ["spot-gears"], "ch-16": ["spot-keys"], "ch-17": ["spot-bison"], "ch-19": ["spot-table"],
+};
 const PT_PER_IN = 72;
 const BOTTOM_LIMIT_PT = (0.78 + BLEED_IN) * PT_PER_IN;   // @page bottom margin: content must end above this
 const TEXT_H_IN = 11 - 0.72 - 0.78;   // the text area's height (the print bleed adds to both the page and its margins)
@@ -206,7 +250,7 @@ function planSpots(ends) {
     // preferred spots first, then any spot not used yet; never a repeat (the same
     // illustration twice in one book reads as a mistake)
     const all = [...new Set(Object.values(SPOTS).flat())];
-    const have = a => existsSync(join(ART, `${a}.svg`));
+    const have = hasArt;
     // don't take a spot a later chapter prefers
     const later = new Set(order.slice(idx + 1).flatMap(k => SPOTS[k] ?? []));
     const art = prefs.find(a => !used.has(a) && have(a))
