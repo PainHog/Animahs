@@ -431,12 +431,14 @@ export function ch_18() {
   let s = sky("c18", W, HH, { top: C.deep, bottom: C.dusk, stars: 40, seed: 48 });
   s += hill([[-10, 200], [300, 172], [600, 168], [1010, 196]], HH, C.leafDeep, C.ink, 2.6);
   const k = .45;
-  s += place(150, 186, k, A.alligator());
-  s += place(330, 176, k, A.bison());
-  s += place(480, 172, k, A.jaguar());
-  s += place(590, 172, k, A.coyote());
-  s += post(700, 176, 50, 7) + place(700, 126, k, A.barnOwl());
-  s += place(735, 177, k, A.rat());
+  // the ready-made Bonded, with their Marks; Maya's (left eye) and Theo's (left ear)
+  // are on the left, so the jaguar and the coyote face left to show them
+  s += place(150, 186, k, A.alligator({ spots: true }));
+  s += place(330, 176, k, A.bison({ scar: true }));
+  s += place(570, 172, k, A.jaguar({ mark: true }), true);
+  s += place(650, 172, k, A.coyote({ notch: true }), true);
+  s += post(700, 176, 50, 7) + place(700, 126, k, A.barnOwl({ rings: true }));
+  s += place(735, 177, k, A.rat({ patch: true }));
   s += place(860, 70, 1, A.owlFlying());
   return vig("The six Bonded in animal form on a hilltop at night, all drawn to one true scale, with a barn owl flying overhead.", s);
 }
