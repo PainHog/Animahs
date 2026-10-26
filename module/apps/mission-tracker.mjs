@@ -12,7 +12,7 @@ import {
   APPROACH_INFO, TAG_INFO, THREATS, FIGHTABLE_THREATS, LABELS, HUNT_TRACK_MAX, EDGE_MAX, STATUS_INFO, STATUSES, PARTY_SIZES,
 } from "../config.mjs";
 import * as M from "../logic/mission.mjs";
-import { MISSIONS, missionById, missionTitle, limitFor, blankMission } from "../logic/missions.mjs";
+import { MISSIONS, missionById, missionTitle, limitFor, blankMission, validateMission } from "../logic/missions.mjs";
 import { unattended } from "../logic/clash.mjs";
 import { onTheTrail } from "../logic/scent.mjs";
 import { getState, isWriter } from "../mission/store.mjs";
@@ -58,6 +58,11 @@ export class MissionTracker extends HandlebarsApplicationMixin(ApplicationV2) {
     const ids = target.dataset.party ? target.dataset.party.split(",")
       : (el?.querySelectorAll?.("input[data-party]") ?? []).filter(i => i.checked).map(i => i.dataset.party);
     const size = Number(target.dataset.size ?? el?.querySelector?.("[name=partySize]")?.value) || null;
+    if (missionKey === "custom") {
+      const mission = await promptCustomMission();
+      if (!mission) return null;
+      return startMissionFor({ mission, actorIds: ids, partySize: size });
+    }
     return startMissionFor({ missionKey, actorIds: ids, partySize: size });
   }
   static #onChooseWay(event, target) { return A.act(M.chooseWay, Number(target.dataset.way), autoOpts()); }
@@ -185,6 +190,28 @@ export async function promptTargets(threats, fighters, defaults) {
       },
     },
   });
+}
+
+/**
+ * A custom mission (Ch 12): the Storyteller edits the mission as data, starting from the
+ * last one they used (or a blank one); it is checked before it starts.
+ */
+export async function promptCustomMission() {
+  let json = "";
+  try { json = game.settings.get(SYSTEM_ID, SETTINGS.customMission) || ""; } catch { json = ""; }
+  if (!json) json = JSON.stringify(blankMission(), null, 2);
+  const content = `<div class="morphgame mg-custom"><p>${L("MG.Tracker.customHint")}</p><textarea name="mission" rows="22" style="width:100%;font-family:monospace">${foundry.utils.escapeHTML(json)}</textarea></div>`;
+  const text = await DialogV2.prompt({
+    window: { title: L("MG.Tracker.customMission") }, content, rejectClose: false, position: { width: 620 },
+    ok: { label: L("MG.Tracker.start"), callback: (e, button) => button.form.elements.mission?.value ?? "" },
+  });
+  if (!text) return null;
+  let raw;
+  try { raw = JSON.parse(text); } catch (err) { ui.notifications.warn(L("MG.Notify.customJson", { error: err.message })); return null; }
+  const { mission, problems } = validateMission(raw);
+  if (problems.length) { ui.notifications.warn(L("MG.Notify.customProblems", { list: problems.join("; ") })); return null; }
+  await game.settings.set(SYSTEM_ID, SETTINGS.customMission, text);
+  return mission;
 }
 
 /** Ask which threats a free Clash has (the Storyteller starts a Clash outside a guarded obstacle). */

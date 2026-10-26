@@ -32,6 +32,7 @@ export const SETTINGS = Object.freeze({
   trackerForPlayers: "trackerForPlayers",
   trackerAutoOpen: "trackerAutoOpen",
   rulesReminders: "rulesReminders",
+  customMission: "customMission",
 });
 
 /** Chat-card kinds (flags.morphgame.card.kind). */

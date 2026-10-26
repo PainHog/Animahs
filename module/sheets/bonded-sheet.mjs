@@ -5,7 +5,7 @@
  * and warnings when the character breaks §11 (ratings not 3, 2, 2, 1, 1; the same animal
  * as another Bonded; and so on).
  */
-import { SYSTEM_PATH, TEMPLATES } from "../contracts.mjs";
+import { SYSTEM_PATH, TEMPLATES, OPS } from "../contracts.mjs";
 import {
   APPROACHES, APPROACH_INFO, FRAMES, FRAME_ORDER, ANIMALS, ANIMAL_ORDER, PERKS, PERK_ORDER, TAG_INFO,
   STATUSES, STATUS_INFO, GROWTH_PICKS, HURT_BOXES, WILD_MAX,
@@ -15,6 +15,8 @@ import { approachOptions } from "../logic/roll-plan.mjs";
 import { usedThisScene } from "../logic/usage.mjs";
 import { shift, shiftCost, patchUp, freeNetted, toggleStatus, hurtUpdate, currentClock, partyActors, cantAct } from "../actors/actor-ops.mjs";
 import { rollDialog } from "../dice/roll-dialog.mjs";
+import { runOp } from "../net/gm-ops.mjs";
+import { getState } from "../mission/store.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -39,6 +41,7 @@ export class BondedSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       addPick: BondedSheet.#onAddPick,
       removePick: BondedSheet.#onRemovePick,
       tracker: BondedSheet.#onTracker,
+      handPrize: BondedSheet.#onHandPrize,
     },
   };
 
@@ -114,6 +117,8 @@ export class BondedSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       canAct: !cantAct(actor),
       patchTargets, hasPatchTargets: patchTargets.length > 0,
       freeTargets, hasFreeTargets: freeTargets.length > 0,
+      carrying: getState().carrier === actor.id,
+      handTargets: friends.filter(a => !a.system.status.taken).map(a => ({ id: a.id, name: a.name })),
       growth: { value: s.growth.value, earned, left: Math.max(0, earned - picks.length), picks, pickTypes },
       pickApproaches: APPROACHES.map(a => ({ key: a, label: L(APPROACH_INFO[a].label) })),
       pickTags: (F?.strengths ?? []).map(t => ({ key: t, label: L(TAG_INFO[t].label) })),
@@ -174,6 +179,8 @@ export class BondedSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     return actor.update(up);
   }
   static async #onTracker() { return game.morphgame?.openTracker?.(); }
+  /** §10: handing the prize to a friend at the same obstacle takes your action, no roll. */
+  static async #onHandPrize(event, target) { return runOp(OPS.handPrize, { actorId: this.document.id, toId: target.dataset.target }); }
 }
 
 /** Keep frame and animal consistent in submitted sheet data. */

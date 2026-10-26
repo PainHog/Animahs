@@ -18,7 +18,7 @@
  * Each mission states its Scent Limit for 3, 4 and 5 players (§8, Table 5), set from the
  * simulator so that its label holds at every party size (DESIGN D19, D24).
  */
-import { PARTY_SIZES, LABELS } from "../config.mjs";
+import { PARTY_SIZES, LABELS, TAGS, APPROACHES, FIGHTABLE_THREATS } from "../config.mjs";
 
 const ob = (o) => ({ kind: "point", tags: [], approaches: {}, progress: 1, guards: [], guardsClear: true, dangerous: false, carry: false, ...o });
 
@@ -143,6 +143,47 @@ export function obstacleSequence(m, way) {
   if (m.objective) out.push({ ...m.objective, section: "objective", objective: true });
   for (const o of m.escape ?? []) out.push({ ...o, section: "escape" });
   return out;
+}
+
+/**
+ * Check (and fill in) a custom mission (Ch 12's checklist, as data). Returns
+ * { mission, problems: [text] } — the mission with every obstacle field set.
+ */
+export function validateMission(raw) {
+  const problems = [];
+  const m = raw && typeof raw === "object" ? raw : {};
+  const fix = (o, where) => {
+    if (!o || typeof o !== "object") { problems.push(`${where}: not an obstacle`); return makeObstacle({ id: where, name: where }); }
+    const ob = makeObstacle({ ...o, id: String(o.id ?? where), name: String(o.name ?? where) });
+    if (!["point", "group"].includes(ob.kind)) problems.push(`${ob.name}: kind must be "point" or "group"`);
+    for (const t of ob.tags) if (!TAGS.includes(t)) problems.push(`${ob.name}: unknown tag "${t}"`);
+    if (!Object.keys(ob.approaches).length) problems.push(`${ob.name}: no approaches`);
+    for (const [a, d] of Object.entries(ob.approaches)) {
+      if (!APPROACHES.includes(a)) problems.push(`${ob.name}: unknown approach "${a}"`);
+      if (!Number.isInteger(d) || d < 1 || d > 6) problems.push(`${ob.name}: ${a} Difficulty must be 1 to 6`);
+    }
+    if (ob.kind === "point" && !(Number.isInteger(ob.progress) && ob.progress >= 1)) problems.push(`${ob.name}: progress must be 1 or more`);
+    for (const g of ob.guards) if (!FIGHTABLE_THREATS.includes(g)) problems.push(`${ob.name}: unknown guard "${g}"`);
+    return ob;
+  };
+  const ways = Array.isArray(m.waysIn) ? m.waysIn : [];
+  if (ways.length !== 2) problems.push("two ways in are needed (waysIn: [[...], [...]])");
+  const out = {
+    id: "custom", name: String(m.name ?? "A custom mission"), label: LABELS[m.label] ? m.label : "standard", brief: String(m.brief ?? ""),
+    limit: {}, watched: !!m.watched,
+    waysIn: [0, 1].map(w => (Array.isArray(ways[w]) ? ways[w] : []).map((o, i) => fix(o, `way${w ? "B" : "A"}${i + 1}`))),
+    inside: (Array.isArray(m.inside) ? m.inside : []).map((o, i) => fix(o, `inside${i + 1}`)),
+    objective: fix(m.objective, "objective"),
+    escape: (Array.isArray(m.escape) ? m.escape : []).map((o, i) => fix(o, `escape${i + 1}`)),
+  };
+  for (const w of [0, 1]) if (!out.waysIn[w].length) problems.push(`way in ${w ? "B" : "A"} has no obstacle`);
+  if (!out.escape.length) problems.push("the Escape needs at least one obstacle");
+  for (const s of PARTY_SIZES) {
+    const v = Number(m.limit?.[s] ?? (typeof m.limit === "number" ? m.limit : NaN));
+    if (!Number.isInteger(v) || v < 1) problems.push(`the Limit for ${s} players must be a whole number`);
+    out.limit[s] = Number.isInteger(v) && v >= 1 ? v : 7;
+  }
+  return { mission: out, problems };
 }
 
 /** A blank custom mission the Storyteller can fill in (§12 shape). */

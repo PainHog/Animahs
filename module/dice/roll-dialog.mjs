@@ -10,6 +10,8 @@ import { APPROACHES, APPROACH_INFO, TAGS, TAG_INFO, CLASH_ACTIONS, CLASH_ACTION_
 import { approachOptions } from "../logic/roll-plan.mjs";
 import { odds } from "../logic/dice.mjs";
 import { threatsLeft } from "../logic/clash.mjs";
+import { currentObstacle, progressOf } from "../logic/mission.mjs";
+import { cantAct } from "../actors/actor-ops.mjs";
 import { getState } from "../mission/store.mjs";
 import { availableContexts, defaultChoices, reconcileChoices, helperOptions, planFor, contextInfo } from "./roll-context.mjs";
 import { performRoll, modLabel } from "./rolls.mjs";
@@ -117,7 +119,10 @@ export class RollDialog extends HandlebarsApplicationMixin(ApplicationV2) {
     const edgesMax = Math.min(EDGE_MAX, state.edges ?? 0);
     const o = plan.canRoll ? odds(plan.pool, plan.difficulty) : null;
     const warnings = [];
+    const blocked = cantAct(actor);
+    if (blocked) warnings.push(L(`MG.Reason.${blocked}`));
     if (ch.context === "obstacle" && listed && listed[ch.approach] == null) warnings.push(L("MG.RollDialog.notListed"));
+    if (ch.context === "obstacle" && info?.kind === "group" && progressOf(state, currentObstacle(state)?.uid)?.past?.includes(actor.id)) warnings.push(L("MG.RollDialog.alreadyPast"));
     if (!plan.canRoll) warnings.push(L(`MG.Reason.${plan.reason}`));
     if (plan.boosts.some(b => !b.counted)) warnings.push(L("MG.RollDialog.overCap"));
     const threats = ch.context === "clash" ? threatsLeft(state.clash).map(t => ({
@@ -138,7 +143,7 @@ export class RollDialog extends HandlebarsApplicationMixin(ApplicationV2) {
       mods, hasMods: mods.length > 0,
       helpers, hasHelpers: helpers.length > 0,
       edgesMax, edgeOptions: Array.from({ length: edgesMax + 1 }, (_, n) => ({ n, selected: n === Number(ch.edges) })),
-      plan, canRoll: plan.canRoll,
+      plan, canRoll: plan.canRoll && !blocked,
       capDice: plan.dice.capped, capDiff: plan.down.capped,
       summary: plan.canRoll ? L("MG.RollDialog.summary", { pool: plan.pool, d: plan.difficulty }) : "",
       chances: o ? L("MG.RollDialog.odds", { partial: pct(1 - o.fail), success: pct(o.success + o.crit), crit: pct(o.crit) }) : "",

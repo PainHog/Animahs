@@ -30,6 +30,7 @@ export function registerSettings() {
   });
   world(SETTINGS.trackerForPlayers, Boolean, true, { onChange: () => Hooks.callAll(HOOKS.missionChanged) });
   world(SETTINGS.rulesReminders, Boolean, true);
+  game.settings.register(SYSTEM_ID, SETTINGS.customMission, { scope: "client", config: false, type: String, default: "" });
   game.settings.register(SYSTEM_ID, SETTINGS.trackerAutoOpen, {
     name: `MG.Setting.${SETTINGS.trackerAutoOpen}.name`, hint: `MG.Setting.${SETTINGS.trackerAutoOpen}.hint`,
     scope: "client", config: true, type: Boolean, default: true,

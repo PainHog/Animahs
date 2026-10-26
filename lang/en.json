@@ -182,7 +182,9 @@
       "gmOnly": "Only the Storyteller can do that.",
       "noMission": "Unknown mission.",
       "noParty": "Choose at least one Bonded for the mission.",
-      "trackerHidden": "The Storyteller keeps the Mission Tracker to themselves."
+      "trackerHidden": "The Storyteller keeps the Mission Tracker to themselves.",
+      "customJson": "That mission isn't valid data: {error}",
+      "customProblems": "The mission needs fixing: {list}"
     },
     "Notice": {
       "shaggyCoat": "{name}'s Shaggy Coat takes 1 Hurt less.",
@@ -314,6 +316,7 @@
       "listed": "Difficulty {d} here",
       "notListed": "That approach isn't listed for this obstacle: pick the nearest one, or let the Storyteller set the Difficulty.",
       "overCap": "Some Help or Edges are over the Cap: they aren't spent.",
+      "alreadyPast": "You're already past this obstacle: this roll won't count for it (you can still Help friends).",
       "threatLine": "{name} (Difficulty {d}, {left} to go, Harm {harm})",
       "helpFree": "{name} (Pack: free)",
       "summary": "{pool} dice against Difficulty {d}",
@@ -355,6 +358,7 @@
       "hurt": "Hurt",
       "patchUp": "Patch Up (1 Wild, 1 Hurt)",
       "free": "Free from the net",
+      "handPrize": "Hand the prize to",
       "growth": "Growth",
       "picksLeft": "picks left: {n}",
       "notes": "Notes",
@@ -401,6 +405,7 @@
       "newMission": "A new mission",
       "mission": "Mission",
       "customMission": "A custom mission",
+      "customHint": "Your mission as data: two ways in, the obstacles inside, the objective and the Escape. Each obstacle has a name, a kind (point or group), tags, approaches with their Difficulty, the progress a point obstacle needs, guards (beater, hound, trapper, huntsman), guardsClear, dangerous, and carry for a prize. Give a Limit for 3, 4 and 5 players (Chapter 12 explains how to set them).",
       "limits": "Limits {a} / {b} / {c}",
       "party": "The team",
       "players": "Players",

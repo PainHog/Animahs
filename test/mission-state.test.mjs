@@ -459,6 +459,21 @@ test("shifts: in a Clash the Clash rises by 2 and you're Exposed; watched missio
   assert.equal(V.roster.maya.exposed, true);
 });
 
+test("custom missions (Ch 12) are checked and filled in", async () => {
+  const { validateMission, blankMission } = await import("../module/logic/missions.mjs");
+  const ok = validateMission(blankMission());
+  assert.deepEqual(ok.problems, []);
+  assert.equal(ok.mission.objective.kind, "point");
+  const bad = validateMission({ waysIn: [[{ name: "Door", kind: "swing", tags: ["shiny"], approaches: { charm: 2, wits: 9 } }]], escape: [], limit: { 3: 7 } });
+  assert.ok(bad.problems.some(p => /two ways in/.test(p)));
+  assert.ok(bad.problems.some(p => /kind must be/.test(p)));
+  assert.ok(bad.problems.some(p => /unknown tag "shiny"/.test(p)));
+  assert.ok(bad.problems.some(p => /unknown approach "charm"/.test(p)));
+  assert.ok(bad.problems.some(p => /Difficulty must be 1 to 6/.test(p)));
+  assert.ok(bad.problems.some(p => /Escape needs/.test(p)));
+  assert.ok(bad.problems.some(p => /Limit for 4 players/.test(p)));
+});
+
 test("On the Trail: an Escape obstacle at +1 Difficulty when it begins at half the Limit", () => {
   const W = world();
   W.start();

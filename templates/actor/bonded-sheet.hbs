@@ -96,6 +96,11 @@
       {{#each patchTargets}}<button type="button" data-action="patchUp" data-target="{{id}}">{{name}}</button>{{/each}}
     </div>
     {{/if}}
+    {{#if carrying}}
+    <div><span>{{localize "MG.Sheet.handPrize"}}:</span>
+      {{#each handTargets}}<button type="button" data-action="handPrize" data-target="{{id}}">{{name}}</button>{{/each}}
+    </div>
+    {{/if}}
     {{#if hasFreeTargets}}
     <div><span>{{localize "MG.Sheet.free"}}:</span>
       {{#each freeTargets}}<button type="button" data-action="freeNetted" data-target="{{id}}">{{name}}</button>{{/each}}

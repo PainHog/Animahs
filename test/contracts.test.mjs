@@ -70,7 +70,7 @@ test("dynamic key families are complete (reasons, problems, log lines, causes, r
   for (const t of ["hurt", "net", "take", "recover", "free", "expose", "clash", "growth", "unstick", "prepare"]) assert.equal(typeof get(`MG.Tracker.suggestEffect.${t}`), "string");
   for (const c of ["wild", "hurt", "manual", "none"]) { assert.equal(typeof get(`MG.Shift.into.${c}`), "string"); assert.equal(typeof get(`MG.Sheet.shiftCost.${c}`), "string"); }
   for (const a of C.CLASH_ACTION_ORDER) assert.equal(typeof get(`MG.Clash.${a}Vs`), "string");
-  for (const k of Object.values(SETTINGS)) if (!["missionState", "systemMigrationVersion"].includes(k)) {
+  for (const k of Object.values(SETTINGS)) if (!["missionState", "systemMigrationVersion", "customMission"].includes(k)) {
     assert.equal(typeof get(`MG.Setting.${k}.name`), "string", k); assert.equal(typeof get(`MG.Setting.${k}.hint`), "string", k);
   }
 });

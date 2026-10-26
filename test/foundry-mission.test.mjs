@@ -214,6 +214,30 @@ test("automation off: the outcome waits for the Storyteller's one click", async 
   await as(users.gm, () => game.settings.set(SYSTEM_ID, SETTINGS.autoHurt, true));
 });
 
+test("a custom mission: edited as data in the tracker, checked, remembered, run", async () => {
+  await as(users.gm, () => api.automation.act(api.mission.endMission));
+  await as(users.gm, () => api.automation.finishMission());
+  const tracker = new api.apps.MissionTracker();
+  await W.asUser(users.gm, () => tracker.render());
+  const { blankMission } = await import("../module/logic/missions.mjs");
+  const mine = { ...blankMission(), name: "The Swimming Baths", label: "hard", limit: { 3: 6, 4: 6, 5: 5 } };
+  mine.inside[0] = { id: "pool", name: "The deep end", kind: "group", tags: ["water"], approaches: { move: 2, sneak: 3 }, guards: ["hound"] };
+  // a broken one first: refused with the problems listed
+  dialogResponders.push(opts => opts.ok.callback(null, { form: fakeForm({ mission: JSON.stringify({ ...mine, escape: [] }) }) }));
+  await as(users.gm, () => tracker.runAction("start", { mission: "custom", party: `${theo.id},${priya.id},${jonah.id}` }));
+  assert.ok(log.warnings.some(w => /Escape needs at least one obstacle/.test(w)));
+  dialogResponders.push(opts => opts.ok.callback(null, { form: fakeForm({ mission: JSON.stringify(mine) }) }));
+  await as(users.gm, () => tracker.runAction("start", { mission: "custom", party: `${theo.id},${priya.id},${jonah.id}` }));
+  const S = state();
+  assert.equal(S.name, "The Swimming Baths");
+  assert.equal(S.limit, 6);
+  assert.equal(S.catalogKey, "custom");
+  await as(users.gm, () => api.automation.act(api.mission.chooseWay, 0));
+  await as(users.gm, () => api.automation.advance(api.mission.nextObstacle));
+  assert.equal(api.mission.currentObstacle(state()).name, "The deep end");
+  assert.match(game.settings.get(SYSTEM_ID, SETTINGS.customMission), /Swimming Baths/, "remembered for next time");
+});
+
 test("the scene-control button and the tracker app id", async () => {
   const controls = { tokens: { tools: { select: {} } } };
   await W.asUser(users.gm, () => W.Hooks.callAll("getSceneControlButtons", controls));
