@@ -10,6 +10,10 @@
  */
 import { classify, rollPool, pushRoll, odds, pushOdds } from "./dice.mjs";
 import * as R from "./rules-data.mjs";
+// The rules for a roll (ratings, Strengths, Weaknesses, every perk, the Cap) and for Scent
+// are shared with the Foundry system: module/logic/roll-plan.mjs and module/logic/scent.mjs.
+import { rating, optionsFor, selfMods, finalPool } from "../module/logic/roll-plan.mjs";
+import { onTheTrail as trailAt, badForScent, pointRollScent, groupRoundRise, clashEndRise, scoutOutcome } from "../module/logic/scent.mjs";
 
 const FR = R.FRAMES;
 
@@ -50,89 +54,9 @@ const fire = (S, key) => { S.st.fires[key] = (S.st.fires[key] ?? 0) + 1; };
 /*  Ratings and modifiers (§1, §2, Tables 1–4)                        */
 /* ------------------------------------------------------------------ */
 
-function rating(c, form, approach, tags) {
-  if (form === "human") return c.human[approach];
-  if (approach === "wits") return c.animal === "raven" && tags.includes("locked") ? 2 : 0; // Raven: Clever Beak
-  return FR[c.frame].ratings[approach];
-}
-
-/** Options at an obstacle for character c in a form: [{ approach, rollAs, D, rating, gnaw }]. */
-function optionsFor(c, form, ob) {
-  const out = [];
-  for (const [a, D] of Object.entries(ob.approaches)) {
-    const r = rating(c, form, a, ob.tags);
-    if (r > 0) out.push({ approach: a, rollAs: a, D, rating: r });
-    // Brown Rat, Gnaw: against Locked things, your Force rating is 3.
-    if (form === "animal" && c.animal === "rat" && ob.tags.includes("locked") && a === "force") {
-      out[out.length - 1] = { approach: a, rollAs: "force", D, rating: 3, gnaw: true };
-    }
-  }
-  return out;
-}
-
-/**
- * The character's own modifiers for a roll (before Help and Edges).
- * ctx: { tags, guardKeys, threat, action ("strike"|"distract"|null), escape, firstStrike, distracted, coiled }
- * Returns { dice, down, up, fires }.
- */
-function selfMods(c, form, opt, ctx) {
-  const tags = ctx.tags;
-  const a = opt.rollAs;
-  let dice = 0, down = 0, up = 0;
-  const fires = [];
-  if (form === "animal") {
-    const F = FR[c.frame];
-    if (F.strengths.some(t => tags.includes(t))) dice++;                        // §2 Strength
-    if (F.weaknesses.some(t => tags.includes(t))) up++;                          // §2 Weakness
-    switch (c.animal) {
-      case "jaguar": if (a === "sneak" && tags.includes("dark")) { down++; fires.push("jaguar"); } break;
-      case "snowleopard": if (ctx.action === "strike" && ctx.firstStrike) { down++; fires.push("snowleopard"); } break;
-      case "dog": if ((a === "sneak" || a === "sense") && tags.includes("crowd")) { down++; fires.push("dog"); } break;
-      case "falcon": if (a === "sense" && (tags.includes("open") || tags.includes("high"))) { down++; fires.push("falcon"); } break;
-      case "owl": if ((a === "sneak" || a === "move") && tags.includes("dark")) { dice++; fires.push("owl"); } break;
-      case "raven": if (opt.approach === "wits") fires.push("raven"); break;
-      case "mouse": if ((a === "sneak" || a === "move") && tags.includes("narrow")) { down++; fires.push("mouse"); } break;
-      case "rat": if (opt.gnaw) fires.push("rat"); break;
-      case "squirrel": if (a === "move" && tags.includes("high")) { down++; fires.push("squirrel"); } break;
-      case "gator": if ((a === "sneak" || a === "force") && tags.includes("water")) { down++; fires.push("gator"); } break;
-      case "komodo": if (a === "sense") { dice++; fires.push("komodo"); } break;
-    }
-  }
-  const pk = R.PERKS[c.perk];
-  if (pk && (pk.form === "any" || form === "human")) {
-    switch (c.perk) {
-      case "football": if (a === "force") { dice++; fires.push("football"); } break;
-      case "hideseek": if (a === "sneak") { dice++; fires.push("hideseek"); } break;
-      case "trackstar": if (a === "move") { dice++; fires.push("trackstar"); } break;
-      case "scout": if (a === "sense") { dice++; fires.push("scout"); } break;
-      case "brainiac": if (opt.approach === "wits") { dice++; fires.push("brainiac"); } break;
-      case "swim": if (tags.includes("water")) { dice++; fires.push("swim"); } break;
-      case "gymnast": if (tags.includes("high")) { dice++; fires.push("gymnast"); } break;
-      case "nightowl": if (tags.includes("dark")) { dice++; fires.push("nightowl"); } break;
-      case "drama": if (tags.includes("crowd")) { dice++; fires.push("drama"); } break;
-      case "whisperer": {
-        const vsHound = ctx.threat ? ctx.threat.key === "hound" : (ctx.guardKeys ?? []).includes("hound");
-        if (vsHound) { dice++; fires.push("whisperer"); }
-        break;
-      }
-    }
-  }
-  if (a === "sneak") {                                                           // Table 4 specials
-    const g = ctx.guardKeys ?? [];
-    if (g.includes("hound") && !(form === "animal" && c.animal === "komodo")) up++; // Tracker (Komodo ignores)
-    if (g.includes("huntsman")) up++;                                            // Trophy
-  }
-  if (ctx.distracted) down++;                                                    // §7 Distract
-  if (ctx.coiled) down++;                                                        // Python: Coil
-  return { dice, down, up, fires };
-}
-
-/** §1 The Cap: pool and Difficulty from a base rating, own mods and extra boosts. */
-function finalPool(opt, m, extraDice = 0, extraDown = 0) {
-  const n = opt.rating + Math.min(R.CAP_DICE, m.dice + extraDice);
-  const d = Math.max(1, opt.D + m.up - Math.min(R.CAP_DIFF, m.down + extraDown));
-  return { n, d };
-}
+/* The rules for a roll — rating (§2, Clever Beak), optionsFor (Gnaw), selfMods (Strengths,
+ * Weaknesses, animal and human perks, Tracker, Trophy, Distract, Coil) and finalPool (§1 the
+ * Cap) — are imported from module/logic/roll-plan.mjs above. */
 
 /* ------------------------------------------------------------------ */
 /*  Policy: values                                                    */
@@ -283,7 +207,7 @@ function scentUp(S, n) {
   if (S.scent >= S.limit) { S.huntUp = true; S.huntUpAt = S.phase; log(S, "The Hunt is Up"); }
 }
 
-const onTheTrail = S => S.scent >= Math.ceil(S.limit / 2);
+const onTheTrail = S => trailAt(S.scent, S.limit);
 
 /** §8: once the Hunt is Up, a Fail means you're Taken (in the Escape; also inside under pressOn). */
 const takenOnFail = S => S.huntUp && (S.phase === "escape" || S.p.huntUpInside === "pressOn");
@@ -522,10 +446,10 @@ function runObstacle(S, rawOb) {
         if (best.form === "animal" && best.c.animal === "hippo" && best.opt.rollAs === "force" && !best.c.used.has("hippo") && prog + 1 < ob.progress) {
           best.c.used.add("hippo"); fire(S, "hippo"); prog += 2; // Hippopotamus: Charge counts as a Critical
         } else prog += 1;
-      } else if (res === "partial") { prog += 1; scentUp(S, 1); }
+      } else if (res === "partial") { prog += 1; scentUp(S, pointRollScent(res, S.phase === "escape" && !S.p.escapePartialScent)); }
       else {
         const wasUp = takenOnFail(S);
-        scentUp(S, 1);
+        scentUp(S, pointRollScent(res, S.phase === "escape" && !S.p.escapePartialScent));
         if (wasUp) take(S, best.c);
         else if (ob.dangerous) hurt(S, best.c, 1);
         if (!wasUp && guards.length && !S.huntUp) {
@@ -566,7 +490,7 @@ function runObstacle(S, rawOb) {
         else if (ob.dangerous) hurt(S, c, 1);
       } else {
         past.add(c);
-        if (res === "partial" && (S.phase !== "escape" || S.p.escapePartialScent)) bad = true;
+        if (badForScent(res, S.phase === "escape" && !S.p.escapePartialScent)) bad = true;
         if (res === "crit") gainEdge(S);
       }
     }
@@ -580,7 +504,7 @@ function runObstacle(S, rawOb) {
       if (ob.guardsClear) break;
     }
     if (stopInside(S)) break;
-    if (S.p.groupScent === "once" && rounds >= 3 && active(S).some(c => !past.has(c))) scentUp(S, 1); // A24: every round after the third costs
+    if (S.p.groupScent === "once") scentUp(S, groupRoundRise(rounds, active(S).some(c => !past.has(c)))); // A24: every round after the third costs
   }
   groupRise();
   endScene(S);
@@ -697,7 +621,7 @@ function clash(S, ob, guardKeys) {
   S.st.clashRounds.push(rounds);
   if (rounds >= R.CLASH_MAX_ROUNDS) S.st.clashRound4++;
   // after round 4 any threats still standing pull back
-  const rise = rounds >= R.CLASH_MAX_ROUNDS || S.clash.down || S.clash.shifted ? 2 : 1;
+  const rise = clashEndRise({ rounds, anyDown: S.clash.down, anyShifted: S.clash.shifted });
   scentUp(S, rise);
   S.clash = null;
   endScene(S);
@@ -738,9 +662,9 @@ function scout(S) {
   if (best.form !== best.c.form) doShift(S, best.c, best.form, false);
   const plan = planBoosts(S, best.c, best.form, best.opt, best.m, best.vals, {});
   const res = makeRoll(S, best.c, best.form, best.opt, best.m, plan, best.vals);
-  if (res === "crit") { gainEdge(S); gainEdge(S); }
-  else if (res === "success") gainEdge(S);
-  else scentUp(S, 1);
+  const out = scoutOutcome(res);
+  for (let i = 0; i < out.edges; i++) gainEdge(S);
+  scentUp(S, out.scent);
   for (const c of S.chars) c.used.clear();
   return res;
 }
