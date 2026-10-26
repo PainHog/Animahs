@@ -30,18 +30,20 @@ export class BondedSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     window: { resizable: true },
     form: { submitOnChange: true },
     actions: {
-      roll: BondedSheet.#onRoll,
-      shift: BondedSheet.#onShift,
-      wildPip: BondedSheet.#onWildPip,
-      hurtBox: BondedSheet.#onHurtBox,
-      status: BondedSheet.#onStatus,
-      patchUp: BondedSheet.#onPatchUp,
-      freeNetted: BondedSheet.#onFree,
-      builder: BondedSheet.#onBuilder,
-      addPick: BondedSheet.#onAddPick,
-      removePick: BondedSheet.#onRemovePick,
+      ...ownerOnly({
+        roll: BondedSheet.#onRoll,
+        shift: BondedSheet.#onShift,
+        wildPip: BondedSheet.#onWildPip,
+        hurtBox: BondedSheet.#onHurtBox,
+        status: BondedSheet.#onStatus,
+        patchUp: BondedSheet.#onPatchUp,
+        freeNetted: BondedSheet.#onFree,
+        builder: BondedSheet.#onBuilder,
+        addPick: BondedSheet.#onAddPick,
+        removePick: BondedSheet.#onRemovePick,
+        handPrize: BondedSheet.#onHandPrize,
+      }),
       tracker: BondedSheet.#onTracker,
-      handPrize: BondedSheet.#onHandPrize,
     },
   };
 
@@ -181,6 +183,14 @@ export class BondedSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static async #onTracker() { return game.morphgame?.openTracker?.(); }
   /** §10: handing the prize to a friend at the same obstacle takes your action, no roll. */
   static async #onHandPrize(event, target) { return runOp(OPS.handPrize, { actorId: this.document.id, toId: target.dataset.target }); }
+}
+
+/** Sheet actions only for the actor's owners (an observer's click would be refused anyway). */
+export function ownerOnly(actions) {
+  return Object.fromEntries(Object.entries(actions).map(([name, fn]) => [name, function (event, target) {
+    if (!this.document?.isOwner) { ui.notifications.warn(game.i18n.localize("MG.Reason.notOwner")); return null; }
+    return fn.call(this, event, target);
+  }]));
 }
 
 /** Keep frame and animal consistent in submitted sheet data. */

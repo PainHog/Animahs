@@ -5,6 +5,7 @@
 import { SYSTEM_PATH, TEMPLATES } from "../contracts.mjs";
 import { THREATS, THREAT_ORDER } from "../config.mjs";
 import { ThreatData } from "../data/threat.mjs";
+import { ownerOnly } from "./bonded-sheet.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -16,7 +17,7 @@ export class ThreatSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     position: { width: 460, height: 520 },
     window: { resizable: true },
     form: { submitOnChange: true },
-    actions: { harmBox: ThreatSheet.#onHarmBox, resetKind: ThreatSheet.#onResetKind },
+    actions: ownerOnly({ harmBox: ThreatSheet.#onHarmBox, resetKind: ThreatSheet.#onResetKind }),
   };
 
   static PARTS = { sheet: { template: `${SYSTEM_PATH}/${TEMPLATES.threatSheet}` } };

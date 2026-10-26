@@ -104,6 +104,16 @@ test("Wild pips, Hurt boxes (Down at 3, Stuck as an animal), statuses, problems"
   await as(users.p2, () => jonah.update({ "system.human.sneak": 1 }));
 });
 
+test("sheet buttons are for the actor's owners only", async () => {
+  const maya = game.actors.find(a => a.name === "Maya Reyes");
+  await as(users.gm, () => maya.update({ ownership: { default: 2, [users.p1.id]: 3 } }));   // everyone observes
+  const sheet = new api.apps.BondedSheet({ document: maya });
+  const before = maya.system.wild.value;
+  await as(users.p2, () => sheet.runAction("wildPip", { n: "1" }));
+  assert.equal(maya.system.wild.value, before);
+  assert.ok(log.warnings.some(w => w.startsWith("Ben") && /That isn't your character/.test(w)));
+});
+
 test("shifting with no Wild costs 1 Hurt, unless it would put you Down", async () => {
   const lucia = await makeBonded("lucia", users.p1, { system: { wild: { value: 0, max: 4 } } });
   await as(users.p1, () => api.shift(lucia));
