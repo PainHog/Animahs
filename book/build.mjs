@@ -24,6 +24,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { imageSize, RASTER_EXT, MIME } from "./tools/image-size.mjs";
+import { sizeProblem } from "./tools/art-sizes.mjs";
 
 const BOOK = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(BOOK, "..");
@@ -64,20 +65,11 @@ function artFile(name) {
   return existsSync(f) ? { kind: "svg", file: f } : null;
 }
 const hasArt = name => artFile(name) !== null;
-// The printed width of each kind of figure (inches): drop-in art should have
-// at least 300 pixels per inch of it. Tailpieces are limited by height instead.
-const PRINT_WIDTH_IN = { "cover-art": 8.75, "part-art": 6.7, "chapter-art": 7.14, "back-art": 4.16, map: 3.42, diagram: 3.42 };
-const PORTRAIT_IN = { entry: 1.2, statblock: 1.75 };
-function checkRaster(name, cls, px) {
+// Drop-in art should have at least 300 pixels per inch at its printed size (book/tools/art-sizes.mjs).
+function checkRaster(name, px) {
   if (!px) { warn.push(`can't read the size of ${name}`); return; }
-  let need = null;
-  for (const [k, inch] of Object.entries(PRINT_WIDTH_IN)) if (cls.includes(k)) need = { w: inch * 300 };
-  if (cls.includes("portrait")) need = { w: PORTRAIT_IN.statblock * 300 };
-  if (cls.includes("tailpiece")) need = { h: 5.3 * 300 };
-  if (cls.includes("chapter-art")) need = { w: 7.14 * 300, h: 1.8 * 300 };
-  if (!need) return;
-  if ((need.w && px.width < need.w) || (need.h && px.height < need.h))
-    warn.push(`${name}: ${px.width}×${px.height} px is below 300 ppi at print size (needs ${need.w ? `${Math.round(need.w)} px wide` : ""}${need.w && need.h ? " and " : ""}${need.h ? `${Math.round(need.h)} px tall` : ""})`);
+  const problem = sizeProblem(name, px);
+  if (problem) warn.push(problem);
 }
 function loadArt(name, cls = "") {
   const key = `${name}|${cls}`;
@@ -86,7 +78,7 @@ function loadArt(name, cls = "") {
   let svg;
   if (found?.kind === "raster") {
     const px = imageSize(found.file);
-    checkRaster(name, cls, px);
+    checkRaster(name, px);
     const data = readFileSync(found.file).toString("base64");
     svg = `<img class="art-raster" alt="" src="data:${MIME[found.ext]};base64,${data}"${px ? ` width="${px.width}" height="${px.height}"` : ""}>`;
   } else if (found?.kind === "svg") {
@@ -222,16 +214,11 @@ const FOOTER_CSS = `@page { @bottom-center { content: ${cssString(BOOK_TITLE + "
  * Spot illustrations fill the space a chapter leaves empty on its last page.
  * Pass 1 prints an end-of-chapter marker; its height on the page tells us how much
  * room is left, and a spot sized to fit is placed there (never enough to move a page).
- * Each chapter lists spots in order of preference; the first not yet used wins.
- *   e.g.  "ch-01": ["spot-something", "spot-spare"],
- * A chapter with no list (or whose list is used up) may take any spot no later chapter wants.
+ * Each chapter lists spots in order of preference in book/src/spots.json; the first not
+ * yet used wins. A chapter with no list (or whose list is used up) may take any spot no
+ * later chapter wants, including those under "spare".
  */
-const SPOTS = {
-  "ch-02": ["spot-sheet"], "ch-04": ["spot-tracks"], "ch-05": ["spot-scent"], "ch-06": ["spot-net"],
-  "ch-07": ["spot-window"], "ch-08": ["spot-treehouse"], "ch-09": ["spot-books"], "ch-10": ["spot-trophy"],
-  "ch-11": ["spot-busstop"], "ch-12": ["spot-notebook"], "ch-13": ["spot-poster"], "ch-14": ["spot-alligator"],
-  "ch-15": ["spot-gears"], "ch-16": ["spot-keys"], "ch-17": ["spot-bison"], "ch-19": ["spot-table"],
-};
+const SPOTS = JSON.parse(readFileSync(join(SRC, "spots.json"), "utf8"));
 const PT_PER_IN = 72;
 const BOTTOM_LIMIT_PT = (0.78 + BLEED_IN) * PT_PER_IN;   // @page bottom margin: content must end above this
 const TEXT_H_IN = 11 - 0.72 - 0.78;   // the text area's height (the print bleed adds to both the page and its margins)

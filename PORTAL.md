@@ -1,6 +1,6 @@
 Now: Polishing the draft rulebook and its stand-in pictures, and building the online version for Foundry VTT
 Next: Richard reviews and revises the whole draft book
-Number: Design decisions so far = 30
+Number: Design decisions so far = 31
 Number: Approved by Richard = 1
 Number: Core questions still open = 0
 

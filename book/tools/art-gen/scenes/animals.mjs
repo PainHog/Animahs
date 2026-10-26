@@ -1,5 +1,7 @@
 // The animals of Second Nature, drawn at real size: 1 unit = 1 cm, ground at y = 0,
-// facing right (flip with place(..., true) only for animals without one-sided marks).
+// facing right, which shows the animal's RIGHT side. A one-sided Mark (mark, notch, scar)
+// is drawn on the visible side: use the drawing as it is for a right-side Mark, and flip
+// it with place(..., true) for a left-side Mark, which then faces left with the Mark showing.
 // Every animal has its true number of legs, eyes and ears for the view it is drawn
 // in (ART-CHECKLIST 9, 21–22). Far-side legs are drawn darker, behind the body.
 import { C, S, L, P, E, Ci, G, n, curve, smooth } from "./kit.mjs";
@@ -39,9 +41,9 @@ export function jaguar({ mark = false } = {}) {
   s += S([[136, -74], [146, -84], [160, -85], [171, -79], [179, -71], [185, -65], [183, -58], [175, -54], [161, -52], [147, -54], [137, -61]], fur, ink, SW);
   s += S([[143, -81], [147, -91], [155, -91], [158, -83]], fur, ink, SW) + S([[147, -84], [149, -88], [153, -88], [154, -84]], C.rosette, null, 0);
   s += P(`M170 -60Q178 -56 184 -60Q182 -54 172 -54Z`, C.tawnyLight, null);
-  // eye (gold-green), nose, mouth, whiskers
-  s += E(166, -72, 3, 2, C.goldLight, ink, 1.1) + Ci(166.5, -72, 1, ink, null);
-  if (mark) s += Ci(165.4, -72.6, .6, C.gold, null);
+  // eye (yellow-green), nose, mouth, whiskers
+  s += E(166, -72, 3, 2, C.leafLight, ink, 1.1) + Ci(166.5, -72, 1, ink, null);
+  if (mark) s += Ci(164.8, -72.3, 1, C.gold, C.goldDeep, .3);   // a fleck of gold in the yellow-green eye
   s += P(`M181 -66L186 -64L182 -61Z`, C.rosette, ink, .8);
   s += P(`M183 -59Q178 -57 173 -58`, "none", ink, 1.1);
   for (const [x, y] of [[150, -66], [156, -60], [146, -60], [158, -76]]) s += Ci(x, y, 1.3, C.rosette, null);

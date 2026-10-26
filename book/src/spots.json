@@ -1,0 +1,18 @@
+{
+  "ch-02": ["spot-sheet"],
+  "ch-04": ["spot-tracks"],
+  "ch-05": ["spot-scent"],
+  "ch-06": ["spot-net"],
+  "ch-07": ["spot-window"],
+  "ch-08": ["spot-treehouse"],
+  "ch-09": ["spot-books"],
+  "ch-10": ["spot-trophy"],
+  "ch-11": ["spot-busstop"],
+  "ch-12": ["spot-notebook"],
+  "ch-13": ["spot-poster"],
+  "ch-14": ["spot-alligator"],
+  "ch-15": ["spot-gears"],
+  "ch-16": ["spot-keys"],
+  "ch-17": ["spot-bison"],
+  "spare": ["spot-table"]
+}

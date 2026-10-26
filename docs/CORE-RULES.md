@@ -1,6 +1,6 @@
-# Second Nature: core rules (v0.1b draft)
+# Second Nature: core rules (v0.1c draft)
 
-*Working title (DESIGN D2). These are the rules until chapters exist. The simulator follows this page and cites its § numbers. The tables after the rules hold the options and numbers. v0.1b includes the first simulator pass (DESIGN D24–D28; `book/REVIEW.md` rows 1–10).*
+*Working title (DESIGN D2). These are the rules until chapters exist. The simulator follows this page and cites its § numbers. The tables after the rules hold the options and numbers. v0.1b includes the first simulator pass (DESIGN D24–D28; `book/REVIEW.md` rows 1–10). v0.1c adds the answers the chapters needed (DESIGN D31; rows 11–17), none of which changes a simulated mission.*
 
 Kids aged 11–15 have **Bonded** with one animal each and can become it. They fight **the Gilded Hunt**, a secret society of rich trophy hunters who steal animal power and wear it as **Trophies**. Each session is one **mission** against the Hunt. One player is the **Storyteller**; the other 3–5 each play one Bonded kid.
 
@@ -64,12 +64,13 @@ The Clash ends when every threat is out, when nobody is left in it, or **at the 
 - **Down** (3 Hurt): you can't act until the scene ends. Then you're back up with 2 Hurt and past the obstacle, if a friend is still standing and the Hunt isn't Up. Otherwise you're **Taken**. If you go Down in animal form, you're **Stuck** in it until the mission ends.
 - **Netted:** you can't act until a friend frees you (their action, no roll). When the scene ends you're freed, if a friend is still standing and the Hunt isn't Up; otherwise you're Taken.
 - **Taken:** the Hunt cages you, and you're out for the mission. If you were carrying the prize, it's lost.
+- **Rescued:** a character freed during a mission rejoins the team once it's out, and doesn't roll in the Escape.
 - **Exposed:** the Hunt knows your face and your **Mark**. In a campaign, your next mission starts at Scent 1.
 - **Everyone Down, Netted or Taken at once:** everyone is Taken, and the mission is a Loss.
 
 **§10 A mission.**
 1. **Scout:** one character rolls Sense against the mission's scouting Difficulty. Success: the team picks one of the two ways in and gains an Edge. Critical: as Success, but two Edges. Partial: the team picks, but Scent starts at 1. Fail: the Storyteller picks, and Scent starts at 1.
-2. **Way in,** then **obstacles,** then the **objective** (an obstacle; a prize to steal must then be carried out).
+2. **Way in,** then **obstacles,** then the **objective** (an obstacle; a prize to steal must then be carried out). One character carries the prize. Handing it to a friend at the same obstacle takes an action, with no roll; shifting drops it (§3); if its carrier is Taken, the prize and the objective are lost.
 3. **Escape:** group obstacles.
 4. **The team may Withdraw** at any time and go straight to the Escape; that's a Loss.
 
@@ -82,10 +83,14 @@ The Clash ends when every threat is out, when nobody is left in it, or **at the 
 4. **Your Mark:** one feature that shows in both forms.
 5. **The rest:** a name, an age (11–15), and something you love about your town. Start with 4 Wild and 0 Hurt.
 
-**§12 Campaign (drafted, not yet simulated).** About six missions, then the Last Hunt.
-- **The Hunt track** (0–6) rises by 2 for a Loss and by 1 for a Costly Win. At 6, the Last Hunt comes early.
-- **Growth:** after each mission, mark 1 Growth. At 2, 4 and 6, choose one: +1 Wild (to a maximum of 6); a second human perk; +1 to a human rating (to a maximum of 3); or **Wild Sense** (one of your frame's Strengths also works in human form).
-- **Taken characters** can be rescued on a later mission. A new Bonded character joins at the start of a mission, never during one.
+**§12 Campaign (drafted, not yet simulated).** Six missions, then the Last Hunt as the seventh.
+- **The Hunt track** (0–6) rises by 2 for a Loss and by 1 for a Costly Win, and never goes down. At 6, the next mission is the Last Hunt.
+- **The Last Hunt** is a Hard mission. With the Hunt track at 4 or more, its Limit is 1 lower.
+- **Growth:** after each mission, mark 1 Growth. At 2, 4 and 6, choose one: +1 Wild (to a maximum of 6, counting the Gamer perk); a second human perk; +1 to a human rating (to a maximum of 3); or **Wild Sense** (one of your frame's Strengths also works in human form). Only +1 to a rating can be chosen again, for a different rating.
+- **Taken characters** can be rescued on a later mission. At the next full moon (within two missions) the Hunt makes them a Trophy: they lose their Bond but keep their memories, and freeing the Trophy gives the Bond back.
+- **New characters** join at the start of a mission, never during one, with Growth equal to the lowest in the group. When a Taken friend is rescued, their player chooses which character to keep.
+- **Everyone Taken:** the next mission is a Breakout, played by new Bonded.
+- **Results carry over:** a mission's Win, Costly Win or Loss may change the next mission (an extra guard, a new ally).
 
 ---
 

@@ -8,6 +8,8 @@ import * as H from "./people.mjs";
 
 /* ------------------------------------------------------------ portraits */
 // 400×400 medallions. Frames show the ready-made Bonded's own animal, Mark included.
+// The animals are drawn facing right, which shows their right side; Maya's and Theo's
+// Marks are on the left (her left eye, his left ear), so those two face left.
 
 function portrait(id, title, body, ring = C.gold) {
   return svg("0 0 400 400", title, medallion(id) + clip(id, body) + medallionRing(ring));
@@ -17,11 +19,11 @@ const floor = (y = 330, fill = C.night2) => P(`M0 ${y}H400V400H0Z`, fill, C.ink,
 
 export function frame_cats() {
   return portrait("fc", "A jaguar walking through the dark, a fleck of gold in its left eye",
-    moonBack(300, 110) + grass(312) + place(24, 314, 1.92, A.jaguar({ mark: true })));
+    moonBack(100, 110) + grass(312) + place(376, 314, 1.92, A.jaguar({ mark: true }), true));
 }
 export function frame_canines() {
   return portrait("fn", "A coyote standing on open ground, a notch in its left ear",
-    moonBack(90, 100) + grass(318) + place(40, 320, 2.25, A.coyote({ notch: true })));
+    moonBack(310, 100) + grass(318) + place(360, 320, 2.25, A.coyote({ notch: true }), true));
 }
 export function frame_birds() {
   return portrait("fb", "A barn owl perched on a fence post, pale rings around its eyes",

@@ -84,6 +84,8 @@ figure.art img.art-raster { display: block; width: 100%; height: auto; }
 .chapter-head .chapter-art img.art-raster { height: 100%; object-fit: cover; }
 .cover .cover-art img.art-raster { width: 100%; height: 100%; object-fit: cover; }
 figure.tailpiece img.art-raster { height: 100%; width: auto; max-width: 100%; }
+/* portraits are square pictures shown as circles */
+figure.portrait img.art-raster { aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
 .art-missing {
   display: grid; place-items: center; min-height: 0.9in;
   border: 1.5px dashed var(--alarm); color: var(--alarm); font: 700 9pt var(--sans);

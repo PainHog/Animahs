@@ -358,6 +358,21 @@ Measured by forcing one character to each option, with the rest of the group ran
 - **Decision:** the rulebook (chapters, missions, ready-made characters, sheets) is drafted from `docs/CORE-RULES.md` v0.1b and the simulator's test missions. Richard revises the whole draft afterwards.
 - **Why:** Richard asked for the full book with art now (2026-10-26). This doesn't approve the core rules: they and every draft decision stay open to his revision. When a rule changes, the chapters, the sheets and the simulator change with it.
 
+### D31 · 2026-10-26 · draft: Rules the chapters add to the core rules
+Writing the chapters needed answers the core rules left open. These are in the book, in `docs/CORE-RULES.md` v0.1c and in `book/REVIEW.md` rows 11–17. None of them changes a simulated mission's numbers.
+1. **Campaigns (§12):**
+   - The Last Hunt is the seventh mission, or the next one once the Hunt track reaches 6. Build it as a Hard mission; with the track at 4 or more, its Limit is 1 lower.
+   - Growth options can't be taken twice, except +1 to a human rating (a different rating each time). The +1 Wild maximum of 6 counts the Gamer perk.
+   - A Taken character becomes a Trophy at the next full moon, within the next two missions. A Trophy loses their Bond but keeps their memories; freeing the Trophy gives the Bond back.
+   - A replacement Bonded starts with Growth equal to the lowest in the group. When a Taken friend is rescued, their player chooses which character to keep playing.
+   - If the whole team is Taken, the next mission is a Breakout: new Bonded run *The Lodge on the Hill* to free them.
+2. **A prize to carry out (§10):** one character carries it. Handing it to a friend at the same obstacle takes an action, with no roll. Shifting drops it (§3). If its carrier is Taken, the prize and the objective are lost.
+3. **Rescued characters (§9):** someone freed during a mission rejoins the team once it's out, and doesn't roll in the Escape.
+4. **A mission's results can set up the next one:** for example, a Loss at the Old Mill lets the Storyteller add a Hound to one guarded obstacle on the next mission.
+5. **Obstacle tables** show the kind and the progress in one column ("Group", or "Point · 3"), so the notes have room.
+- **Options:** leave each to the Storyteller; or write them down now.
+- **Why:** a first-night Storyteller needs these answered on the page. They're the simplest answers that keep §8's "Scent never goes down" and §9's Taken rules intact. The campaign rules still haven't been simulated; Chapter 8 says so.
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
