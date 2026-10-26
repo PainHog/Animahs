@@ -19,11 +19,15 @@ export const OUT = join(ROOT, "packs");
 /**
  * file → output pack, document class & subtype. Must match system.json packs[]
  * (and an Item/Actor subtype must be declared in system.json documentTypes).
- * Empty until the game has content. Examples of the shape:
- *   { file: "things", out: "things", collection: "items", type: "Item", subtype: "thing" },
- *   { file: "rules", out: "rules", collection: "journal", type: "JournalEntry", subtype: null }
+ * The sources are written by tools/build-pack-sources.mjs from the rulebook and the
+ * shared rules data; never edit them by hand.
  */
-export const PACKS = [];
+export const PACKS = [
+  { file: "ready-made-bonded", out: "ready-made-bonded", collection: "actors", type: "Actor", subtype: "bonded" },
+  { file: "threats", out: "threats", collection: "actors", type: "Actor", subtype: "threat" },
+  { file: "rules", out: "rules", collection: "journal", type: "JournalEntry", subtype: null },
+  { file: "missions", out: "missions", collection: "journal", type: "JournalEntry", subtype: null },
+];
 
 /** Deterministic 16-char alphanumeric id from a namespace + key (sha256 hex prefix). */
 export function makeId(...parts) {
@@ -92,7 +96,7 @@ export function toCliDoc(def, raw, index) {
       folder: null,
       sort,
       ownership: { default: 0 },
-      flags: {},
+      flags: raw.flags ?? {},
       _stats: STATS
     };
   }
@@ -108,14 +112,14 @@ export function toCliDoc(def, raw, index) {
     folder: null,
     sort,
     ownership: { default: 0 },
-    flags: {},
+    flags: raw.flags ?? {},
     _stats: STATS
   };
   if (def.type === "Actor") {
     doc.items = [];
     // null (not "") disables a token bar; "" would be cleaned back to the
-    // system's primaryTokenAttribute. Override per pack once actors exist.
-    doc.prototypeToken = { bar1: { attribute: null }, bar2: { attribute: null } };
+    // system's primaryTokenAttribute. Each source may set its own token.
+    doc.prototypeToken = raw.prototypeToken ?? { bar1: { attribute: null }, bar2: { attribute: null } };
   }
   return doc;
 }

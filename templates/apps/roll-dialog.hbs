@@ -1,0 +1,101 @@
+<section class="mg-roll">
+  <header class="mg-roll-head">
+    <img src="{{img}}" alt="" class="mg-portrait"/>
+    <div>
+      <h2>{{actorName}}</h2>
+      <p class="mg-muted">{{formLabel}}</p>
+    </div>
+  </header>
+
+  <div class="mg-field">
+    <label for="mg-roll-context">{{localize "MG.RollDialog.for"}}</label>
+    <select id="mg-roll-context" name="context">
+      {{#each contexts}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+    </select>
+  </div>
+
+  {{#if info}}
+  <div class="mg-roll-info">
+    {{#if info.name}}<p><strong>{{info.name}}</strong>{{#if info.dangerous}} · <span class="bad">{{localize "MG.Tracker.dangerous"}}</span>{{/if}}</p>{{/if}}
+    {{#if trail}}<p class="bad">{{localize "MG.RollDialog.trail"}}</p>{{/if}}
+    {{#if guards}}<p class="mg-muted">{{localize "MG.RollDialog.guards" list=guards}}</p>{{/if}}
+    {{#if info.scoutDiff}}<p class="mg-muted">{{localize "MG.RollDialog.scoutHint" d=info.scoutDiff}}</p>{{/if}}
+  </div>
+  {{/if}}
+
+  {{#if isClash}}
+  <div class="mg-field-row">
+    <div class="mg-field">
+      <label for="mg-roll-action">{{localize "MG.RollDialog.action"}}</label>
+      <select id="mg-roll-action" name="action">
+        {{#each actions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    </div>
+    <div class="mg-field">
+      <label for="mg-roll-threat">{{localize "MG.RollDialog.threat"}}</label>
+      <select id="mg-roll-threat" name="threatId">
+        {{#each threats}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    </div>
+  </div>
+  {{/if}}
+
+  <div class="mg-field-row">
+    <div class="mg-field">
+      <label for="mg-roll-approach">{{localize "MG.RollDialog.approach"}}</label>
+      <select id="mg-roll-approach" name="approach">
+        {{#each approaches}}<option value="{{key}}" {{#if selected}}selected{{/if}} {{#if disabled}}disabled{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    </div>
+    <div class="mg-field mg-narrow">
+      <label for="mg-roll-diff">{{localize "MG.RollDialog.difficulty"}}</label>
+      <input id="mg-roll-diff" type="number" name="difficulty" value="{{difficulty}}" min="{{diffMin}}" max="{{diffMax}}" step="1"/>
+    </div>
+  </div>
+
+  <fieldset class="mg-tags">
+    <legend>{{localize "MG.RollDialog.tags"}}</legend>
+    {{#each tags}}
+    <label class="mg-check"><input type="checkbox" name="tag.{{key}}" {{#if checked}}checked{{/if}}/> {{label}}</label>
+    {{/each}}
+  </fieldset>
+
+  <fieldset class="mg-mods">
+    <legend>{{localize "MG.RollDialog.mods"}}</legend>
+    {{#if hasMods}}
+    <ul>{{#each mods}}<li class="{{cls}}">{{text}}</li>{{/each}}</ul>
+    {{else}}<p class="mg-muted">{{localize "MG.RollDialog.noMods"}}</p>{{/if}}
+  </fieldset>
+
+  <div class="mg-field-row">
+    <fieldset class="mg-help">
+      <legend>{{localize "MG.RollDialog.help"}}</legend>
+      {{#if hasHelpers}}
+      {{#each helpers}}
+      <label class="mg-check {{#unless ok}}mg-muted{{/unless}}"><input type="checkbox" name="help.{{id}}" {{#if checked}}checked{{/if}} {{#unless ok}}disabled{{/unless}}/> {{label}}{{#if reasonLabel}} <em>({{reasonLabel}})</em>{{/if}}</label>
+      {{/each}}
+      {{else}}<p class="mg-muted">{{localize "MG.RollDialog.noHelpers"}}</p>{{/if}}
+    </fieldset>
+    <div class="mg-field mg-narrow">
+      <label for="mg-roll-edges">{{localize "MG.RollDialog.edges"}}</label>
+      <select id="mg-roll-edges" name="edges">
+        {{#each edgeOptions}}<option value="{{n}}" {{#if selected}}selected{{/if}}>{{n}}</option>{{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="mg-roll-summary">
+    {{#if canRoll}}
+    <p class="mg-big">{{summary}}</p>
+    <p class="mg-muted">{{chances}}</p>
+    {{#if capDice}}<p class="mg-cap">{{localize "MG.Roll.capDice"}}</p>{{/if}}
+    {{#if capDiff}}<p class="mg-cap">{{localize "MG.Roll.capDiff"}}</p>{{/if}}
+    {{/if}}
+    {{#each warnings}}<p class="bad">{{this}}</p>{{/each}}
+  </div>
+
+  <footer class="mg-buttons">
+    <button type="submit" {{#unless canRoll}}disabled{{/unless}}><i class="fa-solid fa-dice-six"></i> {{localize "MG.RollDialog.roll"}}</button>
+    <button type="button" data-action="cancel">{{localize "MG.RollDialog.cancel"}}</button>
+  </footer>
+</section>

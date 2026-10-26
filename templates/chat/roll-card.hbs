@@ -1,0 +1,19 @@
+<div class="morphgame mg-card mg-roll-card result-{{resultClass}}">
+  <header class="mg-card-head">
+    {{#if img}}<img src="{{img}}" alt="" class="mg-portrait"/>{{/if}}
+    <div>
+      <h3>{{name}}: {{approach}}{{#if variant}} <small>({{variant}})</small>{{/if}}</h3>
+      <p class="mg-muted">{{form}}{{#if animalName}} · {{animalName}}{{/if}} · {{where}}{{#if tags}} · {{tags}}{{/if}}</p>
+    </div>
+  </header>
+  <ol class="mg-dice">
+    {{#each dice}}<li class="mg-die{{#if hit}} hit{{/if}}{{#if six}} six{{/if}}{{#if rerolled}} rerolled{{/if}}">{{face}}</li>{{/each}}
+  </ol>
+  <p class="mg-result"><strong>{{resultLabel}}</strong> · {{localize "MG.Roll.hitsOf" hits=hits pool=pool d=difficulty}}</p>
+  {{#if mods.length}}<ul class="mg-mods">{{#each mods}}<li class="{{cls}}">{{text}}</li>{{/each}}</ul>{{/if}}
+  {{#if cap}}<p class="mg-cap">{{cap}}</p>{{/if}}
+  {{#each notes}}<p class="mg-note">{{this}}</p>{{/each}}
+  {{#if outcome.length}}<ul class="mg-outcome">{{#each outcome}}<li>{{this}}</li>{{/each}}</ul>{{/if}}
+  {{#if pending}}<p class="mg-pending">{{localize "MG.Roll.pending"}}{{#if reminder}} {{reminder}}{{/if}}</p>{{/if}}
+  <div class="mg-card-actions"></div>
+</div>

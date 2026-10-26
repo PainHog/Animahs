@@ -1,0 +1,186 @@
+<section class="mg-tracker-body">
+{{#unless canSee}}
+  <p class="mg-muted">{{localize "MG.Notify.trackerHidden"}}</p>
+{{else}}
+
+  {{#if showSetup}}
+  <section class="mg-panel mg-setup">
+    <h3>{{localize "MG.Tracker.newMission"}}</h3>
+    <label class="mg-field">{{localize "MG.Tracker.mission"}}
+      <select name="mission">{{#each setup.missions}}<option value="{{key}}">{{label}}</option>{{/each}}</select>
+    </label>
+    <fieldset>
+      <legend>{{localize "MG.Tracker.party"}}</legend>
+      {{#each setup.party}}<label class="mg-check"><input type="checkbox" data-party="{{id}}" {{#if checked}}checked{{/if}}/> {{name}}{{#if taken}} <em>({{localize "MG.Status.taken"}})</em>{{/if}}</label>{{/each}}
+    </fieldset>
+    <label class="mg-field mg-narrow">{{localize "MG.Tracker.players"}}
+      <select name="partySize">{{#each setup.sizes}}<option value="{{n}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    </label>
+    <button type="button" data-action="start"><i class="fa-solid fa-flag"></i> {{localize "MG.Tracker.start"}}</button>
+  </section>
+  {{/if}}
+
+  {{#unless idle}}
+  <header class="mg-panel mg-tracker-head">
+    <h2>{{header.name}} <small>{{header.label}} · {{localize "MG.Tracker.forPlayers" n=header.size}}</small></h2>
+    <p class="mg-muted">{{statusLabel}}{{#if header.watched}} · {{localize "MG.Tracker.watched"}}{{/if}}</p>
+    <div class="mg-scent">
+      <span class="mg-label">{{localize "MG.Tracker.scent"}} {{header.scent}} / {{header.limit}}</span>
+      <ol class="mg-scent-track">
+        {{#each header.pips}}<li class="{{#if filled}}filled{{/if}} {{#if half}}half{{/if}} {{#if limit}}limit{{/if}}">{{n}}</li>{{/each}}
+      </ol>
+      {{#if isGM}}<span class="mg-gm-controls"><button type="button" data-action="scent" data-delta="-1" title="{{localize 'MG.Tracker.scentDown'}}">−</button><button type="button" data-action="scent" data-delta="1" title="{{localize 'MG.Tracker.scentUp'}}">+</button></span>{{/if}}
+    </div>
+    <p class="mg-muted">{{localize "MG.Tracker.trailAt" n=header.half}}{{#if header.trailNow}} · <strong class="bad">{{localize "MG.Tracker.onTheTrail"}}</strong>{{/if}}</p>
+    {{#if header.huntUp}}<p class="mg-hunt-up">{{localize "MG.Tracker.huntUp"}}</p>{{/if}}
+    {{#if header.choice}}
+    <div class="mg-choice">
+      <p>{{localize "MG.Tracker.choice"}} <em>{{header.choice.suggestLabel}}</em></p>
+      {{#if isGM}}<button type="button" data-action="pressOn">{{localize "MG.Tracker.pressOn"}}</button><button type="button" data-action="withdraw">{{localize "MG.Tracker.withdraw"}}</button>{{/if}}
+    </div>
+    {{/if}}
+    <div class="mg-edges"><span class="mg-label">{{localize "MG.Tracker.edges"}}</span>
+      {{#each edges.pips}}<span class="mg-pip {{#if filled}}filled{{/if}}"></span>{{/each}}
+      {{#if isGM}}<button type="button" data-action="edge" data-delta="-1">−</button><button type="button" data-action="edge" data-delta="1">+</button>{{/if}}
+    </div>
+  </header>
+  {{/unless}}
+
+  {{#if scout}}
+  <section class="mg-panel mg-scouting">
+    <h3>{{localize "MG.Tracker.scouting"}}</h3>
+    {{#if scout.rolled}}<p>{{localize "MG.Tracker.scouted" result=scout.result}} {{scout.picks}}</p>
+    {{else}}<p>{{localize "MG.Tracker.scoutPrompt" d=scout.diff}}</p>
+      {{#if canRoll}}<button type="button" data-action="rollFor" data-approach="sense" data-context="scout"><i class="fa-solid fa-dice-six"></i> {{localize "MG.Tracker.rollScout"}}</button>{{/if}}
+    {{/if}}
+    {{#each scout.ways}}
+    <div class="mg-way">
+      <p><strong>{{localize "MG.Tracker.way" letter=letter}}</strong></p>
+      <ul>{{#each obstacles}}<li>{{this}}</li>{{/each}}</ul>
+      {{#if ../isGM}}<button type="button" data-action="chooseWay" data-way="{{way}}">{{localize "MG.Tracker.chooseWay" letter=letter}}</button>{{/if}}
+    </div>
+    {{/each}}
+  </section>
+  {{/if}}
+
+  {{#if current}}
+  <section class="mg-panel mg-current {{#if current.ended}}ended{{/if}}">
+    <h3>{{current.name}} <small>{{current.section}} · {{current.kind}}{{#if current.objective}} · {{localize "MG.Tracker.objective"}}{{/if}}</small></h3>
+    <p>{{localize "MG.Tracker.tags"}}: {{current.tags}}{{#if current.dangerous}} · <span class="bad">{{localize "MG.Tracker.dangerous"}}</span>{{/if}}</p>
+    {{#if current.trail}}<p class="bad">{{localize "MG.Tracker.trailHere"}}</p>{{/if}}
+    <ul class="mg-approaches">
+      {{#each current.approaches}}<li>{{label}} {{d}}{{#if raised}} <small>({{base}} +1)</small>{{/if}}
+        {{#if ../canRoll}}<button type="button" data-action="rollFor" data-approach="{{key}}" data-context="obstacle"><i class="fa-solid fa-dice-six"></i></button>{{/if}}</li>{{/each}}
+    </ul>
+    {{#if current.guarded}}<p>{{localize "MG.Tracker.guards"}}: {{current.guards}}{{#unless current.guardsActive}} <em>({{localize "MG.Tracker.guardsGone"}})</em>{{/unless}}</p>{{/if}}
+    {{#if current.progress}}
+    <p class="mg-progress">{{localize "MG.Tracker.progress"}} {{current.progress.points}} / {{current.progress.need}}
+      {{#each current.progress.pips}}<span class="mg-pip {{#if filled}}filled{{/if}}"></span>{{/each}}
+      {{#if isGM}}<button type="button" data-action="progress" data-delta="-1">−</button><button type="button" data-action="progress" data-delta="1">+</button>{{/if}}
+    </p>
+    {{/if}}
+    {{#if current.past}}
+    <ul class="mg-past">{{#each current.past}}<li class="{{#if past}}past{{/if}} {{#if out}}out{{/if}}">{{#if ../isGM}}<button type="button" data-action="past" data-actor="{{id}}">{{name}}</button>{{else}}{{name}}{{/if}}</li>{{/each}}</ul>
+    {{/if}}
+    <p class="mg-muted">{{localize "MG.Tracker.round" n=current.round}}{{#if current.pending}} · {{localize "MG.Tracker.notPast" list=current.pending}}{{/if}}{{#if current.roundCost}} · <span class="bad">{{localize "MG.Tracker.roundCost"}}</span>{{/if}}</p>
+    {{#if current.ended}}<p class="good">{{#if current.cleared}}{{localize "MG.Tracker.cleared"}}{{else}}{{localize "MG.Tracker.endedUncleared"}}{{/if}}</p>{{/if}}
+    {{#if isGM}}
+    <div class="mg-buttons">
+      {{#unless current.ended}}{{#unless clash}}<button type="button" data-action="endRound">{{localize "MG.Tracker.endRound"}}</button>{{/unless}}{{/unless}}
+      {{#if current.guardsActive}}{{#unless clash}}<button type="button" data-action="startClash">{{localize "MG.Tracker.startClash"}}</button>{{/unless}}{{/if}}
+      {{#if current.canNext}}<button type="button" data-action="next">{{localize "MG.Tracker.next"}}</button>{{/if}}
+      {{#if current.canEscape}}<button type="button" data-action="escape">{{localize "MG.Tracker.startEscape"}}</button>{{/if}}
+      {{#if current.canWithdraw}}<button type="button" data-action="withdraw">{{localize "MG.Tracker.withdraw"}}</button>{{/if}}
+      <button type="button" data-action="watched">{{localize "MG.Tracker.toggleWatched"}}</button>
+    </div>
+    {{/if}}
+  </section>
+  {{/if}}
+
+  {{#if clash}}
+  <section class="mg-panel mg-clash">
+    <h3>{{localize "MG.Tracker.clash"}} <small>{{localize "MG.Tracker.clashRound" n=clash.round}}</small></h3>
+    <ul class="mg-threats">
+      {{#each clash.threats}}
+      <li class="{{#if out}}out{{/if}}">
+        <strong>{{name}}</strong> · {{localize "MG.Tracker.threatStats" d=d harm=harm}}
+        {{#each pips}}<span class="mg-box small {{#if filled}}filled{{/if}}"></span>{{/each}}
+        {{#if coiled}}<span class="mg-chip">{{localize "MG.Mod.coiled"}}</span>{{/if}}
+        {{#if distracted}}<span class="mg-chip">{{localize "MG.Mod.distracted"}}</span>{{/if}}
+        {{#unless out}}{{#if struck}}<span class="mg-chip">{{localize "MG.Tracker.rolledAgainst"}}</span>{{/if}}
+          {{#if ../canRoll}}<button type="button" data-action="rollFor" data-context="clash" data-clash-action="strike" data-threat="{{id}}" data-approach="force">{{localize "MG.Clash.strike"}}</button>{{/if}}{{/unless}}
+      </li>
+      {{/each}}
+    </ul>
+    <p class="mg-muted">{{localize "MG.Tracker.fighters" list=clash.fighters}}{{#if clash.left}} · {{localize "MG.Tracker.slipped" list=clash.left}}{{/if}}</p>
+    {{#if clash.unattended}}<p class="bad">{{localize "MG.Tracker.unattended" list=clash.unattended}}</p>{{/if}}
+    <p class="mg-muted">{{localize "MG.Tracker.clashRise" n=clash.rise}}{{#if clash.flags}} ({{clash.flags}}){{/if}}</p>
+    {{#if isGM}}<div class="mg-buttons"><button type="button" data-action="endRound">{{localize "MG.Tracker.endClashRound"}}</button><button type="button" data-action="endClash">{{localize "MG.Tracker.endClash"}}</button></div>{{/if}}
+  </section>
+  {{/if}}
+
+  {{#if obstacles.length}}
+  <section class="mg-panel mg-sequence">
+    <h3>{{localize "MG.Tracker.obstacles"}}</h3>
+    <ol>{{#each obstacles}}<li class="{{state}}"><strong>{{name}}</strong> <small>{{section}}</small><br/><span class="mg-muted">{{line}}</span></li>{{/each}}</ol>
+  </section>
+  {{/if}}
+
+  {{#if party.length}}
+  <section class="mg-panel mg-party">
+    <h3>{{localize "MG.Tracker.party"}}</h3>
+    <table>
+      <thead><tr><th></th><th>{{localize "MG.Tracker.form"}}</th><th>{{localize "MG.Sheet.wild"}}</th><th>{{localize "MG.Sheet.hurt"}}</th><th></th></tr></thead>
+      <tbody>{{#each party}}<tr><td><img src="{{img}}" alt="" class="mg-portrait tiny"/> {{name}}{{#if carrier}} <span class="mg-chip">{{localize "MG.Tracker.carrying"}}</span>{{/if}}</td><td>{{form}}</td><td>{{wild}}/{{wildMax}}</td><td>{{hurt}}/3</td><td>{{statuses}}</td></tr>{{/each}}</tbody>
+    </table>
+    {{#if prize}}
+    <p>{{localize "MG.Tracker.prize"}}: {{#if prize.lost}}<span class="bad">{{localize "MG.Tracker.prizeLost"}}</span>{{else}}{{#if prize.carrier}}{{prize.carrier}}{{else}}{{#if prize.dropped}}<span class="bad">{{localize "MG.Tracker.prizeDropped"}}</span>{{else}}—{{/if}}{{/if}}{{/if}}
+      {{#if isGM}}{{#unless prize.lost}}<select name="carrier">{{#each prize.options}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select><button type="button" data-action="carrier">{{localize "MG.Tracker.setCarrier"}}</button>{{/unless}}{{/if}}
+    </p>
+    {{/if}}
+  </section>
+  {{/if}}
+
+  {{#if isGM}}
+  {{#if pending}}<p class="mg-pending">{{localize "MG.Tracker.pendingRolls" n=pending}} <button type="button" data-action="finalize">{{localize "MG.Tracker.finalize"}}</button></p>{{/if}}
+  {{#if suggestions.length}}
+  <section class="mg-panel mg-suggestions">
+    <h3>{{localize "MG.Tracker.suggestions"}}</h3>
+    <ul>{{#each suggestions}}<li>{{text}} <button type="button" data-action="suggestion" data-index="{{index}}" data-accept="1">{{localize "MG.Tracker.apply"}}</button><button type="button" data-action="suggestion" data-index="{{index}}" data-accept="0">{{localize "MG.Tracker.dismiss"}}</button></li>{{/each}}</ul>
+  </section>
+  {{/if}}
+  {{/if}}
+
+  {{#if result}}
+  <section class="mg-panel mg-result result-{{result.key}}">
+    <h3>{{result.label}}</h3>
+    <p>{{result.hint}}</p>
+    {{#if isGM}}{{#unless result.finished}}<button type="button" data-action="finish">{{localize "MG.Tracker.finish" n=result.rise}}</button>{{/unless}}
+    {{#if result.finished}}<button type="button" data-action="close">{{localize "MG.Tracker.closeMission"}}</button>{{/if}}{{/if}}
+  </section>
+  {{/if}}
+
+  {{#if isGM}}{{#if running}}
+  <div class="mg-buttons mg-gm-footer">
+    <button type="button" data-action="freeClash">{{localize "MG.Tracker.freeClash"}}</button>
+    <button type="button" data-action="journal">{{localize "MG.Tracker.openJournal"}}</button>
+    <button type="button" data-action="endMission">{{localize "MG.Tracker.endMission"}}</button>
+  </div>
+  {{/if}}{{/if}}
+
+  <section class="mg-panel mg-campaign">
+    <h3>{{localize "MG.Tracker.huntTrack"}} <small>{{campaign.track}} / {{campaign.max}}</small></h3>
+    <ol class="mg-hunt-track">{{#each campaign.pips}}<li class="{{#if filled}}filled{{/if}}">{{n}}</li>{{/each}}</ol>
+    {{#if isGM}}<button type="button" data-action="hunt" data-delta="-1">−</button><button type="button" data-action="hunt" data-delta="1">+</button>{{/if}}
+    {{#if campaign.lastHunt}}<p class="bad">{{localize "MG.Tracker.lastHunt"}}</p>{{/if}}
+    {{#if campaign.history.length}}<ul class="mg-history">{{#each campaign.history}}<li>{{name}}: {{result}}</li>{{/each}}</ul>{{/if}}
+  </section>
+
+  {{#if log.length}}
+  <section class="mg-panel mg-log">
+    <h3>{{localize "MG.Tracker.log"}}</h3>
+    <ul>{{#each log}}<li>{{this}}</li>{{/each}}</ul>
+  </section>
+  {{/if}}
+{{/unless}}
+</section>

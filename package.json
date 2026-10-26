@@ -1,10 +1,11 @@
 {
   "name": "morphgame",
   "version": "0.1.0",
-  "description": "Morph Game — a tabletop roleplaying game by Richard Moore: rulebook pipeline, Foundry VTT system and rules simulator.",
+  "description": "Second Nature (codename Morph Game) — a tabletop roleplaying game by Richard Moore: rulebook pipeline, Foundry VTT system and rules simulator.",
   "private": true,
   "type": "module",
   "scripts": {
+    "build:sources": "node tools/build-pack-sources.mjs",
     "build:packs": "node tools/build-packs.mjs",
     "clean:packs": "node tools/build-packs.mjs --clean",
     "validate": "node tools/validate.mjs",

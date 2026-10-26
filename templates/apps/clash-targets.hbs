@@ -1,0 +1,10 @@
+<div class="morphgame mg-targets">
+  <p>{{localize "MG.Tracker.targetsHint"}}</p>
+  {{#each threats}}
+  <label class="mg-field">{{name}} <small>({{localize "MG.Tracker.harmN" n=harm}})</small>
+    <select name="target-{{id}}">
+      {{#each options}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
+    </select>
+  </label>
+  {{/each}}
+</div>

@@ -42,7 +42,7 @@ Kids aged 11–15 have **Bonded** with one animal each and can become it. They f
   - **Partial:** 1 progress, and Scent +1 (in the Escape, a Partial costs no Scent).
   - **Fail:** no progress, and Scent +1. A **dangerous** obstacle also deals 1 Hurt on a Fail.
   - **A group obstacle raises Scent once, when it ends:** +1 if anyone got a Partial or a Fail (in the Escape, only a Fail counts). If anyone still isn't past after the third round, Scent +1 at the end of every round after that.
-- **Guarded obstacles:** a Fail starts a **Clash** with the guards (§7), unless the Hunt is Up (then the Fail means you're Taken, §8). You can also choose to start the Clash. At a group obstacle, finish the round's rolls first; then the whole team is in the Clash, including anyone already past. Beating the guards clears the obstacle, unless it says progress is still needed (progress already made is kept).
+- **Guarded obstacles:** a Fail starts a **Clash** with the guards (§7), unless the Hunt is Up (then the Fail means you're Taken, §8). You can also choose to start the Clash. At a group obstacle, finish the round's rolls first and raise the obstacle's Scent for them (+1 for any Partial or Fail); then the whole team is in the Clash, including anyone already past. Rolls after the Clash count towards the obstacle's own rise when it ends. Beating the guards clears the obstacle, unless it says progress is still needed (progress already made is kept).
 
 **§7 Clashes.** Threats have **Difficulty**, **Toughness** and **Harm** (Table 4). Each round, everyone in the Clash takes one action, in any order the players like:
 - **Strike** (Force): Success 1 harm; Critical 2 harm. When a threat has taken harm equal to its Toughness, it's out.

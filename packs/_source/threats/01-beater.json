@@ -1,0 +1,28 @@
+{
+  "key": "01-beater",
+  "name": "Beater",
+  "img": "systems/morphgame/assets/icons/beater.svg",
+  "system": {
+    "kind": "beater",
+    "difficulty": 2,
+    "toughness": 2,
+    "harm": 1,
+    "harmTaken": 0,
+    "special": "",
+    "notes": "<p><em>“I’m just the night man, kid.”</em></p>\n<p>Hired muscle in a flat cap and a warm coat. Beaters guard doors, drive vans and walk the grounds with a torch. They’d rather shout than chase.</p>"
+  },
+  "prototypeToken": {
+    "name": "Beater",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "systems/morphgame/assets/icons/beater.svg"
+    }
+  }
+}

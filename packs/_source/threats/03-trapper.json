@@ -1,0 +1,28 @@
+{
+  "key": "03-trapper",
+  "name": "Trapper",
+  "img": "systems/morphgame/assets/icons/trapper.svg",
+  "system": {
+    "kind": "trapper",
+    "difficulty": 2,
+    "toughness": 2,
+    "harm": 1,
+    "harmTaken": 0,
+    "special": "When you Fail against a Trapper, you're Netted instead of Hurt.",
+    "notes": "<p><em>“Hold still. This won’t hurt.”</em></p>\n<p>Patient people in waxed jackets with weighted nets and folding cages. Trappers catch things alive. That’s the point.</p>"
+  },
+  "prototypeToken": {
+    "name": "Trapper",
+    "actorLink": false,
+    "disposition": -1,
+    "bar1": {
+      "attribute": null
+    },
+    "bar2": {
+      "attribute": null
+    },
+    "texture": {
+      "src": "systems/morphgame/assets/icons/trapper.svg"
+    }
+  }
+}

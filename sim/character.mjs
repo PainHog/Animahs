@@ -1,7 +1,8 @@
 /**
- * §11 Making a character — legal random characters, plus a validator.
+ * §11 Making a character — legal random characters for the simulator (its own seeded
+ * RNG), plus the shared validator from module/logic/character.mjs.
  */
-import { FRAMES, FRAME_ORDER, ANIMALS, animalsOf, PERK_ORDER, HUMAN_SPREAD, APPROACHES } from "./rules-data.mjs";
+import { FRAME_ORDER, ANIMALS, animalsOf, PERK_ORDER, HUMAN_SPREAD, APPROACHES } from "./rules-data.mjs";
 
 /**
  * One random legal character. `taken` is the set of animals already in the group
@@ -41,18 +42,5 @@ export function makeParty(rng, size, force0 = {}) {
   return party;
 }
 
-/** Throws if a character or group breaks §11. */
-export function validateParty(party) {
-  const seen = new Set();
-  for (const c of party) {
-    if (!ANIMALS[c.animal]) throw new Error(`unknown animal ${c.animal}`);
-    if (ANIMALS[c.animal].frame !== c.frame) throw new Error(`${c.animal} is not a ${c.frame}`);
-    if (!FRAMES[c.frame]) throw new Error(`unknown frame ${c.frame}`);
-    if (seen.has(c.animal)) throw new Error(`duplicate animal ${c.animal}`);
-    seen.add(c.animal);
-    const spread = APPROACHES.map(a => c.human[a]).sort((a, b) => b - a);
-    if (spread.join() !== [...HUMAN_SPREAD].sort((a, b) => b - a).join()) throw new Error(`bad human ratings ${spread}`);
-    if (c.perk !== "none" && !PERK_ORDER.includes(c.perk)) throw new Error(`unknown perk ${c.perk}`);
-  }
-  return true;
-}
+/** Throws if a character or group breaks §11 (shared with the Foundry system). */
+export { validateParty } from "../module/logic/character.mjs";

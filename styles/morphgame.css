@@ -1,24 +1,204 @@
 /* ==========================================================================
-   MORPH GAME — System Theme (skeleton)
-   EVERY selector must be scoped to one of the system's own roots (e.g. the
-   .morphgame class on our applications and sheets): in v14, system styles
-   sit in a cascade layer that outranks all of core, so an unscoped `.panel` or
-   `.field` would restyle Foundry's own windows.
-
-   ART DIRECTION IS UNDECIDED: the palette below is a neutral PLACEHOLDER that
-   mirrors the rulebook's tokens (book/src/book.css). Change both together.
+   SECOND NATURE — System Theme
+   Night blue, cream paper, moss green, gold and crimson (the rulebook's palette).
+   EVERY selector is scoped to the system's own root class (.morphgame on our
+   applications, sheets and chat cards): in v14, system styles sit in a cascade
+   layer that outranks all of core, so an unscoped `.panel` or `.field` would
+   restyle Foundry's own windows.
    ========================================================================== */
 
 .morphgame {
-  --mg-dark: #3a3a3c;
-  --mg-dark-deep: #222224;
-  --mg-dark-soft: #5c5c60;
-  --mg-paper: #f2f1ee;
-  --mg-paper-2: #e3e1dc;
-  --mg-paper-edge: #c9c6bf;
-  --mg-ink: #161618;
-  --mg-ink-soft: #5a5a5e;
-  --mg-accent: #7a7f88;
-  --mg-alarm: #7c2a2a;
-  --mg-good: #3f6f52;
+  --mg-deep: #1f2a3a;
+  --mg-deep-soft: #2e3d52;
+  --mg-paper: #f6f0e1;
+  --mg-paper-2: #ece3cc;
+  --mg-paper-edge: #d6c9a6;
+  --mg-ink: #1b1d22;
+  --mg-ink-soft: #5b5a55;
+  --mg-accent: #5f7d4e;
+  --mg-accent-soft: #dfe8d6;
+  --mg-gold: #c9a227;
+  --mg-gold-soft: #f1e4b3;
+  --mg-crimson: #8c2f24;
+  --mg-crimson-soft: #f2d9d4;
+  --mg-radius: 6px;
 }
+
+/* ---------------------------------------------------------------- windows */
+
+.morphgame.application .window-content,
+.morphgame.mg-sheet .window-content {
+  background: var(--mg-paper);
+  color: var(--mg-ink);
+}
+.morphgame.application .window-header {
+  background: var(--mg-deep);
+  color: var(--mg-paper);
+  border-bottom: 2px solid var(--mg-gold);
+}
+.morphgame h2, .morphgame h3, .morphgame h4 { color: var(--mg-deep); margin: 0.2em 0 0.4em; border: none; }
+.morphgame h3 small, .morphgame h2 small, .morphgame h4 small { color: var(--mg-ink-soft); font-weight: normal; font-size: 0.8em; }
+.morphgame .mg-muted { color: var(--mg-ink-soft); font-size: 0.92em; }
+.morphgame .mg-small { font-size: 0.85em; margin: 0 0 0.4em; padding-left: 1.2em; }
+.morphgame .good { color: var(--mg-accent); }
+.morphgame .bad { color: var(--mg-crimson); }
+.morphgame .note { color: var(--mg-ink-soft); }
+
+.morphgame .mg-panel {
+  background: var(--mg-paper-2);
+  border: 1px solid var(--mg-paper-edge);
+  border-radius: var(--mg-radius);
+  padding: 0.5em 0.7em;
+  margin: 0 0 0.6em;
+}
+.morphgame .mg-field { display: flex; flex-direction: column; gap: 2px; flex: 1; margin: 0 0 0.4em; font-size: 0.9em; }
+.morphgame .mg-field.mg-narrow { flex: 0 0 6em; }
+.morphgame .mg-field-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: flex-start; }
+.morphgame .mg-check { display: inline-flex; align-items: center; gap: 0.25em; margin: 0 0.8em 0.2em 0; font-size: 0.92em; }
+.morphgame fieldset { border: 1px solid var(--mg-paper-edge); border-radius: var(--mg-radius); margin: 0 0 0.6em; padding: 0.3em 0.6em; }
+.morphgame legend { color: var(--mg-deep); font-weight: bold; padding: 0 0.3em; }
+.morphgame .mg-buttons { display: flex; gap: 0.4em; flex-wrap: wrap; margin-top: 0.4em; }
+.morphgame button {
+  background: var(--mg-deep);
+  color: var(--mg-paper);
+  border: 1px solid var(--mg-deep);
+  border-radius: var(--mg-radius);
+  padding: 0.2em 0.7em;
+  line-height: 1.6;
+  width: auto;
+}
+.morphgame button:hover:not(:disabled) { background: var(--mg-deep-soft); box-shadow: 0 0 0 2px var(--mg-gold-soft); }
+.morphgame button:disabled { opacity: 0.45; cursor: default; }
+.morphgame .mg-chip {
+  display: inline-block; font-size: 0.78em; padding: 0 0.5em; border-radius: 999px;
+  background: var(--mg-accent-soft); color: var(--mg-accent); border: 1px solid var(--mg-accent);
+}
+.morphgame .mg-chip.used { background: var(--mg-crimson-soft); color: var(--mg-crimson); border-color: var(--mg-crimson); }
+.morphgame .mg-portrait { width: 40px; height: 40px; border: 1px solid var(--mg-paper-edge); border-radius: var(--mg-radius); object-fit: cover; }
+.morphgame .mg-portrait.tiny { width: 22px; height: 22px; vertical-align: middle; }
+.morphgame .mg-portrait-large { width: 96px; height: 96px; border: 2px solid var(--mg-gold); border-radius: var(--mg-radius); object-fit: cover; cursor: pointer; }
+
+/* pips and boxes (Wild, Hurt, Edges, progress, harm) */
+.morphgame .mg-pips { display: flex; gap: 4px; flex-wrap: wrap; }
+.morphgame .mg-pip, .morphgame .mg-box {
+  display: inline-block; width: 18px; height: 18px; padding: 0; min-width: 0;
+  border: 2px solid var(--mg-accent); background: var(--mg-paper); vertical-align: middle;
+}
+.morphgame .mg-pip { border-radius: 50%; }
+.morphgame .mg-pip.filled { background: var(--mg-accent); }
+.morphgame .mg-box { border-color: var(--mg-crimson); border-radius: 3px; }
+.morphgame .mg-box.filled { background: var(--mg-crimson); }
+.morphgame .mg-box.small { width: 12px; height: 12px; }
+
+/* ---------------------------------------------------------------- sheets */
+
+.morphgame.mg-sheet .mg-sheet-head { display: flex; gap: 0.8em; margin-bottom: 0.6em; }
+.morphgame.mg-sheet .mg-head-fields { flex: 1; }
+.morphgame.mg-sheet .mg-name { font-size: 1.6em; font-weight: bold; color: var(--mg-deep); background: transparent; border: none; border-bottom: 2px solid var(--mg-gold); width: 100%; margin-bottom: 0.3em; }
+.morphgame.mg-sheet .mg-problems { background: var(--mg-crimson-soft); border: 1px solid var(--mg-crimson); color: var(--mg-crimson); border-radius: var(--mg-radius); padding: 0.4em 0.7em; margin-bottom: 0.6em; }
+.morphgame.mg-sheet .mg-problems ul { margin: 0 0 0.3em; padding-left: 1.2em; }
+.morphgame.mg-sheet .mg-perk { margin: 0.25em 0; }
+.morphgame.mg-sheet .mg-ratings table { width: 100%; border-collapse: collapse; text-align: center; }
+.morphgame.mg-sheet .mg-ratings th, .morphgame.mg-sheet .mg-ratings td { padding: 0.25em; border-bottom: 1px solid var(--mg-paper-edge); }
+.morphgame.mg-sheet .mg-ratings tr th:first-child { text-align: left; color: var(--mg-ink-soft); font-weight: normal; }
+.morphgame.mg-sheet .mg-ratings input { width: 3em; text-align: center; }
+.morphgame.mg-sheet .mg-ratings tr.current { background: var(--mg-gold-soft); font-weight: bold; }
+.morphgame.mg-sheet .mg-ratings tr.current th:first-child { color: var(--mg-deep); font-weight: bold; }
+.morphgame.mg-sheet .mg-roll-btn { width: 100%; }
+.morphgame.mg-sheet .mg-tracks { display: flex; gap: 1.5em; flex-wrap: wrap; }
+.morphgame.mg-sheet .mg-statuses { display: flex; gap: 0.4em; flex-wrap: wrap; }
+.morphgame.mg-sheet .mg-status { background: var(--mg-paper); color: var(--mg-ink-soft); border-color: var(--mg-paper-edge); }
+.morphgame.mg-sheet .mg-status.active { background: var(--mg-crimson); color: var(--mg-paper); border-color: var(--mg-crimson); }
+.morphgame.mg-sheet .mg-actions > div { margin: 0.2em 0; display: flex; gap: 0.4em; flex-wrap: wrap; align-items: center; }
+.morphgame.mg-sheet .mg-inline { width: 3.5em; display: inline-block; }
+.morphgame.mg-sheet .mg-picks { margin: 0.2em 0; padding-left: 1.2em; }
+.morphgame.mg-sheet .mg-icon { padding: 0 0.4em; background: transparent; color: var(--mg-crimson); border: none; }
+.morphgame.mg-sheet .mg-pick-add { display: flex; gap: 0.3em; flex-wrap: wrap; }
+.morphgame.mg-sheet textarea { width: 100%; background: var(--mg-paper); }
+.morphgame.mg-sheet .form-animal .mg-portrait-large { border-color: var(--mg-accent); }
+
+/* ---------------------------------------------------------------- roll dialog */
+
+.morphgame.mg-roll-dialog .mg-roll-head { display: flex; gap: 0.6em; align-items: center; margin-bottom: 0.4em; }
+.morphgame.mg-roll-dialog .mg-roll-info { background: var(--mg-paper-2); border-left: 3px solid var(--mg-gold); padding: 0.2em 0.6em; margin-bottom: 0.4em; }
+.morphgame.mg-roll-dialog .mg-roll-info p { margin: 0.15em 0; }
+.morphgame.mg-roll-dialog .mg-mods ul { margin: 0; padding-left: 1.2em; }
+.morphgame.mg-roll-dialog .mg-roll-summary { text-align: center; margin: 0.4em 0; }
+.morphgame.mg-roll-dialog .mg-big { font-size: 1.35em; font-weight: bold; color: var(--mg-deep); margin: 0.1em 0; }
+.morphgame .mg-cap { color: var(--mg-gold); font-weight: bold; font-size: 0.9em; margin: 0.1em 0; }
+
+/* ---------------------------------------------------------------- chat cards */
+
+.morphgame.mg-card { background: var(--mg-paper); color: var(--mg-ink); border: 1px solid var(--mg-paper-edge); border-radius: var(--mg-radius); padding: 0.4em 0.6em; }
+.morphgame.mg-card .mg-card-head { display: flex; gap: 0.5em; align-items: center; }
+.morphgame.mg-card h3 { font-size: 1.05em; margin: 0; }
+.morphgame.mg-card p { margin: 0.2em 0; }
+.morphgame.mg-card .mg-dice { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; padding: 0; margin: 0.4em 0; }
+.morphgame.mg-card .mg-die {
+  width: 26px; height: 26px; line-height: 24px; text-align: center; font-weight: bold;
+  border: 2px solid var(--mg-paper-edge); border-radius: 5px; background: #fff; color: var(--mg-ink-soft);
+}
+.morphgame.mg-card .mg-die.hit { border-color: var(--mg-accent); background: var(--mg-accent); color: var(--mg-paper); }
+.morphgame.mg-card .mg-die.six { border-color: var(--mg-gold); box-shadow: 0 0 0 2px var(--mg-gold-soft); }
+.morphgame.mg-card .mg-die.rerolled { border-style: dashed; }
+.morphgame.mg-card .mg-result { font-size: 1.05em; }
+.morphgame.mg-card.result-fail .mg-result strong { color: var(--mg-crimson); }
+.morphgame.mg-card.result-partial .mg-result strong { color: var(--mg-gold); }
+.morphgame.mg-card.result-success .mg-result strong { color: var(--mg-accent); }
+.morphgame.mg-card.result-crit .mg-result strong { color: var(--mg-accent); text-shadow: 0 0 2px var(--mg-gold); }
+.morphgame.mg-card .mg-mods, .morphgame.mg-card .mg-outcome, .morphgame.mg-card .mg-notice-lines { margin: 0.2em 0; padding-left: 1.2em; font-size: 0.9em; }
+.morphgame.mg-card .mg-outcome { color: var(--mg-deep); font-weight: bold; }
+.morphgame.mg-card .mg-note { font-style: italic; color: var(--mg-deep-soft); }
+.morphgame .mg-pending { color: var(--mg-crimson); font-size: 0.9em; }
+.morphgame.mg-card .mg-buttons button { flex: 1 1 auto; font-size: 0.9em; }
+.morphgame.mg-notice h3 { font-weight: normal; }
+
+/* ---------------------------------------------------------------- tracker */
+
+.morphgame.mg-tracker .mg-tracker-head h2 { margin: 0; }
+.morphgame.mg-tracker .mg-scent { display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; }
+.morphgame.mg-tracker .mg-scent-track, .morphgame.mg-tracker .mg-hunt-track { display: flex; gap: 3px; list-style: none; margin: 0.2em 0; padding: 0; }
+.morphgame.mg-tracker .mg-scent-track li, .morphgame.mg-tracker .mg-hunt-track li {
+  width: 24px; height: 24px; line-height: 22px; text-align: center; font-size: 0.8em;
+  border: 2px solid var(--mg-deep-soft); border-radius: 4px; background: var(--mg-paper);
+}
+.morphgame.mg-tracker .mg-scent-track li.filled { background: var(--mg-crimson); border-color: var(--mg-crimson); color: var(--mg-paper); }
+.morphgame.mg-tracker .mg-scent-track li.half { outline: 2px solid var(--mg-gold); outline-offset: 1px; }
+.morphgame.mg-tracker .mg-scent-track li.limit { border-color: var(--mg-crimson); border-width: 3px; }
+.morphgame.mg-tracker .mg-hunt-track li.filled { background: var(--mg-deep); color: var(--mg-gold); }
+.morphgame.mg-tracker .mg-hunt-up { background: var(--mg-crimson); color: var(--mg-paper); padding: 0.3em 0.6em; border-radius: var(--mg-radius); font-weight: bold; }
+.morphgame.mg-tracker .mg-choice { border: 2px solid var(--mg-gold); border-radius: var(--mg-radius); padding: 0.3em 0.6em; margin: 0.3em 0; }
+.morphgame.mg-tracker .mg-edges { display: flex; align-items: center; gap: 0.3em; margin-top: 0.3em; }
+.morphgame.mg-tracker .mg-label { font-weight: bold; color: var(--mg-deep); }
+.morphgame.mg-tracker .mg-gm-controls button, .morphgame.mg-tracker .mg-edges button, .morphgame.mg-tracker .mg-progress button, .morphgame.mg-tracker .mg-campaign > button { padding: 0 0.5em; }
+.morphgame.mg-tracker .mg-current { border-left: 4px solid var(--mg-gold); }
+.morphgame.mg-tracker .mg-current.ended { border-left-color: var(--mg-accent); }
+.morphgame.mg-tracker .mg-approaches { display: flex; gap: 0.6em; flex-wrap: wrap; list-style: none; padding: 0; margin: 0.3em 0; }
+.morphgame.mg-tracker .mg-approaches li { background: var(--mg-paper); border: 1px solid var(--mg-paper-edge); border-radius: var(--mg-radius); padding: 0.1em 0.5em; }
+.morphgame.mg-tracker .mg-approaches button { padding: 0 0.4em; margin-left: 0.2em; }
+.morphgame.mg-tracker .mg-past { display: flex; gap: 0.3em; flex-wrap: wrap; list-style: none; padding: 0; }
+.morphgame.mg-tracker .mg-past li.past button, .morphgame.mg-tracker .mg-past li.past { color: var(--mg-accent); }
+.morphgame.mg-tracker .mg-past li.past button { background: var(--mg-accent); color: var(--mg-paper); border-color: var(--mg-accent); }
+.morphgame.mg-tracker .mg-past li.out { text-decoration: line-through; }
+.morphgame.mg-tracker .mg-clash { border-left: 4px solid var(--mg-crimson); }
+.morphgame.mg-tracker .mg-threats { list-style: none; padding: 0; margin: 0.2em 0; }
+.morphgame.mg-tracker .mg-threats li { padding: 0.2em 0; border-bottom: 1px dotted var(--mg-paper-edge); }
+.morphgame.mg-tracker .mg-threats li.out { opacity: 0.5; text-decoration: line-through; }
+.morphgame.mg-tracker .mg-sequence ol { margin: 0; padding-left: 1.4em; }
+.morphgame.mg-tracker .mg-sequence li.done { color: var(--mg-ink-soft); }
+.morphgame.mg-tracker .mg-sequence li.current { font-weight: bold; }
+.morphgame.mg-tracker .mg-party table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+.morphgame.mg-tracker .mg-party td, .morphgame.mg-tracker .mg-party th { padding: 0.15em 0.3em; border-bottom: 1px solid var(--mg-paper-edge); text-align: left; }
+.morphgame.mg-tracker .mg-result.result-win { border-left: 4px solid var(--mg-accent); }
+.morphgame.mg-tracker .mg-result.result-costly { border-left: 4px solid var(--mg-gold); }
+.morphgame.mg-tracker .mg-result.result-loss { border-left: 4px solid var(--mg-crimson); }
+.morphgame.mg-tracker .mg-log ul, .morphgame.mg-tracker .mg-history { margin: 0; padding-left: 1.2em; font-size: 0.88em; color: var(--mg-ink-soft); }
+.morphgame.mg-tracker .mg-way { border-top: 1px dotted var(--mg-paper-edge); padding-top: 0.2em; }
+.morphgame.mg-tracker .mg-way ul { margin: 0.1em 0 0.3em; padding-left: 1.2em; font-size: 0.9em; }
+.morphgame.mg-tracker .mg-suggestions li { margin: 0.2em 0; }
+.morphgame.mg-tracker .mg-suggestions button { padding: 0 0.5em; margin-left: 0.3em; }
+
+/* ---------------------------------------------------------------- builder and prompts */
+
+.morphgame.mg-builder .mg-builder-body { padding: 0.2em; }
+.morphgame.mg-targets .mg-field { margin-bottom: 0.5em; }

@@ -1,0 +1,29 @@
+{
+  "key": "01-petshop",
+  "name": "Pemberton's Pets",
+  "flags": {
+    "morphgame": {
+      "mission": "petshop"
+    }
+  },
+  "pages": [
+    {
+      "key": "obstacles",
+      "name": "Obstacles and Limits",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p><strong>Easy mission.</strong> The Hunt bought the old pet shop and is caging the town's strays as bait. Free them.</p>\n<table>\n<thead><tr><th>Where</th><th>Obstacle</th><th>Tags</th><th>Approaches (Difficulty)</th><th>Kind · Progress</th><th>Notes</th></tr></thead>\n<tbody>\n<tr><td>Way in A</td><td><strong>The coal chute</strong></td><td>Dark, Narrow</td><td>Sneak 2 · Move 2</td><td>Group</td><td>—</td></tr>\n<tr><td>Way in B</td><td><strong>The skylight</strong></td><td>High, Locked</td><td>Force 3 · Move 2 · Wits 2</td><td>Point&nbsp;·&nbsp;2</td><td>—</td></tr>\n<tr><td>Inside 1</td><td><strong>The shop floor (night watchman)</strong></td><td>Dark</td><td>Sneak 2 · Move 2</td><td>Group</td><td>Guarded by a Beater. Beating it clears it.</td></tr>\n<tr><td>Inside 2</td><td><strong>The office door</strong></td><td>Locked</td><td>Force 3 · Wits 2</td><td>Point&nbsp;·&nbsp;2</td><td>—</td></tr>\n<tr><td>Objective</td><td><strong>The cages</strong></td><td>Locked, Narrow</td><td>Force 3 · Wits 2</td><td>Point&nbsp;·&nbsp;3</td><td>—</td></tr>\n<tr><td>Escape</td><td><strong>Out the back</strong></td><td>Dark, Open</td><td>Sneak 2 · Move 2</td><td>Group</td><td>—</td></tr>\n</tbody>\n</table>\n<p><strong>Scent Limit:</strong> 7 with 3 players · 6 with 4 · 5 with 5. <strong>Scouting:</strong> Sense, Difficulty 2.</p>\n<p>Scouting: Sense, Difficulty 2. Run it from the Mission Tracker: it knows every obstacle on this page.</p>"
+      }
+    },
+    {
+      "key": "mission",
+      "name": "The Mission",
+      "type": "text",
+      "text": {
+        "format": 1,
+        "content": "<p>The first mission, made for a first night. The Hunt has bought the old pet shop on the High Street and is caging the town’s strays: bait, to draw out the Bonded. The team gets in after closing, past a sleepy watchman, and opens every cage.</p>\n<p><em>Pemberton’s Pets. On every mission map, A and B are the ways in, the numbers are the obstacles inside, ★ is the objective and E is the Escape, just as in the table below.</em></p>\n<blockquote>\n<h4>Read This Aloud</h4>\n<p><em>The posters are everywhere: lost cats, lost dogs, lost rabbits. Tonight you found out where they went. Through the back window of Pemberton’s Pets you saw them, dozens of them, in a back room stacked high with cages. The shop shut at six. The watchman came at eight. The new manager, Mr Rook, will collect the animals in the morning. You have tonight.</em></p>\n</blockquote>\n<h3>What’s Going On</h3>\n<p>Mr Rook is a Huntsman. He’s gathering strays because the Hunt has learned that Bonded children can’t resist rescuing animals, and tomorrow the cages go up to the Lodge. Tonight only one Beater is on watch, asleep in a chair on the shop floor. Mr Rook lives above the shop and will come down if the Hunt is Up.</p>\n<h3>The Places</h3>\n<h4>Way in A: The Coal Chute</h4>\n<p>An old iron hatch in the alley opens onto a coal chute down into the cellar, then up a short stair into the shop. It’s black as pitch and just wide enough for a kid. Cats and Critters will love it.</p>\n<h4>Way in B: The Skylight</h4>\n<p>On the flat roof, reached by the drainpipe or by wing, a skylight is latched from the inside. One of you climbs up and works the latch open (or forces it); then everyone drops into the stockroom below.</p>\n<h4>Inside 1: The Shop Floor</h4>\n<p>Aisles of pet food and fish tanks, all dark. The watchman snores in a chair by the till. Everyone has to get past him to the office. If anyone Fails, he wakes, and it’s a Clash.</p>\n<h4>Inside 2: The Office Door</h4>\n<p>The door to the back is locked. The key hangs on a hook on the watchman’s belt, which is no help, but the lock is old: a human hand can work it with a hairpin, or something heavy can break it.</p>\n<h4>The Objective: The Cage Room</h4>\n<p>Floor-to-ceiling cages: cats, dogs, rabbits, a tortoise, two very angry geese. The room is cramped and narrow. Every latch has to be opened, or every door broken. When the last cage opens, the animals pour out of the back door ahead of you.</p>\n<h4>The Escape: Out the Back</h4>\n<p>The back yard, a gate and the alley, dark and open. Everyone has to get clear before Mr Rook reaches the window.</p>\n<h3>Threats</h3>\n<p><strong>The watchman</strong> is a Beater (Chapter 10). If the Hunt is Up, Mr Rook comes downstairs with a Master’s car already turning into the High Street. Nobody fights them: it’s time to run.</p>\n<blockquote>\n<h4>Running It on a First Night</h4>\n<p>Let the players see the whole map. Point out the chute and the skylight and let them argue about which to pick before they scout. At the shop floor, remind them that a Fail wakes the watchman. At the office door and the cages, ask who’s staying human: these are the obstacles where hands help most.</p>\n</blockquote>\n<h3>After the Mission</h3>\n<ul>\n<li><strong>Win:</strong> the strays scatter across Wrenfield, and the posters come down one by one. Mr Rook knows somebody was here.</li>\n<li><strong>Costly Win:</strong> the strays are free, but a friend was caught. They’re taken to the Lodge on Thornhill: the rescue can be <em>The Lodge on the Hill</em>.</li>\n<li><strong>Loss:</strong> in the morning a grey van takes the cages up the hill. The Hunt track rises.</li>\n</ul>"
+      }
+    }
+  ]
+}

@@ -373,7 +373,7 @@ Writing the chapters needed answers the core rules left open. These are in the b
 6. **Being Taken also makes you Exposed** (§9). The simulator already did this; the core rules now say so.
 7. **Wordings settled to match the simulator** (a rules review of the whole draft found them unclear or contradictory):
    - A Critical's extra is progress if the obstacle still needs it, otherwise an Edge; it isn't a choice.
-   - A Fail at a guarded group obstacle starts the Clash after that round's rolls, and the whole team is in it, including anyone already past. Progress made before a Clash is kept.
+   - A Fail at a guarded group obstacle starts the Clash after that round's rolls, and the whole team is in it, including anyone already past. The obstacle raises Scent for those rolls first, then the Clash; rolls after the Clash count towards the obstacle's own rise. Progress made before a Clash is kept.
    - A shift taken as your action at an obstacle is out of sight, like one between obstacles; only a shift in a Clash is always seen.
    - Slip Away at a point obstacle takes you out of the fight; you wait there until the Clash ends.
    - Picking up a dropped prize takes an action at an obstacle or in a Clash, and is free between obstacles.
@@ -381,6 +381,16 @@ Writing the chapters needed answers the core rules left open. These are in the b
    - Difficulty is usually 1–4; Weaknesses and threats' traits can push it higher.
 - **Options:** leave each to the Storyteller; or write them down now.
 - **Why:** a first-night Storyteller needs these answered on the page. They're the simplest answers that keep §8's "Scent never goes down" and §9's Taken rules intact. The campaign rules still haven't been simulated; Chapter 8 says so.
+
+### D32 · 2026-10-26 · approved (Richard's request): Build the Foundry VTT system now, alongside the draft book (revises D23)
+- **Decision:** the Foundry VTT system (v13, checked against v14) is built in full now, from the same draft rules as the book, instead of after the core rules are approved.
+  - **One copy of the rules code.** The numbers live in `module/config.mjs` and the rules functions in `module/logic/`, with no Foundry in them. The simulator imports them, so the book, the simulator and the online version can't drift apart. The simulator's results were byte-identical before and after the move.
+  - **The book feeds the compendiums.** The ready-made Bonded, the threats, the rules pages and the missions are built from the chapters (`npm run build:sources`); a test fails if they're out of date.
+  - **What it does:** character sheets and a character builder; a roll dialog that shows every modifier, Help, Edges, the Cap and the odds; roll cards with Push and the perks' reactions; a Mission Tracker that keeps Scent, progress, Clashes, the Hunt and the campaign's Hunt track; GM-only changes through a queue; switches for each automation.
+  - **Where the rules are silent,** it follows the simulator (logged in `docs/FOUNDRY.md`, "Rulings").
+- **Options:** wait for the approved core (D23); build it now.
+- **Why:** Richard asked for a polished Foundry system with the book (2026-10-26). Sharing the rules code means that when he revises a rule, the book's tables, the simulator and the online version all change from one place.
+- **Not yet done:** it has only been tested against a stand-in of Foundry. The checklist in `TESTING.md` must be run in a real Foundry world.
 
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.

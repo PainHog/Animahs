@@ -1,7 +1,7 @@
-Now: Polishing the draft rulebook and its stand-in pictures, and building the online version for Foundry VTT
-Next: Richard reviews and revises the whole draft book
-Number: Design decisions so far = 31
-Number: Approved by Richard = 1
+Now: The draft rulebook and the first online version for Foundry VTT are ready for Richard to review
+Next: Richard reviews and revises the whole draft book and tries the online version, while drawing the real pictures
+Number: Design decisions so far = 32
+Number: Approved by Richard = 2
 Number: Core questions still open = 0
 Screenshot: docs/portal/cover.webp = The draft cover, with stand-in art until the real drawings are done
 
@@ -36,5 +36,7 @@ Plain words only: no repo names, usernames, file paths, links or commit IDs. Rul
 
 ## Online version
 
-- [ ] Decide when to build the online version for Foundry VTT
+- [x] Decide when to build the online version for Foundry VTT
+- [x] A first full version for Foundry VTT, built from the same rules as the book and tested on a stand-in of Foundry
+- [ ] A test of the online version in a real Foundry world
 - [ ] The online version for Foundry VTT
