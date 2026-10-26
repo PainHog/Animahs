@@ -28,7 +28,7 @@ function notes(ob, isObjective) {
   const out = [];
   if (ob.guards.length) {
     const them = ob.guards.length > 1 ? "them" : "it";
-    out.push(`Guarded by ${guardText(ob.guards)}. ${ob.guardsClear ? `Beating ${them} clears it.` : "Clash first, then progress."}`);
+    out.push(`Guarded by ${guardText(ob.guards)}. ${ob.guardsClear ? `Beating ${them} clears it.` : "Beating the guards doesn’t clear it."}`);
   }
   if (ob.dangerous) out.push("Dangerous: a Fail deals 1 Hurt.");
   if (isObjective && ob.carry) out.push("A prize to carry out.");

@@ -1,10 +1,10 @@
 # Second Nature: core rules (v0.1c draft)
 
-*Working title (DESIGN D2). These are the rules until chapters exist. The simulator follows this page and cites its § numbers. The tables after the rules hold the options and numbers. v0.1b includes the first simulator pass (DESIGN D24–D28; `book/REVIEW.md` rows 1–10). v0.1c adds the answers the chapters needed (DESIGN D31; rows 11–17), none of which changes a simulated mission.*
+*Working title (DESIGN D2). These are the rules until chapters exist. The simulator follows this page and cites its § numbers. The tables after the rules hold the options and numbers. v0.1b includes the first simulator pass (DESIGN D24–D28; `book/REVIEW.md` rows 1–10). v0.1c adds the answers the chapters needed (DESIGN D31; rows 11–20), none of which changes a simulated mission.*
 
 Kids aged 11–15 have **Bonded** with one animal each and can become it. They fight **the Gilded Hunt**, a secret society of rich trophy hunters who steal animal power and wear it as **Trophies**. Each session is one **mission** against the Hunt. One player is the **Storyteller**; the other 3–5 each play one Bonded kid.
 
-**§1 The roll.** Roll d6s equal to your **rating** in the approach, plus any bonus dice. Each **5 or 6 is a hit**. The **Difficulty** (1–4) is the number of hits you need.
+**§1 The roll.** Roll d6s equal to your **rating** in the approach, plus any bonus dice. Each **5 or 6 is a hit**. The **Difficulty** (usually 1–4) is the number of hits you need. Weaknesses and threats' traits aren't limited by the Cap, so they can push it higher.
 - **Fail:** no hits. **Partial:** at least one hit, but fewer than the Difficulty; you do it, at a cost. **Success:** hits ≥ Difficulty. **Critical:** a Success with two or more 6s.
 - **The Cap:** from all sources together, a roll gets at most **+2 dice** and **−1 Difficulty**. Difficulty is never below 1. A rating of 0 means you can't roll that approach.
 - **Order:** a roll's result comes first, then its cost, then everything else, including the Hunt being Up (§8).
@@ -18,7 +18,7 @@ Kids aged 11–15 have **Bonded** with one animal each and can become it. They f
 **§3 Shifting.**
 - **Shifting into your animal** costs **1 Wild** and your action. Out of Wild, you can take 1 Hurt instead, unless that would put you Down. **Shifting back** costs nothing, but it also takes your action. There's no time limit on either form.
 - **What comes with you:** your Hurt, your Wild and your human perk carry over. Your clothes and small personal things vanish into the Wild and come back when you do. Anything else you were holding drops at your feet.
-- **In sight of the Hunt:** between obstacles you can always find cover, so a shift there is out of sight, unless the mission says you're being watched. A shift during a Clash is always in sight. If the Hunt can see you shift, Scent +1 (§8) and you're **Exposed** (§9).
+- **In sight of the Hunt:** between obstacles you can always find cover, so a shift there is out of sight, unless the mission says you're being watched. A shift taken as your action at an obstacle is out of sight too. A shift during a Clash is always in sight. If the Hunt can see you shift, Scent +1 (§8) and you're **Exposed** (§9).
 
 **§4 Wild and Edges.**
 - Each character starts every mission with **4 Wild** tokens. Spend 1 to:
@@ -38,16 +38,16 @@ Kids aged 11–15 have **Bonded** with one animal each and can become it. They f
   - At a **group** obstacle, everyone who isn't past yet rolls each round, and each gets past on their own Partial or better.
 - **Results at an obstacle:**
   - **Success:** 1 progress.
-  - **Critical:** 1 progress, plus 1 extra progress or an Edge.
+  - **Critical:** 1 progress, plus 1 extra progress; if the extra isn't needed (always so at a group obstacle), the team gains an Edge instead.
   - **Partial:** 1 progress, and Scent +1 (in the Escape, a Partial costs no Scent).
   - **Fail:** no progress, and Scent +1. A **dangerous** obstacle also deals 1 Hurt on a Fail.
   - **A group obstacle raises Scent once, when it ends:** +1 if anyone got a Partial or a Fail (in the Escape, only a Fail counts). If anyone still isn't past after the third round, Scent +1 at the end of every round after that.
-- **Guarded obstacles:** a Fail starts a **Clash** with the guards (§7), unless the Hunt is Up (then the Fail means you're Taken, §8). You can also choose to start the Clash. Beating the guards clears the obstacle, unless it says progress is still needed.
+- **Guarded obstacles:** a Fail starts a **Clash** with the guards (§7), unless the Hunt is Up (then the Fail means you're Taken, §8). You can also choose to start the Clash. At a group obstacle, finish the round's rolls first; then the whole team is in the Clash, including anyone already past. Beating the guards clears the obstacle, unless it says progress is still needed (progress already made is kept).
 
 **§7 Clashes.** Threats have **Difficulty**, **Toughness** and **Harm** (Table 4). Each round, everyone in the Clash takes one action, in any order the players like:
 - **Strike** (Force): Success 1 harm; Critical 2 harm. When a threat has taken harm equal to its Toughness, it's out.
 - **Distract** (Sneak or Move): a Success puts the next Strike against that threat this round at −1 Difficulty.
-- **Slip Away** (Move or Sneak): a Success takes you out of the Clash, and you go on.
+- **Slip Away** (Move or Sneak): a Success takes you out of the Clash. At a group obstacle you're past it; at a point obstacle you wait, out of harm's way, until the Clash ends.
 - **Or** Shift, Patch Up, or free a Netted friend (no roll).
 
 Against a threat, **a Partial does the job but its Harm hits you; a Fail just hits you**. At the end of each round, **each threat nobody rolled against deals its Harm to one character** of the Storyteller's choice.
@@ -63,14 +63,14 @@ The Clash ends when every threat is out, when nobody is left in it, or **at the 
 - **Hurt:** everyone has 3 boxes in every form, and Hurt never lowers your dice. It clears between missions.
 - **Down** (3 Hurt): you can't act until the scene ends. Then you're back up with 2 Hurt and past the obstacle, if a friend is still standing and the Hunt isn't Up. Otherwise you're **Taken**. If you go Down in animal form, you're **Stuck** in it until the mission ends.
 - **Netted:** you can't act until a friend frees you (their action, no roll). When the scene ends you're freed, if a friend is still standing and the Hunt isn't Up; otherwise you're Taken.
-- **Taken:** the Hunt cages you, and you're out for the mission. If you were carrying the prize, it's lost.
+- **Taken:** the Hunt cages you, and you're out for the mission. If you were carrying the prize, it's lost. You're also Exposed.
 - **Rescued:** a character freed during a mission rejoins the team once it's out, and doesn't roll in the Escape.
-- **Exposed:** the Hunt knows your face and your **Mark**. In a campaign, your next mission starts at Scent 1.
+- **Exposed:** the Hunt knows your face and your **Mark**. In a campaign, your next mission starts at Scent 1 (only 1, however many were Exposed, and not on top of a poor scouting roll's Scent 1).
 - **Everyone Down, Netted or Taken at once:** everyone is Taken, and the mission is a Loss.
 
 **§10 A mission.**
 1. **Scout:** one character rolls Sense against the mission's scouting Difficulty. Success: the team picks one of the two ways in and gains an Edge. Critical: as Success, but two Edges. Partial: the team picks, but Scent starts at 1. Fail: the Storyteller picks, and Scent starts at 1.
-2. **Way in,** then **obstacles,** then the **objective** (an obstacle; a prize to steal must then be carried out). One character carries the prize. Handing it to a friend at the same obstacle takes an action, with no roll; shifting drops it (§3); if its carrier is Taken, the prize and the objective are lost.
+2. **Way in,** then **obstacles,** then the **objective** (an obstacle; a prize to steal must then be carried out). One character carries the prize. Handing it to a friend at the same obstacle takes an action, with no roll. A shift drops it (§3): picking it up takes an action at an obstacle or in a Clash, and is free between obstacles. If its carrier is Taken, the prize and the objective are lost.
 3. **Escape:** group obstacles.
 4. **The team may Withdraw** at any time and go straight to the Escape; that's a Loss.
 

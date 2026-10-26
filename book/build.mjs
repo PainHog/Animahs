@@ -230,7 +230,7 @@ function planSpots(ends) {
   for (const [idx, [id, { freeIn }]] of Object.entries(ends).entries()) {
     const prefs = SPOTS[id];
     const room = freeIn - SAFETY_IN;
-    if (!prefs || room - MIN_GAP_IN < MIN_SPOT_IN) continue;
+    if (room - MIN_GAP_IN < MIN_SPOT_IN) continue;
     // a chapter that fills its last page exactly pushes its zero-height end marker to the top of
     // the next page (the next chapter's opener): that reads as a whole free page, but there is no room
     if (freeIn > TEXT_H_IN - 0.3) continue;
@@ -240,7 +240,7 @@ function planSpots(ends) {
     const have = hasArt;
     // don't take a spot a later chapter prefers
     const later = new Set(order.slice(idx + 1).flatMap(k => SPOTS[k] ?? []));
-    const art = prefs.find(a => !used.has(a) && have(a))
+    const art = (prefs ?? []).find(a => !used.has(a) && have(a))
       ?? all.find(a => !used.has(a) && have(a) && !later.has(a));
     if (!art) continue;
     used.add(art);

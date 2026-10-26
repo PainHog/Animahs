@@ -359,7 +359,7 @@ Measured by forcing one character to each option, with the rest of the group ran
 - **Why:** Richard asked for the full book with art now (2026-10-26). This doesn't approve the core rules: they and every draft decision stay open to his revision. When a rule changes, the chapters, the sheets and the simulator change with it.
 
 ### D31 · 2026-10-26 · draft: Rules the chapters add to the core rules
-Writing the chapters needed answers the core rules left open. These are in the book, in `docs/CORE-RULES.md` v0.1c and in `book/REVIEW.md` rows 11–17. None of them changes a simulated mission's numbers.
+Writing the chapters needed answers the core rules left open. These are in the book, in `docs/CORE-RULES.md` v0.1c and in `book/REVIEW.md` rows 11–20. None of them changes a simulated mission's numbers.
 1. **Campaigns (§12):**
    - The Last Hunt is the seventh mission, or the next one once the Hunt track reaches 6. Build it as a Hard mission; with the track at 4 or more, its Limit is 1 lower.
    - Growth options can't be taken twice, except +1 to a human rating (a different rating each time). The +1 Wild maximum of 6 counts the Gamer perk.
@@ -370,6 +370,15 @@ Writing the chapters needed answers the core rules left open. These are in the b
 3. **Rescued characters (§9):** someone freed during a mission rejoins the team once it's out, and doesn't roll in the Escape.
 4. **A mission's results can set up the next one:** for example, a Loss at the Old Mill lets the Storyteller add a Hound to one guarded obstacle on the next mission.
 5. **Obstacle tables** show the kind and the progress in one column ("Group", or "Point · 3"), so the notes have room.
+6. **Being Taken also makes you Exposed** (§9). The simulator already did this; the core rules now say so.
+7. **Wordings settled to match the simulator** (a rules review of the whole draft found them unclear or contradictory):
+   - A Critical's extra is progress if the obstacle still needs it, otherwise an Edge; it isn't a choice.
+   - A Fail at a guarded group obstacle starts the Clash after that round's rolls, and the whole team is in it, including anyone already past. Progress made before a Clash is kept.
+   - A shift taken as your action at an obstacle is out of sight, like one between obstacles; only a shift in a Clash is always seen.
+   - Slip Away at a point obstacle takes you out of the fight; you wait there until the Clash ends.
+   - Picking up a dropped prize takes an action at an obstacle or in a Clash, and is free between obstacles.
+   - Exposed's Scent 1 at the start of the next mission doesn't add to a poor scouting roll's Scent 1.
+   - Difficulty is usually 1–4; Weaknesses and threats' traits can push it higher.
 - **Options:** leave each to the Storyteller; or write them down now.
 - **Why:** a first-night Storyteller needs these answered on the page. They're the simplest answers that keep §8's "Scent never goes down" and §9's Taken rules intact. The campaign rules still haven't been simulated; Chapter 8 says so.
 
