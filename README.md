@@ -12,7 +12,7 @@ A tabletop roleplaying game by **Richard Moore**. Ordinary people discover they 
 | `docs/` | `DESIGN.md` (pitch, name check, early flags, decisions, open questions), `DESIGN-RULES.md` (lessons from three earlier games), `REVIEW-PROCEDURE.md`, and reference studies from *Heisty Spideys* |
 | `book/` | The rulebook: HTML chapters built into a typeset PDF (digital and print-on-demand), and `book/art/ART-CHECKLIST.md` |
 | `sim/` | The rules simulator for balance testing, built once the core rules exist |
-| `module/`, `templates/`, `styles/`, `lang/`, `packs/` | The Foundry VTT game system (a skeleton for now) |
+| `module/`, `templates/`, `styles/`, `lang/`, `assets/`, `packs/` | The Foundry VTT game system: install, quick start and what it automates in `docs/FOUNDRY.md`, manual checks in `TESTING.md` |
 | `tools/`, `test/` | Build, validation and test tooling |
 
 ## Commands
@@ -21,6 +21,8 @@ npm install
 npm run build:book          # rulebook PDF → book/dist/
 node book/build.mjs --print # print-on-demand interior + covers
 npm run check               # validate the Foundry system + run tests
+npm run build:sources       # compendium sources from the rulebook → packs/_source/
+npm run build:packs         # compile the compendium packs → packs/
 ```
 
 © 2026 Richard Moore. All rights reserved.

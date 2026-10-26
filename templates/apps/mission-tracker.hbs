@@ -14,7 +14,7 @@
       {{#each setup.party}}<label class="mg-check"><input type="checkbox" data-party="{{id}}" {{#if checked}}checked{{/if}}/> {{name}}{{#if taken}} <em>({{localize "MG.Status.taken"}})</em>{{/if}}</label>{{/each}}
     </fieldset>
     <label class="mg-field mg-narrow">{{localize "MG.Tracker.players"}}
-      <select name="partySize">{{#each setup.sizes}}<option value="{{n}}" {{#if selected}}selected{{/if}}>{{n}}</option>{{/each}}</select>
+      <select name="partySize">{{#each setup.sizes}}<option value="{{n}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
     </label>
     <button type="button" data-action="start"><i class="fa-solid fa-flag"></i> {{localize "MG.Tracker.start"}}</button>
   </section>
@@ -88,7 +88,7 @@
     <div class="mg-buttons">
       {{#unless current.ended}}{{#unless clash}}<button type="button" data-action="endRound">{{localize "MG.Tracker.endRound"}}</button>{{/unless}}{{/unless}}
       {{#if current.guardsActive}}{{#unless clash}}<button type="button" data-action="startClash">{{localize "MG.Tracker.startClash"}}</button>{{/unless}}{{/if}}
-      {{#unless current.last}}<button type="button" data-action="next">{{localize "MG.Tracker.next"}}</button>{{/unless}}
+      {{#if current.canNext}}<button type="button" data-action="next">{{localize "MG.Tracker.next"}}</button>{{/if}}
       {{#if current.canEscape}}<button type="button" data-action="escape">{{localize "MG.Tracker.startEscape"}}</button>{{/if}}
       {{#if current.canWithdraw}}<button type="button" data-action="withdraw">{{localize "MG.Tracker.withdraw"}}</button>{{/if}}
       <button type="button" data-action="watched">{{localize "MG.Tracker.toggleWatched"}}</button>

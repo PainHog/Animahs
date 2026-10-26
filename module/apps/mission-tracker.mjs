@@ -56,7 +56,7 @@ export class MissionTracker extends HandlebarsApplicationMixin(ApplicationV2) {
     const el = this.element;
     const missionKey = target.dataset.mission ?? el?.querySelector?.("[name=mission]")?.value ?? "petshop";
     const ids = target.dataset.party ? target.dataset.party.split(",")
-      : (el?.querySelectorAll?.("input[data-party]") ?? []).filter(i => i.checked).map(i => i.dataset.party);
+      : Array.from(el?.querySelectorAll?.("input[data-party]") ?? []).filter(i => i.checked).map(i => i.dataset.party);
     const size = Number(target.dataset.size ?? el?.querySelector?.("[name=partySize]")?.value) || null;
     if (missionKey === "custom") {
       const mission = await promptCustomMission();
@@ -250,7 +250,7 @@ export function trackerView(S, user) {
       missions: [...MISSIONS.map(m => ({ key: m.id, label: `${missionTitle(m)} (${L(LABELS[m.label].label)}, ${L("MG.Tracker.limits", { a: m.limit[3], b: m.limit[4], c: m.limit[5] })})` })),
         { key: "custom", label: L("MG.Tracker.customMission") }],
       party: game.actors.filter(a => a.type === "bonded").map(a => ({ id: a.id, name: a.name, checked: party.includes(a), taken: a.system.status.taken })),
-      sizes: PARTY_SIZES.map(n => ({ n, selected: n === Math.max(3, Math.min(5, party.length || 4)) })),
+      sizes: [{ n: "", label: L("MG.Tracker.sizeAuto"), selected: true }, ...PARTY_SIZES.map(n => ({ n, label: String(n), selected: false }))],
     };
   }
   // header
@@ -292,6 +292,7 @@ export function trackerView(S, user) {
       escape: view.section === "escape", last: S.current === S.obstacles.length - 1,
       canEscape: view.section !== "escape" && S.objectiveDone,
       canWithdraw: view.section !== "escape" && !S.objectiveDone,
+      canNext: S.current < S.obstacles.length - 1 && !view.objective,
     };
   }
   // the Clash

@@ -409,6 +409,7 @@
       "limits": "Limits {a} / {b} / {c}",
       "party": "The team",
       "players": "Players",
+      "sizeAuto": "as many as the team",
       "start": "Start the mission",
       "forPlayers": "{n} players",
       "watched": "watched: shifts are seen",

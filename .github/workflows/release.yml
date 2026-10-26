@@ -53,7 +53,7 @@ jobs:
           zip -r system.zip . \
             -x ".git/*" -x ".github/*" -x ".gitignore" -x "node_modules/*" -x "*.zip" \
             -x "package.json" -x "package-lock.json" -x "WORKFLOW.md" -x "PORTAL.md" \
-            -x "tools/*" -x "test/*" -x "packs/_source/*" -x "*/.gitkeep" \
+            -x "tools/*" -x "test/*" -x "packs/_source/*" -x "*/.gitkeep" -x "TESTING.md" \
             -x "book/*" -x "sim/*" -x "docs/*" \
             -x "packs/*/LOCK" -x "packs/*/LOG" -x "packs/*/LOG.old"
 
@@ -61,7 +61,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.vars.outputs.version }}
-          name: Morph Game v${{ steps.vars.outputs.version }}
+          name: Second Nature v${{ steps.vars.outputs.version }}
           files: |
             system.json
             system.zip

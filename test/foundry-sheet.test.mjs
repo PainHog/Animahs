@@ -166,4 +166,20 @@ test("threat sheet: a new kind brings its Table 4 numbers", async () => {
   assert.deepEqual([...log.missingI18n], []);
 });
 
+test("the tracker's set-up form: the mission select and the party checkboxes", async () => {
+  const tracker = new api.apps.MissionTracker();
+  await W.asUser(users.gm, () => tracker.render());
+  const select = tracker.element.querySelector("[name=mission]");
+  select.value = "mill";
+  const boxes = [...tracker.element.querySelectorAll("input[data-party]")];
+  for (const b of boxes) b.checked = ["Theo Park", "Priya Shah", "Jonah Mensah"].includes(game.actors.get(b.dataset.party)?.name);
+  await as(users.gm, () => tracker.runAction("start"));
+  const S = api.getState();
+  assert.equal(S.catalogKey, "mill");
+  assert.deepEqual(S.party.map(p => p.name).sort(), ["Jonah Mensah", "Priya Shah", "Theo Park"]);
+  assert.equal(S.limit, 7, "The Old Mill with 3 players");
+  await as(users.gm, () => api.automation.act(api.mission.closeMission));
+  assert.equal(api.getState().status, "idle");
+});
+
 test("nothing logged an error", () => { assert.deepEqual(log.errors, []); });

@@ -13,13 +13,21 @@
  *  - documents: Actors (with the system's data models and derived data), Items,
  *    ChatMessages — players may write only what they own (actors) or authored
  *    (messages); creating actors and writing world settings are GM-only;
+ *  - data models: foundry.data.fields with initial values, cleaning (form strings
+ *    cast to numbers, unknown keys dropped) and validation (min/max, integers,
+ *    choices, types) — a bad actor update throws before anything changes;
+ *  - localization from the system's language file (game.i18n.localize/format and
+ *    the {{localize}} helper); missing MG.* keys are recorded in log.missingI18n;
+ *  - sheet registration (foundry.documents.collections.Actors), recorded in log.sheets;
  *  - User#query (CONFIG.queries handlers called as (data, {timeout}) on the
  *    target user's client, data JSON-cloned like the wire);
  *  - dice ("NdF" formulas) from a scripted queue (then a seeded generator), so
  *    runs repeat;
  *  - DialogV2 answered by scripted responders; ApplicationV2 apps "render" by
  *    compiling their PARTS templates against their real context;
- *  - a tiny DOM (elements, buttons, click listeners) for chat-card buttons and HUDs.
+ *  - a tiny DOM (elements, buttons, click listeners) for chat-card buttons and HUDs;
+ *    querySelectorAll returns a NodeList (not an Array) as browsers do, and
+ *    foundry.applications.ux.FormDataExtended reads a form's named controls.
  * Extend it as the system starts using more of the Foundry API.
  * It is NOT shipped (release.yml excludes tools/).
  */
@@ -186,7 +194,7 @@ export class FakeElement {
   get value() {
     if (this._value !== undefined) return this._value;
     if (this.tagName === "SELECT") {
-      const opts = this.querySelectorAll("option");
+      const opts = this._all("option");
       const o = opts.find(x => "selected" in x.attributes) ?? opts[0];
       return o ? (o.attributes.value ?? o.textContent) : "";
     }
@@ -213,12 +221,23 @@ export class FakeElement {
   toggleAttribute(k, on) { if (on) this.attributes[k] = ""; else delete this.attributes[k]; }
   closest(sel) { for (let e = this.parent; e; e = e.parent) if (e instanceof FakeElement && matches(e, sel)) return e; return null; }
   getBoundingClientRect() { return { top: 0, left: 0, width: 100, height: 100 }; }
-  querySelectorAll(sel) { return [...this.descendants()].filter(e => matches(e, sel)); }
-  querySelector(sel) { return this.querySelectorAll(sel)[0] ?? null; }
+  /** Matching descendants as an array (fake-internal). */
+  _all(sel) { return [...this.descendants()].filter(e => matches(e, sel)); }
+  /** Like the browser: a NodeList (indexable, iterable, forEach) — not an Array, so no filter/map. */
+  querySelectorAll(sel) { return new FakeNodeList(this._all(sel)); }
+  querySelector(sel) { return this._all(sel)[0] ?? null; }
   /** Every descendant (depth first). */
   *descendants() { for (const c of this.children) { yield c; yield* c.descendants(); } }
   /** Every button under this element. */
   buttons() { return [...this.descendants()].filter(e => e.tagName === "BUTTON"); }
+}
+
+/** A static NodeList: what querySelectorAll returns in a browser. */
+class FakeNodeList {
+  constructor(items) { items.forEach((el, i) => { this[i] = el; }); Object.defineProperty(this, "length", { value: items.length }); }
+  item(i) { return this[i] ?? null; }
+  forEach(fn, thisArg) { for (let i = 0; i < this.length; i++) fn.call(thisArg, this[i], i, this); }
+  *[Symbol.iterator]() { for (let i = 0; i < this.length; i++) yield this[i]; }
 }
 
 /* ------------------------------------------------------------- Hooks -- */

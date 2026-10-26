@@ -66,12 +66,15 @@ async function rollAndPost(actor, choices, plan, { state, autoWild, input }) {
   const running = inParty(state, actor);
   const ob = running && choices.context === "obstacle" ? obstacleView(state) : null;
   const threat = running && choices.context === "clash" ? threatById(state.clash, choices.threatId) : null;
+  // a roll whose obstacle or threat is gone counts as a free roll (the Hunt-is-Up Fail rule still applies)
+  let context = running ? choices.context : "free";
+  if ((context === "obstacle" && !ob) || (context === "clash" && !threat)) context = "free";
   const s = actor.system;
   const card = {
     v: 1, kind: CARD.roll,
     actorId: actor.id, actorUuid: actor.uuid, userId: game.user.id,
     missionId: running ? state.id : null, sceneSerial: state.sceneSerial,
-    context: running ? choices.context : "free",
+    context,
     obstacleUid: ob?.uid ?? null, obstacleName: ob?.name ?? "",
     clashId: threat ? state.clash.id : null, action: threat ? choices.action : null,
     threatId: threat?.id ?? null, threatKey: threat?.key ?? null, threatName: threat?.name ?? "",
