@@ -392,6 +392,17 @@ Writing the chapters needed answers the core rules left open. These are in the b
 - **Why:** Richard asked for a polished Foundry system with the book (2026-10-26). Sharing the rules code means that when he revises a rule, the book's tables, the simulator and the online version all change from one place.
 - **Not yet done:** it has only been tested against a stand-in of Foundry. The checklist in `TESTING.md` must be run in a real Foundry world.
 
+### D33 · 2026-10-27 · approved (Richard): The title is *Second Nature*
+- **Decision:** the game's title is ***Second Nature***, unless Richard picks another in the next few days.
+- **Options:** keep the working title (D2); choose a new one.
+- **Why:** Richard's choice (2026-10-27).
+- **Name check (2026-10-27, web searches; risk flags, not legal advice):**
+  - **DriveThruRPG, Steam:** no game with this title found.
+  - **itch.io:** two games with the title. A 2018 game-jam shooter (dminiato2), and an adult (NSFW) transformation game in development by KrokoDillo, with a Patreon, where a chemical event turns people into beasts. Neither is a tabletop RPG, but the second shares the theme of turning into animals and is aimed at adults. For a game for ages 10 and up, that's a branding and search risk, not a legal block.
+  - **USPTO (through third-party aggregators):** no SECOND NATURE mark found for games (classes 9, 28 or 41). Live marks exist in other classes (for example advertising and retail services).
+  - **UK IPO (through aggregators):** a registered SECOND NATURE word mark for weight-loss and wellbeing materials (OurPath Ltd); none found for games.
+  - **Still to do before a store page, cover or logo:** search the official USPTO and UK IPO registers directly for classes 9, 28 and 41, ideally with a trademark attorney.
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
