@@ -55,12 +55,12 @@ Each entry: the decision, the options weighed (the chosen one first), why, and i
 ### D1 · 2026-10-22 · approved (Richard's pitch): Premise and the three-part character
 Characters are built from an animal-type **frame**, a **human perk** and a specific-**animal perk**. No *Animorphs* specifics (§2.1).
 
-### D2 · 2026-10-22 · draft: Working title *Second Nature* (Q1)
+### D2 · 2026-10-22 · approved (2026-10-27): Working title *Second Nature* (Q1)
 - **Decision:** the working title is ***Second Nature***.
 - **Options:** *Second Nature*; *Kindred of the Wild*; *Not Your Trophy*.
 - **Why:** it says what the game is about (becoming an animal until it's second nature) without "Animorphs", "Morph", "Beasts" or "Shifters". A web check on 2026-10-22 found no tabletop RPG with this title. It's a common phrase, so the full search in §2.3 (DriveThruRPG, itch.io, Steam, USPTO, UK IPO) is still needed before any store page, cover or logo. *Kindred of the Wild* is a 1902 public-domain book title and less distinctive. The repository name *Animahs* is not used as a title: it starts like *Animorphs*, and *Anima: Beyond Fantasy* is an existing RPG.
 
-### D3 · 2026-10-22 · draft: The enemy is the Gilded Hunt (Q1, flag 6)
+### D3 · 2026-10-22 · approved (2026-10-27): The enemy is the Gilded Hunt (Q1, flag 6)
 - **Decision:** the enemy is **the Gilded Hunt**, a centuries-old secret society of rich trophy hunters.
   - They trap the power of Bonded animals and wear it as **Trophies** (a ring, a brooch, the head of a cane) that lend them stolen animal traits.
   - Members pass as respectable townsfolk. They use hired **Beaters**, bred **Hounds** and **Trappers**. Members who wear a Trophy are **Huntsmen**; their leaders are **Masters**.
@@ -75,12 +75,12 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
   - capture rather than death keeps the stakes real for a 10+ table (D5);
   - Trophies make the Hunt a mirror of the players: they *take* animal power, the players *become* animals.
 
-### D4 · 2026-10-22 · draft: The power comes from the Old Wild (Q1)
+### D4 · 2026-10-22 · approved (2026-10-27): The power comes from the Old Wild (Q1)
 - **Decision:** the power is **the Old Wild**, the living wildness in every animal. When the Hunt began its push towards the Last Hunt, the Wild woke a handful of young people on one strange night, **the Waking**. Each met the eyes of one animal and **Bonded** with it. One animal per person, for life. Nobody chooses it, touches it or collects it.
 - **Options:** the Old Wild; a lab accident (too close to *Maximum Ride*); a crashed alien vault (too close to the books' dying alien and its gift).
 - **Why:** it's original, it has a folklore feel without borrowing any real culture's "spirit animal" beliefs, and it gives the Hunt a reason to hunt the players: their Bond is the trophy it wants.
 
-### D5 · 2026-10-22 · draft: Ages 10 and up, adventure peril (Q1, flag 8)
+### D5 · 2026-10-22 · approved (2026-10-27): Ages 10 and up, adventure peril (Q1, flag 8)
 - **Decision:**
   - **ages 10 and up**, with the peril of a good family adventure film;
   - characters get hurt and can be **Taken** by the Hunt, and a Taken character can be rescued; no gore, and no player-character death by default;
@@ -88,17 +88,17 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** 10+ family adventure; 13+ war and horror like the books; 8+ light comedy.
 - **Why:** it matches Richard's earlier family games, it leaves the darker teen space to *Beasts* and *Idiot Teenagers…*, and it keeps the stakes real.
 
-### D6 · 2026-10-22 · draft: Present-day town, 3–5 players, 2–3 hour missions (Q1)
+### D6 · 2026-10-22 · approved (2026-10-27): Present-day town, 3–5 players, 2–3 hour missions (Q1)
 - **Decision:** **present day, an ordinary town** (the group's own, or the book's sample town), with the Hunt's places hidden in it: an estate, a museum, a zoo, a mill, shops. **3–5 players and a Storyteller.** One mission fills a **2–3 hour session**.
 - **Options:** a present-day town; a 1980s town; a fantasy village.
 - **Why:** it's the easiest setting for a 10+ table to picture, and phones and cameras give the Hunt modern tools. The 1980s look is crowded with similar shows.
 
-### D7 · 2026-10-22 · draft: A campaign of one-shot missions; one animal per character, for life (Q1, flag 3)
+### D7 · 2026-10-22 · approved (2026-10-27): A campaign of one-shot missions; one animal per character, for life (Q1, flag 3)
 - **Decision:** a **campaign of missions building to the Last Hunt, where every mission also plays as a one-shot**. **Each character has one animal, for life**; advancement deepens the Bond instead of adding animals (D18).
 - **Options:** one animal for life; several animals collected over a campaign; a new animal each mission.
 - **Why:** one animal makes the frame and perks the character's identity, keeps every frame and animal testable in the simulator, sets the game apart from the books' collecting, and makes the group's make-up matter: every frame needs a spotlight.
 
-### D8 · 2026-10-22 · draft: The engine is a d6 pool, a 5 or 6 is a hit (Q2)
+### D8 · 2026-10-22 · approved (2026-10-27): The engine is a d6 pool, a 5 or 6 is a hit (Q2)
 - **Decision:**
   - **Roll a pool of d6s: each 5 or 6 is a hit.** The pool is your rating in the approach, in your current form, plus any bonus dice.
   - **Difficulty 1–4** is the number of hits needed.
@@ -113,7 +113,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
   - a Blades-style roll would read like the two Blades-based *Animorphs*-inspired games (§2.2);
   - each form is one row of ratings, so both forms fit on one sheet (flag 5).
 
-### D9 · 2026-10-22 · draft: Five approaches, place tags and six frames (Q3, flag 2)
+### D9 · 2026-10-22 · approved (2026-10-27): Five approaches, place tags and six frames (Q3, flag 2)
 - **Decision:**
   - **Five approaches:** **Sneak** (hide, stalk, slip past), **Force** (fight, break, shove, scare), **Move** (run, climb, jump, fly, swim), **Sense** (notice, track, search, scout) and **Wits** (talk, plan aloud, use tools and machines, read). Wits is **human form only**.
   - **Human form:** each player puts 3, 2, 2, 1 and 1 into the five approaches.
@@ -132,7 +132,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
   - the tags give every frame places where it's best and places where it's worst, so no frame is always the answer (A6, A9), and the shipped missions must use every tag;
   - insects are left out of v0.1 because they would out-sneak and out-scout everyone (A6), and sea animals because they would be useless on land (A9).
 
-### D10 · 2026-10-22 · draft: Three animals per frame; animal perks never skip a roll (Q4, flag 1)
+### D10 · 2026-10-22 · approved (2026-10-27): Three animals per frame; animal perks never skip a roll (Q4, flag 1)
 - **Decision:**
   - **Three animals per frame, 18 in all.** Each has one **animal perk** that works only in animal form.
   - **An animal perk never skips a roll.** It lowers a Difficulty, adds a die, gives a free Push once per scene, gives a once-per-scene effect, or lets you try something your frame normally can't (and you still roll for it).
@@ -141,7 +141,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** choose or roll; roll only; find your animal during the first mission.
 - **Why:** A8 (nothing skips a roll for free); choosing or rolling at the table keeps setup under 30 minutes (A27).
 
-### D11 · 2026-10-22 · draft: Twelve human perks that mostly work in any form (Q5)
+### D11 · 2026-10-22 · approved (2026-10-27): Twelve human perks that mostly work in any form (Q5)
 - **Decision:** **twelve human perks**, each one short effect.
   - Most work **in any form**: it's still you in there, so the football player's tackle works when you're a bear.
   - The few that need speech or hands say **human form** and are a little stronger. They give a reason to stay human now and then.
@@ -149,7 +149,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** work in any form; human form only; half strength in animal form.
 - **Why:** it follows §6's suggestion (the person stays in the animal), so the human side matters in every scene. The balance between human and animal perks is measured by the simulator (D22).
 
-### D12 · 2026-10-22 · draft: Shifting costs Wild and an action, with no time limit (Q6, flags 4–5)
+### D12 · 2026-10-22 · approved (2026-10-27): Shifting costs Wild and an action, with no time limit (Q6, flags 4–5)
 - **Decision:**
   - **Shifting into your animal costs 1 Wild and your action. Shifting back is free, but it also takes your action.** There's **no time limit** on staying in animal form.
   - **Out of Wild,** you can still shift into your animal by taking 1 Hurt, unless that would put you Down.
@@ -165,7 +165,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
   - Wits obstacles, Crowds and Weaknesses make human form the better choice some of the time, so shifting is never always right or always wrong. The simulator measures this (D22);
   - two rows of ratings keep both forms on one sheet (A28).
 
-### D13 · 2026-10-22 · draft: Help, group obstacles and Edges (Q7)
+### D13 · 2026-10-22 · approved (2026-10-27): Help, group obstacles and Edges (Q7)
 - **Decision:**
   - **Help:** a friend at the same obstacle spends 1 Wild to give you +1 die. It doesn't use their action. They must be able to do it in their current form, and it counts towards the Cap.
   - **Group obstacles:** everyone rolls and gets through on their own result. Scent rises **at most once per round**, if anyone gets a Partial or a Fail.
@@ -174,7 +174,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** Help costs Wild but not your action; Help costs your action; free Help from one helper only.
 - **Why:** in the earlier games, helpers who spent a resource without spending their action made the best teamwork; the Cap stops bonuses stacking.
 
-### D14 · 2026-10-22 · draft: Time, obstacles, Clashes and scouting (Q8)
+### D14 · 2026-10-22 · approved (2026-10-27): Time, obstacles, Clashes and scouting (Q8)
 - **Decision:**
   - **Time:** a **round** is everyone getting one action. A **scene** is one obstacle or one Clash; once-per-scene abilities come back each scene. Moving between obstacles is free, and on the way each character may Shift or Patch Up once.
   - **Obstacles** list their tags, the approaches that work with a Difficulty for each, the **progress** needed (usually 2), whether they're **point** (one roll a round, by anyone) or **group** (everyone has to get past), and whether they're **guarded**.
@@ -193,7 +193,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** only players roll; threats roll attack pools; a side-initiative system.
 - **Why:** one roll covers both sides, so fights don't drag (A24), there are no opposed rolls, and the Storyteller's load fits on one card (A29). Scouting gives Sense-heavy frames a spotlight before the first obstacle.
 
-### D15 · 2026-10-22 · draft: Scent is the mission's threat track (Q9)
+### D15 · 2026-10-22 · approved (2026-10-27): Scent is the mission's threat track (Q9)
 - **Decision:**
   - **Scent** is one track per mission, from 0 to the mission's **Limit**. The Limit is set by the mission's label and the party size, and it never moves during a mission.
   - **It rises by 1** for each Partial or Fail at an obstacle (at most once per round at a group obstacle), once for each Clash (+1 or +2, D14), for each shift in sight of the Hunt (outside a Clash), and for a poor scouting roll.
@@ -203,7 +203,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** one Scent track with two thresholds; separate Alert and Time tracks; Scent per character.
 - **Why:** every state is defined (A1); there are no penalties that climb inside one event (A2); nothing lowers it cheaply (A3); and it's the mission's clock, which the simulator must show binding (A22).
 
-### D16 · 2026-10-22 · draft: Wild is the one resource (Q10)
+### D16 · 2026-10-22 · approved (2026-10-27): Wild is the one resource (Q10)
 - **Decision:**
   - **Wild** comes as tokens. Each character starts every mission with **4** (to be tuned in the simulator).
   - Spend 1 Wild to **Shift** into your animal, **Push** a roll, **Help** a friend, or **Patch Up** (heal 1 Hurt, yours or a friend's; it takes your action).
@@ -212,7 +212,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** one resource per character; separate Shift and Push pools; one shared group pool.
 - **Why:** with one resource behind every choice, each spend is a real trade (A5–A7). The simulator checks that it gets spent.
 
-### D17 · 2026-10-22 · draft: Hurt, Down, Netted, Taken, Exposed and how a mission ends (Q11)
+### D17 · 2026-10-22 · approved (2026-10-27): Hurt, Down, Netted, Taken, Exposed and how a mission ends (Q11)
 - **Decision:**
   - **Hurt:** 3 boxes, the same for every character in every form. Hurt clears between missions.
   - **Down** (3 Hurt): you're out until the scene ends. Then you're back up with 2 Hurt, if a friend is still standing and the Hunt isn't Up. Otherwise you're **Taken**.
@@ -226,7 +226,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** capture-based failure; injury and death; failure that only means being exposed.
 - **Why:** real stakes for a 10+ table without death; losing costs something at every stage (A4); and "everyone down" is defined.
 
-### D18 · 2026-10-22 · draft: Missions, the campaign and advancement (Q12)
+### D18 · 2026-10-22 · approved (2026-10-27): Missions, the campaign and advancement (Q12)
 - **Decision:**
   - **A mission:** briefing → scouting → one of two ways in → 2–4 obstacles → the objective → the Escape (1–2 obstacles) → the result.
   - **A campaign:** about six missions, then the Last Hunt. A campaign **Hunt track** (0–6) rises by 2 for a Loss and by 1 for a Costly Win; at 6, the Last Hunt comes early.
@@ -236,11 +236,11 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** a mission campaign with a Hunt track; a single long story; one-shots only.
 - **Why:** it supports both one-shots and campaigns (D7), and advancement grows the one Bond instead of adding animals.
 
-### D19 · 2026-10-22 · draft: Party size is tested every run (Q13)
+### D19 · 2026-10-22 · approved (2026-10-27): Party size is tested every run (Q13)
 - **Decision:** the simulator runs **3, 4 and 5 players** for every mission. Any per-size adjustment (for example to the Scent Limit) comes from the results and is written into the rules outright. Duplicate frames are allowed; duplicate animals aren't.
 - **Why:** A21.
 
-### D20 · 2026-10-22 · draft: Five test missions, as simulator data (Q14)
+### D20 · 2026-10-22 · approved (2026-10-27): Five test missions, as simulator data (Q14)
 - **Decision:** v0.1 has **five test missions** as simulator data (`sim/scenarios.mjs`): one Easy, two Standard and two Hard. They're draft content for the book later. Each has:
   - two ways in;
   - every obstacle's approaches and Difficulties, and every threat's stats;
@@ -249,7 +249,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
   Across the five, every place tag is used, so every frame has a spotlight (A9, A25). There's no generator in v0.1; maps come with the chapters.
 - **Why:** balance needs scenarios to measure; the book's versions follow once the core is approved.
 
-### D21 · 2026-10-22 · draft: The first night (Q15)
+### D21 · 2026-10-22 · approved (2026-10-27): The first night (Q15)
 - **Decision:**
   - **What the table needs:** six d6 per player (the biggest pool is 6); about 6 Wild tokens per player (beads or coins); a printed **Scent track** and a marker; six **pre-made characters** (one per frame); a Storyteller **round card** for Clashes; a one-page **At the Table** reference.
   - **Two players want the same animal:** roll off; the loser picks another animal (the frame can be the same).
@@ -257,7 +257,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
   - **Setup target:** under 30 minutes (A27).
 - **Why:** A27–A29.
 
-### D22 · 2026-10-22 · draft: Simulator targets, agreed before tuning (Q16)
+### D22 · 2026-10-22 · approved (2026-10-27): Simulator targets, agreed before tuning (Q16)
 | Measure | Target |
 |---|---|
 | Win (objective done, nobody Taken) | Easy 85–95%, Standard 70–80%, Hard 50–62% |
@@ -272,7 +272,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 | Party size (A21) | the win rate at each label within ±5 points across 3, 4 and 5 players |
 | Clashes (A24) | 3 rounds or fewer on average; under 5% reach round 4 |
 
-### D23 · 2026-10-22 · draft: Art direction and Foundry (Q17)
+### D23 · 2026-10-22 · approved (2026-10-27): Art direction and Foundry (Q17)
 - **Decision:**
   - **Art:** painterly naturalism. Animals are true to life (ART-CHECKLIST 21–22); colour is warm, like a storybook; the kids are drawn as ordinary kids.
   - **The change is a swirl of light and leaves that hides the body.** Never a half-changed body, and never a person-to-animal sequence across a cover (§2.1, ART-CHECKLIST 24–25).
@@ -280,7 +280,7 @@ Characters are built from an animal-type **frame**, a **human perk** and a speci
 - **Options:** painterly naturalism; cartoon; photo-real.
 - **Why:** true-to-life animals are the draw; cartoon would undercut the stakes; photo-real is hard to keep consistent across a character's two forms.
 
-### D24 · 2026-10-22 · draft: First simulator pass: rule changes (core rules v0.1 → v0.1b)
+### D24 · 2026-10-22 · approved (2026-10-27): First simulator pass: rule changes (core rules v0.1 → v0.1b)
 The simulator (`sim/`) ran the v0.1 text against the D22 targets. These changes are in `docs/CORE-RULES.md` v0.1b; each is logged in `book/REVIEW.md`. "Sweep" figures are from `sim/REPORT.md` §6 (putting the old rule back, all else equal).
 1. **A group obstacle raises Scent once, when it ends** (+1 if anyone got a Partial or a Fail), **plus 1 for every round after the third.**
    - Before: Scent rose every round. That broke A2 ("a group check raises the threat once") and charged bigger groups more.
@@ -305,7 +305,7 @@ The simulator (`sim/`) ran the v0.1 text against the D22 targets. These changes 
 - **Options:** the package above; a tighter Cap; fewer Edges.
 - **Why:** each change fixes a measured problem with the smallest rule. A tighter Cap or fewer Edges would only have moved the win rate, which the Limits already do.
 
-### D25 · 2026-10-22 · draft: Frames, animals and human perks rebalanced
+### D25 · 2026-10-22 · approved (2026-10-27): Frames, animals and human perks rebalanced
 Measured by forcing one character to each option, with the rest of the group random and the dice the same (`sim/REPORT.md` §4). Figures are points of win rate against the average.
 - **Canines:** Sneak 3 and Force 3 (were 2 and 2). Before: −3.7 (−5.5 at Hard); now −1.6.
 - **Reptiles** lose their High Weakness. −2.4 before, −2.0 now.
@@ -321,11 +321,11 @@ Measured by forcing one character to each option, with the rest of the group ran
   - **Result:** all twelve are within ±2 points of the perk average.
 - **Lesson for this game:** anything that turns a Fail into something better is worth far more than a die, because once the Hunt is Up a Fail means Taken. Keep effects like that rare, once per scene, and watched by the simulator (the Red Fox's Wily is the only one left: +1.4).
 
-### D26 · 2026-10-22 · draft: Revised Hunt-is-Up target (revises D22)
+### D26 · 2026-10-22 · approved (2026-10-27): Revised Hunt-is-Up target (revises D22)
 - **Decision:** the Hunt is Up in **Easy ≤ 35%, Standard 25–50%, Hard 45–75%** of missions (were ≤ 15%, 15–40% and 30–60%). Every other D22 target is unchanged.
 - **Why:** under D24 rule 3, the Hunt being Up is the mission's climax (the risk of being Taken), not an automatic Loss. So it has to happen more often for missions to carry real risk. The clock still binds (A22).
 
-### D27 · 2026-10-22 · draft: Test mission changes (revises D20 content)
+### D27 · 2026-10-22 · approved (2026-10-27): Test mission changes (revises D20 content)
 - **The Zoo:** a night keeper to talk past at the staff gate, and a Sense way past the Hound patrol.
 - **The Mill:**
   - the grain store has a Beater and a Hound, and can be talked past (Wits 2);
@@ -335,7 +335,7 @@ Measured by forcing one character to each option, with the rest of the group ran
 - **The Lodge:** the servants' door is added, and there's a Sense way past the kennels.
 - **Why:** labels come from results (A20). The Mill played easier than the Easy mission, and the Gala's best Limit (4–5) was too short to tune by party size. Each mission also gets a moment where human form is the best choice, so that shifting stays a decision.
 
-### D28 · 2026-10-22 · draft: Six animals replaced to avoid the books' signature animals
+### D28 · 2026-10-22 · approved (2026-10-27): Six animals replaced to avoid the books' signature animals
 - **Decision:** Tiger → **Snow Leopard**, Wolf → **Coyote**, Red-tailed Hawk → **Peregrine Falcon**, Brown Bear → **Bison**, Gorilla → **Moose**, Rhinoceros → **Hippopotamus**.
   - Each keeps its perk's effect. Two perks are renamed to fit the new animal: Bison's Thick Fur becomes **Shaggy Coat**, and Moose's Chest Beat becomes **Antler Sweep**.
   - The Tiger's "Water isn't a Weakness" clause goes with it.
@@ -344,7 +344,7 @@ Measured by forcing one character to each option, with the rest of the group ran
   - The Zoo test mission is about stopping Trappers, not about getting a form, which is where the books' zoo scene (The Gardens) is used. Keep any zoo in the book a plain zoo: no amusement park, and no "Gardens" name.
   - **Stuck** (§9) is temporary and comes from going Down. It isn't the books' permanent trap after a time limit.
 
-### D29 · 2026-10-26 · draft: Art is flat storybook vector art drawn by the book's own art scripts (revises D23)
+### D29 · 2026-10-26 · approved (2026-10-27): Art is flat storybook vector art drawn by the book's own art scripts (revises D23)
 - **Decision:** every picture is SVG vector art made by the scripts in `book/tools/art-gen/`.
   - **Style:** flat shapes with an inked outline, like a storybook.
   - **Palette** (`book/art/README.md`): deep blue nights, warm cream paper, moss green for the Wild, and gold and crimson for the Gilded Hunt.
@@ -354,11 +354,11 @@ Measured by forcing one character to each option, with the rest of the group ran
 - **Options:** vector art drawn in code now; marked placeholders for a hired artist to paint later.
 - **Why:** Richard chose to have the whole book made now, with art, and revise it afterwards. Vector art can be fixed and re-made as often as the text changes. A painted edition can replace it later, picture for picture, using the same names and shapes.
 
-### D30 · 2026-10-26 · draft: Core rules v0.1b are used to draft the whole book
+### D30 · 2026-10-26 · approved (2026-10-27): Core rules v0.1b are used to draft the whole book
 - **Decision:** the rulebook (chapters, missions, ready-made characters, sheets) is drafted from `docs/CORE-RULES.md` v0.1b and the simulator's test missions. Richard revises the whole draft afterwards.
 - **Why:** Richard asked for the full book with art now (2026-10-26). This doesn't approve the core rules: they and every draft decision stay open to his revision. When a rule changes, the chapters, the sheets and the simulator change with it.
 
-### D31 · 2026-10-26 · draft: Rules the chapters add to the core rules
+### D31 · 2026-10-26 · approved (2026-10-27): Rules the chapters add to the core rules
 Writing the chapters needed answers the core rules left open. These are in the book, in `docs/CORE-RULES.md` v0.1c and in `book/REVIEW.md` rows 11–20. None of them changes a simulated mission's numbers.
 1. **Campaigns (§12):**
    - The Last Hunt is the seventh mission, or the next one once the Hunt track reaches 6. Build it as a Hard mission; with the track at 4 or more, its Limit is 1 lower.
@@ -395,7 +395,7 @@ Writing the chapters needed answers the core rules left open. These are in the b
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 
-**Status (2026-10-22): all eight are settled in draft.** 1 → D10 · 2 → D9, D22 · 3 → D7 · 4 → D12 · 5 → D12 · 6 → D3 · 7 → D14, D19 · 8 → D5, D23.
+**Status (2026-10-22): all eight are settled in draft; Richard approved every decision on 2026-10-27.** 1 → D10 · 2 → D9, D22 · 3 → D7 · 4 → D12 · 5 → D12 · 6 → D3 · 7 → D14, D19 · 8 → D5, D23.
 
 1. **"Hide in any dark environment" skips a roll** (A8).
    - Read literally, the jaguar perk automatically succeeds at hiding wherever it's dark. That's the kind of ability that broke earlier games (the Spitting Spider jam, the Ghost's Spectral pass).
@@ -424,7 +424,7 @@ These aren't decisions. They're the first things to settle, because each one has
 
 ## 5. Open questions for the design interview (DESIGN-RULES Part B, matched to this game)
 
-**Status (2026-10-22): every question has a draft answer.** 1 → D2–D7 · 2 → D8 · 3 → D9 · 4 → D10 · 5 → D11 · 6 → D12 · 7 → D13 · 8 → D14 · 9 → D15 · 10 → D16 · 11 → D17 · 12 → D18 · 13 → D19 · 14 → D20 · 15 → D21 · 16 → D22 · 17 → D23. The rules themselves are in `docs/CORE-RULES.md`.
+**Status (2026-10-22): every question has a draft answer; Richard approved every decision on 2026-10-27.** 1 → D2–D7 · 2 → D8 · 3 → D9 · 4 → D10 · 5 → D11 · 6 → D12 · 7 → D13 · 8 → D14 · 9 → D15 · 10 → D16 · 11 → D17 · 12 → D18 · 13 → D19 · 14 → D20 · 15 → D21 · 16 → D22 · 17 → D23. The rules themselves are in `docs/CORE-RULES.md`.
 1. **Identity:**
    - the title (brainstorm options; §2.3);
    - the enemy (original; §2.1);

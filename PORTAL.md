@@ -1,7 +1,7 @@
-Now: The draft rulebook and the first online version for Foundry VTT are ready for Richard to review
-Next: Richard reviews and revises the whole draft book and tries the online version, while drawing the real pictures
+Now: Richard has approved the whole design; the rulebook and the online version are ready for a first playtest
+Next: A first playtest at a real table, while Richard draws the real pictures and puts the book in his own words
 Number: Design decisions so far = 32
-Number: Approved by Richard = 2
+Number: Approved by Richard = 32
 Number: Core questions still open = 0
 Screenshot: docs/portal/cover.webp = The draft cover, with stand-in art until the real drawings are done
 
@@ -19,7 +19,7 @@ Plain words only: no repo names, usernames, file paths, links or commit IDs. Rul
 - [x] One page of core rules
 - [x] Balance simulator: wins and losses for every group size and difficulty, and every frame and animal tested
 - [x] First round of balance fixes from the simulator
-- [ ] Richard reviews and revises the drafts, and approves the core rules
+- [x] Richard reviews and revises the drafts, and approves the core rules
 - [ ] Richard chooses the game's real title
 - [ ] Full check that the chosen title is free to use
 

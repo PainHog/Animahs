@@ -1,4 +1,4 @@
-# Second Nature: core rules (v0.1c draft)
+# Second Nature: core rules (v0.1c, approved 2026-10-27)
 
 *Working title (DESIGN D2). These are the rules until chapters exist. The simulator follows this page and cites its § numbers. The tables after the rules hold the options and numbers. v0.1b includes the first simulator pass (DESIGN D24–D28; `book/REVIEW.md` rows 1–10). v0.1c adds the answers the chapters needed (DESIGN D31; rows 11–20), none of which changes a simulated mission.*
 
