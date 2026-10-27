@@ -6,7 +6,8 @@ Every picture in the book has a name, and the chapters place it with
 - **`NAME.png`, `NAME.jpg` or `NAME.webp`** (your own artwork) is used first, if it's here;
 - otherwise **`NAME.svg`**, the stand-in drawing made by the scripts in `book/tools/art-gen/`.
 
-So replacing a stand-in is just saving a picture with the same name.
+So replacing a stand-in is just saving a picture with the same name. The Foundry system uses
+the same pictures: `npm run build:art` remakes its maps, portraits and cover from this folder.
 **`ART-LIST.md`** lists every name, where it goes, its shape and the smallest file that
 prints sharply. Every piece, stand-in or final, should pass `ART-CHECKLIST.md`.
 

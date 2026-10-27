@@ -1,7 +1,7 @@
 {
   "key": "01-beater",
   "name": "Beater",
-  "img": "systems/morphgame/assets/icons/beater.svg",
+  "img": "systems/morphgame/assets/art/threat-beater.png",
   "system": {
     "kind": "beater",
     "difficulty": 2,
@@ -22,7 +22,7 @@
       "attribute": null
     },
     "texture": {
-      "src": "systems/morphgame/assets/icons/beater.svg"
+      "src": "systems/morphgame/assets/art/threat-beater.png"
     }
   }
 }

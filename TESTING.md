@@ -17,7 +17,9 @@ The stand-in can't show layout, CSS, 3D dice or the canvas, so run this once per
 
 ### Set-up
 1. [ ] Install from the manifest URL (or the folder). The world starts with no console errors.
-2. [ ] Compendiums: **Second Nature** folder with Ready-Made Bonded (6), Threats (5), Rules (4 journals), Missions (5). Journals open with tables and no art placeholders.
+2. [ ] Compendiums: **Second Nature** folder with Second Nature: Starter (1 adventure), Ready-Made Bonded (6), Threats (5), Rules (4 journals), Missions (5). Journals open with tables and no art placeholders; each mission opens on its map.
+2a. [ ] **Import Adventure** on the Starter: folders for the Bonded, the Hunt, Missions, Rules and Scenes; 11 actors with portraits (the Master keeps its icon), 9 journals, 6 scenes with thumbnails. Importing a second time offers to update, and makes no duplicates.
+2b. [ ] Open the **Wrenfield** scene: the map fills it; five pins sit just above the numbered places, and each opens that mission's journal. Open **The Zoo After Dark**: a pin above every marker; the GM sees the two Hounds beside 3 and the two Trappers beside ★ as hidden (faded) tokens; the Player sees neither the pins nor the tokens.
 3. [ ] GM imports Maya, Theo, Priya and Jonah; gives Maya and Priya to the Player. Tokens of Bonded are linked and show Wild and Hurt bars.
 4. [ ] Player opens Maya's sheet: both rating rows, Human highlighted, Night Rosettes and Hide-and-Seek Champ texts, 4 Wild pips, 3 Hurt boxes, no warnings.
 5. [ ] Player changes a human rating to break 3, 2, 2, 1, 1 → a warning appears; changes it back → it goes.

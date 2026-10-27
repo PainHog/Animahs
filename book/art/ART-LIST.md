@@ -13,6 +13,8 @@ This list is written by the build tools from the chapters; don't edit it by hand
    To go back to the stand-in, move your file out of `book/art/`.
 3. The build warns if a picture is too small to print sharply (under 300 pixels per inch
    at its printed size). The **smallest file** column gives the size to aim for; bigger is fine.
+4. The Foundry system uses the same pictures (maps, portraits, the cover). After adding yours,
+   run `npm run build:art && npm run build:sources && npm run build:packs`.
 
 Notes:
 

@@ -8,6 +8,13 @@
   },
   "pages": [
     {
+      "key": "map",
+      "name": "Map",
+      "type": "image",
+      "src": "systems/morphgame/assets/art/map-petshop.png",
+      "caption": "Pemberton's Pets. A and B are the ways in, the numbers the obstacles inside, ★ the objective and E the Escape, as in the table on the next page."
+    },
+    {
       "key": "obstacles",
       "name": "Obstacles and Limits",
       "type": "text",

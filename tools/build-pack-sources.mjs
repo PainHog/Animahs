@@ -9,8 +9,14 @@
  *   rules              the quick reference (Chapter 19), the rules chapters (2–10, 12),
  *                      the frames/animals/perks/threats catalogue (module/config.mjs) and a
  *                      short guide to the Foundry system
- *   missions           the five missions: obstacle tables and Limits from the shared catalog
- *                      (module/logic/missions.mjs), the rest of each chapter from the book
+ *   missions           the five missions: the map, the obstacle tables and Limits from the
+ *                      shared catalog (module/logic/missions.mjs), the rest of each chapter
+ *   starter            one Adventure holding all of the above, plus a scene for Wrenfield and
+ *                      each mission: the book's map, a pin on every marker (linked to the
+ *                      mission's journal) and the guards as hidden tokens beside their marker
+ *
+ * Pictures come from assets/art/ (tools/build-foundry-art.mjs makes them from book/art/), and
+ * the map markers from the map drawings themselves (book/tools/art-gen/scenes/sn-maps.mjs).
  *
  * Then compile with `npm run build:packs`. Output is deterministic: same book, same files.
  *   node tools/build-pack-sources.mjs          write the sources
@@ -26,6 +32,8 @@ import {
 import { MISSIONS, missionTitle, scoutDifficulty } from "../module/logic/missions.mjs";
 import { wildMax } from "../module/logic/character.mjs";
 import { missionTable } from "../book/tools/mission-tables.mjs";
+import { MARKERS } from "../book/tools/art-gen/scenes/sn-maps.mjs";
+import { FOUNDRY_ART, MAP_SCALE, artPath } from "./foundry-art.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const CH = join(ROOT, "book", "src", "chapters");
@@ -100,7 +108,7 @@ function bondedDoc(c, i) {
     growth: { value: 0, picks: [] },
     usage: {},
   };
-  const img = `${SYS}/assets/icons/bonded.svg`;
+  const img = artPath(`pc-${c.key}`);     // the book's portrait
   return {
     key: `${String(i + 1).padStart(2, "0")}-${c.key}`, name: c.name, img, system,
     prototypeToken: {
@@ -129,7 +137,8 @@ function threatTexts() {
 function threatDoc(key, i, texts) {
   const T = THREATS[key];
   const tx = texts[key] ?? { epithet: "", text: "" };
-  const img = `${SYS}/assets/icons/${key}.svg`;
+  // the book's portrait where it has one (the Master has none: never fought, never seen)
+  const img = FOUNDRY_ART.some(a => a.name === `threat-${key}`) ? artPath(`threat-${key}`) : `${SYS}/assets/icons/${key}.svg`;
   return {
     key: `${String(i + 1).padStart(2, "0")}-${key}`, name: T.name, img,
     system: {
@@ -184,7 +193,8 @@ function catalogueHtml() {
 }
 
 const GUIDE = [
-  ["start", "Starting a mission", `<p>Open the <strong>Mission Tracker</strong> from the paw button in the token controls. Choose one of the five missions (or a custom one), tick the Bonded who are playing and press <strong>Start the mission</strong>. Everyone gets their Wild back and loses their Hurt; Team Captain's Edge and an Exposed character's Scent 1 are applied for you.</p>
+  ["start", "Starting a mission", `<p>The quickest start: import the <strong>Second Nature: Starter</strong> adventure from the compendiums. It brings the six ready-made Bonded, the Hunt, the rules, the five missions and a scene for Wrenfield and each mission. On a mission's scene every map marker has a pin that opens the mission's journal, and the guards wait as hidden tokens beside their obstacle: a Clash there reveals them.</p>
+<p>Open the <strong>Mission Tracker</strong> from the paw button in the token controls (on a mission's scene, that mission is already chosen). Choose one of the five missions (or a custom one), tick the Bonded who are playing and press <strong>Start the mission</strong>. Everyone gets their Wild back and loses their Hurt; Team Captain's Edge and an Exposed character's Scent 1 are applied for you.</p>
 <p>Scouting comes first: a player rolls from their sheet or the tracker (the roll dialog already says Sense against Difficulty 2). The result sets the Edges, the Scent and who picks the way in; press <strong>Go in by way A</strong> or <strong>B</strong>.</p>`],
   ["rolling", "Rolling", `<p>Every <strong>Roll</strong> button opens the roll dialog. It knows the current obstacle: its tags, the approaches that work and their Difficulty, its guards and whether you're On the Trail. It lists every modifier with its source (Strengths, Weaknesses, animal perks, human perks, Tracker, Trophy, Distract, Coil) and applies the Cap. Tick friends to Help (each pays 1 Wild; Coyote's Pack pays once a scene) and choose Edges; anything over the Cap isn't spent.</p>
 <p>The roll card shows the dice with hits highlighted and the result. A Fail or a Partial stays open while you could still <strong>Push</strong> (1 Wild), use <strong>Burst</strong> or <strong>Wily</strong>; press <strong>Accept</strong>, or the next roll anyone makes settles it. A Success can still be Pushed for a Critical, or counted as one with <strong>Charge</strong>.</p>`],
@@ -193,6 +203,111 @@ const GUIDE = [
 <p>Every automation has a switch in the system settings. With one off, its outcome is listed on the tracker and the roll card gets an <strong>Apply the outcome</strong> button for the Storyteller.</p>`],
   ["end", "The Hunt is Up, and the end", `<p>When Scent reaches the Limit, the tracker announces it and, if the objective isn't done, offers <strong>Press on</strong> or <strong>Withdraw</strong> with the book's advice highlighted. When the last Escape obstacle is behind the team, the tracker shows Win, Costly Win or Loss; <strong>Finish the mission</strong> moves the Hunt track (+1 for a Costly Win, +2 for a Loss) and gives every character 1 Growth.</p>`],
 ];
+
+/* ------------------------------------------------------------------ the Starter adventure */
+
+const PIN = `${SYS}/assets/icons/pin.svg`;
+const W = 800 * MAP_SCALE, H = 600 * MAP_SCALE, TOKEN = 120;   // scene pixels; a token is 1.2 squares of 100px
+const at = ([x, y]) => [Math.round(x * MAP_SCALE), Math.round(y * MAP_SCALE)];
+
+/** A mission's obstacle for a map label: A, B, 1–3, ★, E (or E1, E2). */
+function obstacleFor(m, label) {
+  if (label === "A") return { ob: m.waysIn[0][0], where: "Way in A" };
+  if (label === "B") return { ob: m.waysIn[1][0], where: "Way in B" };
+  if (label === "★") return { ob: m.objective, where: "Objective" };
+  if (/^E\d?$/.test(label)) { const i = label === "E" ? 0 : Number(label[1]) - 1; return { ob: m.escape[i], where: m.escape.length > 1 ? `Escape ${i + 1}` : "Escape" }; }
+  const i = Number(label) - 1;
+  return { ob: m.inside[i], where: `Inside ${i + 1}` };
+}
+
+/** Where a marker's guards stand when the space to its right is taken by other markers. */
+const GUARDS_BELOW = { lodge: ["1"] };
+
+/** Guards as tokens in a row beside their marker (to its left near the right edge; below where
+ *  GUARDS_BELOW says), kept inside the map. */
+function guardTokens(m, label, ob, threatKeys) {
+  const [mx, my] = at(MARKERS[m.id][label]);
+  const n = ob.guards.length, gap = TOKEN + 6;
+  const below = GUARDS_BELOW[m.id]?.includes(label);
+  const right = mx + 64 + n * gap <= W;
+  return ob.guards.map((g, j) => {
+    if (below) {
+      const x = mx - (n * gap - 6) / 2 + j * gap;
+      return guard(m, ob, g, j, threatKeys, x, my + 64 + TOKEN / 2);
+    }
+    const x = right ? mx + 64 + j * gap : mx - 64 - TOKEN - j * gap;
+    return guard(m, ob, g, j, threatKeys, x, my);
+  });
+}
+function guard(m, ob, g, j, threatKeys, x, cy) {
+  {
+    return {
+      name: THREATS[g].name, actor: { pack: "threats", key: threatKeys[g] }, img: artPath(`threat-${g}`),
+      x: Math.max(0, Math.min(W - TOKEN, Math.round(x))), y: Math.max(0, Math.min(H - TOKEN, Math.round(cy - TOKEN / 2))),
+      hidden: true, flags: { morphgame: { guard: { mission: m.id, obstacle: ob.id, n: j } } },
+    };
+  }
+}
+
+export function starterAdventure({ ready, threats, rules, missions }) {
+  const threatKeys = Object.fromEntries(threats.map(t => [t.system.kind, t.key]));
+  const missionKey = id => missions.find(d => d.flags.morphgame.mission === id).key;
+  const scenes = [{
+    key: "wrenfield", name: "Wrenfield", img: artPath("map-wrenfield"), thumb: artPath("map-wrenfield-thumb"), width: W, height: H, folder: "scenes",
+    journal: { pack: "rules", key: "02-the-rules", page: "23-ch11" },
+    // pins 1–5: the five missions, in the book's order
+    notes: Object.entries(MARKERS.wrenfield).map(([label, pt]) => {
+      const m = MISSIONS[Number(label) - 1];
+      const [x, y] = at(pt);
+      return { x, y: y - 92, icon: PIN, text: `${label}. ${missionTitle(m)}`, journal: { pack: "missions", key: missionKey(m.id), page: "mission" } };
+    }),
+  }, ...MISSIONS.map(m => {
+    const notes = [], tokens = [];
+    for (const [label, pt] of Object.entries(MARKERS[m.id])) {
+      const { ob, where } = obstacleFor(m, label);
+      if (!ob) throw new Error(`${m.id}: the map's marker ${label} has no obstacle`);
+      const [x, y] = at(pt);
+      notes.push({ x, y: y - 92, icon: PIN, text: `${where}: ${ob.name}`, journal: { pack: "missions", key: missionKey(m.id), page: "mission" } });
+      if (ob.guards?.length) tokens.push(...guardTokens(m, label, ob, threatKeys));
+    }
+    return {
+      key: m.id, name: missionTitle(m), img: artPath(`map-${m.id}`), thumb: artPath(`map-${m.id}-thumb`), width: W, height: H, folder: "scenes",
+      journal: { pack: "missions", key: missionKey(m.id), page: "mission" }, notes, tokens,
+      flags: { morphgame: { mission: m.id } },
+    };
+  })];
+  return {
+    key: "01-starter",
+    name: "Second Nature: Starter",
+    img: artPath("cover"),
+    caption: "Everything for a first night: six ready-made Bonded, the Hunt, the rules, and five missions with their maps.",
+    description: [
+      "<p>Kids who can become animals, against the rich and secret Gilded Hunt. This adventure brings everything a first night needs:</p>",
+      "<ul>",
+      "<li><strong>The six ready-made Bonded</strong> of Chapter 18, with their portraits, and <strong>the Hunt</strong>: Beaters, Hounds, Trappers, Huntsmen and the Masters.</li>",
+      "<li><strong>A scene for Wrenfield and for each of the five missions</strong>, from the easy first night at Pemberton's Pets to the Lodge on the Hill. Every map marker has a pin that opens the mission's journal; the guards wait as hidden tokens beside their obstacle.</li>",
+      "<li><strong>The rules</strong> and the one-page reference, as journals.</li>",
+      "</ul>",
+      "<p><strong>To play:</strong> give each player a Bonded, open the scene for <em>Pemberton's Pets</em>, then open the Mission Tracker (the paw button in the token controls), tick the players' Bonded and press <strong>Start the mission</strong>.</p>",
+    ].join("\n"),
+    folders: [
+      { key: "bonded", name: "Second Nature: Ready-Made Bonded", type: "Actor", color: "#3e5a34" },
+      { key: "hunt", name: "Second Nature: The Hunt", type: "Actor", color: "#8c2f24" },
+      { key: "missions", name: "Second Nature: Missions", type: "JournalEntry", color: "#8c2f24" },
+      { key: "rules", name: "Second Nature: Rules", type: "JournalEntry", color: "#3e5a34" },
+      { key: "scenes", name: "Second Nature", type: "Scene", color: "#1f2a3a" },
+    ],
+    actors: [
+      ...ready.map(d => ({ pack: "ready-made-bonded", key: d.key, folder: "bonded" })),
+      ...threats.map(d => ({ pack: "threats", key: d.key, folder: "hunt" })),
+    ],
+    journal: [
+      ...missions.map(d => ({ pack: "missions", key: d.key, folder: "missions" })),
+      ...rules.map(d => ({ pack: "rules", key: d.key, folder: "rules" })),
+    ],
+    scenes,
+  };
+}
 
 /* ------------------------------------------------------------------ write */
 
@@ -222,7 +337,7 @@ export function buildAll() {
   const texts = threatTexts();
   const threats = THREAT_ORDER.map((k, i) => threatDoc(k, i, texts));
   const cat = catalogueHtml();
-  const rulesChapters = ["12-ch02.html", "13-ch03.html", "14-ch04.html", "15-ch05.html", "16-ch06.html", "17-ch07.html", "18-ch08.html", "21-ch09.html", "22-ch10.html", "24-ch12.html"];
+  const rulesChapters = ["12-ch02.html", "13-ch03.html", "14-ch04.html", "15-ch05.html", "16-ch06.html", "17-ch07.html", "18-ch08.html", "21-ch09.html", "22-ch10.html", "23-ch11.html", "24-ch12.html"];
   const rules = [
     { key: "01-quick-reference", name: "Quick Reference", pages: [page("at-the-table", titleOf(chapter("42-ch19.html")), cleanHtml(chapter("42-ch19.html")))] },
     { key: "02-the-rules", name: "The Rules", pages: rulesChapters.map(f => page(f.replace(/\.html$/, ""), titleOf(chapter(f)), cleanHtml(chapter(f)))) },
@@ -243,6 +358,8 @@ export function buildAll() {
       key: `${String(i + 1).padStart(2, "0")}-${m.id}`, name: missionTitle(m),
       flags: { morphgame: { mission: m.id } },
       pages: [
+        { key: "map", name: "Map", type: "image", src: artPath(`map-${m.id}`),
+          caption: `${missionTitle(m)}. A and B are the ways in, the numbers the obstacles inside, ★ the objective and E the Escape, as in the table on the next page.` },
         page("obstacles", "Obstacles and Limits", [
           `<p><strong>${label} mission.</strong> ${m.brief}</p>`,
           table,
@@ -252,11 +369,13 @@ export function buildAll() {
       ],
     };
   });
+  const starter = starterAdventure({ ready, threats, rules, missions });
   return [
     ...write("ready-made-bonded", ready),
     ...write("threats", threats),
     ...write("rules", rules),
     ...write("missions", missions),
+    ...write("starter", [starter]),
   ];
 }
 

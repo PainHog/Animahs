@@ -1,0 +1,1085 @@
+{
+  "key": "01-starter",
+  "name": "Second Nature: Starter",
+  "img": "systems/morphgame/assets/art/cover.jpg",
+  "caption": "Everything for a first night: six ready-made Bonded, the Hunt, the rules, and five missions with their maps.",
+  "description": "<p>Kids who can become animals, against the rich and secret Gilded Hunt. This adventure brings everything a first night needs:</p>\n<ul>\n<li><strong>The six ready-made Bonded</strong> of Chapter 18, with their portraits, and <strong>the Hunt</strong>: Beaters, Hounds, Trappers, Huntsmen and the Masters.</li>\n<li><strong>A scene for Wrenfield and for each of the five missions</strong>, from the easy first night at Pemberton's Pets to the Lodge on the Hill. Every map marker has a pin that opens the mission's journal; the guards wait as hidden tokens beside their obstacle.</li>\n<li><strong>The rules</strong> and the one-page reference, as journals.</li>\n</ul>\n<p><strong>To play:</strong> give each player a Bonded, open the scene for <em>Pemberton's Pets</em>, then open the Mission Tracker (the paw button in the token controls), tick the players' Bonded and press <strong>Start the mission</strong>.</p>",
+  "folders": [
+    {
+      "key": "bonded",
+      "name": "Second Nature: Ready-Made Bonded",
+      "type": "Actor",
+      "color": "#3e5a34"
+    },
+    {
+      "key": "hunt",
+      "name": "Second Nature: The Hunt",
+      "type": "Actor",
+      "color": "#8c2f24"
+    },
+    {
+      "key": "missions",
+      "name": "Second Nature: Missions",
+      "type": "JournalEntry",
+      "color": "#8c2f24"
+    },
+    {
+      "key": "rules",
+      "name": "Second Nature: Rules",
+      "type": "JournalEntry",
+      "color": "#3e5a34"
+    },
+    {
+      "key": "scenes",
+      "name": "Second Nature",
+      "type": "Scene",
+      "color": "#1f2a3a"
+    }
+  ],
+  "actors": [
+    {
+      "pack": "ready-made-bonded",
+      "key": "01-maya",
+      "folder": "bonded"
+    },
+    {
+      "pack": "ready-made-bonded",
+      "key": "02-theo",
+      "folder": "bonded"
+    },
+    {
+      "pack": "ready-made-bonded",
+      "key": "03-priya",
+      "folder": "bonded"
+    },
+    {
+      "pack": "ready-made-bonded",
+      "key": "04-sam",
+      "folder": "bonded"
+    },
+    {
+      "pack": "ready-made-bonded",
+      "key": "05-jonah",
+      "folder": "bonded"
+    },
+    {
+      "pack": "ready-made-bonded",
+      "key": "06-lucia",
+      "folder": "bonded"
+    },
+    {
+      "pack": "threats",
+      "key": "01-beater",
+      "folder": "hunt"
+    },
+    {
+      "pack": "threats",
+      "key": "02-hound",
+      "folder": "hunt"
+    },
+    {
+      "pack": "threats",
+      "key": "03-trapper",
+      "folder": "hunt"
+    },
+    {
+      "pack": "threats",
+      "key": "04-huntsman",
+      "folder": "hunt"
+    },
+    {
+      "pack": "threats",
+      "key": "05-master",
+      "folder": "hunt"
+    }
+  ],
+  "journal": [
+    {
+      "pack": "missions",
+      "key": "01-petshop",
+      "folder": "missions"
+    },
+    {
+      "pack": "missions",
+      "key": "02-zoo",
+      "folder": "missions"
+    },
+    {
+      "pack": "missions",
+      "key": "03-mill",
+      "folder": "missions"
+    },
+    {
+      "pack": "missions",
+      "key": "04-gala",
+      "folder": "missions"
+    },
+    {
+      "pack": "missions",
+      "key": "05-lodge",
+      "folder": "missions"
+    },
+    {
+      "pack": "rules",
+      "key": "01-quick-reference",
+      "folder": "rules"
+    },
+    {
+      "pack": "rules",
+      "key": "02-the-rules",
+      "folder": "rules"
+    },
+    {
+      "pack": "rules",
+      "key": "03-catalogue",
+      "folder": "rules"
+    },
+    {
+      "pack": "rules",
+      "key": "04-foundry",
+      "folder": "rules"
+    }
+  ],
+  "scenes": [
+    {
+      "key": "wrenfield",
+      "name": "Wrenfield",
+      "img": "systems/morphgame/assets/art/map-wrenfield.png",
+      "thumb": "systems/morphgame/assets/art/map-wrenfield-thumb.png",
+      "width": 2000,
+      "height": 1500,
+      "folder": "scenes",
+      "journal": {
+        "pack": "rules",
+        "key": "02-the-rules",
+        "page": "23-ch11"
+      },
+      "notes": [
+        {
+          "x": 175,
+          "y": 353,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "1. Pemberton's Pets",
+          "journal": {
+            "pack": "missions",
+            "key": "01-petshop",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 535,
+          "y": 1218,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "2. The Zoo After Dark",
+          "journal": {
+            "pack": "missions",
+            "key": "02-zoo",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1145,
+          "y": 898,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "3. The Old Mill",
+          "journal": {
+            "pack": "missions",
+            "key": "03-mill",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 905,
+          "y": 83,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "4. The Trophy Gala",
+          "journal": {
+            "pack": "missions",
+            "key": "04-gala",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1800,
+          "y": 138,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "5. The Lodge on the Hill",
+          "journal": {
+            "pack": "missions",
+            "key": "05-lodge",
+            "page": "mission"
+          }
+        }
+      ]
+    },
+    {
+      "key": "petshop",
+      "name": "Pemberton's Pets",
+      "img": "systems/morphgame/assets/art/map-petshop.png",
+      "thumb": "systems/morphgame/assets/art/map-petshop-thumb.png",
+      "width": 2000,
+      "height": 1500,
+      "folder": "scenes",
+      "journal": {
+        "pack": "missions",
+        "key": "01-petshop",
+        "page": "mission"
+      },
+      "notes": [
+        {
+          "x": 1060,
+          "y": 808,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 1: The shop floor (night watchman)",
+          "journal": {
+            "pack": "missions",
+            "key": "01-petshop",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 645,
+          "y": 666,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 2: The office door",
+          "journal": {
+            "pack": "missions",
+            "key": "01-petshop",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 175,
+          "y": 958,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in A: The coal chute",
+          "journal": {
+            "pack": "missions",
+            "key": "01-petshop",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1668,
+          "y": 786,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in B: The skylight",
+          "journal": {
+            "pack": "missions",
+            "key": "01-petshop",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1175,
+          "y": 473,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Objective: The cages",
+          "journal": {
+            "pack": "missions",
+            "key": "01-petshop",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1800,
+          "y": 98,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Escape: Out the back",
+          "journal": {
+            "pack": "missions",
+            "key": "01-petshop",
+            "page": "mission"
+          }
+        }
+      ],
+      "tokens": [
+        {
+          "name": "Beater",
+          "actor": {
+            "pack": "threats",
+            "key": "01-beater"
+          },
+          "img": "systems/morphgame/assets/art/threat-beater.png",
+          "x": 1124,
+          "y": 840,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "petshop",
+                "obstacle": "floor",
+                "n": 0
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "morphgame": {
+          "mission": "petshop"
+        }
+      }
+    },
+    {
+      "key": "zoo",
+      "name": "The Zoo After Dark",
+      "img": "systems/morphgame/assets/art/map-zoo.png",
+      "thumb": "systems/morphgame/assets/art/map-zoo-thumb.png",
+      "width": 2000,
+      "height": 1500,
+      "folder": "scenes",
+      "journal": {
+        "pack": "missions",
+        "key": "02-zoo",
+        "page": "mission"
+      },
+      "notes": [
+        {
+          "x": 1085,
+          "y": 983,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 1: Find the Trappers",
+          "journal": {
+            "pack": "missions",
+            "key": "02-zoo",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1190,
+          "y": 788,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 2: The night keeper at the staff gate",
+          "journal": {
+            "pack": "missions",
+            "key": "02-zoo",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1325,
+          "y": 533,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 3: The Hound patrol",
+          "journal": {
+            "pack": "missions",
+            "key": "02-zoo",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1400,
+          "y": 1173,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in A: The perimeter fence",
+          "journal": {
+            "pack": "missions",
+            "key": "02-zoo",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 200,
+          "y": 1103,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in B: The river culvert",
+          "journal": {
+            "pack": "missions",
+            "key": "02-zoo",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1390,
+          "y": 103,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Objective: The crates on the loading dock",
+          "journal": {
+            "pack": "missions",
+            "key": "02-zoo",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 490,
+          "y": 633,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Escape: Across the moat",
+          "journal": {
+            "pack": "missions",
+            "key": "02-zoo",
+            "page": "mission"
+          }
+        }
+      ],
+      "tokens": [
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 1389,
+          "y": 565,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "zoo",
+                "obstacle": "patrol",
+                "n": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 1515,
+          "y": 565,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "zoo",
+                "obstacle": "patrol",
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "Trapper",
+          "actor": {
+            "pack": "threats",
+            "key": "03-trapper"
+          },
+          "img": "systems/morphgame/assets/art/threat-trapper.png",
+          "x": 1454,
+          "y": 135,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "zoo",
+                "obstacle": "crates",
+                "n": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "Trapper",
+          "actor": {
+            "pack": "threats",
+            "key": "03-trapper"
+          },
+          "img": "systems/morphgame/assets/art/threat-trapper.png",
+          "x": 1580,
+          "y": 135,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "zoo",
+                "obstacle": "crates",
+                "n": 1
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "morphgame": {
+          "mission": "zoo"
+        }
+      }
+    },
+    {
+      "key": "mill",
+      "name": "The Old Mill",
+      "img": "systems/morphgame/assets/art/map-mill.png",
+      "thumb": "systems/morphgame/assets/art/map-mill-thumb.png",
+      "width": 2000,
+      "height": 1500,
+      "folder": "scenes",
+      "journal": {
+        "pack": "missions",
+        "key": "03-mill",
+        "page": "mission"
+      },
+      "notes": [
+        {
+          "x": 655,
+          "y": 903,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 1: The grain store (a Beater and a Hound)",
+          "journal": {
+            "pack": "missions",
+            "key": "03-mill",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 635,
+          "y": 438,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 2: The gear loft",
+          "journal": {
+            "pack": "missions",
+            "key": "03-mill",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 375,
+          "y": 1188,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in A: The millrace",
+          "journal": {
+            "pack": "missions",
+            "key": "03-mill",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 255,
+          "y": 903,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in B: The ivy wall",
+          "journal": {
+            "pack": "missions",
+            "key": "03-mill",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 835,
+          "y": 158,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Objective: The Callhorn",
+          "journal": {
+            "pack": "missions",
+            "key": "03-mill",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1810,
+          "y": 373,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Escape: Down the waterwheel",
+          "journal": {
+            "pack": "missions",
+            "key": "03-mill",
+            "page": "mission"
+          }
+        }
+      ],
+      "tokens": [
+        {
+          "name": "Beater",
+          "actor": {
+            "pack": "threats",
+            "key": "01-beater"
+          },
+          "img": "systems/morphgame/assets/art/threat-beater.png",
+          "x": 719,
+          "y": 935,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "mill",
+                "obstacle": "grain",
+                "n": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 845,
+          "y": 935,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "mill",
+                "obstacle": "grain",
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "Huntsman",
+          "actor": {
+            "pack": "threats",
+            "key": "04-huntsman"
+          },
+          "img": "systems/morphgame/assets/art/threat-huntsman.png",
+          "x": 899,
+          "y": 190,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "mill",
+                "obstacle": "horn",
+                "n": 0
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "morphgame": {
+          "mission": "mill"
+        }
+      }
+    },
+    {
+      "key": "gala",
+      "name": "The Trophy Gala",
+      "img": "systems/morphgame/assets/art/map-gala.png",
+      "thumb": "systems/morphgame/assets/art/map-gala-thumb.png",
+      "width": 2000,
+      "height": 1500,
+      "folder": "scenes",
+      "journal": {
+        "pack": "missions",
+        "key": "04-gala",
+        "page": "mission"
+      },
+      "notes": [
+        {
+          "x": 375,
+          "y": 783,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 1: The ballroom",
+          "journal": {
+            "pack": "missions",
+            "key": "04-gala",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 375,
+          "y": 283,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 2: The dark exhibit halls",
+          "journal": {
+            "pack": "missions",
+            "key": "04-gala",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1000,
+          "y": 1168,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in A: The front doors",
+          "journal": {
+            "pack": "missions",
+            "key": "04-gala",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1925,
+          "y": 933,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in B: The loading bay",
+          "journal": {
+            "pack": "missions",
+            "key": "04-gala",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1410,
+          "y": 258,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Objective: The Trophy case",
+          "journal": {
+            "pack": "missions",
+            "key": "04-gala",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1750,
+          "y": 48,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Escape 1: The galleries",
+          "journal": {
+            "pack": "missions",
+            "key": "04-gala",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 650,
+          "y": 1278,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Escape 2: The museum steps",
+          "journal": {
+            "pack": "missions",
+            "key": "04-gala",
+            "page": "mission"
+          }
+        }
+      ],
+      "tokens": [
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 439,
+          "y": 315,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "gala",
+                "obstacle": "halls",
+                "n": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 565,
+          "y": 315,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "gala",
+                "obstacle": "halls",
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "Trapper",
+          "actor": {
+            "pack": "threats",
+            "key": "03-trapper"
+          },
+          "img": "systems/morphgame/assets/art/threat-trapper.png",
+          "x": 691,
+          "y": 315,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "gala",
+                "obstacle": "halls",
+                "n": 2
+              }
+            }
+          }
+        },
+        {
+          "name": "Huntsman",
+          "actor": {
+            "pack": "threats",
+            "key": "04-huntsman"
+          },
+          "img": "systems/morphgame/assets/art/threat-huntsman.png",
+          "x": 1474,
+          "y": 290,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "gala",
+                "obstacle": "case",
+                "n": 0
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "morphgame": {
+          "mission": "gala"
+        }
+      }
+    },
+    {
+      "key": "lodge",
+      "name": "The Lodge on the Hill",
+      "img": "systems/morphgame/assets/art/map-lodge.png",
+      "thumb": "systems/morphgame/assets/art/map-lodge-thumb.png",
+      "width": 2000,
+      "height": 1500,
+      "folder": "scenes",
+      "journal": {
+        "pack": "missions",
+        "key": "05-lodge",
+        "page": "mission"
+      },
+      "notes": [
+        {
+          "x": 620,
+          "y": 283,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 1: The kennels",
+          "journal": {
+            "pack": "missions",
+            "key": "05-lodge",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 885,
+          "y": 208,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 2: The servants' door",
+          "journal": {
+            "pack": "missions",
+            "key": "05-lodge",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1085,
+          "y": 158,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Inside 3: The trophy hall",
+          "journal": {
+            "pack": "missions",
+            "key": "05-lodge",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 100,
+          "y": 648,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in B: The ice-house tunnel",
+          "journal": {
+            "pack": "missions",
+            "key": "05-lodge",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 780,
+          "y": 918,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Way in A: The deer park",
+          "journal": {
+            "pack": "missions",
+            "key": "05-lodge",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1425,
+          "y": 498,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Objective: The cellar cage",
+          "journal": {
+            "pack": "missions",
+            "key": "05-lodge",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1500,
+          "y": 958,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Escape 1: The lawn",
+          "journal": {
+            "pack": "missions",
+            "key": "05-lodge",
+            "page": "mission"
+          }
+        },
+        {
+          "x": 1850,
+          "y": 1343,
+          "icon": "systems/morphgame/assets/icons/pin.svg",
+          "text": "Escape 2: The wall",
+          "journal": {
+            "pack": "missions",
+            "key": "05-lodge",
+            "page": "mission"
+          }
+        }
+      ],
+      "tokens": [
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 434,
+          "y": 439,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "lodge",
+                "obstacle": "kennels",
+                "n": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 560,
+          "y": 439,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "lodge",
+                "obstacle": "kennels",
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 686,
+          "y": 439,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "lodge",
+                "obstacle": "kennels",
+                "n": 2
+              }
+            }
+          }
+        },
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 844,
+          "y": 950,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "lodge",
+                "obstacle": "deerpark",
+                "n": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "Hound",
+          "actor": {
+            "pack": "threats",
+            "key": "02-hound"
+          },
+          "img": "systems/morphgame/assets/art/threat-hound.png",
+          "x": 970,
+          "y": 950,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "lodge",
+                "obstacle": "deerpark",
+                "n": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "Trapper",
+          "actor": {
+            "pack": "threats",
+            "key": "03-trapper"
+          },
+          "img": "systems/morphgame/assets/art/threat-trapper.png",
+          "x": 1489,
+          "y": 530,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "lodge",
+                "obstacle": "cellar",
+                "n": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "Trapper",
+          "actor": {
+            "pack": "threats",
+            "key": "03-trapper"
+          },
+          "img": "systems/morphgame/assets/art/threat-trapper.png",
+          "x": 1615,
+          "y": 530,
+          "hidden": true,
+          "flags": {
+            "morphgame": {
+              "guard": {
+                "mission": "lodge",
+                "obstacle": "cellar",
+                "n": 1
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "morphgame": {
+          "mission": "lodge"
+        }
+      }
+    }
+  ]
+}

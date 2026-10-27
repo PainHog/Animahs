@@ -246,8 +246,10 @@ export function trackerView(S, user) {
   // set-up
   if (out.showSetup) {
     const party = defaultParty();
+    // on a mission's scene (the Starter adventure flags them), that mission comes first
+    const sceneMission = game.scenes?.viewed?.flags?.[SYSTEM_ID]?.mission ?? null;
     out.setup = {
-      missions: [...MISSIONS.map(m => ({ key: m.id, label: `${missionTitle(m)} (${L(LABELS[m.label].label)}, ${L("MG.Tracker.limits", { a: m.limit[3], b: m.limit[4], c: m.limit[5] })})` })),
+      missions: [...MISSIONS.map(m => ({ key: m.id, selected: m.id === sceneMission, label: `${missionTitle(m)} (${L(LABELS[m.label].label)}, ${L("MG.Tracker.limits", { a: m.limit[3], b: m.limit[4], c: m.limit[5] })})` })),
         { key: "custom", label: L("MG.Tracker.customMission") }],
       party: game.actors.filter(a => a.type === "bonded").map(a => ({ id: a.id, name: a.name, checked: party.includes(a), taken: a.system.status.taken })),
       sizes: [{ n: "", label: L("MG.Tracker.sizeAuto"), selected: true }, ...PARTY_SIZES.map(n => ({ n, label: String(n), selected: false }))],

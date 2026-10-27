@@ -7,7 +7,7 @@
   <section class="mg-panel mg-setup">
     <h3>{{localize "MG.Tracker.newMission"}}</h3>
     <label class="mg-field">{{localize "MG.Tracker.mission"}}
-      <select name="mission">{{#each setup.missions}}<option value="{{key}}">{{label}}</option>{{/each}}</select>
+      <select name="mission">{{#each setup.missions}}<option value="{{key}}"{{#if selected}} selected{{/if}}>{{label}}</option>{{/each}}</select>
     </label>
     <fieldset>
       <legend>{{localize "MG.Tracker.party"}}</legend>

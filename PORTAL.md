@@ -39,5 +39,6 @@ Plain words only: no repo names, usernames, file paths, links or commit IDs. Rul
 
 - [x] Decide when to build the online version for Foundry VTT
 - [x] A first full version for Foundry VTT, built from the same rules as the book and tested on a stand-in of Foundry
+- [x] A ready-to-play starter for the online version: the six ready-made characters with portraits, the Hunt, the rules, and a map scene for the town and each mission, in one import
 - [ ] A test of the online version in a real Foundry world
 - [ ] The online version for Foundry VTT

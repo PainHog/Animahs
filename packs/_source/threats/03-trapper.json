@@ -1,7 +1,7 @@
 {
   "key": "03-trapper",
   "name": "Trapper",
-  "img": "systems/morphgame/assets/icons/trapper.svg",
+  "img": "systems/morphgame/assets/art/threat-trapper.png",
   "system": {
     "kind": "trapper",
     "difficulty": 2,
@@ -22,7 +22,7 @@
       "attribute": null
     },
     "texture": {
-      "src": "systems/morphgame/assets/icons/trapper.svg"
+      "src": "systems/morphgame/assets/art/threat-trapper.png"
     }
   }
 }

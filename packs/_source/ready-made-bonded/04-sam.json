@@ -1,7 +1,7 @@
 {
   "key": "04-sam",
   "name": "Sam Lindqvist",
-  "img": "systems/morphgame/assets/icons/bonded.svg",
+  "img": "systems/morphgame/assets/art/pc-sam.png",
   "system": {
     "age": 12,
     "mark": "a white streak in his fringe; as a rat, a white patch between his ears",
@@ -51,7 +51,7 @@
       "attribute": "hurt"
     },
     "texture": {
-      "src": "systems/morphgame/assets/icons/bonded.svg"
+      "src": "systems/morphgame/assets/art/pc-sam.png"
     }
   }
 }

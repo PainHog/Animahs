@@ -5,6 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:art": "node tools/build-foundry-art.mjs",
     "build:sources": "node tools/build-pack-sources.mjs",
     "build:packs": "node tools/build-packs.mjs",
     "clean:packs": "node tools/build-packs.mjs --clean",

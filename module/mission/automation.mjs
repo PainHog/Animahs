@@ -179,10 +179,14 @@ async function applyEffect(S, e) {
  * if there is one (imported from the compendium if not), tokens on the scene when there is
  * a scene to put them on, otherwise tracker entries only.
  */
-export async function buildThreats(keys) {
+export async function buildThreats(keys, where = null) {
   const out = [];
+  const waiting = waitingGuards(where);
   for (const [i, key] of keys.entries()) {
-    const actor = await threatActor(key);
+    // a guard already standing on the mission's scene (the Starter adventure places them hidden)
+    const j = waiting.findIndex(t => t.actor?.system?.kind === key);
+    const pre = j >= 0 ? waiting.splice(j, 1)[0] : null;
+    const actor = pre?.actor ?? await threatActor(key);
     const sys = actor?.system;
     const t = makeThreat(key, i, {
       name: actor?.name ?? THREATS[key]?.name,
@@ -190,10 +194,24 @@ export async function buildThreats(keys) {
       actorUuid: actor?.uuid ?? null,
     });
     t.id = `${key}-${i + 1}-${foundry.utils.randomID(4)}`;
-    t.tokenUuid = await placeToken(actor, i);
+    t.tokenUuid = pre ? await revealToken(pre) : await placeToken(actor, i);
     out.push(t);
   }
   return out;
+}
+
+/** The viewed scene's tokens waiting for this obstacle's Clash: flags.morphgame.guard = { mission, obstacle }. */
+function waitingGuards(where) {
+  if (!where || !globalThis.canvas?.ready || !canvas.scene || !game.user.isGM) return [];
+  return [...(canvas.scene.tokens ?? [])].filter(t => {
+    const g = t.flags?.[SYSTEM_ID]?.guard;
+    return g && g.mission === where.mission && g.obstacle === where.obstacle;
+  });
+}
+
+async function revealToken(token) {
+  try { if (token.hidden) await token.update({ hidden: false }); } catch (err) { console.warn(err); }
+  return token.uuid ?? null;
 }
 
 async function threatActor(key) {
@@ -235,7 +253,8 @@ export async function syncThreatTokens(clash) {
 
 async function startClashFromGuards(S, e) {
   if (S.clash || !M.isRunning(S)) return S;
-  const threats = await buildThreats(e.guards ?? []);
+  const ob = [...(S.obstacles ?? []), ...(S.ways ?? []).flat()].find(o => o.uid === e.obstacleUid);
+  const threats = await buildThreats(e.guards ?? [], ob ? { mission: S.catalogKey, obstacle: ob.id } : null);
   const r = M.startClash(S, { id: foundry.utils.randomID(8), obstacleUid: e.obstacleUid, threats, auto: { scent: autoSettings().scent } }, partyRoster(S));
   await postNotice("MG.Notice.clash", { threats: threats.map(t => t.name).join(", ") }, {
     lines: game.settings.get(SYSTEM_ID, SETTINGS.rulesReminders) ? [L("MG.Notice.clashReminder")] : [],

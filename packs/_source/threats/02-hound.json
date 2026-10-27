@@ -1,7 +1,7 @@
 {
   "key": "02-hound",
   "name": "Hound",
-  "img": "systems/morphgame/assets/icons/hound.svg",
+  "img": "systems/morphgame/assets/art/threat-hound.png",
   "system": {
     "kind": "hound",
     "difficulty": 2,
@@ -22,7 +22,7 @@
       "attribute": null
     },
     "texture": {
-      "src": "systems/morphgame/assets/icons/hound.svg"
+      "src": "systems/morphgame/assets/art/threat-hound.png"
     }
   }
 }

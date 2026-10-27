@@ -1,6 +1,6 @@
 # Second Nature for Foundry VTT
 
-The Foundry VTT game system for *Second Nature* (system id `morphgame`). It follows `docs/CORE-RULES.md` (v0.1b) and the rulebook chapters, and it is **automation-first**: players and the Storyteller shouldn't have to track a rule by hand. Where the rules need a human judgement, the Storyteller gets one click with the rules-correct default. Every automation can be switched off.
+The Foundry VTT game system for *Second Nature* (system id `morphgame`). It follows `docs/CORE-RULES.md` (v0.1c) and the rulebook chapters, and it is **automation-first**: players and the Storyteller shouldn't have to track a rule by hand. Where the rules need a human judgement, the Storyteller gets one click with the rules-correct default. Every automation can be switched off.
 
 - **Foundry:** v13 or later (verified on v14).
 - **Recommended:** Dice So Nice (every roll and Push is a real Foundry `Roll`).
@@ -18,12 +18,16 @@ A release is published by the `Release` workflow (`.github/workflows/release.yml
 ## Quick start for the Storyteller
 
 1. Create a world with the *Second Nature* system.
-2. Import characters: open the **Ready-Made Bonded** compendium (the six of Chapter 18) and import one per player, or create a new **Bonded** actor and use **Character builder** on its sheet (pick, or roll it all by the book; an animal another Bonded already has is rerolled). Give each player ownership of their character.
-3. Read the mission in the **Missions** compendium (each one has its obstacle table, Limits and the chapter text).
-4. Open the **Mission Tracker** from the paw button in the token controls. Choose the mission, tick the Bonded who are playing and press **Start the mission**. Everyone gets their Wild back and loses their Hurt; Team Captain's Edge and an Exposed character's Scent 1 are applied.
+2. **Import the Starter.** In the Compendium Packs tab, open **Second Nature: Starter** and press **Import Adventure**. It brings, in their own folders:
+   - the six ready-made Bonded of Chapter 18, with their portraits, and the Hunt (Beater, Hound, Trapper, Huntsman, Master);
+   - the five missions and the rules as journals (each mission opens on its map, then its obstacle table and Limits, then the chapter);
+   - a scene for **Wrenfield** (a pin on each mission's place opens its journal) and one for **each mission**: the book's map, a pin on every marker (A, B, the numbers, ★, E) that opens the mission's journal, and the guards waiting as hidden tokens beside their obstacle.
+   Importing it again later just updates what's there. You can also take things one by one from the **Ready-Made Bonded**, **Threats**, **Rules** and **Missions** compendiums.
+3. Give each player ownership of a Bonded (or make a new **Bonded** and use **Character builder** on its sheet: pick, or roll it all by the book; an animal another Bonded already has is rerolled).
+4. Activate the mission's scene (for a first night, **Pemberton's Pets**), open the **Mission Tracker** from the paw button in the token controls (on a mission's scene that mission is already chosen), tick the Bonded who are playing and press **Start the mission**. Everyone gets their Wild back and loses their Hurt; Team Captain's Edge and an Exposed character's Scent 1 are applied.
 5. **Scouting:** a player rolls (from their sheet or the tracker's **Roll to scout**). The dialog already says Sense against Difficulty 2. The result sets Edges, Scent and who picks; press **Go in by way A** or **B**.
 6. **Obstacles:** players roll from their sheets or from the tracker's approach buttons. The roll dialog binds to the current obstacle (tags, approaches, Difficulty, guards, On the Trail). The tracker shows progress or who is past, the round, and **End round** (a group obstacle that runs past round 3 costs Scent). Press **Next obstacle** when the team moves on.
-7. **Clashes** start by themselves on a guarded Fail: at once at a point obstacle, and at **End Round** at a group obstacle, once everyone has rolled (or with **Start the Clash**). Players roll Strike, Distract or Slip Away against a threat. **End the Clash round** asks who each unattended threat goes for (a random friend preselected). The Clash ends when every threat is out, nobody is left, or after round 4.
+7. **Clashes** start by themselves on a guarded Fail: at once at a point obstacle, and at **End Round** at a group obstacle, once everyone has rolled (or with **Start the Clash**). On a Starter scene the guards waiting beside that obstacle are revealed; elsewhere new tokens are placed in the middle of the view. Players roll Strike, Distract or Slip Away against a threat. **End the Clash round** asks who each unattended threat goes for (a random friend preselected). The Clash ends when every threat is out, nobody is left, or after round 4.
 8. **The Hunt is Up:** the tracker announces it and offers **Press on** or **Withdraw**, with the book's advice highlighted. Every Fail now means Taken.
 9. **The Escape:** **Start the Escape** after the objective. When the last Escape obstacle is behind the team the tracker shows the result; **Finish the mission** moves the Hunt track and gives everyone 1 Growth. **Close the mission** gets the tracker ready for the next one (the campaign carries on).
 
@@ -76,6 +80,8 @@ With an automation switched off, its outcome is kept as a suggestion: the roll c
 - **The GM's client reacts to documents.** A roll or shift posts a chat card with structured flags (`flags.morphgame.card`); the active GM's client applies final cards to the mission state (one world setting, written only by the active GM through a serialized queue) and to the actors. Players write only their own actors and messages; anything else is a GM operation (`CONFIG.queries["morphgame.op"]` via `User#query`).
 - **Once per scene** uses are stamped with the mission clock (`<missionId>:<sceneSerial>`), so scene changes need no resets.
 - **Packs** are built from the book: `npm run build:sources` (writes `packs/_source/`), then `npm run build:packs`. `npm run check` fails if the sources fall behind the book.
+- **Pictures** come from the book too: `npm run build:art` renders `assets/art/` (maps, portraits, the cover) from `book/art/`, using Richard's own PNG, JPG or WebP when there is one and the stand-in SVG otherwise (`tools/foundry-art.mjs` lists them). After changing a picture: `npm run build:art && npm run build:sources && npm run build:packs`.
+- **The Starter adventure** (`packs/_source/starter/`) names its actors and journals by pack and key, so they are the same documents (same ids) as in the other packs. Its scenes' pins and guard tokens sit on the map markers, read from the map drawings (`MARKERS` in `book/tools/art-gen/scenes/sn-maps.mjs`); guard tokens carry `flags.morphgame.guard = { mission, obstacle }`, which is how a Clash finds them.
 - **Tests:** `npm run check` runs the validator and `node --test`: the pure rules, the mission reducer and the system booted on `tools/fake-foundry.mjs` with a GM and two players (sheets, the roll flow, Clashes, a whole mission, GM operations, packs).
 - **API:** `game.morphgame` (`openTracker`, `startMission`, `rollDialog`, `performRoll`, `shift`, `patchUp`, `freeNetted`, `getState`, `automation`, `logic`, `mission`).
 
@@ -109,7 +115,8 @@ Where the rules leave a choice, the system takes these readings (the Storyteller
 - Built and tested against a stand-in for Foundry (`tools/fake-foundry.mjs`); the layout, the stylesheet, Dice So Nice, threat tokens on the canvas, importing threats from the compendium, the scene-control button and image editing need checking in a real v13/v14 world (`TESTING.md`).
 - Actions per round aren't enforced: the tracker doesn't record who has acted, and the free Shift or Patch Up on the way between obstacles isn't counted.
 - No Combat tracker integration; Clash rounds are counted on the tracker.
-- Threat tokens are placed only when the Storyteller is viewing a scene; out threats are hidden, not deleted.
+- Outside the Starter's scenes, threat tokens are placed only when the Storyteller is viewing a scene, in the middle of the view; out threats are hidden, not deleted.
+- The scenes are gridless backdrops (the game has no squares to count); there are no walls, lights or fog of war.
 - Chat card text is written in the roller's language; whispered and blind rolls show their buttons only to those who can see them.
 - Custom missions are edited as data, not with a form.
 - The campaign rules (Growth, the Hunt track, the Last Hunt) haven't been simulated yet; the Last Hunt's lower Limit is applied only when a macro starts it with `lastHunt: true`.

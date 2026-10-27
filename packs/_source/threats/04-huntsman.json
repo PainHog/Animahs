@@ -1,7 +1,7 @@
 {
   "key": "04-huntsman",
   "name": "Huntsman",
-  "img": "systems/morphgame/assets/icons/huntsman.svg",
+  "img": "systems/morphgame/assets/art/threat-huntsman.png",
   "system": {
     "kind": "huntsman",
     "difficulty": 3,
@@ -22,7 +22,7 @@
       "attribute": null
     },
     "texture": {
-      "src": "systems/morphgame/assets/icons/huntsman.svg"
+      "src": "systems/morphgame/assets/art/threat-huntsman.png"
     }
   }
 }

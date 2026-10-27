@@ -33,6 +33,27 @@ const door = (x, y, w = 44, vertical = false) => vertical ? R(x - 5, y, 10, w, C
 const base = () => R(2, 2, 796, 596, C.light, C.ink, 3, 10);
 const water = d => P(d, C.glass, C.ink, 3);
 
+/**
+ * Where each map's markers sit (in map units, 800×600). The Foundry system's scenes put
+ * their pins and threat tokens at the same places (tools/build-pack-sources.mjs), so the
+ * pictures and the online version can't disagree. A and B are the ways in, numbers the
+ * obstacles inside (on the town map, the missions), ★ the objective, E/E1/E2 the Escape.
+ */
+export const MARKERS = {
+  wrenfield: { "5": [720, 92], "1": [70, 178], "4": [362, 70], "2": [214, 524], "3": [458, 396] },
+  petshop: { "A": [70, 420], "B": [667, 351], "1": [424, 360], "2": [258, 303], "★": [470, 226], "E": [720, 76] },
+  zoo: { "A": [560, 506], "B": [80, 478], "1": [434, 430], "2": [476, 352], "3": [530, 250], "★": [556, 78], "E": [196, 290] },
+  mill: { "A": [150, 512], "B": [102, 398], "1": [262, 398], "2": [254, 212], "★": [334, 100], "E": [724, 186] },
+  gala: { "A": [400, 504], "B": [770, 410], "1": [150, 350], "2": [150, 150], "★": [564, 140], "E1": [700, 56], "E2": [260, 548] },
+  lodge: { "B": [40, 296], "A": [312, 404], "1": [248, 150], "2": [354, 120], "3": [434, 100], "★": [570, 236], "E1": [600, 420], "E2": [740, 574] },
+};
+/** The marker for a label, in its kind's colours. */
+function pin(map, label) {
+  const [x, y] = MARKERS[map][label];
+  const kind = /^[AB]$/.test(label) ? "in" : label === "★" ? "goal" : /^E\d?$/.test(label) ? "out" : "step";
+  return marker(x, y, label, kind);
+}
+
 /* ------------------------------------------------------------ the town */
 
 export function map_wrenfield() {
@@ -40,7 +61,7 @@ export function map_wrenfield() {
   // Thornhill, with the Lodge behind its wall
   s += E(630, 130, 160, 106, C.accentB, C.ink, 3) + E(630, 118, 106, 64, C.leafLight, C.ink, 2.4);
   s += R(586, 76, 92, 58, "none", C.ink, 3, 4, ` stroke-dasharray="7 5"`) + R(606, 88, 52, 34, C.night2, C.ink, 3);
-  s += marker(720, 92, "5") + label(632, 166, "The Lodge") + label(630, 222, "Thornhill", { italic: true });
+  s += pin("wrenfield", "5") + label(632, 166, "The Lodge") + label(630, 222, "Thornhill", { italic: true });
   // Wrenwood, between the town and the hill
   for (const [x, y] of [[452, 204], [500, 236], [448, 270], [548, 282], [500, 304], [560, 232], [598, 290]]) s += tree(x, y, 46, C.leaf);
   s += label(500, 346, "Wrenwood", { italic: true });
@@ -50,15 +71,15 @@ export function map_wrenfield() {
   s += label(660, 586, "River Wren", { italic: true, fill: C.accentDeep });
   // the High Street, with Pemberton's Pets at its end
   s += R(34, 250, 320, 34, C.paper2, C.ink, 3, 4) + label(194, 276, "High Street");
-  s += R(40, 204, 60, 44, C.brick, C.ink, 3) + marker(70, 178, "1") + label(102, 188, "Pemberton’s Pets", { anchor: "start" });
+  s += R(40, 204, 60, 44, C.brick, C.ink, 3) + pin("wrenfield", "1") + label(102, 188, "Pemberton’s Pets", { anchor: "start" });
   s += R(150, 292, 72, 44, C.wall, C.ink, 3) + label(186, 364, "Library");
   s += R(252, 292, 84, 50, C.paper2, C.ink, 3) + label(294, 370, "School");
   // the museum, the zoo by the river, the mill on it
   s += R(316, 120, 92, 60, C.wall, C.ink, 3);
   for (let k = 0; k < 4; k++) s += R(326 + k * 22, 134, 8, 40, C.paper, C.ink, 1.6);
-  s += P(`M310 120L362 98L414 120Z`, C.wall, C.ink, 3) + marker(362, 70, "4") + label(362, 212, "Museum");
-  s += R(60, 490, 220, 96, C.leafLight, C.ink, 3, 8) + E(130, 530, 34, 20, C.glass, C.ink, 2.4) + marker(214, 524, "2") + label(150, 574, "Zoo");
-  s += R(372, 396, 52, 56, C.brick, C.ink, 3) + R(386, 372, 24, 26, C.brick, C.ink, 3) + marker(458, 396, "3") + label(488, 406, "Old Mill", { anchor: "start" });
+  s += P(`M310 120L362 98L414 120Z`, C.wall, C.ink, 3) + pin("wrenfield", "4") + label(362, 212, "Museum");
+  s += R(60, 490, 220, 96, C.leafLight, C.ink, 3, 8) + E(130, 530, 34, 20, C.glass, C.ink, 2.4) + pin("wrenfield", "2") + label(150, 574, "Zoo");
+  s += R(372, 396, 52, 56, C.brick, C.ink, 3) + R(386, 372, 24, 26, C.brick, C.ink, 3) + pin("wrenfield", "3") + label(488, 406, "Old Mill", { anchor: "start" });
   return svg("0 0 800 600", "A map of Wrenfield: the High Street with Pemberton's Pets at its end (1), the Library and the School; the zoo by the River Wren (2); the Old Mill on the river (3); the Ashcombe Museum (4); and the Lodge (5) on Thornhill, beyond Wrenwood.", s);
 }
 
@@ -80,12 +101,12 @@ export function map_petshop() {
   s += R(590, 322, 154, 58, "none", C.ink, 3, 4, ` stroke-dasharray="9 6"`) + label(667, 418, "Skylight", { italic: true });
   // doors: office door, office to cage room, back door, stockroom, shop front, yard gate
   s += door(236, 303) + door(405, 204, 44, true) + door(664, 147, 50) + door(561, 420, 44, true) + door(296, 503, 64) + door(130, 52, 52, true);
-  s += route([[94, 420], [150, 448], [214, 440]]) + marker(70, 420, "A", "in");
-  s += route([[640, 360], [596, 420], [520, 436]]) + marker(667, 351, "B", "in");
-  s += route([[400, 372], [310, 336], [272, 320]]) + marker(424, 360, "1");
-  s += route([[270, 282], [330, 230], [430, 222]]) + marker(258, 303, "2");
-  s += marker(470, 226, "★", "goal");
-  s += route([[640, 228], [688, 168], [672, 104], [560, 70], [300, 66], [104, 78]], OUT) + marker(720, 76, "E", "out");
+  s += route([[94, 420], [150, 448], [214, 440]]) + pin("petshop", "A");
+  s += route([[640, 360], [596, 420], [520, 436]]) + pin("petshop", "B");
+  s += route([[400, 372], [310, 336], [272, 320]]) + pin("petshop", "1");
+  s += route([[270, 282], [330, 230], [430, 222]]) + pin("petshop", "2");
+  s += pin("petshop", "★");
+  s += route([[640, 228], [688, 168], [672, 104], [560, 70], [300, 66], [104, 78]], OUT) + pin("petshop", "E");
   return svg("0 0 800 600", "Floor plan of Pemberton's Pets: the coal chute from the alley (A), the skylight over the stockroom (B), the shop floor (1), the office door (2), the cage room (the objective), and the way out through the back yard and its gate (E).", s);
 }
 
@@ -102,13 +123,13 @@ export function map_zoo() {
   s += R(468, 190, 300, 120, C.leaf, C.ink, 3, 8) + label(640, 290, "Lawns", { fill: C.light });
   s += P(`M110 352H782`, "none", C.ink, 5, ` stroke-dasharray="4 8"`) + door(470, 352, 60) + label(640, 388, "Staff gate");
   s += R(140, 404, 262, 64, C.paper2, C.ink, 3, 8) + label(271, 446, "Aviary walkway");
-  s += route([[560, 482], [500, 450], [424, 438]]) + marker(560, 506, "A", "in");
-  s += route([[130, 470], [150, 452], [160, 440]]) + marker(80, 478, "B", "in");
-  s += route([[452, 412], [462, 386], [476, 370]]) + marker(434, 430, "1");
-  s += route([[500, 334], [520, 286], [528, 268]]) + marker(476, 352, "2");
-  s += route([[540, 228], [552, 160], [556, 116]]) + marker(530, 250, "3");
-  s += marker(556, 78, "★", "goal");
-  s += route([[540, 92], [448, 96], [396, 134], [330, 226], [210, 250], [110, 252]], OUT) + marker(196, 290, "E", "out");
+  s += route([[560, 482], [500, 450], [424, 438]]) + pin("zoo", "A");
+  s += route([[130, 470], [150, 452], [160, 440]]) + pin("zoo", "B");
+  s += route([[452, 412], [462, 386], [476, 370]]) + pin("zoo", "1");
+  s += route([[500, 334], [520, 286], [528, 268]]) + pin("zoo", "2");
+  s += route([[540, 228], [552, 160], [556, 116]]) + pin("zoo", "3");
+  s += pin("zoo", "★");
+  s += route([[540, 92], [448, 96], [396, 134], [330, 226], [210, 250], [110, 252]], OUT) + pin("zoo", "E");
   return svg("0 0 800 600", "Map of Wrenfield Zoo: the perimeter fence (A), the river culvert (B), the aviary walkway (1), the staff gate (2), the Hound patrol on the lawns (3), the loading dock (the objective), and the way out across the moat round the big cats to the river path (E).", s);
 }
 
@@ -140,12 +161,12 @@ export function map_mill() {
   s += Ci(650, 420, 92, "none", C.ink, 9) + Ci(650, 420, 92, "none", C.wood, 5) + Ci(650, 420, 15, C.woodDark, C.ink, 2.4);
   for (let a = 0; a < 8; a++) { const t = a * Math.PI / 4; s += L([[650, 420], [650 + Math.cos(t) * 92, 420 + Math.sin(t) * 92]], C.wood, 5) + R(650 + Math.cos(t) * 92 - 8, 420 + Math.sin(t) * 92 - 8, 16, 16, C.wood, C.ink, 2); }
   s += label(660, 572, "Waterwheel");
-  s += route([[176, 512], [236, 500], [272, 476]]) + marker(150, 512, "A", "in");
-  s += route([[124, 396], [168, 394], [210, 392]]) + marker(102, 398, "B", "in");
-  s += route([[262, 376], [252, 300], [254, 242]]) + marker(262, 398, "1");
-  s += route([[276, 210], [340, 184], [402, 168]]) + marker(254, 212, "2");
-  s += marker(334, 100, "★", "goal");
-  s += route([[552, 104], [604, 160], [636, 240], [646, 320]], OUT) + marker(724, 186, "E", "out");
+  s += route([[176, 512], [236, 500], [272, 476]]) + pin("mill", "A");
+  s += route([[124, 396], [168, 394], [210, 392]]) + pin("mill", "B");
+  s += route([[262, 376], [252, 300], [254, 242]]) + pin("mill", "1");
+  s += route([[276, 210], [340, 184], [402, 168]]) + pin("mill", "2");
+  s += pin("mill", "★");
+  s += route([[552, 104], [604, 160], [636, 240], [646, 320]], OUT) + pin("mill", "E");
   return svg("0 0 800 600", "Cutaway of the Old Mill: the millrace under the wheel and the mill (A), the ivy wall up to a broken window in the grain store (B), the grain store (1), the gear loft (2), the Callhorn at the top of the tower (the objective), and the way out through the tower window and down the waterwheel into the river (E).", s);
 }
 
@@ -167,13 +188,13 @@ export function map_gala() {
   s += room(46, 300, 470, 182, C.paper2) + label(290, 412, "Ballroom");
   s += room(526, 300, 228, 182, C.paper) + label(640, 412, "Kitchens");
   s += door(370, 487, 60) + door(765, 340, 44, true) + door(260, 295, 60) + door(503, 160, 44, true) + door(521, 330, 40, true);
-  s += route([[400, 476], [400, 444]]) + marker(400, 504, "A", "in");
-  s += route([[756, 386], [660, 360], [540, 352]]) + marker(770, 410, "B", "in");
-  s += route([[176, 350], [290, 320], [290, 266]]) + marker(150, 350, "1");
-  s += route([[176, 150], [380, 156], [530, 176]]) + marker(150, 150, "2");
-  s += marker(564, 140, "★", "goal");
+  s += route([[400, 476], [400, 444]]) + pin("gala", "A");
+  s += route([[756, 386], [660, 360], [540, 352]]) + pin("gala", "B");
+  s += route([[176, 350], [290, 320], [290, 266]]) + pin("gala", "1");
+  s += route([[176, 150], [380, 156], [530, 176]]) + pin("gala", "2");
+  s += pin("gala", "★");
   s += route([[600, 130], [590, 56], [130, 54], [70, 110], [66, 300], [80, 460], [250, 478], [370, 492], [400, 520], [300, 544]], OUT);
-  s += marker(700, 56, "E1", "out") + marker(260, 548, "E2", "out");
+  s += pin("gala", "E1") + pin("gala", "E2");
   return svg("0 0 800 600", "Plan of the Ashcombe Museum: the front doors at the top of the steps (A), the loading bay into the kitchens (B), the ballroom (1), the dark exhibit halls (2), the Trophy case under its spotlight in the Hall of Hunters, beside the dinosaur (the objective), and the way out back through the upper galleries (E1) and down the museum steps (E2).", s);
 }
 
@@ -194,13 +215,13 @@ export function map_lodge() {
   s += room(346, 60, 250, 120, C.paper2) + label(470, 150, "Trophy hall");
   s += R(346, 196, 250, 100, C.edge, C.ink, 3, 6, ` stroke-dasharray="10 6"`) + label(470, 280, "Cellar (below)", { italic: true });
   s += door(330, 108, 44, true) + door(620, 311, 60);
-  s += route([[62, 296], [150, 282], [186, 258]]) + route([[214, 222], [220, 196]]) + marker(40, 296, "B", "in");
-  s += route([[312, 382], [312, 290], [296, 198]]) + marker(312, 404, "A", "in");
-  s += route([[272, 150], [304, 132], [326, 130]]) + marker(248, 150, "1");
-  s += route([[380, 100], [400, 98], [416, 98]]) + marker(354, 120, "2");
-  s += route([[456, 96], [600, 110], [626, 170], [596, 216]]) + marker(434, 100, "3");
-  s += marker(570, 236, "★", "goal");
+  s += route([[62, 296], [150, 282], [186, 258]]) + route([[214, 222], [220, 196]]) + pin("lodge", "B");
+  s += route([[312, 382], [312, 290], [296, 198]]) + pin("lodge", "A");
+  s += route([[272, 150], [304, 132], [326, 130]]) + pin("lodge", "1");
+  s += route([[380, 100], [400, 98], [416, 98]]) + pin("lodge", "2");
+  s += route([[456, 96], [600, 110], [626, 170], [596, 216]]) + pin("lodge", "3");
+  s += pin("lodge", "★");
   s += route([[594, 252], [650, 300], [640, 440], [728, 552]], OUT);
-  s += marker(600, 420, "E1", "out") + marker(740, 574, "E2", "out");
+  s += pin("lodge", "E1") + pin("lodge", "E2");
   return svg("0 0 800 600", "Plan of the Lodge grounds: the deer park (A) and the ice-house tunnel from Wrenwood (B), the kennels (1), the servants' door (2), the trophy hall (3), the cellar cage below it (the objective), and the way out across the lawn (E1) and over the wall (E2).", s);
 }

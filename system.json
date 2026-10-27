@@ -81,6 +81,17 @@
       "ownership": {
         "PLAYER": "NONE"
       }
+    },
+    {
+      "name": "starter",
+      "label": "Second Nature: Starter",
+      "path": "packs/starter",
+      "type": "Adventure",
+      "system": "morphgame",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -89,6 +100,7 @@
       "sorting": "m",
       "color": "#1f2a3a",
       "packs": [
+        "starter",
         "ready-made-bonded",
         "threats",
         "rules",

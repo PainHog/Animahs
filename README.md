@@ -21,6 +21,7 @@ npm install
 npm run build:book          # rulebook PDF → book/dist/
 node book/build.mjs --print # print-on-demand interior + covers
 npm run check               # validate the Foundry system + run tests
+npm run build:art           # Foundry's pictures from book/art/ → assets/art/
 npm run build:sources       # compendium sources from the rulebook → packs/_source/
 npm run build:packs         # compile the compendium packs → packs/
 ```

@@ -1,7 +1,7 @@
 {
   "key": "05-jonah",
   "name": "Jonah Mensah",
-  "img": "systems/morphgame/assets/icons/bonded.svg",
+  "img": "systems/morphgame/assets/art/pc-jonah.png",
   "system": {
     "age": 14,
     "mark": "a scar through his right eyebrow; as a bison, a pale scar over his right eye",
@@ -51,7 +51,7 @@
       "attribute": "hurt"
     },
     "texture": {
-      "src": "systems/morphgame/assets/icons/bonded.svg"
+      "src": "systems/morphgame/assets/art/pc-jonah.png"
     }
   }
 }
