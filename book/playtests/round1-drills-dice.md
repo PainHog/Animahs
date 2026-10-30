@@ -1,0 +1,113 @@
+- roll 1 · D1a r1 Lucia gator Sneak culvert (5d, Diff 1) · 5d6 → [3, 5, 2, 2, 4] · hits 1 · sixes 0
+- roll 2 · D1a r1 Sam rat Sneak culvert (5d, Diff 2) · 5d6 → [1, 2, 4, 5, 5] · hits 2 · sixes 0
+- roll 3 · D1a r1 Priya human Move culvert (2d, Diff 2, Hurt 2) · 2d6 → [6, 4] · hits 1 · sixes 1
+- roll 4 · D1a run2 r1 Lucia gator Sneak culvert (5d, Diff 1) · 5d6 → [5, 3, 3, 3, 6] · hits 2 · sixes 1
+- roll 5 · D1a run2 r1 Sam rat Sneak culvert (5d, Diff 2) · 5d6 → [2, 4, 1, 1, 3] · hits 0 · sixes 0
+- roll 6 · D1a run2 r1 Priya human Move culvert (2d, Diff 2, Hurt 2) · 2d6 → [5, 6] · hits 2 · sixes 1
+- roll 7 · D1a run2 r1 Sam Push · Push of [2,4,1,1,3] → [6, 4, 3, 1, 5] · hits 2 · sixes 1
+- roll 8 · D1a run3 r1 Lucia gator Sneak culvert (5d, Diff 1) · 5d6 → [4, 3, 2, 6, 2] · hits 1 · sixes 1
+- roll 9 · D1a run3 r1 Sam human Sneak culvert (2d, Diff 2, Hurt 2, Wild 0) · 2d6 → [2, 4] · hits 0 · sixes 0
+- roll 10 · D1a run3 r1 Priya human Move culvert (2d, Diff 2, Hurt 2, Wild 0) · 2d6 → [1, 3] · hits 0 · sixes 0
+- roll 11 · D1b Clash r1 Sam rat Distract Beater Sneak (4d, Diff 2, Hurt 2) · 4d6 → [4, 2, 5, 6] · hits 2 · sixes 1
+- roll 12 · D1b Clash r1 Jonah bison Strike Beater (5d, Diff 1) · 5d6 → [1, 5, 3, 5, 2] · hits 2 · sixes 0
+- roll 13 · D1b Clash r1 Maya jaguar Strike Beater (4d, Diff 2) · 4d6 → [1, 2, 5, 1] · hits 1 · sixes 0
+- roll 14 · D1b run2 Clash r1 Sam rat Distract Hound Move (4d, Diff 2, Hurt 2) · 4d6 → [1, 2, 3, 4] · hits 0 · sixes 0
+- roll 15 · D1b run2 Sam Push · Push of [1,2,3,4] → [1, 6, 4, 2] · hits 1 · sixes 1
+- roll 16 · D1b run2 r1 Jonah bison Strike Hound (5d, Diff 2: 2-1 Distract+1 Narrow) · 5d6 → [6, 1, 2, 4, 1] · hits 1 · sixes 1
+- roll 17 · D1b run2 r1 Maya jaguar Strike Beater (4d, Diff 2) · 4d6 → [4, 6, 1, 2] · hits 1 · sixes 1
+- roll 18 · D1b run2 r1 Lucia gator Strike Beater (4d, Diff 2) · 4d6 → [6, 5, 6, 3] · hits 3 · sixes 2
+- roll 19 · D1b run2 r2 Maya jaguar Distract Hound Move (4d, Diff 2) · 4d6 → [3, 6, 5, 4] · hits 2 · sixes 1
+- roll 20 · D1b run2 r2 Jonah bison Strike Hound (5d, Diff 2: 2-1+1) · 5d6 → [6, 5, 6, 2, 4] · hits 3 · sixes 2
+- roll 21 · D1c Clash r1 Priya human Distract Trapper A Move (2d, Diff 2) · 2d6 → [6, 1] · hits 1 · sixes 1
+- roll 22 · D1c Clash r1 Theo coyote Strike Trapper A (3d, Diff 1) · 3d6 → [6, 4, 5] · hits 2 · sixes 1
+- roll 23 · D1c Clash r1 Sam rat Distract Trapper B Sneak (4d, Diff 2) · 4d6 → [1, 5, 5, 5] · hits 3 · sixes 0
+- roll 24 · D1c Clash r1 Jonah bison Strike Trapper B (6d, Diff 1) · 6d6 → [3, 6, 4, 6, 1, 5] · hits 3 · sixes 2
+- roll 25 · D1c Clash r2 Priya human Distract Trapper A Move (2d, Diff 2) · 2d6 → [6, 1] · hits 1 · sixes 1
+- roll 26 · D1c Clash r2 Theo coyote Strike Trapper A (3d, Diff 1) · 3d6 → [4, 6, 1] · hits 1 · sixes 1
+- roll 27 · D1c run2 Clash r1 Lucia human Strike Trapper A (1d, Diff 2) · 1d6 → [6] · hits 1 · sixes 1
+- roll 28 · D1c run2 Clash r1 Priya human Strike Trapper B (1d, Diff 2) · 1d6 → [1] · hits 0 · sixes 0
+- roll 29 · D1d Clash r1 Jonah bison Strike Trapper B (6d, Diff 2) · 6d6 → [1, 2, 3, 4, 5, 6] · hits 2 · sixes 1
+- roll 30 · D1d Clash r1 Theo coyote Strike Trapper A (3d, Diff 2) · 3d6 → [5, 6, 6] · hits 3 · sixes 2
+- roll 31 · D1d Clash r2 Jonah bison Strike Trapper B (6d, Diff 2) · 6d6 → [6, 4, 6, 1, 6, 6] · hits 4 · sixes 4
+- roll 32 · D2 Clash r1 Priya human Distract Trapper A Move (2d, Diff 2, Hurt 2) · 2d6 → [3, 3] · hits 0 · sixes 0
+- roll 33 · D2 Clash r1 Theo coyote Strike Trapper B (3d, Diff 2, Hurt 2) · 3d6 → [4, 4, 4] · hits 0 · sixes 0
+- roll 34 · D2 Theo Push · Push of [4,4,4] → [4, 1, 3] · hits 0 · sixes 0
+- roll 35 · D3a office door Priya human Wits (4d, Diff 2, Scent 5/6) · 4d6 → [3, 6, 6, 5] · hits 3 · sixes 2
+- roll 36 · D3a cages r1 Priya human Wits (4d, Diff 2, Scent 5/6) · 4d6 → [3, 1, 5, 2] · hits 1 · sixes 0
+- roll 37 · D3a cages r2 Priya human Wits + Theo Help (5d, Diff 2, Hunt Up) · 5d6 → [4, 5, 6, 3, 1] · hits 2 · sixes 1
+- roll 38 · D3a cages r3 Priya human Wits + Theo Help (5d, Diff 2, Hunt Up) · 5d6 → [3, 1, 4, 6, 1] · hits 1 · sixes 1
+- roll 39 · D3d Escape r1 Priya owl Move (6d, Diff 3, Hunt Up) · 6d6 → [1, 3, 1, 4, 6, 5] · hits 2 · sixes 1
+- roll 40 · D3d Escape r1 Theo coyote Move (4d, Diff 3, Hunt Up) · 4d6 → [2, 1, 3, 5] · hits 1 · sixes 0
+- roll 41 · D3d Escape r1 Jonah bison Move (4d, Diff 3, Hunt Up) · 4d6 → [6, 1, 4, 2] · hits 1 · sixes 1
+- roll 42 · D3d Escape r1 Maya jaguar Sneak (6d, Diff 2, Hunt Up) · 6d6 → [4, 4, 5, 2, 2, 4] · hits 1 · sixes 0
+- roll 43 · D3a-W office door Priya human Wits (4d, Diff 2, Scent 5/6) · 4d6 → [1, 1, 5, 4] · hits 1 · sixes 0
+- roll 44 · D3a-W Escape r1 Priya owl Move (6d, Diff 3, Hunt Up) · 6d6 → [2, 3, 5, 2, 1, 6] · hits 2 · sixes 1
+- roll 45 · D3a-W Escape r1 Theo coyote Move (4d, Diff 3, Hunt Up) · 4d6 → [4, 5, 5, 6] · hits 3 · sixes 1
+- roll 46 · D3a-W Escape r1 Jonah bison Move (4d, Diff 3, Hunt Up) · 4d6 → [6, 1, 6, 2] · hits 2 · sixes 2
+- roll 47 · D3a-W Escape r1 Maya jaguar Sneak (6d, Diff 2, Hunt Up) · 6d6 → [6, 1, 1, 2, 2, 3] · hits 1 · sixes 1
+- roll 48 · D3b Hound patrol r1 Sam human Move (2d, Diff 2, Scent 7/8) · 2d6 → [3, 6] · hits 1 · sixes 1
+- roll 49 · D3b Hound patrol r1 Priya human Move (2d, Diff 2) · 2d6 → [6, 6] · hits 2 · sixes 2
+- roll 50 · D3b Hound patrol r1 Lucia human Move (3d, Diff 2) · 3d6 → [6, 6, 6] · hits 3 · sixes 3
+- roll 51 · D3b Hound patrol r1 Jonah bison Move (4d, Diff 2) · 4d6 → [2, 4, 3, 5] · hits 1 · sixes 0
+- roll 52 · D3b run2 Hound patrol r1 Sam human Move (2d, Diff 2, Scent 7/8) · 2d6 → [5, 5] · hits 2 · sixes 0
+- roll 53 · D3b run2 Hound patrol r1 Priya human Move (2d, Diff 2) · 2d6 → [2, 1] · hits 0 · sixes 0
+- roll 54 · D3b run2 Hound patrol r1 Lucia human Move (3d, Diff 2) · 3d6 → [3, 2, 5] · hits 1 · sixes 0
+- roll 55 · D3b run2 Hound patrol r1 Jonah bison Move (4d, Diff 2) · 4d6 → [2, 3, 5, 1] · hits 1 · sixes 0
+- roll 56 · D3b run2 Clash(Hunt Up) r1 Sam human Slip Away Move (2d, Diff 2) · 2d6 → [2, 5] · hits 1 · sixes 0
+- roll 57 · D3b run2 Clash(Hunt Up) r1 Priya human Slip Away Move (2d, Diff 2) · 2d6 → [4, 4] · hits 0 · sixes 0
+- roll 58 · D3b run2 Clash(Hunt Up) r1 Lucia human Slip Away Move (3d, Diff 2) · 3d6 → [4, 4, 3] · hits 0 · sixes 0
+- roll 59 · D3b run2 Clash(Hunt Up) r1 Jonah bison Slip Away Move (4d, Diff 2) · 4d6 → [3, 6, 6, 4] · hits 2 · sixes 2
+- roll 60 · D3b run2 Priya Push · Push of [4,4] → [3, 5] · hits 1 · sixes 0
+- roll 61 · D3b run2 Lucia Push · Push of [4,4,3] → [1, 4, 5] · hits 1 · sixes 0
+- roll 62 · D3c Clash r1 Maya jaguar Strike Beater (4d, Diff 2, Hurt 2, Scent 5/7) · 4d6 → [1, 3, 4, 4] · hits 0 · sixes 0
+- roll 63 · D3c Clash r1 Theo coyote Distract Hound Move (3d, Diff 2) · 3d6 → [2, 5, 2] · hits 1 · sixes 0
+- roll 64 · D3c Clash r1 Lucia gator Strike Beater (4d, Diff 2) · 4d6 → [6, 4, 2, 6] · hits 2 · sixes 2
+- roll 65 · D3c Clash r1 Jonah bison Strike Hound (5d, Diff 2) · 5d6 → [2, 2, 1, 1, 3] · hits 0 · sixes 0
+- roll 66 · D3c Jonah Push · Push of [2,2,1,1,3] → [4, 6, 1, 4, 1] · hits 1 · sixes 1
+- roll 67 · D3c Clash r2 Theo coyote Distract Hound Move (3d, Diff 2) · 3d6 → [6, 4, 5] · hits 2 · sixes 1
+- roll 68 · D3c Clash r2 Jonah bison Strike Hound (5d, Diff 2) · 5d6 → [3, 5, 1, 3, 6] · hits 2 · sixes 1
+- roll 69 · D3c Clash r2 Lucia gator Strike Hound (4d, Diff 2) · 4d6 → [1, 1, 5, 5] · hits 2 · sixes 0
+- roll 70 · D4b night keeper r4 Sam human Sneak + Theo Help (3d, Diff 3, Scent 2/8) · 3d6 → [3, 3, 1] · hits 0 · sixes 0
+- roll 71 · D4b night keeper r5 Sam human Sneak + Theo Help (3d, Diff 3, Scent 3/8) · 3d6 → [1, 1, 3] · hits 0 · sixes 0
+- roll 72 · D4b night keeper r6 Sam human Sneak + Priya Help (3d, Diff 3, Scent 4/8) · 3d6 → [6, 4, 4] · hits 1 · sixes 1
+- roll 73 · D4c kennels r1 Sam rat Sneak (5d, Diff 3: 2+1 Tracker) · 5d6 → [4, 6, 5, 1, 6] · hits 3 · sixes 2
+- roll 74 · D4c kennels r1 Maya jaguar Sneak (6d, Diff 2: 2+1 Tracker-1 Rosettes) · 6d6 → [3, 4, 3, 4, 6, 5] · hits 2 · sixes 1
+- roll 75 · D4c kennels r1 Lucia gator Sneak (4d, Diff 3) · 4d6 → [5, 4, 2, 1] · hits 1 · sixes 0
+- roll 76 · D4c kennels r1 Priya human Move (2d, Diff 3) · 2d6 → [6, 6] · hits 2 · sixes 2
+- roll 77 · D4c run2 kennels r1 Sam rat Sneak (5d, Diff 3) · 5d6 → [2, 4, 6, 6, 4] · hits 2 · sixes 2
+- roll 78 · D4c run2 kennels r1 Maya jaguar Sneak (6d, Diff 2) · 6d6 → [6, 2, 1, 5, 4, 3] · hits 2 · sixes 1
+- roll 79 · D4c run2 kennels r1 Lucia gator Sneak (4d, Diff 3) · 4d6 → [4, 5, 5, 3] · hits 2 · sixes 0
+- roll 80 · D4c run2 kennels r1 Priya human Move (2d, Diff 3) · 2d6 → [2, 5] · hits 1 · sixes 0
+- roll 81 · D5 kennels Clash r1 Sam rat Slip Away Move (4d, Diff 2) · 4d6 → [1, 3, 2, 6] · hits 1 · sixes 1
+- roll 82 · D5 kennels Clash r1 Maya jaguar Strike Hound A (4d, Diff 2) · 4d6 → [5, 5, 4, 2] · hits 2 · sixes 0
+- roll 83 · D5 kennels Clash r1 Lucia gator Strike Hound A (4d, Diff 2) · 4d6 → [4, 2, 2, 5] · hits 1 · sixes 0
+- roll 84 · D5 kennels Clash r2 Maya jaguar Strike Hound A (4d, Diff 2) · 4d6 → [2, 1, 6, 6] · hits 2 · sixes 2
+- roll 85 · D5 kennels Clash r2 Priya owl Distract Hound C Move (5d, Diff 3) · 5d6 → [5, 2, 5, 4, 6] · hits 3 · sixes 1
+- roll 86 · D5 kennels Clash r2 Lucia gator Strike Hound C (4d, Diff 1) · 4d6 → [4, 2, 4, 6] · hits 1 · sixes 1
+- roll 87 · D5 kennels Clash r3 Priya owl Distract Hound B Move (5d, Diff 3) · 5d6 → [4, 6, 6, 5, 3] · hits 3 · sixes 2
+- roll 88 · D5 kennels Clash r3 Maya jaguar Strike Hound C (4d, Diff 2) · 4d6 → [3, 3, 2, 2] · hits 0 · sixes 0
+- roll 89 · D5 kennels Clash r3 Lucia gator Strike Hound C (4d, Diff 2, Hurt 2) · 4d6 → [6, 6, 2, 4] · hits 2 · sixes 2
+- roll 90 · D5 kennels Clash r4 Priya owl Distract Hound B Move (5d, Diff 3) · 5d6 → [1, 4, 1, 3, 3] · hits 0 · sixes 0
+- roll 91 · D5 kennels Clash r4 Maya jaguar Strike Hound B (4d, Diff 1 if Distract) · 4d6 → [5, 3, 4, 6] · hits 2 · sixes 1
+- roll 92 · D5 kennels Clash r4 Lucia gator Strike Hound B (4d, Diff 2, Hurt 2) · 4d6 → [1, 6, 5, 1] · hits 2 · sixes 1
+- roll 93 · D5b crates Clash r1 Priya human Slip Away Move (2d, Diff 2) · 2d6 → [5, 2] · hits 1 · sixes 0
+- roll 94 · D5b crates Clash r1 Jonah bison Slip Away Move (4d, Diff 2) · 4d6 → [2, 3, 6, 4] · hits 1 · sixes 1
+- roll 95 · D5b crates Clash r1 Sam rat Slip Away Sneak (4d, Diff 2) · 4d6 → [1, 2, 1, 3] · hits 0 · sixes 0
+- roll 96 · D5b crates Clash r1 Theo coyote Slip Away Move (3d, Diff 2) · 3d6 → [5, 6, 1] · hits 2 · sixes 1
+- roll 97 · D6 Trophy case Clash Maya jaguar Slip Away Sneak (6d at Cap, Diff 5) · 6d6 → [6, 1, 6, 6, 3, 4] · hits 3 · sixes 3
+- roll 98 · D6 Maya Push · Push of [6,1,6,6,3,4] → [6, 3, 6, 6, 6, 1] · hits 4 · sixes 4
+- roll 99 · D7 Gala Escape1 r1 Priya owl (carrier) Move (6d, Diff 3, Scent 5/6) · 6d6 → [6, 2, 3, 2, 4, 2] · hits 1 · sixes 1
+- roll 100 · D7 Gala Escape1 r1 Maya jaguar Sneak (6d, Diff 2) · 6d6 → [4, 6, 6, 3, 3, 4] · hits 2 · sixes 2
+- roll 101 · D7 Gala Escape1 r1 Theo human Move (3d, Diff 3) · 3d6 → [4, 4, 1] · hits 0 · sixes 0
+- roll 102 · D7 Gala Escape1 r1 Lucia gator Sneak (4d, Diff 3) · 4d6 → [6, 5, 3, 5] · hits 3 · sixes 1
+- roll 103 · D7 Theo Push · Push of [4,4,1] → [2, 5, 6] · hits 2 · sixes 1
+- roll 104 · D7 Gala Escape2 r1 Theo coyote (carrier) Move + Edge (5d, Diff 3, Scent 5/6) · 5d6 → [3, 1, 3, 5, 5] · hits 2 · sixes 0
+- roll 105 · D7 Gala Escape2 r1 Priya owl Move (5d, Diff 3) · 5d6 → [4, 4, 1, 3, 6] · hits 1 · sixes 1
+- roll 106 · D7 Gala Escape2 r1 Maya human Sneak (4d, Diff 3) · 4d6 → [6, 6, 4, 1] · hits 2 · sixes 2
+- roll 107 · D7 Gala Escape2 r1 Lucia human Move (3d, Diff 3) · 3d6 → [5, 6, 1] · hits 2 · sixes 1
+- roll 108 · D8 Gala Escape2 Hunt Up r1 Priya human Move (2d, Diff 3) · 2d6 → [2, 1] · hits 0 · sixes 0
+- roll 109 · D8 Gala Escape2 Hunt Up r1 Sam human Move (2d, Diff 3) · 2d6 → [3, 4] · hits 0 · sixes 0
+- roll 110 · D8 Gala Escape2 Hunt Up r1 Theo human (carrier) Move (3d, Diff 3) · 3d6 → [5, 4, 3] · hits 1 · sixes 0
+- roll 111 · D8 run2 Gala Escape2 Hunt Up r1 Priya human Move (2d, Diff 3) · 2d6 → [5, 1] · hits 1 · sixes 0
+- roll 112 · D8 run2 Gala Escape2 Hunt Up r1 Sam human Move (2d, Diff 3) · 2d6 → [6, 2] · hits 1 · sixes 1
+- roll 113 · D8 run2 Gala Escape2 Hunt Up r1 Theo human (carrier) Move (3d, Diff 3) · 3d6 → [1, 2, 3] · hits 0 · sixes 0

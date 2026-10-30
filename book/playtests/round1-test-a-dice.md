@@ -3,3 +3,42 @@
 - roll 3 · Setup: Cara, new character, frame d6 (Ch2 step 1) · 1d6 → [6] · hits 1 · sixes 1
 - roll 4 · Setup: Cara, animal d6 (Ch2 step 1: 1-2 first, 3-4 second, 5-6 third) · 1d6 → [3] · hits 0 · sixes 0
 - roll 5 · Setup: Cara, human perk 2d6 (Ch2: first die list 1-3 A / 4-6 B, second die row) · 2d6 → [2, 3] · hits 0 · sixes 0
+- roll 6 · Setup practice roll (Ch9): Ben/Maya, human Sneak 3, Difficulty 2 (ruling) · 3d6 → [1, 6, 4] · hits 1 · sixes 1
+- roll 7 · Setup practice roll (Ch9): Ana/Priya, human Wits 3, Difficulty 2 (ruling) · 3d6 → [4, 2, 5] · hits 1 · sixes 0
+- roll 8 · Setup practice roll (Ch9): Cara/Nadia, human Move 3, Difficulty 2 (ruling) · 3d6 → [6, 3, 2] · hits 1 · sixes 1
+- roll 9 · Pemberton's: Scouting, Priya (barn owl) Sense 4, Difficulty 2, no tags, no Help · 4d6 → [5, 4, 5, 1] · hits 2 · sixes 0
+- roll 10 · Pemberton's: Way in A coal chute R1, Maya (jaguar) Sneak 4 +1 Dark +1 Hide-and-Seek = 6 dice, Diff 2-1 (Night Rosettes) = 1 · 6d6 → [1, 1, 6, 6, 2, 3] · hits 2 · sixes 2
+- roll 11 · Pemberton's: Way in A coal chute R1, Priya (owl) Move 4 +1 Silent Wings = 5 dice, Diff 2+1 (Narrow weakness) = 3 · 5d6 → [6, 3, 3, 4, 5] · hits 2 · sixes 1
+- roll 12 · Pemberton's: Way in A coal chute R1, Nadia (python) Move 3 +1 Dark +1 Track Star = 5 dice, Diff 2 · 5d6 → [1, 5, 6, 5, 3] · hits 3 · sixes 1
+- roll 13 · Pemberton's: Way in A coal chute R1, Priya Push (1 Wild), Diff 3 · Push of [6,3,3,4,5] → [6, 2, 5, 2, 5] · hits 3 · sixes 1
+- roll 14 · Pemberton's: Inside 1 shop floor R1, Maya (jaguar) Sneak 4 +1 Dark +1 Hide-and-Seek = 6 dice, Diff 1 (Night Rosettes) · 6d6 → [3, 3, 6, 2, 3, 6] · hits 2 · sixes 2
+- roll 15 · Pemberton's: Inside 1 shop floor R1, Priya (owl) Move 4 +1 Silent Wings = 5 dice, Diff 2 · 5d6 → [2, 4, 4, 4, 3] · hits 0 · sixes 0
+- roll 16 · Pemberton's: Inside 1 shop floor R1, Nadia (python) Move 3 +1 Dark +1 Track Star = 5 dice (Edge spent but Cap reached, see log), Diff 2 · 5d6 → [2, 5, 3, 5, 6] · hits 3 · sixes 1
+- roll 17 · Pemberton's: Inside 1 shop floor R1, Priya Push (1 Wild), Diff 2 · Push of [2,4,4,4,3] → [3, 3, 4, 2, 4] · hits 0 · sixes 0
+- roll 18 · Pemberton's: Clash vs Beater R1, Priya (owl) Distract Move 4 +1 Silent Wings = 5 dice, Diff 2 · 5d6 → [5, 6, 2, 3, 6] · hits 3 · sixes 2
+- roll 19 · Pemberton's: Clash vs Beater R1, Nadia (python) Strike Force 3 +1 Dark +1 Edge = 5 dice, Diff 2-1 (Distract) = 1 · 5d6 → [6, 3, 6, 2, 4] · hits 2 · sixes 2
+- roll 20 · Pemberton's: Inside 2 office door R1, Priya (human) Wits 3 +1 Brainiac = 4 dice, Diff 2 · 4d6 → [3, 1, 4, 2] · hits 0 · sixes 0
+- roll 21 · Pemberton's: Inside 2 office door R1, Priya Push (1 Wild, her last), Diff 2 · Push of [3,1,4,2] → [3, 1, 1, 6] · hits 1 · sixes 1
+- roll 22 · Pemberton's: Inside 2 office door R2, Priya (human) Wits 3 +1 Brainiac +1 Help (Maya, 1 Wild) = 5 dice, Diff 2 · 5d6 → [1, 6, 1, 5, 4] · hits 2 · sixes 1
+- roll 23 · Pemberton's: Objective cages R1, Priya (human) Wits 3 +1 Brainiac +1 Edge = 5 dice, Diff 2 · 5d6 → [5, 4, 6, 4, 4] · hits 2 · sixes 1
+- roll 24 · Pemberton's: Objective cages R2, Priya (human) Wits 3 +1 Brainiac +1 Help (Nadia, 1 Wild) = 5 dice, Diff 2 · 5d6 → [6, 2, 6, 5, 5] · hits 4 · sixes 2
+- roll 25 · Pemberton's: Escape out the back R1, Maya (jaguar) Sneak 4 +1 Dark +1 Hide-and-Seek = 6 dice, Diff 1 (Night Rosettes) · 6d6 → [3, 2, 5, 6, 5, 5] · hits 4 · sixes 1
+- roll 26 · Pemberton's: Escape out the back R1, Priya (owl) Move 4 +1 Open +1 Silent Wings = 6 dice, Diff 2 · 6d6 → [4, 2, 3, 1, 6, 6] · hits 2 · sixes 2
+- roll 27 · Pemberton's: Escape out the back R1, Nadia (python) Move 3 +1 Dark +1 Track Star = 5 dice, Diff 2 · 5d6 → [2, 5, 5, 2, 6] · hits 3 · sixes 1
+- roll 28 · Ch12 mission build: Ideas table, 'The Hunt is...' d6 · 1d6 → [3] · hits 0 · sixes 0
+- roll 29 · Ch12 mission build: Ideas table, 'At...' d6 · 1d6 → [2] · hits 0 · sixes 0
+- roll 30 · Fair: Scouting, Priya (barn owl) Sense 4, Difficulty 2, no tags, no Help · 4d6 → [2, 5, 1, 5] · hits 2 · sixes 0
+- roll 31 · Fair: Way in B brook R1, Maya (jaguar) Sneak 4 +1 Dark +1 Hide-and-Seek = 6 dice, Diff 2 -1 Night Rosettes +1 Water weakness = 2 · 6d6 → [6, 3, 1, 5, 3, 5] · hits 3 · sixes 1
+- roll 32 · Fair: Way in B brook R1, Priya (owl) Move 4 +1 Silent Wings = 5 dice, Diff 2 · 5d6 → [5, 3, 5, 4, 4] · hits 2 · sixes 0
+- roll 33 · Fair: Way in B brook R1, Nadia (python) Move 3 +1 Water/Dark +1 Track Star = 5 dice, Diff 2 · 5d6 → [3, 3, 4, 5, 6] · hits 2 · sixes 1
+- roll 34 · Fair: Inside 1 fairground R1, Priya (owl) Move 4 +1 Open = 5 dice, Diff 3 · 5d6 → [1, 5, 4, 2, 4] · hits 1 · sixes 0
+- roll 35 · Fair: Inside 1 fairground R1, Nadia (human) Move 3 +1 Track Star +1 Help (Priya, 1 Wild) = 5 dice, Diff 3 · 5d6 → [5, 3, 1, 5, 4] · hits 2 · sixes 0
+- roll 36 · Fair: Inside 1 fairground R1, Maya (human) Sneak 3 +1 Hide-and-Seek +1 Edge = 5 dice, Diff 2 +1 Hound Tracker = 3 · 5d6 → [4, 4, 5, 3, 5] · hits 2 · sixes 0
+- roll 37 · Fair: Inside 2 gym roof R1, Nadia (human) Move 3 +1 Track Star +1 Help (Maya, 1 Wild) = 5 dice, Diff 2, dangerous · 5d6 → [3, 3, 1, 5, 3] · hits 1 · sixes 0
+- roll 38 · Fair: Inside 2 gym roof R1, Nadia Push (1 Wild), Diff 2 · Push of [3,3,1,5,3] → [3, 6, 6, 5, 1] · hits 3 · sixes 2
+- roll 39 · Fair: Objective van R1, Priya (human) Wits 3 +1 Brainiac +1 Help (Nadia, 1 Wild) = 5 dice, Diff 2, guarded by Huntsman · 5d6 → [2, 3, 3, 6, 6] · hits 2 · sixes 2
+- roll 40 · Fair: Objective van R2, Priya (human) Wits 3 +1 Brainiac +1 Help (Maya, 1 Wild) = 5 dice, Diff 2, guarded by Huntsman · 5d6 → [4, 5, 4, 4, 2] · hits 1 · sixes 0
+- roll 41 · Fair: Objective van R2, Priya Push (1 Wild), Diff 2 · Push of [4,5,4,4,2] → [5, 5, 4, 1, 2] · hits 2 · sixes 0
+- roll 42 · Fair: Escape playing field R1, Priya (owl, carrying prize) Move 4 +1 Open +1 Silent Wings = 6 dice, Diff 2 · 6d6 → [6, 3, 1, 1, 2, 3] · hits 1 · sixes 1
+- roll 43 · Fair: Escape playing field R1, Maya (jaguar) Sneak 4 +1 Dark +1 Hide-and-Seek = 6 dice, Diff 1 (Night Rosettes) · 6d6 → [3, 2, 6, 5, 4, 2] · hits 2 · sixes 1
+- roll 44 · Fair: Escape playing field R1, Nadia (python) Move 3 +1 Dark +1 Track Star = 5 dice, Diff 2 · 5d6 → [4, 1, 6, 1, 6] · hits 2 · sixes 2

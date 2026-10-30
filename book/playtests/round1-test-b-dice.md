@@ -1,0 +1,73 @@
+- roll 1 · Gala scouting: Priya (owl) Sense 4 +1 Help (Theo, human), Diff 2 · 5d6 → [2, 4, 1, 3, 6] · hits 1 · sixes 1
+- roll 2 · Gala scouting PUSH: Priya (owl) Sense, Diff 2 · Push of [2,4,1,3,6] → [2, 1, 1, 4, 6] · hits 1 · sixes 1
+- roll 3 · Gala loading bay R1: Maya (jaguar) Sneak 4 +1 Dark +1 Hide-and-Seek, Diff 3-1 Night Rosettes = 2 · 6d6 → [2, 2, 1, 6, 6, 3] · hits 2 · sixes 2
+- roll 4 · Gala ballroom R1: Maya (jaguar) Sneak 4 +1 Hide-and-Seek +1 Help (Theo Pack, free), Diff 2+1 Crowd weakness = 3 · 6d6 → [5, 1, 2, 1, 4, 2] · hits 1 · sixes 0
+- roll 5 · Gala ballroom R1: Theo (coyote) Sneak 3 +1 Open/Crowd strength, Diff 2 · 4d6 → [2, 1, 5, 4] · hits 1 · sixes 0
+- roll 6 · Gala ballroom R1: Priya (human) Wits 3 +1 Brainiac, Diff 2 · 4d6 → [6, 5, 6, 4] · hits 3 · sixes 2
+- roll 7 · Gala ballroom R1: Sam (rat) Sneak 4 +1 Crowd strength, Diff 2+1 Open weakness = 3 · 5d6 → [4, 5, 3, 5, 2] · hits 2 · sixes 0
+- roll 8 · Gala ballroom R1: Jonah (human) Wits 2 +1 Edge, Diff 2 · 3d6 → [5, 6, 5] · hits 3 · sixes 1
+- roll 9 · Gala halls R1: Maya (jaguar) Sneak 4 +1 Dark/High +1 Hide-and-Seek, Diff 2 +1 Tracker -1 Night Rosettes = 2 · 6d6 → [5, 6, 5, 1, 3, 2] · hits 3 · sixes 1
+- roll 10 · Gala halls R1: Priya (owl) Move 4 +1 High +1 Silent Wings, Diff 2 · 6d6 → [1, 5, 3, 6, 4, 2] · hits 2 · sixes 1
+- roll 11 · Gala halls R1: Theo (coyote) Sense 4 +1 Edge, Diff 3 +1 High weakness = 4 · 5d6 → [3, 3, 4, 4, 1] · hits 0 · sixes 0
+- roll 12 · Gala halls R1 PUSH: Theo (coyote) Sense, Diff 4 · Push of [3,3,4,4,1] → [2, 4, 5, 4, 2] · hits 1 · sixes 0
+- roll 13 · Gala halls R1: Sam (rat) Sneak 4, Diff 2 +1 Tracker = 3 · 4d6 → [2, 5, 2, 1] · hits 1 · sixes 0
+- roll 14 · Gala halls R1: Jonah (bison) Move 3 +1 Help (Theo Pack, free), Diff 2 · 4d6 → [5, 3, 4, 4] · hits 1 · sixes 0
+- roll 15 · Gala Trophy case R1: Sam (rat) Force 3 (Gnaw) +1 Crowd strength +1 Help (Theo Pack, free), Diff 3 · 5d6 → [5, 6, 4, 2, 5] · hits 3 · sixes 1
+- roll 16 · Gala Trophy case R2: Priya (human) Wits 3 +1 Brainiac +1 Help (Maya, human), Diff 3 [at Cap +2] · 5d6 → [1, 3, 4, 1, 1] · hits 0 · sixes 0
+- roll 17 · Gala Trophy case R2 PUSH: Priya (human) Wits, Diff 3 · Push of [1,3,4,1,1] → [1, 6, 2, 6, 2] · hits 2 · sixes 2
+- roll 18 · Gala Trophy case R3: Jonah (human) Force 3 +1 Football Player +1 Help (Sam, rat), Diff 3 [at Cap] · 5d6 → [2, 6, 6, 1, 5] · hits 3 · sixes 2
+- roll 19 · Gala Escape 1 galleries R1: Maya (jaguar) Sneak 4 +1 Dark/High +1 Hide-and-Seek, Diff 2 +1 On the Trail -1 Night Rosettes = 2 · 6d6 → [4, 1, 3, 4, 3, 1] · hits 0 · sixes 0
+- roll 20 · Gala Escape 1 galleries R1: Priya (owl) Move 4 +1 High +1 Silent Wings, Diff 2 +1 On the Trail = 3 · 6d6 → [2, 3, 2, 2, 3, 2] · hits 0 · sixes 0
+- roll 21 · Gala Escape 1 galleries R1: Theo (coyote) Move 3, Diff 2 +1 On the Trail +1 High weakness = 4 · 3d6 → [2, 2, 3] · hits 0 · sixes 0
+- roll 22 · Gala Escape 1 galleries R1: Sam (rat) Sneak 4, Diff 2 +1 On the Trail = 3 · 4d6 → [3, 1, 6, 6] · hits 2 · sixes 2
+- roll 23 · Gala Escape 1 galleries R1: Jonah (human, carrying pendant) Move 2 +1 Help (Theo Pack, free) +1 Edge, Diff 2 +1 On the Trail = 3 · 4d6 → [4, 4, 4, 6] · hits 1 · sixes 1
+- roll 24 · Gala Escape 1 galleries R2: Maya (jaguar) Sneak 4 +1 Dark/High +1 Hide-and-Seek, Diff 2 · 6d6 → [6, 3, 1, 6, 6, 3] · hits 3 · sixes 3
+- roll 25 · Gala Escape 1 galleries R2: Priya (owl) Move 4 +1 High +1 Silent Wings, Diff 3 · 6d6 → [6, 6, 4, 4, 3, 4] · hits 2 · sixes 2
+- roll 26 · Gala Escape 1 galleries R2: Theo (coyote) Move 3, Diff 4 · 3d6 → [4, 5, 2] · hits 1 · sixes 0
+- roll 27 · Gala Escape 2 steps R1: Theo (coyote, carrying pendant) Move 3 +1 Open/Crowd +1 Edge, Diff 2 +1 On the Trail = 3 · 5d6 → [5, 3, 1, 6, 3] · hits 2 · sixes 1
+- roll 28 · Gala Escape 2 steps R1: Maya (jaguar) Sneak 4 +1 Hide-and-Seek, Diff 2 +1 On the Trail +1 Crowd weakness = 4 · 5d6 → [1, 1, 1, 5, 3] · hits 1 · sixes 0
+- roll 29 · Gala Escape 2 steps R1: Priya (owl) Move 4 +1 Open, Diff 2 +1 On the Trail = 3 · 5d6 → [4, 6, 4, 3, 4] · hits 1 · sixes 1
+- roll 30 · Gala Escape 2 steps R1: Sam (rat) Sneak 4 +1 Crowd +1 Help (Theo Pack, free), Diff 2 +1 On the Trail +1 Open weakness = 4 · 6d6 → [2, 2, 6, 2, 2, 2] · hits 1 · sixes 1
+- roll 31 · Gala Escape 2 steps R2: Jonah (human) Move 2 +1 Help (Sam) +1 Help (Maya), Diff 3 · 4d6 → [6, 3, 5, 1] · hits 2 · sixes 1
+- roll 32 · Lodge scouting: Theo (coyote) Sense 4 +1 Help (Sam, human), Diff 2 · 5d6 → [4, 5, 5, 6, 5] · hits 4 · sixes 1
+- roll 33 · Lodge deer park Clash R1: Priya (owl) Distract Hound 1, Move 4 +1 Open +1 Silent Wings (Dark), Diff 2 · 6d6 → [2, 2, 2, 6, 1, 1] · hits 1 · sixes 1
+- roll 34 · Lodge deer park Clash R1: Jonah (bison) Strike Hound 1, Force 4 +1 Open +1 Football Player, Diff 2-1 Distract = 1 · 6d6 → [1, 6, 3, 5, 2, 2] · hits 2 · sixes 1
+- roll 35 · Lodge deer park Clash R1: Theo (coyote) Strike Hound 2, Force 3 +1 Open +1 Edge, Diff 2 · 5d6 → [1, 1, 4, 4, 4] · hits 0 · sixes 0
+- roll 36 · Lodge deer park Clash R1: Maya (jaguar) Strike Hound 1, Force 3 +1 Dark +1 Edge, Diff 2 · 5d6 → [6, 2, 4, 2, 3] · hits 1 · sixes 1
+- roll 37 · Lodge deer park Clash R1 PUSH: Theo (coyote) Strike Hound 2, Diff 2 · Push of [1,1,4,4,4] → [3, 5, 5, 5, 3] · hits 3 · sixes 0
+- roll 38 · Lodge deer park Clash R2: Priya (owl) Distract Hound 2, Move 4 +1 Open +1 Silent Wings, Diff 2 · 6d6 → [6, 1, 6, 2, 1, 5] · hits 3 · sixes 2
+- roll 39 · Lodge deer park Clash R2: Theo (coyote) Strike Hound 2, Force 3 +1 Open, Diff 2-1 Distract = 1 · 4d6 → [6, 6, 3, 6] · hits 3 · sixes 3
+- roll 40 · Lodge deer park Clash R2: Jonah (bison) Strike Hound 1, Force 4 +1 Open +1 Football Player, Diff 2 · 6d6 → [5, 2, 1, 5, 5, 3] · hits 3 · sixes 0
+- roll 41 · Lodge kennels R1: Maya (jaguar) Sneak 4 +1 Dark +1 Hide-and-Seek, Diff 2 +1 Tracker -1 Night Rosettes = 2 · 6d6 → [4, 1, 6, 4, 5, 4] · hits 2 · sixes 1
+- roll 42 · Lodge kennels R1: Priya (owl) Move 4 +1 Silent Wings (Dark), Diff 3 +1 Narrow weakness = 4 · 5d6 → [5, 6, 5, 6, 2] · hits 4 · sixes 2
+- roll 43 · Lodge kennels R1: Theo (coyote) Sense 4, Diff 3 · 4d6 → [6, 4, 3, 2] · hits 1 · sixes 1
+- roll 44 · Lodge kennels R1: Sam (rat) Sneak 4 +1 Narrow, Diff 2 +1 Tracker = 3 · 5d6 → [3, 6, 2, 6, 5] · hits 3 · sixes 2
+- roll 45 · Lodge kennels R1: Jonah (bison) Sense 3 +1 Help (Theo Pack, free) +1 Edge, Diff 3 +1 Narrow weakness = 4 · 5d6 → [4, 6, 2, 6, 2] · hits 2 · sixes 2
+- roll 46 · Lodge servants door R1: Priya (human) Wits 3 +1 Brainiac +1 Edge, Diff 2 · 5d6 → [3, 1, 1, 6, 2] · hits 1 · sixes 1
+- roll 47 · Lodge servants door R1 PUSH: Priya (human) Wits, Diff 2 · Push of [3,1,1,6,2] → [3, 1, 5, 6, 6] · hits 3 · sixes 2
+- roll 48 · Lodge trophy hall R1: Theo (coyote) Sense 4 +1 Help (Maya, jaguar), Diff 2 · 5d6 → [3, 5, 6, 3, 1] · hits 2 · sixes 1
+- roll 49 · Lodge trophy hall R2: Sam (rat) Sense 3 +1 Help (Theo Pack, free) +1 Help (Jonah, bison), Diff 2 · 5d6 → [5, 5, 3, 1, 5] · hits 3 · sixes 0
+- roll 50 · Lodge cellar Clash R1: Sam (rat) Distract Trapper 1, Sneak 4 +1 Narrow, Diff 2 · 5d6 → [2, 3, 5, 2, 4] · hits 1 · sixes 0
+- roll 51 · Lodge cellar Clash R1: Jonah (bison) Strike Trapper 1, Force 4 +1 Locked +1 Football Player, Diff 2 +1 Narrow -1 Distract = 2 · 6d6 → [4, 4, 3, 2, 2, 3] · hits 0 · sixes 0
+- roll 52 · Lodge cellar Clash R1 PUSH: Jonah (bison) Strike Trapper 1, Diff 2 · Push of [4,4,3,2,2,3] → [2, 5, 1, 3, 3, 1] · hits 1 · sixes 0
+- roll 53 · Lodge cellar Clash R1: Theo (coyote) Strike Trapper 2, Force 3, Diff 2 · 3d6 → [4, 5, 3] · hits 1 · sixes 0
+- roll 54 · Lodge cellar Clash R1: Maya (jaguar) Strike Trapper 2, Force 3, Diff 2 · 3d6 → [1, 6, 5] · hits 2 · sixes 1
+- roll 55 · Lodge cellar Clash R1: Priya (human) Slip Away from Trapper 1, Move 2, Diff 2 · 2d6 → [2, 5] · hits 1 · sixes 0
+- roll 56 · Lodge cellar Clash R2: Sam (rat) Distract Trapper 1, Sneak 4 +1 Narrow, Diff 2 · 5d6 → [1, 2, 3, 6, 1] · hits 1 · sixes 1
+- roll 57 · Lodge cellar Clash R2: Jonah (bison) Strike Trapper 1, Force 4 +1 Locked +1 Football Player, Diff 2 +1 Narrow -1 Distract = 2 · 6d6 → [6, 5, 1, 1, 3, 3] · hits 2 · sixes 1
+- roll 58 · Lodge cellar cage R1: Priya (human) Wits 3 +1 Brainiac, Diff 2 (guards gone) · 4d6 → [3, 3, 1, 1] · hits 0 · sixes 0
+- roll 59 · Lodge cellar cage R1 PUSH: Priya (human) Wits, Diff 2 · Push of [3,3,1,1] → [1, 2, 5, 6] · hits 2 · sixes 1
+- roll 60 · Lodge cellar cage R2: Priya (human) Wits 3 +1 Brainiac +1 Help (Maya, human) [Theo's Help refused by the Cap], Diff 2 · 5d6 → [5, 4, 6, 3, 1] · hits 2 · sixes 1
+- roll 61 · Lodge cellar cage R3: Priya (human) Wits 3 +1 Brainiac +1 Help (Theo, human), Diff 2 · 5d6 → [2, 4, 3, 5, 5] · hits 2 · sixes 0
+- roll 62 · Lodge Escape 1 lawn R1: Theo (coyote) Move 3 +1 Open, Diff 2 +1 On the Trail = 3 · 4d6 → [5, 2, 4, 1] · hits 1 · sixes 0
+- roll 63 · Lodge Escape 1 lawn R1: Jonah (bison) Move 3 +1 Open, Diff 2 +1 On the Trail = 3 · 4d6 → [1, 4, 6, 2] · hits 1 · sixes 1
+- roll 64 · Lodge Escape 1 lawn R1: Priya (owl) Move 4 +1 Open, Diff 2 +1 On the Trail = 3 · 5d6 → [1, 2, 6, 2, 6] · hits 2 · sixes 2
+- roll 65 · Lodge Escape 1 lawn R1: Maya (human) Sneak 3 +1 Hide-and-Seek, Diff 3 +1 On the Trail = 4 · 4d6 → [6, 2, 5, 4] · hits 2 · sixes 1
+- roll 66 · Lodge Escape 1 lawn R1: Sam (rat) Sneak 4 +1 Help (Theo Pack, free), Diff 3 +1 On the Trail +1 Open weakness = 5 · 5d6 → [1, 3, 5, 1, 5] · hits 2 · sixes 0
+- roll 67 · Lodge Escape 2 wall R1: Priya (owl) Move 4 +1 High, Diff 2 +1 On the Trail = 3 · 5d6 → [1, 4, 4, 3, 2] · hits 0 · sixes 0
+- roll 68 · Lodge Escape 2 wall R1: Theo (coyote) Move 3, Diff 2 +1 On the Trail +1 High weakness = 4 · 3d6 → [6, 1, 2] · hits 1 · sixes 1
+- roll 69 · Lodge Escape 2 wall R1: Jonah (bison) Force 4 +1 Football Player, Diff 3 +1 On the Trail = 4 · 5d6 → [6, 2, 1, 3, 1] · hits 1 · sixes 1
+- roll 70 · Lodge Escape 2 wall R1: Maya (jaguar) Move 3 +1 High, Diff 2 +1 On the Trail = 3 · 4d6 → [6, 1, 6, 6] · hits 3 · sixes 3
+- roll 71 · Lodge Escape 2 wall R1: Sam (rat) Move 3 +1 Help (Theo Pack, free), Diff 2 +1 On the Trail = 3 · 4d6 → [1, 2, 1, 4] · hits 0 · sixes 0
+- roll 72 · Lodge Escape 2 wall R2: Priya (owl) Move 4 +1 High +1 Edge, Diff 3 · 6d6 → [2, 5, 2, 5, 1, 2] · hits 2 · sixes 0
+- roll 73 · Lodge Escape 2 wall R2: Sam (rat) Move 3 +1 Help (Jonah, bison), Diff 3 · 4d6 → [3, 5, 6, 5] · hits 3 · sixes 1
