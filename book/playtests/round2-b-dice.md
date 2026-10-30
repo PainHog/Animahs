@@ -1,0 +1,5 @@
+- roll 1 · Mill scouting: Sam (human) Sense 3, no Help, Difficulty 2 · 3d6 → [5, 1, 5] · hits 2 · sixes 0
+- roll 2 · Mill millrace R1: Lucia (alligator) Sneak 3 +1 Water/Dark +1 Swim Team, Lurker -1, Difficulty 1 · 5d6 → [2, 4, 4, 6, 4] · hits 1 · sixes 1
+- roll 3 · Mill millrace R1: Maya (human) Sneak 3 +1 Hide-and-Seek, Difficulty 2 (dangerous) · 4d6 → [4, 2, 4, 5] · hits 1 · sixes 0
+- roll 4 · Mill millrace R1: Sam (rat) Sneak 4, Difficulty 2 (dangerous) · 4d6 → [2, 3, 1, 1] · hits 0 · sixes 0
+- roll 5 · Mill millrace R1: Jonah (bison) Move 3, Difficulty 2 (dangerous) · 3d6 → [4, 1, 1] · hits 0 · sixes 0

@@ -1,0 +1,2 @@
+- roll 1 · Setup: Dev roll-off for Jonah (Ch9, higher chooses first) · 1d6 → [3] · hits 0 · sixes 0
+- roll 2 · Setup: Elif roll-off for Jonah (Ch9, higher chooses first) · 1d6 → [1] · hits 0 · sixes 0
