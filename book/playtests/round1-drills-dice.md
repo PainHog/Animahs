@@ -113,3 +113,10 @@
 - roll 113 · D8 run2 Gala Escape2 Hunt Up r1 Theo human (carrier) Move (3d, Diff 3) · 3d6 → [1, 2, 3] · hits 0 · sixes 0
 - roll 114 · D8c Petshop Escape Hunt Up r1 Priya human Move (2d, Diff 3) · 2d6 → [4, 1] · hits 0 · sixes 0
 - roll 115 · D8c Petshop Escape Hunt Up r1 Jonah human Move (2d, Diff 3) · 2d6 → [4, 3] · hits 0 · sixes 0
+- roll 116 · D9 M2 scouting (team Exposed) Theo coyote Sense (4d, Diff 2) · 4d6 → [2, 6, 1, 1] · hits 1 · sixes 1
+- roll 117 · D7b homebrew guarded steps Clash r1 Priya owl Distract Beater Move (5d, Diff 2) · 5d6 → [2, 5, 6, 1, 5] · hits 3 · sixes 1
+- roll 118 · D7b Clash r2 Priya owl Distract Beater Move (5d, Diff 2) · 5d6 → [3, 1, 5, 4, 2] · hits 1 · sixes 0
+- roll 119 · D7b Clash r2 Maya human (carrier) Slip Away Move (2d, Diff 2) · 2d6 → [3, 2] · hits 0 · sixes 0
+- roll 120 · D7b Clash r2 Theo coyote Strike Beater (4d, Diff 1) · 4d6 → [2, 6, 1, 4] · hits 1 · sixes 1
+- roll 121 · D7b Clash r3 Priya owl Distract Beater Move (5d, Diff 2) · 5d6 → [2, 4, 4, 1, 2] · hits 0 · sixes 0
+- roll 122 · D7b Clash r3 Theo coyote Strike Beater (4d, Diff 1 if Distract) · 4d6 → [3, 4, 5, 2] · hits 1 · sixes 0
