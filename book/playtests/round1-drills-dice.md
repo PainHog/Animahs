@@ -111,3 +111,5 @@
 - roll 111 · D8 run2 Gala Escape2 Hunt Up r1 Priya human Move (2d, Diff 3) · 2d6 → [5, 1] · hits 1 · sixes 0
 - roll 112 · D8 run2 Gala Escape2 Hunt Up r1 Sam human Move (2d, Diff 3) · 2d6 → [6, 2] · hits 1 · sixes 1
 - roll 113 · D8 run2 Gala Escape2 Hunt Up r1 Theo human (carrier) Move (3d, Diff 3) · 3d6 → [1, 2, 3] · hits 0 · sixes 0
+- roll 114 · D8c Petshop Escape Hunt Up r1 Priya human Move (2d, Diff 3) · 2d6 → [4, 1] · hits 0 · sixes 0
+- roll 115 · D8c Petshop Escape Hunt Up r1 Jonah human Move (2d, Diff 3) · 2d6 → [4, 3] · hits 0 · sixes 0
