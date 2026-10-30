@@ -27,3 +27,25 @@
 - roll 27 · Zoo Clash r2: Jonah (bison) Strike Hound A (2/3), 6 dice vs 1 (Distracted) · 6d6 → [5, 4, 1, 1, 6, 4] · hits 2 · sixes 1
 - roll 28 · Zoo Clash r2: Ollie (dog) Strike Hound B (1/3), 4 dice vs 2 · 4d6 → [5, 2, 6, 3] · hits 2 · sixes 1
 - roll 29 · Zoo Clash r3: Jonah (bison) Strike Hound B (2/3), 6 dice vs 2 · 6d6 → [5, 3, 1, 1, 6, 4] · hits 2 · sixes 1
+- roll 30 · Zoo Objective crates (point 0/3, 2 Trappers) r1: Ollie (kid) Wits 3 +1 Brainiac = 4 dice vs 2 · 4d6 → [5, 3, 6, 1] · hits 2 · sixes 1
+- roll 31 · Zoo crates (1/3) r2: Jonah (bison) Force 4 +1 Locked +1 Football Player = 6 dice vs 3 · 6d6 → [1, 4, 3, 5, 3, 3] · hits 1 · sixes 0
+- roll 32 · Zoo crates r2: Jonah Push of roll 31 (vs 3) · Push of [1,4,3,5,3,3] → [1, 4, 4, 5, 3, 5] · hits 2 · sixes 0
+- roll 33 · Zoo crates (2/3) r3: Ollie (kid) Wits 3 +1 Brainiac = 4 dice vs 2 · 4d6 → [6, 4, 4, 5] · hits 2 · sixes 1
+- roll 34 · Zoo Escape moat (group, On the Trail) r1: Jonah (bison) Move 3 +1 Open = 4 dice vs 3 · 4d6 → [2, 1, 3, 1] · hits 0 · sixes 0
+- roll 35 · Zoo Escape moat r1: Sam (rat) Sneak 4 = 4 dice vs 4 (2 +1 Trail +1 Open Weakness) · 4d6 → [4, 1, 2, 5] · hits 1 · sixes 0
+- roll 36 · Zoo Escape moat r1: Ollie (kid) Move 2 +1 Help (Sam) = 3 dice vs 3 · 3d6 → [5, 5, 3] · hits 2 · sixes 0
+- roll 37 · Zoo Escape moat r2: Jonah (bison) Move 3 +1 Open +1 Help (Sam) = 5 dice vs 3 · 5d6 → [1, 2, 5, 5, 3] · hits 2 · sixes 0
+- roll 38 · Build: Ideas table, The Hunt is... (Ch12, d6 per column) · 1d6 → [2] · hits 0 · sixes 0
+- roll 39 · Build: Ideas table, At... (Ch12, d6 per column) · 1d6 → [1] · hits 0 · sixes 0
+- roll 40 · Deep End scouting: Ollie (dog) Sense 4 +1 Help (Sam, kid) = 5 dice vs 2, no tags (Ch5) · 5d6 → [1, 1, 4, 6, 4] · hits 1 · sixes 1
+- roll 41 · Deep End scouting: Ollie Push of roll 40 (vs 2) · Push of [1,1,4,6,4] → [6, 1, 6, 6, 4] · hits 3 · sixes 3
+- roll 42 · Deep End way in A foyer (group, Crowd) r1: Jonah (kid) Wits 2 +2 Edges = 4 dice vs 2 · 4d6 → [2, 5, 3, 5] · hits 2 · sixes 0
+- roll 43 · Deep End foyer r1: Ollie (dog) Sneak 3 +1 Crowd = 4 dice vs 2 (3, -1 Good Dog) · 4d6 → [3, 3, 6, 5] · hits 2 · sixes 1
+- roll 44 · Deep End foyer r1: Sam (rat) Sneak 4 +1 Crowd = 5 dice vs 3 · 5d6 → [4, 1, 5, 4, 4] · hits 1 · sixes 0
+- roll 45 · Deep End foyer r1: Sam Push of roll 44 (vs 3) · Push of [4,1,5,4,4] → [5, 2, 5, 5, 5] · hits 4 · sixes 0
+- roll 46 · Deep End Inside 1 pool hall (group, Beater+Hound) r1: Jonah (bison) Move 3 +1 Open = 4 dice vs 2 · 4d6 → [6, 1, 1, 6] · hits 2 · sixes 2
+- roll 47 · Deep End pool hall r1: Ollie (dog) Move 3 +1 Open = 4 dice vs 2 · 4d6 → [6, 1, 4, 6] · hits 2 · sixes 2
+- roll 48 · Deep End pool hall r1: Sam (rat) Sneak 4 +1 Edge = 5 dice vs 4 (2 +1 Tracker +1 Open Weakness) · 5d6 → [5, 5, 1, 5, 6] · hits 4 · sixes 1
+- roll 49 · Deep End Inside 2 girders (point 0/2, dangerous) r1: Sam (rat) Move 3 +1 Narrow +1 Edge = 5 dice vs 2 · 5d6 → [5, 1, 5, 1, 1] · hits 2 · sixes 0
+- roll 50 · Deep End girders (1/2) r2: Sam (rat) Move 3 +1 Narrow +1 Help (Jonah) = 5 dice vs 2 · 5d6 → [2, 2, 6, 5, 1] · hits 2 · sixes 1
+- roll 51 · Deep End Objective cage (point 0/3, Huntsman) r1: Ollie (kid) Wits 3 +1 Brainiac +1 Help (Sam, kid) = 5 dice vs 2 · 5d6 → [1, 2, 4, 2, 1] · hits 0 · sixes 0

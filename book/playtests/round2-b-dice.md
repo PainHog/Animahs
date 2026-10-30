@@ -22,3 +22,31 @@
 - roll 22 · Mill Callhorn Clash R1: Lucia (alligator, Hurt 1) Strike Huntsman, Force 3, Difficulty 3 · 3d6 → [2, 3, 4] · hits 0 · sixes 0
 - roll 23 · Mill Callhorn Clash R2: Jonah (bison) Slip Away from Huntsman, Move 3, Difficulty 3 · 3d6 → [5, 1, 4] · hits 1 · sixes 0
 - roll 24 · Mill Callhorn Clash R2: Maya (jaguar) Slip Away from Huntsman, Sneak 4 +1 High +1 Hide-and-Seek, Difficulty 3 +1 Trophy = 4 · 6d6 → [2, 3, 2, 3, 4, 5] · hits 1 · sixes 0
+- roll 25 · Mill Callhorn (Hunt Up) R1: Jonah (bison, Hurt 1) Force 4 +1 Locked +1 Football, Difficulty 3 (point 0/3) · 6d6 → [1, 1, 2, 2, 2, 6] · hits 1 · sixes 1
+- roll 26 · Mill Callhorn (Hunt Up) R2: Maya (jaguar, Hurt 2) Force 3 +1 High +1 Edge, Difficulty 3 (point 1/3) · 5d6 → [1, 1, 4, 3, 2] · hits 0 · sixes 0
+- roll 27 · Mill Callhorn (Hunt Up) R3: Jonah (bison, Hurt 1) Force 4 +1 Locked +1 Football, Difficulty 3 (point 1/3) · 6d6 → [4, 2, 4, 4, 5, 2] · hits 1 · sixes 0
+- roll 28 · Mill Callhorn (Hunt Up) R4: Jonah (bison, Hurt 1) Force 4 +1 Locked +1 Football, Difficulty 3 (point 2/3) · 6d6 → [3, 3, 1, 4, 4, 2] · hits 0 · sixes 0
+- roll 29 · Mill Callhorn (Hunt Up) R4 Push: Jonah · Push of [3,3,1,4,4,2] → [2, 5, 2, 2, 4, 1] · hits 1 · sixes 0
+- roll 30 · Mill Escape waterwheel (Hunt Up) R1: Jonah (bison, Hurt 1) Move 3, Difficulty 2 +1 On the Trail = 3 · 3d6 → [5, 2, 6] · hits 2 · sixes 1
+- roll 31 · Campaign: new Bonded A (Maya's player) frame d6 · 1d6 → [6] · hits 1 · sixes 1
+- roll 32 · Campaign: new Bonded A animal d6 · 1d6 → [2] · hits 0 · sixes 0
+- roll 33 · Campaign: new Bonded A animal d6 again (alligator is Lucia's), keep Reptiles · 1d6 → [5] · hits 1 · sixes 0
+- roll 34 · Campaign: new Bonded A human perk 2d6 (first die list, second row) · 2d6 → [2, 1] · hits 0 · sixes 0
+- roll 35 · Campaign: new Bonded B (Priya's player) frame d6 · 1d6 → [4] · hits 0 · sixes 0
+- roll 36 · Campaign: new Bonded B animal d6 · 1d6 → [2] · hits 0 · sixes 0
+- roll 37 · Campaign: new Bonded B human perk 2d6 · 2d6 → [4, 6] · hits 1 · sixes 1
+- roll 38 · Campaign: new Bonded C (Sam's player) frame d6 · 1d6 → [5] · hits 1 · sixes 0
+- roll 39 · Campaign: new Bonded C animal d6 · 1d6 → [6] · hits 1 · sixes 1
+- roll 40 · Campaign: new Bonded C human perk 2d6 · 2d6 → [5, 5] · hits 2 · sixes 0
+- roll 41 · Lodge scouting: Theo (coyote) Sense 4, no Help, Difficulty 2 · 4d6 → [3, 3, 1, 6] · hits 1 · sixes 1
+- roll 42 · Lodge tunnel R1: Rosa (mouse) Sneak 4 +1 Narrow, Tiny -1, Difficulty 1 (dangerous) · 5d6 → [2, 4, 2, 4, 6] · hits 1 · sixes 1
+- roll 43 · Lodge tunnel R1: Dev (komodo) Sneak 3 +1 Water/Dark, Difficulty 2 (dangerous) · 4d6 → [1, 5, 6, 1] · hits 2 · sixes 1
+- roll 44 · Lodge tunnel R1: Theo (coyote) Move 3, Difficulty 2 (dangerous) · 3d6 → [6, 3, 6] · hits 2 · sixes 2
+- roll 45 · Lodge tunnel R1: Ben (human) Move 2 +1 Night Owl, Difficulty 2 (dangerous) · 3d6 → [4, 1, 6] · hits 1 · sixes 1
+- roll 46 · Lodge tunnel R1: Jonah (human) Move 2, Difficulty 2 (dangerous) · 2d6 → [1, 4] · hits 0 · sixes 0
+- roll 47 · Lodge tunnel R2: Jonah (human, Hurt 1) Move 2 +1 Edge, Difficulty 2 (dangerous) · 3d6 → [2, 6, 2] · hits 1 · sixes 1
+- roll 48 · Lodge kennels R1: Rosa (mouse) Sneak 4 +1 Narrow, Difficulty 2 +1 Tracker -1 Tiny = 2 · 5d6 → [6, 6, 1, 6, 5] · hits 4 · sixes 3
+- roll 49 · Lodge kennels R1: Dev (komodo) Sneak 3 +1 Dark, Difficulty 2 (Taste the Air: no Tracker) · 4d6 → [6, 6, 6, 2] · hits 3 · sixes 3
+- roll 50 · Lodge kennels R1: Theo (coyote) Sense 4, Difficulty 3 · 4d6 → [4, 1, 4, 3] · hits 0 · sixes 0
+- roll 51 · Lodge kennels R1: Ben (human) Move 2 +1 Night Owl, Difficulty 3 · 3d6 → [3, 5, 5] · hits 2 · sixes 0
+- roll 52 · Lodge kennels R1: Jonah (human, Hurt 1) Move 2, Difficulty 3 · 2d6 → [5, 5] · hits 2 · sixes 0
