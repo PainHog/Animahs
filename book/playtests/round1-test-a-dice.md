@@ -1,0 +1,5 @@
+- roll 1 · Setup: Ana rolls off for Maya (Ch9/Ch18 'they roll a die: the higher roll chooses first') · 1d6 → [2] · hits 0 · sixes 0
+- roll 2 · Setup: Ben rolls off for Maya (Ch9/Ch18 roll-off) · 1d6 → [6] · hits 1 · sixes 1
+- roll 3 · Setup: Cara, new character, frame d6 (Ch2 step 1) · 1d6 → [6] · hits 1 · sixes 1
+- roll 4 · Setup: Cara, animal d6 (Ch2 step 1: 1-2 first, 3-4 second, 5-6 third) · 1d6 → [3] · hits 0 · sixes 0
+- roll 5 · Setup: Cara, human perk 2d6 (Ch2: first die list 1-3 A / 4-6 B, second die row) · 2d6 → [2, 3] · hits 0 · sixes 0
