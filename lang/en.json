@@ -56,8 +56,8 @@
     },
     "Threat": {
       "beater": { "name": "Beater", "specialName": "", "special": "None." },
-      "hound": { "name": "Hound", "specialName": "Tracker", "special": "Sneak rolls at an obstacle a Hound guards are at +1 Difficulty." },
-      "trapper": { "name": "Trapper", "specialName": "Net", "special": "When you Fail against a Trapper, you're Netted instead of Hurt." },
+      "hound": { "name": "Hound", "specialName": "Tracker", "special": "Sneak rolls at an obstacle a Hound guards, or in a Clash with a Hound, are at +1 Difficulty (+1 in all, however many Hounds)." },
+      "trapper": { "name": "Trapper", "specialName": "Net", "special": "When you Fail against a Trapper in a Clash, you're Netted instead of Hurt (the Fail that starts a Clash doesn't net you)." },
       "huntsman": { "name": "Huntsman", "specialName": "Trophy", "special": "Sneak rolls at an obstacle a Huntsman guards are at +1 Difficulty." },
       "master": { "name": "Master of the Hunt", "specialName": "Arrives", "special": "Only when the Hunt is Up. Masters are never fought. While they're here, any Fail means you're Taken." }
     },
@@ -516,6 +516,7 @@
       "crit": "a Critical"
     },
     "Log": {
+      "guardsStay": "Nobody was left in the Clash, so the guards at {name} are still on guard.",
       "clashDue": "A Fail at {name}: the guards turn. Finish this round's rolls, then End Round starts the Clash.",
       "scent": "Scent +{n} ({cause}): {scent} of {limit}.",
       "huntUp": "The Hunt is Up!",

@@ -539,3 +539,22 @@ test("Hunt track: Win +0, Costly +1, Loss +2, at most 6", () => {
   assert.equal(W.state.campaign.huntTrack, 6);
   assert.ok(W.state.log.some(l => l.k === "MG.Log.lastHunt"));
 });
+
+test("§7 a Clash nobody is left in: the guards stay, and the next Fail starts a new Clash", () => {
+  const W = world("zoo");
+  W.start();
+  W.do(M.chooseWay, 0);
+  for (let i = 0; i < 4; i++) W.do(M.nextObstacle, W.list());   // to the crates: point, guarded by two Trappers
+  const ob = M.currentObstacle(W.state);
+  assert.equal(ob.id, "crates");
+  W.roll("maya", "fail");
+  assert.ok(W.state.clash, "a Clash");
+  const t = W.state.clash.threats[0].id;
+  for (const id of W.state.clash.participants) W.roll(id, "success", { action: "slip", threatId: t });
+  assert.equal(W.state.clash, null, "nobody left: the Clash ends");
+  assert.equal(W.state.progress[ob.uid].guardsBeaten, false, "the Trappers are still on guard");
+  assert.equal(W.state.progress[ob.uid].ended, false);
+  W.roll("priya", "fail");
+  assert.ok(W.state.clash, "the next Fail starts a new Clash with them");
+  assert.equal(M.withdraw(W.state, W.list(), {}).state.withdrawn, false, "no Withdraw in the middle of a Clash");
+});

@@ -403,6 +403,20 @@ Writing the chapters needed answers the core rules left open. These are in the b
   - **UK IPO (through aggregators):** a registered SECOND NATURE word mark for weight-loss and wellbeing materials (OurPath Ltd); none found for games.
   - **Still to do before a store page, cover or logo:** search the official USPTO and UK IPO registers directly for classes 9, 28 and 41, ideally with a trademark attorney.
 
+### D34 · 2026-10-30 · draft: Rulings from the first computer playtests
+Three playtests by the book with real dice (`book/playtests/round1-*`: a first night, a rowdy five-player campaign on the Hard missions, and drills for every failure state) found two blockers and about thirty gaps. The rulings, in the book, `docs/CORE-RULES.md` and `book/REVIEW.md` rows 22–27, follow the simulator wherever it already plays the case:
+1. **Blockers.**
+   - A group obstacle is done when everyone *who can act* is past; the Down and Netted get up, are freed or are Taken as the scene ends. (Before, a character Down at a group obstacle could stall it for ever.)
+   - If everyone is Taken as the Hunt track reaches 6, the Breakout comes first and the Last Hunt follows it.
+2. **The Hunt is Up.** The roll that brings it Up resolves as if it weren't (a guarded Fail still starts its Clash); after that a Fail is Taken everywhere, in a Clash too. A Clash's Scent rises before its scene ends, so a rise that brings the Hunt Up Takes anyone Down or Netted.
+3. **Clashes.** A Clash nobody who can act is left in ends with the guards still on guard (no more "start the Clash and all Slip Away" to clear a guarded objective). A Critical on Distract or Slip Away is a Success; Edges come only from obstacles. A Clash is a scene, and so is the rest of the obstacle after it. Tracker is +1 however many Hounds, and applies in a Clash with a Hound. The Fail that starts a Clash doesn't net anyone.
+4. **Obstacles and the team.** The team moves together. At a group obstacle players roll one at a time and decide on a Push before the next rolls; those already past can Help, Patch Up and free friends. A Clash the team chooses to start begins at once. Scouting has no tags. The long-round rise is "+1 at the end of each round from the third while anyone isn't past".
+5. **Resources and the prize.** The free Shift or Patch Up between obstacles still costs Wild (and covers the gap before the way in); Hurt paid to shift is paid as a kid, so animal perks don't reduce it; a Patch Up doesn't get a Down friend up. Edges are lost at the end of a mission; each Team Captain gives one. Taking the prize costs no action, handing it over is free between obstacles, and a prize nobody carries at the end is lost. No Withdraw in the middle of a Clash; before the way in it just means going home.
+6. **Results and campaigns.** Everyone Taken is a Loss even after the objective. The rescue can come on either of the next two missions, or as an extra locked-cage obstacle; Taken characters mark Growth; a second human perk must differ; a Breakout team starts with the old team's lowest Growth; the Last Hunt's Win and Costly Win keep the Wild free.
+7. **Making missions.** Chapter 12's Limit rule is now "obstacles + 2 for Easy or Standard, obstacles + 0 for Hard" (it gives every Part Three mission its Limit for 3 players), with what makes each label.
+- **Options:** leave each to the table (the playtests showed that's where tables get stuck); or settle them in the book.
+- **Why:** WORKFLOW.md and REVIEW-PROCEDURE.md: playtests by the book, fixes, then verification until two in a row are clean. **Not changed in the simulator:** it never Slips Away, Withdraws or rescues mid-mission, and in a Clash after the Hunt is Up it applies Harm rather than Taken, a rare case left as a known simplification.
+
 ## 4. Early flags: where the pitch meets the lessons in `DESIGN-RULES.md`
 These aren't decisions. They're the first things to settle, because each one has already caused trouble in an earlier game.
 

@@ -532,7 +532,8 @@ export function startEscape(state, roster, opts) {
 /** §8, §10 step 4: Withdraw straight to the Escape (a Loss). */
 export function withdraw(state, roster, opts) {
   const S = clone(state);
-  if (!isRunning(S) || S.objectiveDone) return { state: S, effects: [] };
+  // §10: not in the middle of a Clash (Slip Away or see it through first)
+  if (!isRunning(S) || S.objectiveDone || S.clash) return { state: S, effects: [] };
   S.withdrawn = true;
   if (S.huntUpChoice === "pending") S.huntUpChoice = "withdraw";
   log(S, "MG.Log.withdraw", {});
@@ -623,22 +624,26 @@ export function endClash(state, roster, opts) {
   const ob = currentObstacle(S);
   const p = ob && progressOf(S, ob.uid);
   if (ob && p && c.obstacleUid === ob.uid && !p.ended) {
-    p.guardsBeaten = true;
+    // §7: beaten, or pulled back after round 4, the guards are gone; if the Clash ended because
+    // nobody was left in it (all slipped away, Down, Netted or Taken), they're still on guard
+    const beaten = c.over !== "nobodyLeft";
+    if (beaten) p.guardsBeaten = true;
+    else log(S, "MG.Log.guardsStay", { name: ob.name });
     if (ob.kind === "group") {
       // Slip Away at a group obstacle gets you past it (§7); at a point obstacle you just wait
       for (const id of c.left) if (!p.past.includes(id)) p.past.push(id);
-      if (ob.guardsClear) {
+      if (ob.guardsClear && beaten) {
         for (const r of party) if (!r.taken && !p.past.includes(r.id)) p.past.push(r.id);
         const e = endObstacle(S, roster, { ...opts, skipSceneEnd: true });
         S = e.state;
       }
-    } else if (ob.guardsClear) {
+    } else if (ob.guardsClear && beaten) {
       p.points = ob.progress;
       p.cleared = true;
       if (ob.objective) objectiveDone(S, null);
       const e = endObstacle(S, roster, { ...opts, skipSceneEnd: true });
       S = e.state;
-    } else {
+    } else if (beaten) {
       log(S, "MG.Log.stillProgress", { name: ob.name });
     }
   }

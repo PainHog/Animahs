@@ -8,7 +8,7 @@
     "toughness": 2,
     "harm": 1,
     "harmTaken": 0,
-    "special": "When you Fail against a Trapper, you're Netted instead of Hurt.",
+    "special": "When you Fail against a Trapper in a Clash, you're Netted instead of Hurt (the Fail that starts a Clash doesn't net you).",
     "notes": "<p><em>“Hold still. This won’t hurt.”</em></p>\n<p>Patient people in waxed jackets with weighted nets and folding cages. Trappers catch things alive. That’s the point.</p>"
   },
   "prototypeToken": {

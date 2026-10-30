@@ -1,6 +1,6 @@
 Now: Richard has approved the whole design; the rulebook and the online version are ready for a first playtest
 Next: A first playtest at a real table, while Richard draws the real pictures and puts the book in his own words
-Number: Design decisions so far = 33
+Number: Design decisions so far = 34
 Number: Approved by Richard = 33
 Number: Core questions still open = 0
 Screenshot: docs/portal/cover.webp = The draft cover, with stand-in art until the real drawings are done

@@ -8,7 +8,7 @@
     "toughness": 3,
     "harm": 1,
     "harmTaken": 0,
-    "special": "Sneak rolls at an obstacle a Hound guards are at +1 Difficulty.",
+    "special": "Sneak rolls at an obstacle a Hound guards, or in a Clash with a Hound, are at +1 Difficulty (+1 in all, however many Hounds).",
     "notes": "<p><em>grey, silent, gilt-collared</em></p>\n<p>Long-legged, grey and unnervingly quiet. Hounds never bark; they just look at you. They can smell the Wild on a Bonded kid even in human form.</p>"
   },
   "prototypeToken": {
