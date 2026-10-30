@@ -7,9 +7,28 @@ npm install
 npm run check        # the validator (manifest, packs, templates) + node --test
 ```
 
-`node --test` covers the shared rules (`module/logic/`), the mission reducer, character validation, the pack content against the rulebook, and the system booted on `tools/fake-foundry.mjs` with a GM and two players: sheets, the roll dialog and cards, Clashes, a whole mission, GM operations and their permission checks. The simulator check: `node sim/run.mjs --runs 300 --balance 0 --sweep 0 --out /tmp/x.md` gives the same report as before any change to the shared code.
+`node --test` covers the shared rules (`module/logic/`), the mission reducer, character validation, the pack content against the rulebook, and the system booted on `tools/fake-foundry.mjs` with a GM and two players: sheets, the roll dialog and cards, Clashes, a whole mission, GM operations and their permission checks, and the Starter adventure imported and played from the tracker to the result on the Zoo's scene (`test/foundry-starter.test.mjs`). The simulator check: `node sim/run.mjs --runs 300 --balance 0 --sweep 0 --out /tmp/x.md` gives the same report as before any change to the shared code.
 
 After a rulebook change: `npm run build:sources && npm run build:packs`, then commit `packs/`.
+
+## The 15-minute check (do this first)
+
+Two browser windows: **GM** (Gamemaster) and **Player** (a Player-role user). Foundry v13 or v14. If a step goes wrong, note the step number, what you saw and any red error in the browser console (F12).
+
+1. [ ] Install the system, create a world with it, log in as GM. No red errors in the console.
+2. [ ] Compendium Packs tab, **Second Nature** folder: open **Second Nature: Starter**, press **Import Adventure**, accept. Folders appear for the Bonded, the Hunt, Missions, Rules and Scenes.
+3. [ ] Actors: Maya's portrait shows on her sheet. Give Maya to the Player (right-click → Configure Ownership → Owner).
+4. [ ] Scenes: open **The Zoo After Dark** and activate it. The zoo map fills the scene; a gold pin sits above each lettered marker; the GM sees faded Hounds by marker 3 and Trappers by ★. In the Player's window, neither the pins nor the Hounds and Trappers show.
+5. [ ] GM: click the pin by marker A. The zoo's journal opens.
+6. [ ] GM: the paw button in the token controls opens the **Mission Tracker** with *The Zoo After Dark* already chosen. Tick Maya, Theo, Priya and Jonah and press **Start the mission**. A chat card says the mission begins; the Scent track shows a Limit of 8.
+7. [ ] Player: on Maya's sheet press **Roll** for Sense. The dialog says Scouting, Sense, Difficulty 2. Roll. The tracker updates in both windows.
+8. [ ] GM: choose way A, then roll for Theo, Priya and Jonah from the tracker; Player rolls for Maya. When everyone is past, **Next obstacle**. Keep going to the Hound patrol (marker 3).
+9. [ ] At the patrol: Maya's Sneak dialog shows Difficulty 3 (the Hounds' Tracker). Keep rolling until someone Fails (or set Maya's Wild to 0 and Fail), let everyone roll, then press **End round**. The two Hounds by marker 3 become visible to the Player and a Clash starts.
+10. [ ] Strike the Hounds until both are out (Strike buttons, **End Clash round** between rounds). Each out Hound is hidden again. The Clash ends by itself.
+11. [ ] Next obstacle (the crates, guarded by the Trappers), roll until it's open; **Start the Escape**, roll everyone across the moat. The tracker shows the result; **Finish the mission**. Everyone's sheet shows 1 Growth.
+12. [ ] Player: nothing above threw an error or asked for permission they shouldn't need.
+
+The automated version of this run is `test/foundry-starter.test.mjs` (on the stand-in Foundry). The full checklist below goes through everything else.
 
 ## Manual two-client smoke test
 
