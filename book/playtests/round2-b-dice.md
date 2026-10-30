@@ -76,3 +76,11 @@
 - roll 76 · Lodge cellar cage (Hunt Up) R2: Rosa (human) Wits 3 +1 Help Ben, Difficulty 2 (point 1/3) · 4d6 → [1, 3, 6, 2] · hits 1 · sixes 1
 - roll 77 · Lodge cellar cage (Hunt Up) R3: Rosa (human) Wits 3, Difficulty 2 (point 2/3) · 3d6 → [5, 2, 2] · hits 1 · sixes 0
 - roll 78 · Lodge Escape lawn (Hunt Up) R1: Theo (coyote, Hurt 1) Move 3 +1 Open, Difficulty 2 +1 On the Trail = 3 · 4d6 → [3, 4, 1, 1] · hits 0 · sixes 0
+- roll 79 · Lodge Escape lawn (Hunt Up) R1 Push: Theo · Push of [3,4,1,1] → [2, 4, 2, 1] · hits 0 · sixes 0
+- roll 80 · Lodge Escape lawn (Hunt Up) R1: Ben (hippo, Hurt 2, Wild 0) Move 3 +1 Open, Difficulty 3 · 4d6 → [6, 6, 1, 4] · hits 2 · sixes 2
+- roll 81 · Lodge Escape lawn (Hunt Up) R1: Rosa (mouse) Sneak 4, Difficulty 3 +1 Open +1 On the Trail = 5 · 4d6 → [5, 5, 2, 3] · hits 2 · sixes 0
+- roll 82 · Lodge Escape lawn (Hunt Up) R1: Dev (komodo, Hurt 2) Move 3, Difficulty 2 +1 On the Trail = 3 · 3d6 → [3, 4, 1] · hits 0 · sixes 0
+- roll 83 · Lodge Escape lawn (Hunt Up) R1 Push: Dev · Push of [3,4,1] → [4, 5, 1] · hits 1 · sixes 0
+- roll 84 · Lodge Escape wall (Hunt Up) R1: Ben (hippo, Hurt 2, Wild 0) Force 4 +1 Help Rosa, Difficulty 3 +1 On the Trail = 4 · 5d6 → [4, 6, 1, 3, 4] · hits 1 · sixes 1
+- roll 85 · Lodge Escape wall (Hunt Up) R1: Rosa (mouse, Wild 1) Move 3, Difficulty 2 +1 On the Trail = 3 · 3d6 → [6, 2, 3] · hits 1 · sixes 1
+- roll 86 · Lodge Escape wall (Hunt Up) R1: Dev (komodo, Hurt 2, Wild 2) Force 3 +1 Football, Difficulty 3 +1 On the Trail = 4 · 4d6 → [2, 5, 4, 5] · hits 2 · sixes 0
