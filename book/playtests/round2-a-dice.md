@@ -49,3 +49,15 @@
 - roll 49 · Deep End Inside 2 girders (point 0/2, dangerous) r1: Sam (rat) Move 3 +1 Narrow +1 Edge = 5 dice vs 2 · 5d6 → [5, 1, 5, 1, 1] · hits 2 · sixes 0
 - roll 50 · Deep End girders (1/2) r2: Sam (rat) Move 3 +1 Narrow +1 Help (Jonah) = 5 dice vs 2 · 5d6 → [2, 2, 6, 5, 1] · hits 2 · sixes 1
 - roll 51 · Deep End Objective cage (point 0/3, Huntsman) r1: Ollie (kid) Wits 3 +1 Brainiac +1 Help (Sam, kid) = 5 dice vs 2 · 5d6 → [1, 2, 4, 2, 1] · hits 0 · sixes 0
+- roll 52 · Deep End cage r1: Ollie Push of roll 51 (vs 2) · Push of [1,2,4,2,1] → [3, 6, 1, 1, 6] · hits 2 · sixes 2
+- roll 53 · Deep End cage (2/3) r2: Jonah (bison) Force 4 +1 Locked +1 Football Player = 6 dice vs 3 · 6d6 → [4, 1, 2, 3, 3, 3] · hits 0 · sixes 0
+- roll 54 · Deep End cage r2: Jonah Push of roll 53 (vs 3) · Push of [4,1,2,3,3,3] → [1, 2, 2, 1, 1, 3] · hits 0 · sixes 0
+- roll 55 · Deep End Clash (Mr Rook, Huntsman) r1: Jonah (bison) Strike, Force 4 +1 Locked +1 Football Player = 6 dice vs 3 · 6d6 → [5, 1, 3, 1, 6, 3] · hits 2 · sixes 1
+- roll 56 · Deep End Clash r1: Jonah Push of roll 55 (vs 3) · Push of [5,1,3,1,6,3] → [5, 2, 1, 1, 6, 1] · hits 2 · sixes 1
+- roll 57 · Deep End Clash r2: Jonah (bison) Strike Mr Rook (1/4), 6 dice vs 3 · 6d6 → [4, 3, 2, 1, 4, 1] · hits 0 · sixes 0
+- roll 58 · Deep End Clash r3: Jonah (bison) Strike Mr Rook (1/4), 6 dice vs 3 · 6d6 → [5, 1, 1, 2, 4, 2] · hits 1 · sixes 0
+- roll 59 · Deep End Clash r4: Jonah (bison, Hurt 2) Strike Mr Rook (2/4), 6 dice vs 3 · 6d6 → [3, 6, 1, 1, 5, 2] · hits 2 · sixes 1
+- roll 60 · Deep End cage (2/3, guard gone) r5: Ollie (kid) Wits 3 +1 Brainiac = 4 dice vs 2 · 4d6 → [5, 5, 1, 4] · hits 2 · sixes 0
+- roll 61 · Deep End Escape car park (group) r1: Jonah (bison, Stuck) Move 3 +1 Open = 4 dice vs 2 · 4d6 → [6, 2, 2, 4] · hits 1 · sixes 1
+- roll 62 · Deep End Escape car park r1: Ollie (dog) Move 3 +1 Open = 4 dice vs 2 · 4d6 → [6, 2, 5, 1] · hits 2 · sixes 1
+- roll 63 · Deep End Escape car park r1: Sam (rat) Sneak 4 = 4 dice vs 3 (Open Weakness) · 4d6 → [6, 4, 4, 5] · hits 2 · sixes 1

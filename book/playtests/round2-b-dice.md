@@ -50,3 +50,29 @@
 - roll 50 · Lodge kennels R1: Theo (coyote) Sense 4, Difficulty 3 · 4d6 → [4, 1, 4, 3] · hits 0 · sixes 0
 - roll 51 · Lodge kennels R1: Ben (human) Move 2 +1 Night Owl, Difficulty 3 · 3d6 → [3, 5, 5] · hits 2 · sixes 0
 - roll 52 · Lodge kennels R1: Jonah (human, Hurt 1) Move 2, Difficulty 3 · 2d6 → [5, 5] · hits 2 · sixes 0
+- roll 53 · Lodge kennels Clash R1: Rosa (mouse) Distract Hound A, Move 3 +1 Narrow, Difficulty 2 -1 Tiny = 1 · 4d6 → [6, 6, 4, 4] · hits 2 · sixes 2
+- roll 54 · Lodge kennels Clash R1: Dev (komodo) Strike Hound A, Force 3 +1 Dark +1 Football, Difficulty 2 -1 Distract = 1 · 5d6 → [1, 3, 2, 3, 3] · hits 0 · sixes 0
+- roll 55 · Lodge kennels Clash R1: Jonah (human, Hurt 1) Strike Hound B, Force 3 +1 Football, Difficulty 2 · 4d6 → [3, 3, 3, 5] · hits 1 · sixes 0
+- roll 56 · Lodge kennels Clash R1: Ben (human) Strike Hound C, Force 3 +1 Night Owl +1 Pack Help, Difficulty 2 · 5d6 → [6, 4, 5, 4, 5] · hits 3 · sixes 1
+- roll 57 · Lodge kennels Clash R1: Theo (coyote) Strike Hound A, Force 3, Difficulty 2 · 3d6 → [3, 5, 2] · hits 1 · sixes 0
+- roll 58 · Lodge kennels Clash R2: Rosa (mouse) Distract Hound A, Move 3 +1 Narrow, Difficulty 1 · 4d6 → [4, 5, 5, 4] · hits 2 · sixes 0
+- roll 59 · Lodge kennels Clash R2: Dev (komodo, Hurt 1) Strike Hound A, Force 3 +1 Dark +1 Football, Difficulty 1 · 5d6 → [4, 6, 2, 1, 1] · hits 1 · sixes 1
+- roll 60 · Lodge kennels Clash R2: Jonah (human, Hurt 2) Strike Hound B, Force 3 +1 Football +1 Edge, Difficulty 2 · 5d6 → [2, 6, 6, 6, 5] · hits 4 · sixes 3
+- roll 61 · Lodge kennels Clash R2: Ben (human) Strike Hound C, Force 3 +1 Night Owl, Difficulty 2 · 4d6 → [1, 3, 3, 1] · hits 0 · sixes 0
+- roll 62 · Lodge kennels Clash R2: Theo (coyote, Hurt 1) Strike Hound A, Force 3, Difficulty 2 · 3d6 → [5, 5, 4] · hits 2 · sixes 0
+- roll 63 · Lodge kennels Clash R3: Rosa (mouse) Distract Hound C, Move 3 +1 Narrow, Difficulty 1 · 4d6 → [3, 4, 5, 6] · hits 2 · sixes 1
+- roll 64 · Lodge kennels Clash R3: Dev (komodo, Hurt 1) Strike Hound C, Force 3 +1 Dark +1 Football, Difficulty 1 · 5d6 → [3, 1, 6, 4, 3] · hits 1 · sixes 1
+- roll 65 · Lodge kennels Clash R3: Jonah (human, Hurt 2) Strike Hound C, Force 3 +1 Football, Difficulty 2 · 4d6 → [5, 4, 4, 4] · hits 1 · sixes 0
+- roll 66 · Lodge servants door R1: Ben (hippo, Hurt 1) Force 4 +1 Locked +1 Edge, Difficulty 3, Charge (point 0/2) · 6d6 → [1, 3, 4, 6, 5, 1] · hits 2 · sixes 1
+- roll 67 · Lodge servants door R2: Rosa (human) Wits 3, Difficulty 2 (point 1/2) · 3d6 → [3, 5, 6] · hits 2 · sixes 1
+- roll 68 · Lodge trophy hall R1: Dev (komodo, Hurt 1) Sense 3 +1 Dark +1 Taste the Air, Difficulty 2 (point 0/2) · 5d6 → [4, 5, 6, 4, 6] · hits 3 · sixes 2
+- roll 69 · Lodge cellar Clash R1: Rosa (human) Distract Trapper 2, Move 2, Difficulty 2 · 2d6 → [3, 2] · hits 0 · sixes 0
+- roll 70 · Lodge cellar Clash R1: Jonah (human, Hurt 2) Strike Trapper 2, Force 3 +1 Football, Difficulty 2 · 4d6 → [4, 3, 6, 4] · hits 1 · sixes 1
+- roll 71 · Lodge cellar Clash R1: Ben (hippo, Hurt 1) Strike Trapper 2, Force 4 +1 Locked, Difficulty 2 +1 Narrow = 3 · 5d6 → [3, 2, 3, 5, 5] · hits 2 · sixes 0
+- roll 72 · Lodge cellar Clash R1: Dev (komodo, Hurt 1) Strike Trapper 1, Force 3 +1 Football, Difficulty 2 · 4d6 → [4, 3, 6, 1] · hits 1 · sixes 1
+- roll 73 · Lodge cellar Clash R2: Rosa (human) Distract Trapper 1, Move 2, Difficulty 2 · 2d6 → [6, 5] · hits 2 · sixes 1
+- roll 74 · Lodge cellar Clash R2: Theo (coyote, Hurt 1) Strike Trapper 1, Force 3, Difficulty 2 -1 Distract = 1 · 3d6 → [3, 2, 6] · hits 1 · sixes 1
+- roll 75 · Lodge cellar cage (Hunt Up) R1: Rosa (human) Wits 3 +1 Help Theo +1 Help Ben, Difficulty 2 (point 0/3) · 5d6 → [4, 4, 3, 2, 6] · hits 1 · sixes 1
+- roll 76 · Lodge cellar cage (Hunt Up) R2: Rosa (human) Wits 3 +1 Help Ben, Difficulty 2 (point 1/3) · 4d6 → [1, 3, 6, 2] · hits 1 · sixes 1
+- roll 77 · Lodge cellar cage (Hunt Up) R3: Rosa (human) Wits 3, Difficulty 2 (point 2/3) · 3d6 → [5, 2, 2] · hits 1 · sixes 0
+- roll 78 · Lodge Escape lawn (Hunt Up) R1: Theo (coyote, Hurt 1) Move 3 +1 Open, Difficulty 2 +1 On the Trail = 3 · 4d6 → [3, 4, 1, 1] · hits 0 · sixes 0
