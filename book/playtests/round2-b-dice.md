@@ -3,3 +3,22 @@
 - roll 3 · Mill millrace R1: Maya (human) Sneak 3 +1 Hide-and-Seek, Difficulty 2 (dangerous) · 4d6 → [4, 2, 4, 5] · hits 1 · sixes 0
 - roll 4 · Mill millrace R1: Sam (rat) Sneak 4, Difficulty 2 (dangerous) · 4d6 → [2, 3, 1, 1] · hits 0 · sixes 0
 - roll 5 · Mill millrace R1: Jonah (bison) Move 3, Difficulty 2 (dangerous) · 3d6 → [4, 1, 1] · hits 0 · sixes 0
+- roll 6 · Mill millrace R1: Priya (human) Move 2, Difficulty 2 (dangerous) · 2d6 → [2, 5] · hits 1 · sixes 0
+- roll 7 · Mill millrace R2: Sam (rat, Hurt 1) Sneak 4, Difficulty 2 (dangerous) · 4d6 → [6, 3, 1, 5] · hits 2 · sixes 1
+- roll 8 · Mill millrace R2: Jonah (bison) Move 3, Difficulty 2 (dangerous) · 3d6 → [2, 3, 6] · hits 1 · sixes 1
+- roll 9 · Mill grain-store Clash R1: Sam (rat) Distract Beater, Move 3 +1 Narrow, Difficulty 2 · 4d6 → [6, 3, 4, 1] · hits 1 · sixes 1
+- roll 10 · Mill grain-store Clash R1: Jonah (bison) Strike Beater, Force 4 +1 Football, Difficulty 2 +1 Narrow -1 Distract = 2 · 5d6 → [5, 5, 2, 6, 2] · hits 3 · sixes 1
+- roll 11 · Mill grain-store Clash R1: Maya (jaguar) Strike Hound, Force 3 +1 Dark, Difficulty 2 · 4d6 → [5, 3, 5, 2] · hits 2 · sixes 0
+- roll 12 · Mill grain-store Clash R1: Lucia (alligator) Strike Hound, Force 3 +1 Dark, Difficulty 2 · 4d6 → [1, 3, 2, 6] · hits 1 · sixes 1
+- roll 13 · Mill grain-store Clash R2: Sam (rat, Hurt 2) Strike Beater, Force 1 +1 Narrow, Difficulty 2 · 2d6 → [5, 4] · hits 1 · sixes 0
+- roll 14 · Mill grain-store Clash R2: Priya (owl) Distract Hound, Move 4 +1 Silent Wings, Difficulty 2 +1 Narrow = 3 · 5d6 → [4, 3, 5, 3, 1] · hits 1 · sixes 0
+- roll 15 · Mill grain-store Clash R2: Maya (jaguar) Strike Hound, Force 3 +1 Dark, Difficulty 2 -1 Distract = 1 · 4d6 → [4, 4, 5, 3] · hits 1 · sixes 0
+- roll 16 · Mill gear loft R1: Sam (rat, Stuck, Hurt 2) Move 3 +1 Narrow, Difficulty 2 (dangerous, point 0/3) · 4d6 → [6, 4, 3, 6] · hits 2 · sixes 2
+- roll 17 · Mill gear loft R2: Priya (owl, Hurt 1) Move 4 +1 High, Difficulty 2 +1 Narrow = 3 (dangerous, point 2/3) · 5d6 → [2, 4, 6, 5, 4] · hits 2 · sixes 1
+- roll 18 · Mill Callhorn Clash R1: Priya (owl, Hurt 1) Distract Huntsman, Move 4 +1 High, Difficulty 3 · 5d6 → [2, 2, 3, 4, 5] · hits 1 · sixes 0
+- roll 19 · Mill Callhorn Clash R1: Jonah (bison) Strike Huntsman, Force 4 +1 Football +1 Locked (Cap +2), Difficulty 3 -1 Distract = 2 · 6d6 → [4, 5, 1, 6, 1, 5] · hits 3 · sixes 1
+- roll 20 · Mill Callhorn Clash R1: Sam (rat, Stuck, Hurt 2) Distract Huntsman, Sneak 4, Difficulty 3 +1 Trophy = 4 · 4d6 → [3, 3, 1, 6] · hits 1 · sixes 1
+- roll 21 · Mill Callhorn Clash R1: Maya (jaguar) Strike Huntsman, Force 3 +1 High, Difficulty 3 -1 Distract = 2 · 4d6 → [3, 6, 4, 5] · hits 2 · sixes 1
+- roll 22 · Mill Callhorn Clash R1: Lucia (alligator, Hurt 1) Strike Huntsman, Force 3, Difficulty 3 · 3d6 → [2, 3, 4] · hits 0 · sixes 0
+- roll 23 · Mill Callhorn Clash R2: Jonah (bison) Slip Away from Huntsman, Move 3, Difficulty 3 · 3d6 → [5, 1, 4] · hits 1 · sixes 0
+- roll 24 · Mill Callhorn Clash R2: Maya (jaguar) Slip Away from Huntsman, Sneak 4 +1 High +1 Hide-and-Seek, Difficulty 3 +1 Trophy = 4 · 6d6 → [2, 3, 2, 3, 4, 5] · hits 1 · sixes 0

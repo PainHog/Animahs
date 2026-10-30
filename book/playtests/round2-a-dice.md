@@ -1,2 +1,29 @@
 - roll 1 · Setup: Dev roll-off for Jonah (Ch9, higher chooses first) · 1d6 → [3] · hits 0 · sixes 0
 - roll 2 · Setup: Elif roll-off for Jonah (Ch9, higher chooses first) · 1d6 → [1] · hits 0 · sixes 0
+- roll 3 · Setup: Finn new character, frame d6 (Ch2) · 1d6 → [2] · hits 0 · sixes 0
+- roll 4 · Setup: Finn new character, animal d6 (Ch2: 1-2 first, 3-4 second, 5-6 third) · 1d6 → [4] · hits 0 · sixes 0
+- roll 5 · Setup: Finn human perk, 2d6 (Ch2: first die list A 1-3 / B 4-6, second die row) · 2d6 → [1, 5] · hits 1 · sixes 0
+- roll 6 · Setup: practice roll, Dev (Jonah), 3 dice vs Difficulty 2 (Ch9) · 3d6 → [4, 3, 1] · hits 0 · sixes 0
+- roll 7 · Setup: practice roll, Elif (Sam), 3 dice vs Difficulty 2 (Ch9) · 3d6 → [5, 3, 6] · hits 2 · sixes 1
+- roll 8 · Setup: practice roll, Finn (Ollie), 3 dice vs Difficulty 2 (Ch9) · 3d6 → [1, 2, 6] · hits 1 · sixes 1
+- roll 9 · Zoo scouting: Ollie (dog) Sense 4 +1 Help (Sam, kid) = 5 dice vs Difficulty 2, no tags (Ch5) · 5d6 → [2, 6, 1, 5, 4] · hits 2 · sixes 1
+- roll 10 · Zoo way in A fence (group) r1: Jonah (bison) Move 3 +1 Open = 4 dice vs 2 · 4d6 → [1, 6, 3, 6] · hits 2 · sixes 2
+- roll 11 · Zoo fence r1: Ollie (dog) Move 3 +1 Open = 4 dice vs 3 (High is a Canine Weakness) · 4d6 → [1, 4, 2, 2] · hits 0 · sixes 0
+- roll 12 · Zoo fence r1: Ollie Push of roll 11 (vs 3) · Push of [1,4,2,2] → [4, 6, 6, 2] · hits 2 · sixes 2
+- roll 13 · Zoo fence r1: Sam (rat) Sneak 4 +1 Edge = 5 dice vs 4 (Sneak 3, +1 Open Weakness) · 5d6 → [3, 4, 4, 6, 2] · hits 1 · sixes 1
+- roll 14 · Zoo Inside 1 Find the Trappers (point 0/2) r1: Jonah (bison) Sense 3 +1 Open +1 Help (Sam, rat) = 5 dice vs 2 · 5d6 → [2, 2, 5, 3, 1] · hits 1 · sixes 0
+- roll 15 · Zoo Find the Trappers r1: Jonah Push of roll 14 (vs 2) · Push of [2,2,5,3,1] → [6, 3, 5, 6, 4] · hits 3 · sixes 2
+- roll 16 · Zoo Inside 2 night keeper (group) r1: Ollie (kid) Wits 3 +1 Brainiac = 4 dice vs 2 · 4d6 → [1, 5, 4, 6] · hits 2 · sixes 1
+- roll 17 · Zoo night keeper r1: Sam (rat) Sneak 4 = 4 dice vs 3 (no tags) · 4d6 → [4, 3, 1, 6] · hits 1 · sixes 1
+- roll 18 · Zoo night keeper r1: Jonah (bison) Sneak 2 +1 Edge = 3 dice vs 3 · 3d6 → [1, 6, 4] · hits 1 · sixes 1
+- roll 19 · Zoo Inside 3 Hound patrol (group, 2 Hounds) r1: Jonah (bison) Move 3 +1 Open = 4 dice vs 2 · 4d6 → [3, 4, 1, 1] · hits 0 · sixes 0
+- roll 20 · Zoo Hound patrol r1: Jonah Push of roll 19 (vs 2) · Push of [3,4,1,1] → [2, 4, 1, 3] · hits 0 · sixes 0
+- roll 21 · Zoo Hound patrol r1: Ollie (dog) Move 3 +1 Open = 4 dice vs 2 · 4d6 → [6, 4, 3, 5] · hits 2 · sixes 1
+- roll 22 · Zoo Hound patrol r1: Sam (rat) Move 3 = 3 dice vs 3 (Open Weakness) · 3d6 → [5, 2, 6] · hits 2 · sixes 1
+- roll 23 · Zoo Clash (2 Hounds) r1: Sam (rat) Distract Hound A, Move 3 = 3 dice vs 3 (2 +1 Open Weakness) · 3d6 → [4, 6, 2] · hits 1 · sixes 1
+- roll 24 · Zoo Clash r1: Jonah (bison) Strike Hound A, Force 4 +1 Open +1 Football Player = 6 dice vs 1 (Distracted) · 6d6 → [2, 3, 6, 3, 2, 6] · hits 2 · sixes 2
+- roll 25 · Zoo Clash r1: Ollie (dog) Strike Hound B, Force 3 +1 Open = 4 dice vs 2 · 4d6 → [2, 3, 2, 5] · hits 1 · sixes 0
+- roll 26 · Zoo Clash r2: Sam (rat) Distract Hound A, Move 3 = 3 dice vs 3 · 3d6 → [6, 1, 3] · hits 1 · sixes 1
+- roll 27 · Zoo Clash r2: Jonah (bison) Strike Hound A (2/3), 6 dice vs 1 (Distracted) · 6d6 → [5, 4, 1, 1, 6, 4] · hits 2 · sixes 1
+- roll 28 · Zoo Clash r2: Ollie (dog) Strike Hound B (1/3), 4 dice vs 2 · 4d6 → [5, 2, 6, 3] · hits 2 · sixes 1
+- roll 29 · Zoo Clash r3: Jonah (bison) Strike Hound B (2/3), 6 dice vs 2 · 6d6 → [5, 3, 1, 1, 6, 4] · hits 2 · sixes 1
