@@ -130,7 +130,7 @@ Most severe first. There are no blockers. Issues found by reading, on paths play
 ### Issue 8 (minor): "Edges come only from obstacles"
 
 - **Where:** `16-ch06.html`: "A Critical on Distract or Slip Away works like a Success; Edges come only from obstacles." `13-ch03.html`: "You gain Edges from a Critical ... from a good scouting roll ... and from the Team Captain perk."
-- **What happened:** rolls 53 and 73 were Criticals on Distracts. The new sentence settled them, but a player noted it also says scouting (roll 1) and Team Captain can't give Edges.
+- **What happened:** roll 53 was a Critical on a Distract. The new sentence settled it, but a player noted it also says scouting (roll 1) and Team Captain can't give Edges.
 - **Fix:** "...works like a Success; a Clash never gives an Edge."
 - **Ruling tonight:** Chapter 3.
 
@@ -148,10 +148,10 @@ Most severe first. There are no blockers. Issues found by reading, on paths play
 - **Fix:** Scent box: "starts at 1 after someone was Exposed (not on top of a poor scouting roll)".
 - **Ruling tonight:** Chapter 7. Scent 1.
 
-### Issue 11 (minor): Two mission lengths
+### Issue 11 (minor, found on reading): Two mission lengths
 
 - **Where:** `11-ch01.html`: "A mission takes one to two hours, a little more for a Hard one with a big group." `21-ch09.html`, Pacing: "**A mission takes two to three hours.**"
-- **What happened:** the Storyteller planned the evening from Chapter 9 and was told Chapter 1 says otherwise.
+- **What happened:** the fix changed Chapter 1 and the first-night box, but not Chapter 9's Pacing list. A Storyteller planning the evening gets two answers.
 - **Fix:** change Chapter 9 to match.
 - **Ruling tonight:** none needed.
 
@@ -338,7 +338,7 @@ The round's rolls are done, so the kennels' rise comes now: **Scent 3**. Then "t
 - **Round 2 (rolls 58 to 62):**
   - Rosa (roll 58) Distracts A: Success.
   - Dev (roll 59) Strikes A at Difficulty 1: Success, 2 of 3.
-  - Jonah (roll 60) Strikes B with the second Edge (**Edges 0**). Critical: 2 harm, **B is out**.
+  - Jonah (roll 60) Strikes B with an Edge (**Edges 1**). Critical: 2 harm, **B is out**.
   - Ben (roll 61) Strikes C. Fail: **Ben Hurt 1.**
   - Theo (roll 62) Strikes A. Success: **A is out.**
 - **Round 3 (rolls 63 to 65):**
@@ -350,7 +350,7 @@ The Clash ends in round 3: +2 (someone went Down). **Scent 5.** The scene ends w
 
 **Inside 2, the servants’ door.** Locked; Force 3, Wits 2; point, 2 progress. In the gap, Ben shifted to hippo (Wild 4 to 3) to use Charge, and Rosa shifted back to human (free; "shifting back counts as a Shift").
 
-- **Round 1** (roll 66): Ben, hippo Force 4 +1 Locked +1 Edge... except there was no Edge left after roll 60. **Correction:** the team held 0 Edges after roll 60, so the "+1 Edge" in roll 66's label is wrong. Ben rolled six dice where he should have rolled five. That's a wrong number of dice, and per the brief the result stands: 2 hits against 3, a Partial. With five dice it would still have been at most the same 2 hits, so it was a Partial either way. Charge needs a Success. 1 of 2, Scent +1. No Push. **Scent 6.**
+- **Round 1** (roll 66): Ben, hippo Force 4 +1 Locked +1 Edge (**Edges 0**), against 3. 2 hits: a Partial, so Charge doesn't trigger (it needs a Success). 1 of 2, and Scent +1. A Push of the four misses could have made it a Success, which Charge would turn into a Critical and the door would be open, but the table skipped it. **Scent 6.**
 - **Round 2** (roll 67): Rosa, human Wits 3 against 2, no Help. Success: 2 of 2, at no Scent.
 
 **Inside 3, the trophy hall** (roll 68). High, Dark; Sense 2; point, 2 progress. Dev rolled Sense 3 +1 Dark +1 Taste the Air (at the Cap) against 2. Critical: 2 progress, at no Scent. **Scent 6 of 7.**
