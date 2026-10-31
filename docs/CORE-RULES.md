@@ -53,7 +53,7 @@ Kids aged 11–15 have **Bonded** with one animal each and can become it. They f
 
 A Critical on Distract or Slip Away works like a Success (Edges come only from obstacles).
 
-Against a threat, **a Partial does the job but its Harm hits you; a Fail just hits you**. At the end of each round, **each threat nobody rolled against deals its Harm to one character** of the Storyteller's choice.
+Against a threat, **a Partial does the job but its Harm hits you** (even if it puts the threat out); **a Fail just hits you**. At the end of each round, **each threat nobody rolled against deals its Harm to one character still standing in the Clash** (not Down, Netted or slipped away) of the Storyteller's choice. Once you've slipped away you take no part in the Clash, not even Help. Help can come before or after the helper's own action.
 
 The Clash ends when every threat is out; **at the end of round 4**, when any threats still standing pull back; or when nobody who can act is left in it (everyone has slipped away or is Down, Netted or Taken), and then the guards are still on guard: at a group obstacle those who slipped away are past, and at a point obstacle the next Fail there starts a new Clash. **When it ends, Scent rises once:** +1, or +2 if it reached round 4, someone went Down, or someone shifted during it (they're Exposed). Then the scene ends (§9), so if that rise brings the Hunt Up, anyone Down or Netted is Taken.
 
@@ -64,10 +64,10 @@ The Clash ends when every threat is out; **at the end of round 4**, when any thr
 
 **§9 Hurt and worse.**
 - **Hurt:** everyone has 3 boxes in every form, and Hurt never lowers your dice. It clears between missions.
-- **Down** (3 Hurt): you can't act until the scene ends; a Patch Up lowers your Hurt but doesn't get you up. Then you're back up with 2 Hurt and past the obstacle, if a friend is still standing and the Hunt isn't Up. Otherwise you're **Taken**. If you go Down in animal form, you're **Stuck** in it until the mission ends.
+- **Down** (3 Hurt): you can't act until the scene ends; a Patch Up lowers your Hurt but doesn't get you up. Then you're back up with 2 Hurt (and past it, at a group obstacle), if a friend is still standing and the Hunt isn't Up. Otherwise you're **Taken**. If you go Down in animal form, you're **Stuck** in it until the mission ends.
 - **Netted:** you can't act until a friend frees you (their action, no roll). When the scene ends you're freed, if a friend is still standing and the Hunt isn't Up; otherwise you're Taken.
 - **Taken:** the Hunt cages you, and you're out for the mission. If you were carrying the prize, it's lost. You're also Exposed.
-- **Rescued:** a character freed during a mission rejoins the team once it's out, and doesn't roll in the Escape.
+- **Rescued:** a character freed during a mission goes with the team: they don't roll or Help, can't be Taken unless everyone else is, don't count towards "everyone Taken", and rejoin the team once it's out. Anyone Taken on the same mission is out of reach until another one.
 - **Exposed:** the Hunt knows your face and your **Mark**. In a campaign, your next mission starts at Scent 1 (only 1, however many were Exposed, and not on top of a poor scouting roll's Scent 1).
 - **Everyone Down, Netted or Taken at once:** everyone is Taken, and the mission is a Loss.
 
@@ -77,7 +77,7 @@ The Clash ends when every threat is out; **at the end of round 4**, when any thr
 3. **Escape:** group obstacles.
 4. **The team may Withdraw** at any time outside a Clash and go straight to the Escape (before the way in, it just goes home); that's a Loss.
 
-**Results:** **Win:** the objective is done and nobody is Taken. **Costly Win:** it's done, but someone (not everyone) is Taken. **Loss:** it isn't done, or everyone is Taken. Afterwards unspent Wild and Edges are lost and Hurt clears.
+**Results:** **Win:** the objective is done and nobody is Taken. **Costly Win:** it's done, but someone (not everyone) is Taken. **Loss:** it isn't done, or everyone is Taken (what they did stays done, but it counts as a Loss). Afterwards unspent Wild and Edges are lost and Hurt clears.
 
 **§11 Making a character.**
 1. **Frame and animal:** choose them, or roll a d6 for the frame (Table 1) and a d6 for the animal (1–2 the first, 3–4 the second, 5–6 the third, in Table 2). No two characters in a group have the same animal; if two players want the same one, roll off (again on a tie).
@@ -90,8 +90,8 @@ The Clash ends when every threat is out; **at the end of round 4**, when any thr
 - **The Hunt track** (0–6) rises by 2 for a Loss and by 1 for a Costly Win, and never goes down. At 6, the next mission is the Last Hunt.
 - **The Last Hunt** is a Hard mission. With the Hunt track at 4 or more, its Limit is 1 lower.
 - **Growth:** after each mission, mark 1 Growth. At 2, 4 and 6, choose one: +1 Wild (to a maximum of 6, counting the Gamer perk); a second, different human perk; +1 to a human rating (to a maximum of 3); or **Wild Sense** (one of your frame's Strengths also works in human form). Only +1 to a rating can be chosen again, for a different rating. Taken characters mark Growth too.
-- **Taken characters** can be rescued on either of the next two missions (as the mission, or as one more point obstacle before the Escape: a locked cage, Force 3 or Wits 2, 3 progress); after that the Hunt makes them a Trophy: they lose their Bond but keep their memories, and freeing the Trophy gives the Bond back.
-- **New characters** join at the start of a mission, never during one, with Growth equal to the lowest in the group. When a Taken friend is rescued, their player chooses which character to keep.
+- **Taken characters** can be rescued on either of the next two missions (as the mission, or as one more point obstacle before the Escape: a locked cage, Force 3 or Wits 2, 3 progress, +1 to the Limit; failing it doesn't change the result); after that the Hunt makes them a Trophy: they lose their Bond but keep their memories, and freeing the Trophy gives the Bond back.
+- **New characters** join at the start of a mission, never during one, with Growth equal to the lowest in the group; a Taken character's animal still counts for "no two the same". When a Taken friend is rescued, their player chooses which character to keep.
 - **Everyone Taken:** the next mission is a Breakout, played by new Bonded with the old team's lowest Growth. It comes first even if the Hunt track has just reached 6; the Last Hunt follows it.
 - **The Last Hunt's results:** a Win or a Costly Win keeps the Old Wild free (and frees anyone Taken that night); a Loss ends the campaign with the Wild chained.
 - **Results carry over:** a mission's Win, Costly Win or Loss may change the next mission (an extra guard, a new ally).
@@ -148,7 +148,7 @@ Every perk works in any form unless it says otherwise. A perk's die counts towar
 | Beater (hired hand) | 2 | 2 | 1 | — |
 | Hound (bred by the Hunt) | 2 | 3 | 1 | **Tracker:** Sneak rolls at an obstacle a Hound guards, or in a Clash with a Hound, are at +1 Difficulty (+1 in all, however many Hounds). |
 | Trapper | 2 | 2 | 1 | **Net:** when you Fail against a Trapper in a Clash, you're Netted instead of Hurt (the Fail that starts a Clash doesn't net you). |
-| Huntsman (wears a Trophy) | 3 | 4 | 2 | **Trophy:** Sneak rolls at an obstacle a Huntsman guards are at +1 Difficulty. |
+| Huntsman (wears a Trophy) | 3 | 4 | 2 | **Trophy:** Sneak rolls at an obstacle a Huntsman guards, or in a Clash with a Huntsman, are at +1 Difficulty (+1 in all, however many Huntsmen; it adds to a Hound's Tracker). |
 | Master of the Hunt | — | — | — | Arrives only when the Hunt is Up (§8); never fought in v0.1. |
 
 ## Table 5: Mission labels and Limits

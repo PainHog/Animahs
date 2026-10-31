@@ -212,7 +212,7 @@ export const THREATS = {
   trapper:  { name: "Trapper",  diff: 2, tough: 2, harm: 1, net: true, label: "MG.Threat.trapper.name", specialLabel: "MG.Threat.trapper.special",
               specialName: "Net", special: "When you Fail against a Trapper in a Clash, you're Netted instead of Hurt (the Fail that starts a Clash doesn't net you)." },
   huntsman: { name: "Huntsman", diff: 3, tough: 4, harm: 2, trophy: true, label: "MG.Threat.huntsman.name", specialLabel: "MG.Threat.huntsman.special",
-              specialName: "Trophy", special: "Sneak rolls at an obstacle a Huntsman guards are at +1 Difficulty." },
+              specialName: "Trophy", special: "Sneak rolls at an obstacle a Huntsman guards, or in a Clash with a Huntsman, are at +1 Difficulty (+1 in all, however many Huntsmen; it adds to a Hound's Tracker)." },
   master:   { name: "Master of the Hunt", diff: null, tough: null, harm: null, fightable: false, label: "MG.Threat.master.name", specialLabel: "MG.Threat.master.special",
               specialName: "Arrives", special: "Only when the Hunt is Up. Masters are never fought. While they're here, any Fail means you're Taken." },
 };

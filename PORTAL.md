@@ -1,4 +1,4 @@
-Now: Richard has approved the whole design; the rulebook and the online version are ready for a first playtest
+Now: Richard has approved the whole design; the computer playtests are done and their fixes are in the book and the online version
 Next: A first playtest at a real table, while Richard draws the real pictures and puts the book in his own words
 Number: Design decisions so far = 34
 Number: Approved by Richard = 33
@@ -26,13 +26,13 @@ Plain words only: no repo names, usernames, file paths, links or commit IDs. Rul
 
 ## Building the game
 
-- [ ] Write the rulebook chapters
-- [ ] Ready-made characters for a quick start
-- [ ] The first ready-made adventure
+- [x] Write the rulebook chapters
+- [x] Ready-made characters for a quick start
+- [x] The first ready-made adventure
 - [x] A stand-in picture for every spot in the book, including a map for each mission, ready to swap for the real drawings
 - [ ] Cover and book art
-- [ ] Rulebook layout, for screen and for print
-- [ ] Computer playtests by the book, and the fixes they turn up
+- [x] Rulebook layout, for screen and for print
+- [x] Computer playtests by the book, and the fixes they turn up
 - [ ] A playtest at a real table
 
 ## Online version
